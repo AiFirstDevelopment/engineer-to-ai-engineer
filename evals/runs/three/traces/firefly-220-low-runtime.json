@@ -1,0 +1,160 @@
+{
+  "run": "three",
+  "case": "firefly-220-low-runtime",
+  "question": "How long does the Firefly 220 run on low?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "The Firefly 220 runs 42 hours on low [1].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "release-notes.md > Fixes"
+    }
+  ],
+  "cost": 0.00196,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.6016515694383043
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.5217055796150536
+    },
+    {
+      "id": 125,
+      "where": "faq.md > How long does the Firefly 220R take to charge?",
+      "score": 0.48116649452742
+    },
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.4720509977628867
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.46601518635125855
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.4593408753842938
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.453932751578959
+    },
+    {
+      "id": 15,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99",
+      "score": 0.43235794309222586
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.42212699871040044
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.3970268705463212
+    },
+    {
+      "id": 212,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.3952220256003945
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.39294833835483195
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.3833300235062593
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.3486815234661197
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3448324769499106
+    },
+    {
+      "id": 195,
+      "where": "release-notes.md > 3.7 — April 15, 2025",
+      "score": 0.3435928558300425
+    },
+    {
+      "id": 154,
+      "where": "fuel-safety.md > Lighting and ventilation",
+      "score": 0.3388248730019667
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.33541932824100074
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.3296739578817474
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.32410016808419945
+    }
+  ],
+  "shown": [
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.6016515694383043
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.5217055796150536
+    },
+    {
+      "id": 125,
+      "where": "faq.md > How long does the Firefly 220R take to charge?",
+      "score": 0.48116649452742
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How long does the Firefly 220 run on low?",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] release-notes.md > Fixes\n### Fixes\n\n- The Firefly 220R product page showed the Firefly 220's runtime (42 hours on low) instead of\n  its own (48 hours on low). The two products share a page template and the runtime field was\n  pointing at the wrong product record. Customers who bought a 220R between May 19 and August\n  11 and asked about the difference were offered a 40-day return by Customer Service.\n- Order lookup rejected order numbers typed in lower case.\n- The holiday return extension banner was showing in July.\n\n[2] repair-manual.pdf p.7\n5. Light under the hood and set the flame so that it is just below the point where it\nsmokes. Run the 30-minute burn-in.\nAir tubes and burner\nThe two side tubes carry air to the burner. If they are dented so that a 4 mm rod will not\npass, straighten them with the tube mandrel or replace the lantern. The burner itself (part\nBR-12) is replaced only when the winder gear strips, which happens about twice a year\nacross the whole fleet.\nFirefly 220 and 220R\nThe Firefly 220 (LS-220) runs on three AA cells; the Firefly 220R (LS-220R) is the\nrechargeable model with the 2,600 mAh pack and a USB-C port. They look the same from\nthe outside except for the port cover, and the 220R weighs 30 g more. Check the model\nnumber on the base plate before you order parts: the switches are different and the 220's\nswitch will not fit the 220R.\nSwitch\n1. Remove the base (two Phillips screws on the 220, three on the 220R).\n2. The switch is a tactile switch on the main board. Switch part numbers: SW-220 for the\n220, SW-220R for the 220R. Both are soldered; this is the one soldering job on the\nFirefly bench.\n3. Replace the switch, refit, and check both brightness levels.\nFirefly 220R USB-C port\n\n[3] faq.md > How long does the Firefly 220R take to charge?\n### How long does the Firefly 220R take to charge?\n\nAbout 3.5 hours from empty with a 5 volt 2 amp USB charger. Four blue lights beside the port show\nhow full the battery is.\n\nQuestion: How long does the Firefly 220 run on low?",
+      "reply": "The Firefly 220 runs 42 hours on low [1].",
+      "stopReason": "end_turn",
+      "inputTokens": 870,
+      "outputTokens": 22,
+      "cost": 0.00196,
+      "ms": 1407
+    }
+  ],
+  "ms": 1415,
+  "tokens": {
+    "input": 870,
+    "output": 22
+  }
+}

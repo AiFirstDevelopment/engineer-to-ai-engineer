@@ -1,0 +1,65 @@
+{
+  "total": 0.1994,
+  "runs": [
+    {
+      "run": "five",
+      "at": "2026-11-04T20:43:22.230Z",
+      "git": "ed36867+changes",
+      "config": {
+        "options": {
+          "citeCheck": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 1
+      },
+      "passed": 26,
+      "failed": 4,
+      "notRun": 0,
+      "cost": 0.1046
+    },
+    {
+      "run": "three",
+      "at": "2026-11-04T20:45:07.976Z",
+      "git": "ed36867+changes",
+      "config": {
+        "options": {
+          "citeCheck": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 3,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 1
+      },
+      "passed": 25,
+      "failed": 5,
+      "notRun": 0,
+      "cost": 0.0724
+    },
+    {
+      "run": "capped",
+      "at": "2026-11-04T20:46:34.051Z",
+      "git": "ed36867+changes",
+      "config": {
+        "options": {
+          "citeCheck": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 0.02
+      },
+      "passed": 5,
+      "failed": 1,
+      "notRun": 24,
+      "cost": 0.0224
+    }
+  ]
+}

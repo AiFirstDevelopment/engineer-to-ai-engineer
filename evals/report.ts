@@ -12,16 +12,22 @@ export function printResults(scored: Scored): void {
       : "";
     const verdict = r.verdict;
     const judged = !verdict ? "" : verdict.grounded && verdict.cited ? "ok" : "no";
-    const status = r.status === "pass" ? "pass" : "FAIL";
+    const status = r.status === "fail" ? "FAIL" : r.status;
     const line = `${r.id.padEnd(24)} ${status.padEnd(7)} ${source.padEnd(7)} ${facts.padEnd(6)} `;
     console.log(`${line}${judged.padEnd(9)} ${r.why}`.trimEnd());
   }
+  console.log(summary(scored));
+}
+
+// One line: passed of all, by kind, the cases not run, and the cost with the judge.
+export function summary(scored: Scored): string {
   const of = (expect: string) => scored.results.filter((r) => r.expect === expect);
   const passed = (rs: Scored["results"]) => rs.filter((r) => r.status === "pass").length;
+  const notRun = scored.results.filter((r) => r.status === "not run").length;
   const cost = scored.results.reduce((sum, r) => sum + r.cost, 0);
-  console.log(
+  return (
     `passed ${scored.passed}/${scored.results.length}: answer ${passed(of("answer"))}/` +
-      `${of("answer").length}, fallback ${passed(of("fallback"))}/${of("fallback").length}; ` +
-      `$${cost.toFixed(4)} with the judge (${scored.judge})`,
+    `${of("answer").length}, fallback ${passed(of("fallback"))}/${of("fallback").length}` +
+    `${notRun ? `, not run ${notRun}` : ""}; $${cost.toFixed(4)} with the judge`
   );
 }

@@ -1,0 +1,154 @@
+{
+  "run": "three",
+  "case": "sales-2025",
+  "question": "How many lanterns did Lantern Supply Co. sell in 2025?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.001378,
+  "retrieved": [
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.6269044204867927
+    },
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.6067445037480029
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.5957082520614978
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5920843757263128
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.583711958012297
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5677848291313977
+    },
+    {
+      "id": 8,
+      "where": "about.md > Lights for Scouts",
+      "score": 0.5666263909468267
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.5633682919700118
+    },
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.5568252484563565
+    },
+    {
+      "id": 240,
+      "where": "shipping.md > Where we ship",
+      "score": 0.5493062566394915
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.5458714846146183
+    },
+    {
+      "id": 148,
+      "where": "fuel-safety.md > Fuel Safety Guide",
+      "score": 0.5292709068567611
+    },
+    {
+      "id": 22,
+      "where": "catalog.md > Fuel lanterns and oil lamps",
+      "score": 0.528125928647033
+    },
+    {
+      "id": 13,
+      "where": "catalog.md > How to read a model number",
+      "score": 0.5109459465705444
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.5080558264145336
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.5035872681675037
+    },
+    {
+      "id": 57,
+      "where": "customer-service-playbook.md > WAR-01 Warranty claim opened",
+      "score": 0.5006345219510114
+    },
+    {
+      "id": 24,
+      "where": "catalog.md > Hagerstown Kerosene Lantern (LS-HK12) — $44.99",
+      "score": 0.49537007885673945
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.4912266091543207
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.49013515896387305
+    }
+  ],
+  "shown": [
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.6269044204867927
+    },
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.6067445037480029
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.5957082520614978
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How many lanterns did Lantern Supply Co. sell in 2025?",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n[2] about.md > The company\n## The company\n\nLantern Supply Co. is a Maryland corporation, privately held and family owned. The fiscal year\nruns from February 1 to January 31. The company has no outside investors and no debt beyond the\nmortgage on the Hagerstown building.\n\n[3] employee-handbook.md > Welcome\n## Welcome\n\nLantern Supply Co. was founded in 1987 by Marjorie and Dale Whitcomb in Frederick, Maryland, and\nis still owned and run by the family. Priya Whitcomb-Nair, the founders' daughter, has been chief\nexecutive since 2019. As of October 2026 there are 63 of us across the Frederick headquarters and\nshowroom, the Annapolis showroom and the Hagerstown warehouse and Repair Center. We are a small\ncompany that sells a small range of things well. Most of the people who buy from us are repeat\ncustomers, and most of them know a great deal about lanterns. Treat them that way.\n\nQuestion: How many lanterns did Lantern Supply Co. sell in 2025?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 654,
+      "outputTokens": 7,
+      "cost": 0.001378,
+      "ms": 1399
+    }
+  ],
+  "ms": 1408,
+  "tokens": {
+    "input": 654,
+    "output": 7
+  }
+}

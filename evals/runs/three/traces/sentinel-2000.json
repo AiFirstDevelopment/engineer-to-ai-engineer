@@ -1,0 +1,154 @@
+{
+  "run": "three",
+  "case": "sentinel-2000",
+  "question": "When does the Sentinel 2000 come out?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.00271,
+  "retrieved": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.4706489408459714
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.4356149909200375
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.422789012994758
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.42112147706198527
+    },
+    {
+      "id": 129,
+      "where": "faq.md > Do you still sell the Beacon 400?",
+      "score": 0.40712723072327567
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.40226151843967545
+    },
+    {
+      "id": 195,
+      "where": "release-notes.md > 3.7 — April 15, 2025",
+      "score": 0.38935974405783685
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.37799178742381523
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.36561982661766396
+    },
+    {
+      "id": 214,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.36399910434899607
+    },
+    {
+      "id": 34,
+      "where": "catalog.md > Beacon 400 (LS-400)",
+      "score": 0.3591193594028869
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.3545639788214374
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.3353104983799356
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.33488280504227763
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.3312712886282932
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.32086960706149553
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.31751233051372896
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.31576839621833447
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.30972238724230694
+    },
+    {
+      "id": 166,
+      "where": "lumen-rewards.md > Beacon",
+      "score": 0.3035062497545373
+    }
+  ],
+  "shown": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.4706489408459714
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.4356149909200375
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.422789012994758
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "When does the Sentinel 2000 come out?",
+      "ms": 9
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.5\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n[2] catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n[3] warranty.md > Warranty periods\nThe standard warranty is 2 years. The Sentinel 1000 and Sentinel 1000 Pro carry 5 years because\ntheir housings and electronics are designed for it, and the company has the parts to honor it.\nThe Heritage No. 7 carries 10 years under the Heritage Promise, which dates from the lamp's\nintroduction in 1994 and has never been shortened.\n\nRechargeable batteries and battery packs, whether built in or removable, are covered for 1 year\nfrom the date of purchase, regardless of the warranty period of the product they are in. A\nbattery is considered defective if it holds less than 70% of its rated capacity within the first\nyear under normal charging; capacity loss beyond that is wear.\n\nSecond Light refurbished items are covered for 1 year from purchase, whatever the model's new\nwarranty would be. The refurbished warranty is noted on the receipt.\n\nQuestion: When does the Sentinel 2000 come out?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1320,
+      "outputTokens": 7,
+      "cost": 0.00271,
+      "ms": 1254
+    }
+  ],
+  "ms": 1265,
+  "tokens": {
+    "input": 1320,
+    "output": 7
+  }
+}

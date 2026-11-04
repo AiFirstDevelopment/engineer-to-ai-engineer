@@ -1,0 +1,168 @@
+{
+  "run": "three",
+  "case": "firefly-220r-weight",
+  "question": "How heavy is the rechargeable Firefly?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "The Firefly 220R weighs 30 grams more than the Firefly 220 [2][3], which is 310 g with batteries [1], so it comes to about 340 g. The passages don't state the 220R's weight directly, so that figure is calculated.",
+  "citations": [
+    {
+      "n": 2,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?"
+    },
+    {
+      "n": 3,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99"
+    },
+    {
+      "n": 1,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99"
+    }
+  ],
+  "cost": 0.00329,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 15,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99",
+      "score": 0.48607298082738837
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.46930337124364024
+    },
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.46707829628581743
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.46430523100577
+    },
+    {
+      "id": 125,
+      "where": "faq.md > How long does the Firefly 220R take to charge?",
+      "score": 0.43631972639585376
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.4069148723828008
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.4038786400159702
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.3965320413581978
+    },
+    {
+      "id": 8,
+      "where": "about.md > Lights for Scouts",
+      "score": 0.3744949118042971
+    },
+    {
+      "id": 244,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.36570858339195894
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.3422961471665837
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.3210997745052278
+    },
+    {
+      "id": 212,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.3155506856498953
+    },
+    {
+      "id": 154,
+      "where": "fuel-safety.md > Lighting and ventilation",
+      "score": 0.312893940691345
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.3024211627368848
+    },
+    {
+      "id": 27,
+      "where": "catalog.md > Porchlight Solar (LS-PS1) — $39.99",
+      "score": 0.2938842768382325
+    },
+    {
+      "id": 121,
+      "where": "faq.md > If I give a lantern as a gift, is it still under warranty?",
+      "score": 0.28884283716735104
+    },
+    {
+      "id": 143,
+      "where": "faq.md > What do the tiers get me?",
+      "score": 0.2868542450600808
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.2850395377474058
+    },
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.2807633416446003
+    }
+  ],
+  "shown": [
+    {
+      "id": 15,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99",
+      "score": 0.48607298082738837
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.46930337124364024
+    },
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.46707829628581743
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How heavy is the rechargeable Firefly?",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Firefly 220 (LS-220) — $34.99\n### Firefly 220 (LS-220) — $34.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | 3 AA alkaline batteries (included) |\n| Runtime, low | 42 hours |\n| Runtime, high | 9 hours |\n| Weight | 310 g with batteries |\n| Water rating | IPX4 (splash resistant) |\n| Brightness levels | Two (low, high) |\n| Colors | Moss, slate, ember |\n| Warranty | 2 years |\n| In the box | Lantern, 3 AA batteries, wrist lanyard |\n\nThe Firefly 220 is the lantern most of our customers start with. It is the size of a coffee mug,\nruns on three AA cells, and gives a soft, even light from a frosted polycarbonate globe. The base\nis flat and rubberized, the bail handle folds flat for packing, and there is a hook under the base\nfor hanging it upside down from a tent loop. Two brightness levels are all it has, and that is on\npurpose: it is a lantern for reading in a tent, lighting a picnic table, or keeping on the kitchen\ncounter for the next power outage. Alkaline cells are included; it also runs on NiMH\nrechargeables, with about 15 percent less runtime.\n\nCompatible parts: wrist lanyard L-22.\n\n[2] faq.md > What is the difference between the Firefly 220 and the Firefly 220R?\n### What is the difference between the Firefly 220 and the Firefly 220R?\n\nThey are the same size and give the same 220 lumens. The Firefly 220 ($34.99) runs on three AA\nbatteries, which are included, for 42 hours on low or 9 hours on high. The Firefly 220R ($54.99)\nhas a built-in 2,600 mAh rechargeable battery that charges over USB-C, runs 48 hours on low or 10\nhours on high, and can charge a phone from its USB-A port. The 220R weighs 30 grams more.\n\n[3] catalog.md > Firefly 220R (LS-220R) — $54.99\nThe Firefly 220R is the same lantern as the Firefly 220 with the battery compartment replaced by a\nsealed 2,600 mAh lithium-ion pack. It is the same size, gives the same 220 lumens from the same\nglobe, and uses the same two brightness levels, but it charges from any USB-C source in 3.5 hours\nand never needs cells. The extra 30 grams are the battery. A USB-A port under a rubber flap lets\nit charge a phone in an emergency; the port supplies 5 volts at 1 amp, enough to top up a phone\nbut not to charge a tablet. The battery is not user-replaceable and is covered for 1 year, while\nthe rest of the lantern carries the standard 2-year warranty. Four blue LEDs beside the USB-C port\nshow the state of charge.\n\nPlease note that the Firefly 220 and the Firefly 220R are different products with different\nruntimes and prices. The 220 takes batteries and runs 42 hours on low; the 220R is rechargeable\nand runs 48 hours on low.\n\nCompatible parts: USB-C cable C-15, wrist lanyard L-22.\n\nQuestion: How heavy is the rechargeable Firefly?",
+      "reply": "The Firefly 220R weighs 30 grams more than the Firefly 220 [2][3], which is 310 g with batteries [1], so it comes to about 340 g. The passages don't state the 220R's weight directly, so that figure is calculated.",
+      "stopReason": "end_turn",
+      "inputTokens": 1235,
+      "outputTokens": 82,
+      "cost": 0.00329,
+      "ms": 1624
+    }
+  ],
+  "ms": 1632,
+  "tokens": {
+    "input": 1235,
+    "output": 82
+  }
+}

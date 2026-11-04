@@ -309,14 +309,15 @@ order, because a chunk boundary is arbitrary. `src/cite-check.ts` removes any [n
 at a passage the model was not shown and marks the answer, because a citation nobody can
 follow looks like evidence. `src/pipeline.ts` switches each on with an option; the server
 keeps the cite check on. `evals/suite.ts` runs the ten questions with a set of options,
-`evals/run.ts` takes the options as flags, and `evals/compare.ts` climbs the ladder, one
-change at a time, and prints the table. One expectation was widened while building this: the
+`evals/run.ts` takes the options as flags, and `evals/ladder.ts` climbs the ladder, one
+change at a time, and prints the table (it was `evals/compare.ts` at `s1e8`, and is renamed in
+series 2, episode 5, which needs the name). One expectation was widened while building this: the
 manual says "hand-tight plus a quarter turn, never more than 2.5 N·m", and an answer that
 quotes the first half is right.
 
 ```sh
 npx tsx --env-file=.env evals/run.ts --hybrid --rerank
-npx tsx --env-file=.env evals/compare.ts
+npx tsx --env-file=.env evals/ladder.ts
 ```
 
 The transcript, `transcripts/s1e8-making-it-good.txt`, is the table, and it is not the table
@@ -565,6 +566,57 @@ the policy. `holiday-return` passed with its source 16th: the answer came from t
 worked example. A passing case with a missing source is a case that lists too few sources, or a
 lucky answer; either is worth knowing before it fails.
 
+### 5. Caps, the ledger and comparing runs (`s2e5`)
+
+A budget the harness enforces, a record of every run, and a comparison that says which cases
+moved.
+
+An eval spends money on every run, and a harness that runs in CI or in a loop can spend a great
+deal of it without anyone deciding to. So the harness has caps, and a run that reaches one
+stops: the cases it did not reach are "not run", counted and shown, never passes. And a score on
+its own says little; what decides a change is the same cases scored before and after, side by
+side.
+
+Files: `evals/ledger.ts` holds the caps, `RUN_CAP` ($1 a run) and `TOTAL_CAP` ($5 across every
+run in the ledger), and the ledger itself, `evals/runs/ledger.json`: one line per run with when
+it started, the commit (marked `+changes` when `src/`, `docs/` or the cases had uncommitted
+edits, as a deliberate regression does), the configuration (the pipeline's options, its numbers
+`MIN_SCORE`, `SHOWN` and `POOL`, now exported by `src/pipeline.ts` as `SETTINGS`, the model, the
+judge and the budget), passed, failed, not run and the cost. `evals/eval.ts` now scores each
+case as soon as it has run it and rewrites the run's ledger line after every case, so a run that
+dies still counts what it spent; before each case it checks the run's spend against its budget
+(`--budget` may lower it, never raise it above `RUN_CAP`) and the ledger's total against
+`TOTAL_CAP`, and once either is reached every remaining case is recorded as not run. The check
+is made between cases, so a run can pass its budget by at most one case. The results table and
+its summary show the not-run count. `evals/compare.ts <runA> <runB>` lists every case whose
+status changed, with the reason it failed and where its source was retrieved in each run, then
+the unchanged count, the passed totals and the cost change. Series 1's ladder, which had that
+name, is now `evals/ladder.ts`. The ledger starts with this episode: the `baseline` and `scored`
+runs of episodes 3 and 4, $0.21 between them, came before it.
+
+```sh
+npx tsx --env-file=.env evals/eval.ts five
+npx tsx --env-file=.env evals/eval.ts three        # with SHOWN = 3 in src/pipeline.ts
+npx tsx evals/compare.ts five three
+npx tsx --env-file=.env evals/eval.ts capped --budget 0.02
+```
+
+The transcript, `transcripts/s2e5-caps-ledger-compare.txt`, is a change proposed and refused by
+its numbers. The served pipeline scores 26 of 30 for $0.1046 (run `five`; `scored`, the same
+code, scored 29 an episode earlier: the bench fee said "I don't know" this time, and the two
+Firefly answers mentioned the other model's figure again). Then the change: show the model three
+passages instead of five, which makes every prompt shorter. It is 31% cheaper, $0.0724, and
+scores 25: one point down, inside the noise, and on the score alone it would ship. The
+comparison says otherwise. Two cases went from pass to "I don't know", the generator torque and
+the Sentinel 1000's runtime on low, and in both the source chunk came 4th in the search: shown
+with five passages, not with three. Those are not noise; they are the change, and the trace says
+why. A third case went the other way, the Firefly 220's runtime, for no reason the change
+explains: its source was 4th as well, not shown, and it answered from the FAQ without the
+contrast that trips the case. The change is reverted (`git checkout src/pipeline.ts`). Last, a
+run with a two-cent budget: it ran six cases, spent $0.0224, one case past the budget as the
+check allows, and recorded the other 24 as not run, so its 5 passes cannot be read as a score.
+The ledger then reads back all three runs, with the setting that differed: $0.1994 of the $5.
+
 ## Tags
 
 | Tag | Episode |
@@ -581,6 +633,7 @@ lucky answer; either is worth knowing before it fails.
 | `s2e2` | Models as a parameter |
 | `s2e3` | The tracer |
 | `s2e4` | Scoring |
+| `s2e5` | Caps, the ledger and comparing runs |
 
 ## Dependencies
 

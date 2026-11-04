@@ -35,6 +35,9 @@ const MIN_SCORE = 0.25;
 const SHOWN = 5; // passages the model is shown
 const POOL = 20; // candidates to choose them from, and how far down the record goes
 
+// The numbers above, for the record a run keeps of the settings it ran with.
+export const SETTINGS = { MIN_SCORE, SHOWN, POOL };
+
 export async function answer(question: string, options: Options, deps: Deps): Promise<Result> {
   let hits = await retrieve(question, POOL, deps);
   const retrieved = hits.map(passage);

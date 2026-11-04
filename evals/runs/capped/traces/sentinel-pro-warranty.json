@@ -1,0 +1,178 @@
+{
+  "run": "capped",
+  "case": "sentinel-pro-warranty",
+  "question": "How long is the warranty on the Sentinel 1000 Pro?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "The Sentinel 1000 Pro has a 5-year warranty [1][2][3]. Its rechargeable battery pack is covered for only 1 year from purchase [1].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "warranty.md > Warranty periods"
+    },
+    {
+      "n": 2,
+      "where": "faq.md > How long is the warranty?"
+    },
+    {
+      "n": 3,
+      "where": "customer-service-playbook.md > Warranty claims"
+    }
+  ],
+  "cost": 0.004134,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.7098467865071759
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.7006093501731043
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.6490381707771332
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.5858563631912618
+    },
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.5296467995657299
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4531511139981559
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.4465971358838201
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.44157670973740526
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4372975795120886
+    },
+    {
+      "id": 282,
+      "where": "warranty.md > Proof of purchase",
+      "score": 0.4330817341033672
+    },
+    {
+      "id": 281,
+      "where": "warranty.md > Turnaround",
+      "score": 0.42804151293371817
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.42463835219093954
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.4244475936935238
+    },
+    {
+      "id": 286,
+      "where": "warranty.md > Safety notices",
+      "score": 0.41121801173688766
+    },
+    {
+      "id": 271,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4059283632648507
+    },
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.3919409883813758
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3832410166124453
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.3808943540959082
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.37989179431931436
+    },
+    {
+      "id": 166,
+      "where": "lumen-rewards.md > Beacon",
+      "score": 0.3779038015855083
+    }
+  ],
+  "shown": [
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.7098467865071759
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.7006093501731043
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.6490381707771332
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.5858563631912618
+    },
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.5296467995657299
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How long is the warranty on the Sentinel 1000 Pro?",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Warranty periods\nThe standard warranty is 2 years. The Sentinel 1000 and Sentinel 1000 Pro carry 5 years because\ntheir housings and electronics are designed for it, and the company has the parts to honor it.\nThe Heritage No. 7 carries 10 years under the Heritage Promise, which dates from the lamp's\nintroduction in 1994 and has never been shortened.\n\nRechargeable batteries and battery packs, whether built in or removable, are covered for 1 year\nfrom the date of purchase, regardless of the warranty period of the product they are in. A\nbattery is considered defective if it holds less than 70% of its rated capacity within the first\nyear under normal charging; capacity loss beyond that is wear.\n\nSecond Light refurbished items are covered for 1 year from purchase, whatever the model's new\nwarranty would be. The refurbished warranty is noted on the receipt.\n\n[2] faq.md > How long is the warranty?\n### How long is the warranty?\n\nEvery lantern and lamp is covered against manufacturing defects for 2 years from the purchase\ndate. The Sentinel 1000 and Sentinel 1000 Pro are covered for 5 years. The Heritage No. 7 brass\noil lamp is covered for 10 years under the Heritage Promise. Rechargeable batteries and Second\nLight refurbished items are covered for 1 year.\n\n[3] customer-service-playbook.md > Warranty claims\n## Warranty claims\n\nThe standard warranty is 2 years from the purchase date and covers manufacturing defects. The\nSentinel 1000 and Sentinel 1000 Pro carry 5 years, the Heritage No. 7 carries 10 years,\nrechargeable batteries and battery packs carry 1 year, and Second Light refurbished items carry\n1 year. Mantles, globes, wicks, bulbs and fuel caps are consumables and are not covered. Drops,\nwater beyond the IP rating, unapproved fuel, modifications and commercial rental use are not\ncovered.\n\nA customer starts a claim by emailing help@lanternsupply.example with the order number and\nphotos. Open a warranty claim in the Hearth admin; it issues a number in the form WC-xxxxxx, for\nexample WC-030517. The Repair Center decides within 5 business days whether to repair or replace,\nand the choice is ours. For an approved claim, send the customer a prepaid label to the\nHagerstown Repair Center at no charge. A claim with no order number can be matched by email\naddress or by the serial number on the base of the lantern.\n\nThe warranty transfers with a gift but not with a resale. If a customer bought the item second\nhand, explain this and offer a paid repair.\n\n[4] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\n[5] repair-manual.pdf p.5\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\nQuestion: How long is the warranty on the Sentinel 1000 Pro?",
+      "reply": "The Sentinel 1000 Pro has a 5-year warranty [1][2][3]. Its rechargeable battery pack is covered for only 1 year from purchase [1].",
+      "stopReason": "end_turn",
+      "inputTokens": 1772,
+      "outputTokens": 59,
+      "cost": 0.004134,
+      "ms": 1729
+    }
+  ],
+  "ms": 1738,
+  "tokens": {
+    "input": 1772,
+    "output": 59
+  }
+}

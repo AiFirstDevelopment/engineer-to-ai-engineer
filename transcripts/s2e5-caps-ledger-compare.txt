@@ -1,0 +1,29 @@
+$ npx tsx --env-file=.env evals/eval.ts five | tail -2
+passed 26/30: answer 18/22, fallback 8/8; $0.1046 with the judge
+ledger: 1 runs, $0.1046 of $5
+$ sed -i "" "s/^const SHOWN = 5;/const SHOWN = 3;/" src/pipeline.ts
+$ npx tsx --env-file=.env evals/eval.ts three | tail -2
+passed 25/30: answer 17/22, fallback 8/8; $0.0724 with the judge
+ledger: 2 runs, $0.1770 of $5
+$ npx tsx evals/compare.ts five three
+case                     five           three          why
+generator-torque         pass           fail           said I don't know
+                         source #4 shown then #4
+sentinel-low-runtime     pass           fail           said I don't know
+                         source #4 shown then #4
+firefly-220-low-runtime  fail           pass           forbidden: the 220R's 48 hours
+                         source #4 shown then #4
+27 of 30 cases unchanged
+passed  26 -> 25 of 30
+cost    $0.1046 -> $0.0724 (-31%)
+$ git checkout src/pipeline.ts
+Updated 1 path from the index
+$ npx tsx --env-file=.env evals/eval.ts capped --budget 0.02 | tail -2
+passed 5/30: answer 5/22, fallback 0/8, not run 24; $0.0224 with the judge
+ledger: 3 runs, $0.1994 of $5
+$ jq -r \
+    '.runs[] | "\(.run) SHOWN=\(.config.SHOWN) passed=\(.passed) not_run=\(.notRun) $\(.cost)"' \
+    evals/runs/ledger.json
+five SHOWN=5 passed=26 not_run=0 $0.1046
+three SHOWN=3 passed=25 not_run=0 $0.0724
+capped SHOWN=5 passed=5 not_run=24 $0.0224

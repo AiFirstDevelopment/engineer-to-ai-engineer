@@ -1,0 +1,164 @@
+{
+  "run": "five",
+  "case": "staff-discount",
+  "question": "Can staff buy a Second Light lantern for less?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.002594,
+  "retrieved": [
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.6442056405106159
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5742194788148288
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.5565934416795136
+    },
+    {
+      "id": 8,
+      "where": "about.md > Lights for Scouts",
+      "score": 0.534324351308012
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5337536373320931
+    },
+    {
+      "id": 24,
+      "where": "catalog.md > Hagerstown Kerosene Lantern (LS-HK12) — $44.99",
+      "score": 0.5085996891240746
+    },
+    {
+      "id": 15,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99",
+      "score": 0.5004952886525084
+    },
+    {
+      "id": 113,
+      "where": "faq.md > Can I return a lantern I have already put fuel in?",
+      "score": 0.49884167194953005
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.49170744399801725
+    },
+    {
+      "id": 27,
+      "where": "catalog.md > Porchlight Solar (LS-PS1) — $39.99",
+      "score": 0.4740812240210902
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.4725432686492965
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.47067027243759885
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.4702036696241734
+    },
+    {
+      "id": 122,
+      "where": "faq.md > Can you fix a lantern that is out of warranty?",
+      "score": 0.46241633617973965
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.4591096379851422
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.458847669874066
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.4470332656852747
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.44557238246281544
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.4437117814366425
+    },
+    {
+      "id": 121,
+      "where": "faq.md > If I give a lantern as a gift, is it still under warranty?",
+      "score": 0.44030148351870035
+    }
+  ],
+  "shown": [
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.6442056405106159
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5742194788148288
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.5565934416795136
+    },
+    {
+      "id": 8,
+      "where": "about.md > Lights for Scouts",
+      "score": 0.534324351308012
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5337536373320931
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "Can staff buy a Second Light lantern for less?",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > Second Light\n## Second Light\n\nLanterns that come back as returns or trade-ins and pass a bench inspection are sold as Second\nLight refurbished items, at a discount, with a 1-year warranty. Second Light items are sold at\nboth showrooms and, a few times a year, online. The program keeps good lanterns out of landfills\nand gives a scout troop or a student a Sentinel at a Firefly price.\n\n[2] catalog.md > Base Camp Bundle — $199.99\n### Base Camp Bundle — $199.99\n\nOne Sentinel 1000 and two Firefly 220 lanterns in one box, for a household that wants one big\nlight for the main room and two small ones for bedrooms. Bought separately the three lanterns\ncost $219.97, so the bundle saves $19.98. The Firefly 220s come in slate. Each lantern carries its\nown warranty: 5 years on the Sentinel, 2 years on each Firefly. A bundle can be returned only as a\nwhole; one lantern from a bundle cannot be returned on its own.\n\n[3] faq.md > Do you sell refurbished lanterns?\n### Do you sell refurbished lanterns?\n\nYes. Lanterns that come back and pass a bench inspection at the Repair Center are sold as Second\nLight refurbished items at a discount, with a 1-year warranty. They are sold at both showrooms\nand a few times a year online.\n\n[4] about.md > Lights for Scouts\n## Lights for Scouts\n\nSince 2019 we have donated 2,400 lanterns to scout troops across Maryland through Lights for\nScouts. Each spring, troops apply through their council and receive Firefly 220 lanterns for\ntheir summer camps, along with a repair clinic run by the Repair Center. Dale Whitcomb, who\nstarted repairing scout lanterns before the company existed, still attends the Frederick clinic.\nCustomers can add a lantern to the program at checkout for $25, and the company matches every\ndonated lantern one for one.\n\n[5] about.md > What we believe\n## What we believe\n\nA lantern should last. Everything we sell is chosen or built to be repaired, and the Repair\nCenter will fix an out-of-warranty lantern at a fair price rather than tell you to buy a new one.\nA policy should be plain. Our returns, shipping and warranty pages say what we do in numbers,\nand the customer service team is allowed to say yes. A customer should be able to reach a person.\nThe phone is answered by someone in Frederick, Monday through Friday 8:30 AM to 6:00 PM and\nSaturday 9:00 AM to 5:00 PM Eastern.\n\nQuestion: Can staff buy a Second Light lantern for less?",
+      "reply": "I don't know.\n\nThe passages say Second Light items are sold at a discount with a 1-year warranty [1][3], but none mention a staff discount or special pricing for employees.",
+      "stopReason": "end_turn",
+      "inputTokens": 1017,
+      "outputTokens": 56,
+      "cost": 0.002594,
+      "ms": 1457
+    }
+  ],
+  "ms": 1465,
+  "tokens": {
+    "input": 1017,
+    "output": 56
+  }
+}

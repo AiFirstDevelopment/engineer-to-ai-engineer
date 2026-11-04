@@ -1,0 +1,437 @@
+{
+  "run": "capped",
+  "judge": "claude-haiku-5-5",
+  "passed": 5,
+  "results": [
+    {
+      "id": "return-window",
+      "expect": "answer",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.0028268,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "40 days from delivery",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly states the 40-day return window and conditions from passage [1] and the fuel restriction from passage [3], both of which are supported and correctly cited, with no unsupported facts.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00018680000000000001
+      }
+    },
+    {
+      "id": "restocking-fee",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 3,
+        "shown": true
+      },
+      "cost": 0.0035179,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "12% of the item price",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's core fact (12% restocking fee on opened non-defective items, price after discounts before tax and shipping) is supported by passages 1-3, and the waiver list and Beacon-tier exception match passage 3; all citations point to supporting passages.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00022590000000000002
+      }
+    },
+    {
+      "id": "sentinel-pro-warranty",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0044142,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "5 years",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's core claim of a 5-year warranty for the Sentinel 1000 Pro is supported by passages 1, 2 and 3, and the 1-year battery pack coverage is stated in passage 1, so the facts and citations are correct.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00028020000000000003
+      }
+    },
+    {
+      "id": "firefly-220r-weight",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 4,
+        "shown": true
+      },
+      "cost": 0.0039804,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "340 g",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states the 220R weighs 340 g, supported by [4], and that it is 30 grams more than the Firefly 220, which [2] and [3] both support (the 220R weighs 30 grams more), so the facts and citations all check out.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002624
+      }
+    },
+    {
+      "id": "free-shipping-65",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 7,
+        "shown": false
+      },
+      "cost": 0.0033367,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "free shipping starts at $60",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly uses the more recent release notes [3] stating the threshold is now $60, so a $65 order qualifies, and the citations to [1][2] accurately reflect the older $75 figure they state; the claim that $65 is the post-discount pre-tax subtotal is supported by [2]'s description of how the subtotal is calculated, though framed as an assumption.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00023270000000000002
+      }
+    },
+    {
+      "id": "bench-fee",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.004372,
+      "status": "fail",
+      "why": "said I don't know"
+    },
+    {
+      "id": "generator-torque",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "staff-discount",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "sentinel-low-runtime",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "firefly-220-low-runtime",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "fuel-to-canada",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "prepaid-label",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "points-for-reward",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "flame-tier",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "pump-cup",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "sentinel-pro-pack",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "holiday-return",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "annapolis-pickup",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "pto-first-year",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "refund-approval",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "lost-package",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "heritage-kerosene",
+      "expect": "answer",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "ceo-salary",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "sales-2025",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "sentinel-2000",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "dental-deductible",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "ups-account",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "showroom-wifi",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "firefly-euros",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    },
+    {
+      "id": "brass-spinner",
+      "expect": "fallback",
+      "status": "not run",
+      "why": "budget",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0
+    }
+  ]
+}

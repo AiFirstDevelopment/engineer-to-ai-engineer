@@ -1,7 +1,9 @@
 // Score a run: each case's trace against its golden case. Retrieval first (where did a source
 // come back), then the rules (facts, forbidden claims, citations), then the judge for what the
-// rules cannot decide. A fallback case passes on "I don't know" and fails on any answer.
-import { readFileSync, writeFileSync } from "node:fs";
+// rules cannot decide. A fallback case passes on "I don't know" and fails on any answer. A case
+// with no trace was not run (the budget stopped the run first): it is "not run", never a pass.
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import type { StoredChunk } from "../src/db";
 import { allChunks } from "../src/db";
 import type { Models } from "../src/models";
 import { checkAnswer, retrieval, saidIDontKnow, type Checked, type Retrieval } from "./checks";
@@ -12,7 +14,7 @@ import type { Trace } from "./tracer";
 export type CaseResult = {
   id: string;
   expect: Case["expect"];
-  status: "pass" | "fail";
+  status: "pass" | "fail" | "not run";
   why: string; // the first check that failed, or ""
   retrieval: Retrieval;
   checked?: Checked;
@@ -22,34 +24,50 @@ export type CaseResult = {
 
 export type Scored = { run: string; judge: string; passed: number; results: CaseResult[] };
 
+// Score every case of a run from its traces, and write evals/runs/<run>/results.json.
 export async function scoreRun(run: string, models: Models): Promise<Scored> {
   const byId = new Map(allChunks().map((chunk) => [chunk.id, chunk]));
   const results: CaseResult[] = [];
   for (const c of loadGolden()) {
     const path = `evals/runs/${run}/traces/${c.id}.json`;
-    const trace = JSON.parse(readFileSync(path, "utf8")) as Trace;
-    const found = retrieval(c, trace, byId);
-    const base = { id: c.id, expect: c.expect, retrieval: found, cost: trace.cost };
-    if (saidIDontKnow(trace.answer)) {
-      const passed = c.expect === "fallback";
-      const why = passed ? "" : "said I don't know";
-      results.push({ ...base, status: passed ? "pass" : "fail", why });
-      continue;
-    }
-    if (c.expect === "fallback") {
-      results.push({ ...base, status: "fail", why: "answered; the corpus does not say" });
-      continue;
-    }
-    const checked = checkAnswer(c, trace, byId);
-    const verdict = await judge(answerCall(trace), trace.answer, models);
-    const why = firstFailure(checked, verdict);
-    const cost = base.cost + verdict.cost;
-    results.push({ ...base, status: why ? "fail" : "pass", why, checked, verdict, cost });
+    if (!existsSync(path)) results.push(notRun(c));
+    else results.push(await scoreCase(c, JSON.parse(readFileSync(path, "utf8")), byId, models));
   }
+  return saveResults(run, results);
+}
+
+export function saveResults(run: string, results: CaseResult[]): Scored {
   const passed = results.filter((r) => r.status === "pass").length;
   const scored = { run, judge: JUDGE_MODEL, passed, results };
   writeFileSync(`evals/runs/${run}/results.json`, JSON.stringify(scored, null, 2) + "\n");
   return scored;
+}
+
+export function notRun(c: Case): CaseResult {
+  const retrieval = { rank: null, shown: false };
+  return { id: c.id, expect: c.expect, status: "not run", why: "budget", retrieval, cost: 0 };
+}
+
+export async function scoreCase(
+  c: Case,
+  trace: Trace,
+  byId: Map<number, StoredChunk>,
+  models: Models,
+): Promise<CaseResult> {
+  const found = retrieval(c, trace, byId);
+  const base = { id: c.id, expect: c.expect, retrieval: found, cost: trace.cost };
+  if (saidIDontKnow(trace.answer)) {
+    const passed = c.expect === "fallback";
+    return { ...base, status: passed ? "pass" : "fail", why: passed ? "" : "said I don't know" };
+  }
+  if (c.expect === "fallback") {
+    return { ...base, status: "fail", why: "answered; the corpus does not say" };
+  }
+  const checked = checkAnswer(c, trace, byId);
+  const verdict = await judge(answerCall(trace), trace.answer, models);
+  const why = firstFailure(checked, verdict);
+  const cost = base.cost + verdict.cost;
+  return { ...base, status: why ? "fail" : "pass", why, checked, verdict, cost };
 }
 
 // What the answering call was given: the last chat call's (a reranker's comes before it).
