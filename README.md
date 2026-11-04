@@ -23,13 +23,15 @@ have: TypeScript, SQLite, `curl` and an HTTP server.
 - Node 20 or later (`node --version`) and `jq` (`brew install jq`).
 - An Anthropic API key from <https://console.anthropic.com>. The runs in this series cost
   cents; each episode's section says what its commands cost.
-- `cp .env.example .env` and put your key in `.env`. The file is gitignored.
+- `cp .env.example .env` and put your key in `.env`. The file is gitignored. `ask.sh` reads it,
+  and every `npx tsx` command below loads it with Node's own `--env-file=.env`, so there is no
+  dotenv package.
 - `npm install`.
 
 ## The model
 
-The series uses one chat model, `claude-sonnet-5-5`, in one place (the request body in `ask.sh`
-for now; one constant in the code from episode 2 on). It costs $2 per million input tokens and
+The series uses one chat model, `claude-sonnet-5-5`, in one place (the request body in `ask.sh`,
+and the constant `MODEL` in `src/claude.ts`). It costs $2 per million input tokens and
 $10 per million output tokens. A question through the finished pipeline is a few thousand
 tokens in and a few hundred out, about a cent. Claude Opus 5.5 is the more capable model at
 twice the price per token; Claude Haiku 5.5 is twenty times cheaper but we want answers we can
@@ -85,11 +87,39 @@ body with a model name, a limit on the answer's length and a list of messages; a
 the text and the number of tokens in and out. Nothing else is needed. Cost of the run: a
 fraction of a cent.
 
+### 2. Calling a model from code (`s1e2`)
+
+The same call from TypeScript, and the only client this repository will ever have.
+
+Files: `src/claude.ts` is the client: `ask(messages, options)` is one `fetch` to the Messages
+API that returns the answer's text, the token counts and the cost in dollars, computed from the
+price list in one constant, with the model id in another; `countTokens(text)` asks the API's
+count-tokens endpoint, which is free. `src/ask.ts` is a command line around `ask`, and
+`src/tokens.ts` one around `countTokens`. There is no SDK: it is an HTTP API like any other, and
+the whole client is shorter than most SDK quick-starts.
+
+```sh
+npx tsx --env-file=.env src/ask.ts "In one sentence: what does HTTP status 304 mean?"
+npx tsx --env-file=.env src/ask.ts "I bought a lantern from Lantern Supply Co. How many days do I have to return it?"
+npx tsx --env-file=.env src/tokens.ts "The Firefly 220R charges in 3.5 hours over USB-C."
+```
+
+The transcript, `transcripts/s1e2-calling-a-model.txt`, shows three things. A general question
+is answered well, in 79 output tokens, for a twelfth of a cent. The question about Lantern
+Supply Co.'s return window is not answered: the model has never seen `docs/returns-policy.md`
+(40 days from delivery), says it does not know the company, and sends the customer to their
+receipt. It cannot know. That is the problem the rest of the series solves, and notice that a
+model which guessed a number instead would sound exactly as sure. Last, a 49-character sentence
+is 32 tokens: a token is a few characters, a short word is one, and numbers, model names and
+punctuation split into several. Everything you pay for and every limit you will meet is counted
+in tokens. Cost of the three runs together: under half a cent.
+
 ## Tags
 
 | Tag | Episode |
 | --- | --- |
 | `s1e1` | What actually changed, and what didn't |
+| `s1e2` | Calling a model from code |
 
 ## Dependencies
 

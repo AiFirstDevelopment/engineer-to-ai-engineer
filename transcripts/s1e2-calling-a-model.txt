@@ -1,0 +1,33 @@
+$ npx tsx --env-file=.env src/ask.ts "In one sentence: what does HTTP status 304 mean?"
+HTTP 304 "Not Modified" means the resource hasn't changed since the client's last request (based
+on headers like `If-Modified-Since` or `If-None-Match`), so the server doesn't resend it and the
+client can use its cached copy.
+
+tokens in: 27  out: 79  cost: $0.0008
+
+$ npx tsx --env-file=.env src/ask.ts "I bought a lantern from Lantern Supply Co. How many days do
+I have to return it?"
+I don't have any information about Lantern Supply Co.'s return policy. I can't look up specific
+retailers' policies, and I don't know the details of your purchase.
+
+Here are some ways to find out quickly:
+
+- **Your receipt or order confirmation email**: the return window is often printed on it.
+- **The company's website**: look for a "Returns," "Refund Policy," or "FAQ" page, usually linked
+in the footer.
+- **Your account page**: if you ordered online, the order details may show a return-by date.
+- **Customer service**: call or email them and ask directly. Have your order number handy.
+
+A few things worth checking when you find the policy:
+- Whether the clock starts at purchase date or delivery date
+- Whether the item must be unused or in original packaging
+- Who pays for return shipping
+- Whether there are exceptions for certain items (e.g., fuel-burning lanterns, clearance, or
+custom products)
+
+If you paste the policy text here, I'm happy to help you interpret it or draft a return request.
+
+tokens in: 36  out: 323  cost: $0.0033
+
+$ npx tsx --env-file=.env src/tokens.ts "The Firefly 220R charges in 3.5 hours over USB-C."
+49 characters, 9 words, 32 tokens
