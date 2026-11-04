@@ -1,0 +1,10 @@
+{"question": "I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?", "expect": ["40 days", "40-day", "forty days"]}
+{"question": "What is the restocking fee on an opened item that is not defective?", "expect": ["12%", "12 percent"]}
+{"question": "How long is the warranty on the Sentinel 1000 Pro?", "expect": ["5 years", "five years", "5-year", "five-year"]}
+{"question": "How heavy is the rechargeable Firefly?", "expect": ["340"]}
+{"question": "Does a $65 order qualify for free shipping?", "expect": ["$60"]}
+{"question": "My Northstar is out of warranty. What does it cost just to have the bench look at it?", "expect": ["$25"]}
+{"question": "How tight should the Northstar generator tube be?", "expect": ["2.5"]}
+{"question": "Can staff buy a Second Light lantern for less?", "expect": ["50%", "50 percent", "half"]}
+{"question": "How long does the Sentinel 1000 run on low?", "expect": ["190"]}
+{"question": "What is Priya Whitcomb-Nair's salary?", "expect": ["I don't know"]}

@@ -1,0 +1,26 @@
+$ npx tsx --env-file=.env src/server.ts &
+listening on http://localhost:3000/ask
+
+$ curl -s localhost:3000/ask -d '{"question": "How many days do I have to return a lantern?"}'
+{"answer":"Customers have 40 days from delivery to return an unused item [2]. The window is only
+extended if the holiday extension applies [4]. Fueled lanterns can't be returned, but they remain
+covered by warranty [2].","citations":[{"n":2,"where":"warranty.md > Relationship to the returns
+policy"},{"n":4,"where":"returns-policy.md > Common situations"}],"cost":0.003554}
+
+$ curl -s localhost:3000/ask -d '{"question": "How much is the CEO paid?"}'
+{"answer":"I don't know.","citations":[],"cost":0.002222}
+
+$ npx tsx --env-file=.env evals/run.ts
+PASS  I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?
+PASS  What is the restocking fee on an opened item that is not defective?
+PASS  How long is the warranty on the Sentinel 1000 Pro?
+PASS  How heavy is the rechargeable Firefly?
+PASS  Does a $65 order qualify for free shipping?
+PASS  My Northstar is out of warranty. What does it cost just to have the bench look at it?
+PASS  How tight should the Northstar generator tube be?
+FAIL  Can staff buy a Second Light lantern for less?
+      got: I don't know.
+PASS  How long does the Sentinel 1000 run on low?
+PASS  What is Priya Whitcomb-Nair's salary?
+
+9/10 passed, cost $0.0367

@@ -245,6 +245,43 @@ Why `unpdf` and not `pdf-parse`, the usual answer: it is plain JavaScript (pdf.j
 an ES module, with no native build, and it gives the text page by page in one call; `pdf-parse`
 is CommonJS and returns one blob for the whole file unless you hook into its page renderer.
 
+### 7. Your first pipeline (`s1e7`)
+
+Retrieve, prompt, answer: with a server in front and a test behind.
+
+Files: `src/retrieve.ts` returns the top five chunks for a question (episode 5's search as a
+function). `src/prompt.ts` is the system prompt and the layout: answer from the passages and
+nothing else, cite every fact with the passage's number like [2], prefer the more recent
+document when passages disagree, and when they do not answer, reply exactly "I don't know";
+the passages are numbered and labelled with where they came from. `src/pipeline.ts` is
+`answer(question)`: retrieve; if the best score is under 0.25 the model is not even asked (a
+question about nothing in this corpus scores 0.17 to 0.24 here; measure yours); otherwise ask,
+and if the model says it does not know, cite nothing; otherwise resolve every [n] in the answer
+to the passage it points at. `src/server.ts` is `POST /ask` on Node's own `http` module, JSON
+in, answer and citations out, thirty lines. `evals/questions.jsonl` is ten questions, each with
+the strings its answer must contain, phrased the way people ask and aimed at the traps: the
+rechargeable Firefly, a $65 order, the bench fee, the torque, and the CEO's salary, whose only
+right answer is "I don't know". `evals/run.ts` runs them through the pipeline and prints pass
+or fail and the total cost.
+
+```sh
+npx tsx --env-file=.env src/server.ts &
+curl -s localhost:3000/ask -d '{"question": "How many days do I have to return a lantern?"}'
+curl -s localhost:3000/ask -d '{"question": "How much is the CEO paid?"}'
+npx tsx --env-file=.env evals/run.ts
+```
+
+The transcript, `transcripts/s1e7-your-first-pipeline.txt`, shows the return-window question
+answered right over HTTP, 40 days from delivery, citing [2] and [4], which resolve to
+`warranty.md > Relationship to the returns policy` and `returns-policy.md > Common situations`,
+for a third of a cent: twenty-five times cheaper than pasting the corpus in episode 4, and
+faster. The question about the CEO's pay gets "I don't know." and no citations. The ten
+questions score 9/10 for less than four cents. The failure is "Can staff buy a Second Light
+lantern for less?": the pipeline answered "I don't know", because the handbook's employee
+discount section was not among the five passages retrieved (the question says staff and
+Second Light; the five nearest passages are all about Second Light itself). It is an honest
+failure, which is the second rule working, and it is a number. Episode 8 is about that number.
+
 ## Tags
 
 | Tag | Episode |
@@ -255,6 +292,7 @@ is CommonJS and returns one blob for the whole file unless you hook into its pag
 | `s1e4` | Why it can't read your documents |
 | `s1e5` | Embeddings, for people who know SQL |
 | `s1e6` | Chunking and indexing is ETL |
+| `s1e7` | Your first pipeline |
 
 ## Dependencies
 
