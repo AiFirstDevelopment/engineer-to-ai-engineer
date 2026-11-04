@@ -1,0 +1,7 @@
+$ ./ask.sh "In two sentences: what is a race condition?"
+A race condition is a bug that occurs when a program's behavior depends on the unpredictable
+timing or ordering of events, such as multiple threads or processes accessing shared data at the
+same time. Because the outcome varies depending on which operation "wins the race," it can
+produce inconsistent results that are hard to reproduce and debug.
+
+input tokens: 21  output tokens: 103
