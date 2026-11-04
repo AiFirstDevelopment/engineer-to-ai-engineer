@@ -1,0 +1,174 @@
+{
+  "run": "baseline",
+  "case": "lost-package",
+  "question": "How long before a package that never showed up counts as lost?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "A package counts as lost once 10 business days have passed since its expected delivery date with no delivery scan [1][2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "shipping.md > Lost"
+    },
+    {
+      "n": 2,
+      "where": "customer-service-playbook.md > Lost in transit"
+    }
+  ],
+  "cost": 0.002184,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6713625962287507
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.659389613965584
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5602058399696797
+    },
+    {
+      "id": 246,
+      "where": "shipping.md > Lost, late and damaged packages",
+      "score": 0.5597922136107525
+    },
+    {
+      "id": 101,
+      "where": "faq.md > My package says delivered but I don't have it. What now?",
+      "score": 0.5581908888709776
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.5352741699722923
+    },
+    {
+      "id": 55,
+      "where": "customer-service-playbook.md > SHP-01 Package lost",
+      "score": 0.4972598418640302
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.4840107182745534
+    },
+    {
+      "id": 219,
+      "where": "returns-policy.md > How the window is counted",
+      "score": 0.4456794417204412
+    },
+    {
+      "id": 102,
+      "where": "faq.md > My order arrived damaged. Do I have to send it back?",
+      "score": 0.4398766019415147
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.4386014120492608
+    },
+    {
+      "id": 44,
+      "where": "customer-service-playbook.md > Damaged and lost packages",
+      "score": 0.4292049128487394
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.42131961062716433
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.41856687059141456
+    },
+    {
+      "id": 249,
+      "where": "shipping.md > Damaged on arrival",
+      "score": 0.4164458299094276
+    },
+    {
+      "id": 282,
+      "where": "warranty.md > Proof of purchase",
+      "score": 0.41311196891311686
+    },
+    {
+      "id": 32,
+      "where": "catalog.md > Price Promise",
+      "score": 0.41166186248981784
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.4071488152703792
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.3934381612968452
+    },
+    {
+      "id": 250,
+      "where": "shipping.md > Address problems",
+      "score": 0.3932690855314202
+    }
+  ],
+  "shown": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6713625962287507
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.659389613965584
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5602058399696797
+    },
+    {
+      "id": 246,
+      "where": "shipping.md > Lost, late and damaged packages",
+      "score": 0.5597922136107525
+    },
+    {
+      "id": 101,
+      "where": "faq.md > My package says delivered but I don't have it. What now?",
+      "score": 0.5581908888709776
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How long before a package that never showed up counts as lost?",
+      "ms": 3
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] shipping.md > Lost\n### Lost\n\nA package is treated as lost when 10 business days have passed since the expected delivery date\nwith no delivery scan. At that point customer service files a claim with the carrier and, without\nwaiting for the claim to settle, ships a replacement at no charge. If the original package later\nturns up, the customer is asked to refuse it or to return it with a free prepaid label. Lost\npackage replacements over $500 need Tomas Reyes's approval under the Three Lights rule, like any\nother credit of that size.\n\nA package that tracking shows as delivered but that the customer did not receive is handled the\nsame way after a 3 business day wait, during which the customer checks with neighbors and the\nbuilding office. The carrier is asked for the GPS delivery scan.\n\n[2] customer-service-playbook.md > Lost in transit\n### Lost in transit\n\nA package counts as lost when it has not arrived 10 business days after the expected delivery\ndate shown in tracking. Before that, ask the customer to check with neighbors and the carrier.\nOnce a package is lost, ship a replacement first and file the carrier claim afterwards; the\ncustomer does not wait for the carrier. Note the carrier claim number on the ticket. If the\nreplacement is also fuel, confirm the address is not a PO box.\n\nA package shown as delivered that the customer says did not arrive is handled the same way after\na 2-business-day wait, with one exception: for orders over $400, which require a signature, pull\nthe signature image from the carrier before replacing.\n\n[3] shipping.md > Late\n### Late\n\nA package is late when it has not arrived by the last day of its delivery window. Agents should\nfirst check the carrier's tracking; most late packages are moving and arrive within two business\ndays. For an expedited or overnight order that misses its window, the difference between the\nservice paid for and standard shipping is refunded without the customer asking.\n\n[4] shipping.md > Lost, late and damaged packages\n## Lost, late and damaged packages\n\n[5] faq.md > My package says delivered but I don't have it. What now?\n### My package says delivered but I don't have it. What now?\n\nCheck with neighbors and your building's office first; most packages turn up within a day. If it\nhas not arrived 10 business days after the expected delivery date, write to us with the order\nnumber and we will ship a replacement before the carrier claim is settled.\n\nQuestion: How long before a package that never showed up counts as lost?",
+      "reply": "A package counts as lost once 10 business days have passed since its expected delivery date with no delivery scan [1][2].",
+      "stopReason": "end_turn",
+      "inputTokens": 902,
+      "outputTokens": 38,
+      "cost": 0.002184,
+      "ms": 1858
+    }
+  ],
+  "tokens": {
+    "input": 902,
+    "output": 38
+  },
+  "ms": 1861
+}

@@ -20,20 +20,28 @@ export type Options = {
 };
 
 export type Citation = { n: number; where: string };
-export type Result = { answer: string; citations: Citation[]; cost: number; flagged?: boolean };
+export type Passage = { id: number; where: string; score: number }; // a chunk, as ranked
+export type Result = {
+  answer: string;
+  citations: Citation[];
+  cost: number;
+  flagged?: boolean;
+  retrieved: Passage[]; // the vector search's top POOL, in order, whatever was shown
+  shown: Passage[]; // the passages the model was shown, numbered [1], [2]... in this order
+};
 
 // Below this, the best passage is not about the question, and the model is not even asked.
 const MIN_SCORE = 0.25;
 const SHOWN = 5; // passages the model is shown
-const POOL = 20; // candidates to choose them from, when something does the choosing
+const POOL = 20; // candidates to choose them from, and how far down the record goes
 
 export async function answer(question: string, options: Options, deps: Deps): Promise<Result> {
-  const pool = options.hybrid || options.rerank ? POOL : SHOWN;
-  let hits = await retrieve(question, pool, deps);
-  if (hits.length === 0 || hits[0].score < MIN_SCORE) return dontKnow(0);
+  let hits = await retrieve(question, POOL, deps);
+  const retrieved = hits.map(passage);
+  if (hits.length === 0 || hits[0].score < MIN_SCORE) return dontKnow(0, retrieved, []);
 
   let cost = 0;
-  if (options.hybrid) hits = fuse(hits, keywordSearch(question, deps.chunks, pool), pool);
+  if (options.hybrid) hits = fuse(hits, keywordSearch(question, deps.chunks, POOL), POOL);
   if (options.rerank) {
     const ranked = await rerank(question, hits, SHOWN, deps.models);
     hits = ranked.hits;
@@ -41,21 +49,26 @@ export async function answer(question: string, options: Options, deps: Deps): Pr
   }
   hits = hits.slice(0, SHOWN);
   if (options.widen) hits = widen(hits, deps.chunks);
+  const shown = hits.map(passage);
 
   const reply = await deps.models.chat([{ role: "user", content: layout(question, hits) }], {
     system: SYSTEM,
   });
   cost += reply.cost;
-  if (reply.text.trim().startsWith("I don't know")) return dontKnow(cost);
+  if (reply.text.trim().startsWith("I don't know")) return dontKnow(cost, retrieved, shown);
 
   let text = reply.text.trim();
   let flagged = false;
   if (options.citeCheck) ({ answer: text, flagged } = checkCitations(text, hits.length));
-  return { answer: text, citations: cited(text, hits), cost, flagged };
+  return { answer: text, citations: cited(text, hits), cost, flagged, retrieved, shown };
 }
 
-function dontKnow(cost: number): Result {
-  return { answer: "I don't know.", citations: [], cost };
+function dontKnow(cost: number, retrieved: Passage[], shown: Passage[]): Result {
+  return { answer: "I don't know.", citations: [], cost, retrieved, shown };
+}
+
+function passage(hit: Hit): Passage {
+  return { id: hit.id, where: where(hit), score: hit.score };
 }
 
 // Every [n] in the answer, resolved to the passage it points at.

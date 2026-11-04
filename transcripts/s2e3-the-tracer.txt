@@ -1,0 +1,38 @@
+$ ls evals/runs/baseline/traces | column -c 96 | expand
+annapolis-pickup.json           fuel-to-canada.json             restocking-fee.json
+bench-fee.json                  generator-torque.json           return-window.json
+brass-spinner.json              heritage-kerosene.json          sales-2025.json
+ceo-salary.json                 holiday-return.json             sentinel-2000.json
+dental-deductible.json          lost-package.json               sentinel-low-runtime.json
+firefly-220-low-runtime.json    points-for-reward.json          sentinel-pro-pack.json
+firefly-220r-weight.json        prepaid-label.json              sentinel-pro-warranty.json
+firefly-euros.json              pto-first-year.json             showroom-wifi.json
+flame-tier.json                 pump-cup.json                   staff-discount.json
+free-shipping-65.json           refund-approval.json            ups-account.json
+$ npx tsx evals/trace.ts baseline staff-discount
+staff-discount (run baseline)
+question   Can staff buy a Second Light lantern for less?
+retrieved  rank  score  chunk  where
+             1  0.644      9  about.md > Second Light
+             2  0.574     30  catalog.md > Base Camp Bundle — $199.99
+             3  0.557    133  faq.md > Do you sell refurbished lanterns?
+             4  0.534      8  about.md > Lights for Scouts
+             5  0.534      7  about.md > What we believe
+             6  0.509     24  catalog.md > Hagerstown Kerosene Lantern (LS-HK12) — $44.99
+             7  0.500     15  catalog.md > Firefly 220 (LS-220) — $34.99
+             8  0.499    113  faq.md > Can I return a lantern I have already put fuel in?
+           ... 12 more
+shown
+           [1]  0.644      9  about.md > Second Light
+           [2]  0.574     30  catalog.md > Base Camp Bundle — $199.99
+           [3]  0.557    133  faq.md > Do you sell refurbished lanterns?
+           [4]  0.534      8  about.md > Lights for Scouts
+           [5]  0.534      7  about.md > What we believe
+calls
+  embed    7 ms
+  chat     claude-sonnet-5-5, 1017 in, 52 out, $0.0026, 1406 ms, end_turn
+prompt     2422 characters; the question last:
+           Question: Can staff buy a Second Light lantern for less?
+answer     I don't know.
+citations  none
+total      $0.0026, 1414 ms

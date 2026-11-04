@@ -454,6 +454,52 @@ on every change, and an eval that runs when the answers may have moved. The pipe
 with the real models did not change: the ten questions of series 1 still score 9/10 for four
 cents.
 
+### 3. The tracer (`s2e3`)
+
+Every step of every case, written down, so a failure can be read instead of guessed at.
+
+A pass or a fail says nothing about why. When the staff-discount question fails, did the search
+miss the handbook, did the model see it and not use it, or did it answer and the check misread
+the answer? Each has a different fix, and only a record of what happened tells them apart. The
+record is the trace: for one case, the query, what retrieval returned and with what scores, what
+the model was shown, the prompt, the answer, the tokens, the cost and the time.
+
+Files: `evals/tracer.ts` wraps a `Models` (the parameter of episode 2 pays off again):
+`traced(models)` returns models that behave exactly like the ones given and a list, `calls`,
+that each embedding and each chat call appends to, with the text in, the reply out, the stop
+reason, the tokens, the cost and the milliseconds. The pipeline does not know it is traced.
+Retrieval is not a model call, so `answer` now reports it in its result: `retrieved`, the vector
+search's top 20 in order with chunk id, where and score, and `shown`, the passages the model
+saw, in the order it saw them, so `[2]` in an answer is `shown[1]`. The search always fetches 20
+for this record; the vector-only pipeline still shows the model the first five, so its answers
+are unchanged. `src/config.ts` holds `SERVED`, the options the server runs with (the cite
+check), so the evals measure what is served unless told otherwise. `evals/eval.ts <run>` runs
+the golden set through the traced pipeline, with the served options or the flags of series 1,
+and writes `evals/runs/<run>/traces/<case>.json`, one file per case, refusing a run name that
+exists. `evals/trace.ts <run> <case>` prints one trace readably: the question, the top eight
+retrieved with rank, score and chunk, the passages shown, each call, the prompt's size and its
+last line, the answer wrapped, the citations resolved, the total. `test/tracer.test.ts` checks,
+with the fakes, that the tracer records the embedding and the chat call with the prompt and the
+reply.
+
+```sh
+npx tsx --env-file=.env evals/eval.ts baseline
+npx tsx evals/trace.ts baseline staff-discount
+```
+
+The first run, `evals/runs/baseline/`, is committed: thirty traces, $0.1001 for the thirty
+questions, between one and two and a half seconds each. The transcript,
+`transcripts/s2e3-the-tracer.txt`, lists the traces and reads one, series 1's failure, and it
+answers the question episode 8 could only state: the handbook is not among the top eight
+retrieved at all; the five passages shown are the Second Light program in `about.md`, the Base
+Camp Bundle, the FAQ on refurbished lanterns, Lights for Scouts and the company's beliefs; the
+model read 1,017 tokens of them, wrote 52 and said "I don't know." for a quarter of a cent. That
+is a retrieval miss, read from the record in ten seconds, and the model's answer was the right
+one for what it was shown. The rest of the run, read the same way, has its own surprises: the
+bench-fee answer quotes the $25.00 fee and then says it does not know what an inspection alone
+costs, a hedge a string match would count as a pass. Telling those apart is scoring, the next
+episode.
+
 ## Tags
 
 | Tag | Episode |
@@ -468,6 +514,7 @@ cents.
 | `s1e8` | Making it good, with numbers |
 | `s2e1` | The golden set |
 | `s2e2` | Models as a parameter |
+| `s2e3` | The tracer |
 
 ## Dependencies
 
