@@ -1,0 +1,188 @@
+{
+  "run": "bad-prompt",
+  "case": "lost-package",
+  "question": "How long before a package that never showed up counts as lost?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "lost package definition policy: number of days after expected delivery date before undelivered shipment is classified as lost, shipping and delivery policy, claims for non-delivery",
+  "answer": "A package counts as lost once 10 business days have passed since the expected delivery date with no delivery scan [1][2]. (For packages tracking shows as delivered but the customer didn't receive, the wait is shorter: the passages differ on 3 [1] versus 2 [2] business days, and I can't tell from them which document is more recent.)",
+  "citations": [
+    {
+      "n": 1,
+      "where": "shipping.md > Lost"
+    },
+    {
+      "n": 2,
+      "where": "customer-service-playbook.md > Lost in transit"
+    }
+  ],
+  "cost": 0.003816,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6792199421561256
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.6234664024950476
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5683373168080189
+    },
+    {
+      "id": 55,
+      "where": "customer-service-playbook.md > SHP-01 Package lost",
+      "score": 0.5329083976492004
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.4979865595155094
+    },
+    {
+      "id": 101,
+      "where": "faq.md > My package says delivered but I don't have it. What now?",
+      "score": 0.4874146430385076
+    },
+    {
+      "id": 246,
+      "where": "shipping.md > Lost, late and damaged packages",
+      "score": 0.4741593135547606
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.47343525027854044
+    },
+    {
+      "id": 102,
+      "where": "faq.md > My order arrived damaged. Do I have to send it back?",
+      "score": 0.42783967327524897
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.4240682007146372
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.41801797778972316
+    },
+    {
+      "id": 250,
+      "where": "shipping.md > Address problems",
+      "score": 0.4113974139684525
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.40716635767265286
+    },
+    {
+      "id": 45,
+      "where": "customer-service-playbook.md > Damaged on arrival",
+      "score": 0.3996145708677731
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.3930414957950391
+    },
+    {
+      "id": 283,
+      "where": "warranty.md > Transfer of the warranty",
+      "score": 0.3913747347901359
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.3903923839887729
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.3894247475701351
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.3867385495948522
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.3836785776951504
+    }
+  ],
+  "shown": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6792199421561256
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.6234664024950476
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5683373168080189
+    },
+    {
+      "id": 55,
+      "where": "customer-service-playbook.md > SHP-01 Package lost",
+      "score": 0.5329083976492004
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.4979865595155094
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How long before a package that never showed up counts as lost?",
+      "reply": "lost package definition policy: number of days after expected delivery date before undelivered shipment is classified as lost, shipping and delivery policy, claims for non-delivery",
+      "stopReason": "end_turn",
+      "inputTokens": 120,
+      "outputTokens": 53,
+      "cost": 0.00077,
+      "ms": 1679
+    },
+    {
+      "kind": "embed",
+      "text": "lost package definition policy: number of days after expected delivery date before undelivered shipment is classified as lost, shipping and delivery policy, claims for non-delivery",
+      "ms": 13
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] shipping.md > Lost\n### Lost\n\nA package is treated as lost when 10 business days have passed since the expected delivery date\nwith no delivery scan. At that point customer service files a claim with the carrier and, without\nwaiting for the claim to settle, ships a replacement at no charge. If the original package later\nturns up, the customer is asked to refuse it or to return it with a free prepaid label. Lost\npackage replacements over $500 need Tomas Reyes's approval under the Three Lights rule, like any\nother credit of that size.\n\nA package that tracking shows as delivered but that the customer did not receive is handled the\nsame way after a 3 business day wait, during which the customer checks with neighbors and the\nbuilding office. The carrier is asked for the GPS delivery scan.\n\n[2] customer-service-playbook.md > Lost in transit\n### Lost in transit\n\nA package counts as lost when it has not arrived 10 business days after the expected delivery\ndate shown in tracking. Before that, ask the customer to check with neighbors and the carrier.\nOnce a package is lost, ship a replacement first and file the carrier claim afterwards; the\ncustomer does not wait for the carrier. Note the carrier claim number on the ticket. If the\nreplacement is also fuel, confirm the address is not a PO box.\n\nA package shown as delivered that the customer says did not arrive is handled the same way after\na 2-business-day wait, with one exception: for orders over $400, which require a signature, pull\nthe signature image from the carrier before replacing.\n\n[3] shipping.md > Late\n### Late\n\nA package is late when it has not arrived by the last day of its delivery window. Agents should\nfirst check the carrier's tracking; most late packages are moving and arrive within two business\ndays. For an expedited or overnight order that misses its window, the difference between the\nservice paid for and standard shipping is refunded without the customer asking.\n\n[4] customer-service-playbook.md > SHP-01 Package lost\n### SHP-01 Package lost\n\nHello {name}, I am sorry your order {order} has not arrived. Tracking shows it has been more than\n10 business days past the expected delivery date, so I have shipped a replacement today under\norder {replacement}; tracking will follow by email. We will take the claim up with the carrier\nourselves, and you do not need to do anything further.\n\n[5] faq.md > Can I send something back if I changed my mind?\n### Can I send something back if I changed my mind?\n\nYes. You have 40 days from the day your order was delivered to return any unused item in its\noriginal packaging with all its accessories. Start a return on the online store, or call us, and\nyou will get an RA number to put on the box.\n\nQuestion: How long before a package that never showed up counts as lost?",
+      "reply": "A package counts as lost once 10 business days have passed since the expected delivery date with no delivery scan [1][2]. (For packages tracking shows as delivered but the customer didn't receive, the wait is shorter: the passages differ on 3 [1] versus 2 [2] business days, and I can't tell from them which document is more recent.)",
+      "stopReason": "end_turn",
+      "inputTokens": 978,
+      "outputTokens": 109,
+      "cost": 0.003046,
+      "ms": 1967
+    }
+  ],
+  "ms": 3661,
+  "tokens": {
+    "input": 1098,
+    "output": 162
+  }
+}

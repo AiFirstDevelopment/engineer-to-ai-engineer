@@ -1,0 +1,184 @@
+{
+  "run": "reverted",
+  "case": "staff-discount",
+  "question": "Can staff buy a Second Light lantern for less?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Second Light lantern employee discount staff purchase pricing policy",
+  "answer": "Yes. Employees get 50% off Second Light refurbished items [2], versus 30% off other merchandise. The discount counts toward the $2,000 annual cap and is for you and your household only [2].",
+  "citations": [
+    {
+      "n": 2,
+      "where": "employee-handbook.md > Employee discount"
+    }
+  ],
+  "cost": 0.0033,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.6542462854977126
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.5836052331562189
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.5761849451903024
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5487816066348902
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5365858909588526
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.5128715379823136
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.49026709426628856
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.4795142188899958
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.4779342941623579
+    },
+    {
+      "id": 90,
+      "where": "employee-handbook.md > Conduct",
+      "score": 0.4625843523076451
+    },
+    {
+      "id": 270,
+      "where": "warranty.md > What the warranty promises",
+      "score": 0.458137306746257
+    },
+    {
+      "id": 8,
+      "where": "about.md > Lights for Scouts",
+      "score": 0.4518212933436847
+    },
+    {
+      "id": 231,
+      "where": "returns-policy.md > Approvals: the Three Lights rule",
+      "score": 0.44913175152172735
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.44717271371355194
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.44711589714831296
+    },
+    {
+      "id": 121,
+      "where": "faq.md > If I give a lantern as a gift, is it still under warranty?",
+      "score": 0.44620855729995224
+    },
+    {
+      "id": 32,
+      "where": "catalog.md > Price Promise",
+      "score": 0.44615275395128207
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.43644197309178323
+    },
+    {
+      "id": 27,
+      "where": "catalog.md > Porchlight Solar (LS-PS1) — $39.99",
+      "score": 0.43361289145975246
+    },
+    {
+      "id": 57,
+      "where": "customer-service-playbook.md > WAR-01 Warranty claim opened",
+      "score": 0.42768761321194143
+    }
+  ],
+  "shown": [
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.6542462854977126
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.5836052331562189
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.5761849451903024
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5487816066348902
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5365858909588526
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Can staff buy a Second Light lantern for less?",
+      "reply": "Second Light lantern employee discount staff purchase pricing policy",
+      "stopReason": "end_turn",
+      "inputTokens": 121,
+      "outputTokens": 23,
+      "cost": 0.000472,
+      "ms": 1350
+    },
+    {
+      "kind": "embed",
+      "text": "Second Light lantern employee discount staff purchase pricing policy",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > Second Light\n## Second Light\n\nLanterns that come back as returns or trade-ins and pass a bench inspection are sold as Second\nLight refurbished items, at a discount, with a 1-year warranty. Second Light items are sold at\nboth showrooms and, a few times a year, online. The program keeps good lanterns out of landfills\nand gives a scout troop or a student a Sentinel at a Firefly price.\n\n[2] employee-handbook.md > Employee discount\n## Employee discount\n\nEvery employee, full-time or part-time, gets 30% off the retail price of anything we sell, in the\nshowrooms or on the online store, and 50% off Second Light refurbished items. The discount applies\nto merchandise, not to shipping, repairs or gift cards. Employees may spend up to $2,000 a year at\nthe discounted price; purchases past the cap are at retail. The cap resets on January 1.\n\nThe discount is for you and the people in your household. Buying discounted items to resell, or\nfor friends outside your household, is a conduct violation and ends the discount. Use the\ndiscount code on your employee ID card online, or give your employee number at the register. Your\ndiscounted purchases still earn Lumen Rewards points on the amount you actually paid.\n\n[3] faq.md > Do you sell refurbished lanterns?\n### Do you sell refurbished lanterns?\n\nYes. Lanterns that come back and pass a bench inspection at the Repair Center are sold as Second\nLight refurbished items at a discount, with a 1-year warranty. They are sold at both showrooms\nand a few times a year online.\n\n[4] catalog.md > Base Camp Bundle — $199.99\n### Base Camp Bundle — $199.99\n\nOne Sentinel 1000 and two Firefly 220 lanterns in one box, for a household that wants one big\nlight for the main room and two small ones for bedrooms. Bought separately the three lanterns\ncost $219.97, so the bundle saves $19.98. The Firefly 220s come in slate. Each lantern carries its\nown warranty: 5 years on the Sentinel, 2 years on each Firefly. A bundle can be returned only as a\nwhole; one lantern from a bundle cannot be returned on its own.\n\n[5] about.md > What we believe\n## What we believe\n\nA lantern should last. Everything we sell is chosen or built to be repaired, and the Repair\nCenter will fix an out-of-warranty lantern at a fair price rather than tell you to buy a new one.\nA policy should be plain. Our returns, shipping and warranty pages say what we do in numbers,\nand the customer service team is allowed to say yes. A customer should be able to reach a person.\nThe phone is answered by someone in Frederick, Monday through Friday 8:30 AM to 6:00 PM and\nSaturday 9:00 AM to 5:00 PM Eastern.\n\nQuestion: Can staff buy a Second Light lantern for less?",
+      "reply": "Yes. Employees get 50% off Second Light refurbished items [2], versus 30% off other merchandise. The discount counts toward the $2,000 annual cap and is for you and your household only [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1084,
+      "outputTokens": 66,
+      "cost": 0.002828,
+      "ms": 2008
+    }
+  ],
+  "ms": 3367,
+  "tokens": {
+    "input": 1205,
+    "output": 89
+  }
+}

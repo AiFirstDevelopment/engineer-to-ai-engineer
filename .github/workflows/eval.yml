@@ -1,0 +1,39 @@
+# The eval as a gate: on every pull request that touches the pipeline, its corpus or its evals,
+# and once a month to catch drift in the model behind the API. It runs the served pipeline on
+# the golden set within a budget (evals/gate.ts) and fails the check below the threshold.
+# Needs the repository secret ANTHROPIC_API_KEY (Settings > Secrets and variables > Actions).
+name: eval
+on:
+  pull_request:
+    paths: ["src/**", "docs/**", "evals/**", "package.json", "package-lock.json"]
+  schedule:
+    - cron: "0 9 1 * *" # 09:00 UTC on the 1st of every month
+  workflow_dispatch:
+concurrency:
+  group: eval-${{ github.ref }}
+  cancel-in-progress: true # a newer push replaces the run, so one PR never pays twice
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - uses: actions/cache@v4 # the 97 MB embedding model, downloaded once
+        with:
+          path: node_modules/@huggingface/transformers/.cache
+          key: embedding-model-all-MiniLM-L6-v2
+      - run: npx tsx evals/check-golden.ts
+      - run: npx tsx src/index.ts
+      - run: npx tsx evals/gate.ts gate-${{ github.run_id }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - uses: actions/upload-artifact@v4 # the run's traces and results, to read a failure
+        if: always()
+        with:
+          name: eval-run
+          path: evals/runs/

@@ -1,0 +1,33 @@
+$ npx tsx --env-file=.env src/server.ts &
+listening on http://localhost:3000/ask
+$ curl -s localhost:3000/ask -d '{"question": "Does the Northstar come with a carry case?"}' \
+    | jq -r .answer
+I don't know.
+$ curl -s localhost:3000/ask -d '{"question": "Can I bring my dog into the Annapolis showroom?"}' \
+    | jq -r .answer
+I don't know.
+$ npx tsx evals/sample.ts 5
+new questions in the log: 1; drafted in evals/drafts.jsonl: 1
+  draft-1: Can I bring my dog into the Annapolis showroom?
+$ sed -i "" "/reply exactly: I don't know/d" src/prompt.ts
+$ npx tsx --env-file=.env evals/gate.ts bad-prompt; echo "exit code $?"
+FAIL  sentinel-low-runtime: forbidden: the Pro's 380 hours
+FAIL  heritage-kerosene: missing: kerosene voids the warranty
+FAIL  ceo-salary: answered; the corpus does not say
+FAIL  sales-2025: answered; the corpus does not say
+FAIL  sentinel-2000: answered; the corpus does not say
+FAIL  dental-deductible: answered; the corpus does not say
+FAIL  ups-account: answered; the corpus does not say
+FAIL  showroom-wifi: answered; the corpus does not say
+FAIL  firefly-euros: answered; the corpus does not say
+FAIL  brass-spinner: answered; the corpus does not say
+passed 21/31: answer 21/23, fallback 0/8; $0.1373 with the judge
+gate: FAILED (21 passed, the gate needs 27; a fallback case answered)
+exit code 1
+$ git checkout src/prompt.ts
+Updated 1 path from the index
+$ npx tsx --env-file=.env evals/gate.ts reverted; echo "exit code $?"
+FAIL  northstar-carry-case: said I don't know
+passed 30/31: answer 22/23, fallback 8/8; $0.1323 with the judge
+gate: passed
+exit code 0

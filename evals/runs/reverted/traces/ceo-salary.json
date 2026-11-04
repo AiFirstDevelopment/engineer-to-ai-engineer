@@ -1,0 +1,178 @@
+{
+  "run": "reverted",
+  "case": "ceo-salary",
+  "question": "What is Priya Whitcomb-Nair's salary?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Priya Whitcomb-Nair salary compensation base pay employee compensation records pay grade salary band",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.0031599999999999996,
+  "retrieved": [
+    {
+      "id": 69,
+      "where": "employee-handbook.md > Pay",
+      "score": 0.31106795057977304
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.30937899668110636
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.2621539956673114
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.24956035193827894
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.2152042802251775
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.21254829155525398
+    },
+    {
+      "id": 192,
+      "where": "release-notes.md > Known issues",
+      "score": 0.19544421442807783
+    },
+    {
+      "id": 141,
+      "where": "faq.md > How do I earn points?",
+      "score": 0.19514645201713374
+    },
+    {
+      "id": 171,
+      "where": "lumen-rewards.md > Program contact",
+      "score": 0.19317696415684546
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.19050897273546205
+    },
+    {
+      "id": 75,
+      "where": "employee-handbook.md > Benefits",
+      "score": 0.1899603740194656
+    },
+    {
+      "id": 186,
+      "where": "release-notes.md > Fixes",
+      "score": 0.18793027184505248
+    },
+    {
+      "id": 159,
+      "where": "lumen-rewards.md > Lumen Rewards Program",
+      "score": 0.18771271701638717
+    },
+    {
+      "id": 233,
+      "where": "returns-policy.md > Record keeping",
+      "score": 0.1831259855219509
+    },
+    {
+      "id": 77,
+      "where": "employee-handbook.md > Retirement",
+      "score": 0.1830249650243019
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.18293767738971944
+    },
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.18143062134951554
+    },
+    {
+      "id": 216,
+      "where": "returns-policy.md > Returns Policy",
+      "score": 0.16935655082603013
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.16757832749020968
+    },
+    {
+      "id": 161,
+      "where": "lumen-rewards.md > Joining",
+      "score": 0.16018682048216826
+    }
+  ],
+  "shown": [
+    {
+      "id": 69,
+      "where": "employee-handbook.md > Pay",
+      "score": 0.31106795057977304
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.30937899668110636
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.2621539956673114
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.24956035193827894
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.2152042802251775
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is Priya Whitcomb-Nair's salary?",
+      "reply": "Priya Whitcomb-Nair salary compensation base pay employee compensation records pay grade salary band",
+      "stopReason": "end_turn",
+      "inputTokens": 123,
+      "outputTokens": 36,
+      "cost": 0.000606,
+      "ms": 1408
+    },
+    {
+      "kind": "embed",
+      "text": "Priya Whitcomb-Nair salary compensation base pay employee compensation records pay grade salary band",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] employee-handbook.md > Pay\n## Pay\n\nEveryone is paid twice a month, on the 15th and on the last day of the month. When a pay date falls\non a weekend or a bank holiday, pay is deposited the business day before. Pay is by direct deposit;\npaper checks are available on request from Harold Nkemelu's office and are mailed, not held.\n\nPay periods run from the 1st through the 15th and from the 16th through the end of the month.\nHourly employees are paid for the period that ended on the pay date; salaried employees are paid\ncurrent. Pay stubs are in Gusto. Report a pay error to People Operations within 30 days.\n\nAnnual pay reviews happen in February, after the fiscal year closes on January 31. Changes take\neffect with the pay period beginning March 1.\n\n[2] employee-handbook.md > Other benefits\n### Other benefits\n\nFull-time employees receive a company-paid life insurance policy of $25,000, a pretax commuter\nbenefit of up to $150 a month, and an annual stipend of $200 for work boots or safety footwear for\nwarehouse and repair staff. The company pays for the ServSafe-style fuel handling certification\nrequired for warehouse staff and renews it every three years.\n\n[3] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n[4] employee-handbook.md > Employee discount\n## Employee discount\n\nEvery employee, full-time or part-time, gets 30% off the retail price of anything we sell, in the\nshowrooms or on the online store, and 50% off Second Light refurbished items. The discount applies\nto merchandise, not to shipping, repairs or gift cards. Employees may spend up to $2,000 a year at\nthe discounted price; purchases past the cap are at retail. The cap resets on January 1.\n\nThe discount is for you and the people in your household. Buying discounted items to resell, or\nfor friends outside your household, is a conduct violation and ends the discount. Use the\ndiscount code on your employee ID card online, or give your employee number at the register. Your\ndiscounted purchases still earn Lumen Rewards points on the amount you actually paid.\n\n[5] employee-handbook.md > Employee Handbook (excerpt)\n# Employee Handbook (excerpt)\n\nLast updated: September 8, 2026\nOwner: Beth Carrow, People Operations Manager\n\nThis excerpt covers the sections of the Lantern Supply Co. employee handbook that new hires ask\nabout most: hours, pay, time off, benefits, the employee discount, dress code, expenses, fuel\nsafety on the showroom floor, customer service standards and conduct. The full handbook is on the\nshared drive under People Operations and in the binder at the front desk of each showroom. Where\nthis excerpt and the full handbook disagree, the full handbook governs. Questions go to Beth\nCarrow, People Operations Manager, or to your manager.\n\nQuestion: What is Priya Whitcomb-Nair's salary?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1242,
+      "outputTokens": 7,
+      "cost": 0.002554,
+      "ms": 1193
+    }
+  ],
+  "ms": 2611,
+  "tokens": {
+    "input": 1365,
+    "output": 43
+  }
+}

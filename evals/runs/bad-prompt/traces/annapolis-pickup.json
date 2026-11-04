@@ -1,0 +1,192 @@
+{
+  "run": "bad-prompt",
+  "case": "annapolis-pickup",
+  "question": "Can I collect my online order at the Annapolis showroom?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Annapolis showroom in-store pickup policy for online orders (buy online pick up in store, BOPIS), eligibility, pickup procedures, order ready notification and ID requirements",
+  "answer": "No. The Annapolis showroom doesn't offer curbside pickup, and online orders can't be collected there [1][2][4]. You can have the order shipped, or choose curbside pickup at the Frederick showroom instead [2][4].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "faq.md > Can I pick my order up instead?"
+    },
+    {
+      "n": 2,
+      "where": "shipping.md > Curbside pickup"
+    },
+    {
+      "n": 4,
+      "where": "showrooms.md > Services"
+    }
+  ],
+  "cost": 0.004076,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 100,
+      "where": "faq.md > Can I pick my order up instead?",
+      "score": 0.5888511722311
+    },
+    {
+      "id": 245,
+      "where": "shipping.md > Curbside pickup",
+      "score": 0.5814404397128807
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.5485188693691295
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.5346851745611683
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.5184724017266924
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.49920710785312256
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.4917606479559621
+    },
+    {
+      "id": 48,
+      "where": "customer-service-playbook.md > Repairs",
+      "score": 0.47288119434909487
+    },
+    {
+      "id": 228,
+      "where": "returns-policy.md > In-store returns",
+      "score": 0.45609000792633747
+    },
+    {
+      "id": 239,
+      "where": "shipping.md > Carriers",
+      "score": 0.4550413447449898
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.44922901736034787
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.4479849941965386
+    },
+    {
+      "id": 268,
+      "where": "showrooms.md > Contact",
+      "score": 0.44789424906497965
+    },
+    {
+      "id": 263,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.44577583767736145
+    },
+    {
+      "id": 145,
+      "where": "faq.md > Where are your stores?",
+      "score": 0.4411752525368852
+    },
+    {
+      "id": 235,
+      "where": "shipping.md > Scope",
+      "score": 0.4405990944618674
+    },
+    {
+      "id": 238,
+      "where": "shipping.md > Dispatch",
+      "score": 0.4306678514519109
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.4264405098486653
+    },
+    {
+      "id": 266,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.4257894720124337
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.42559707633212107
+    }
+  ],
+  "shown": [
+    {
+      "id": 100,
+      "where": "faq.md > Can I pick my order up instead?",
+      "score": 0.5888511722311
+    },
+    {
+      "id": 245,
+      "where": "shipping.md > Curbside pickup",
+      "score": 0.5814404397128807
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.5485188693691295
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.5346851745611683
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.5184724017266924
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Can I collect my online order at the Annapolis showroom?",
+      "reply": "Annapolis showroom in-store pickup policy for online orders (buy online pick up in store, BOPIS), eligibility, pickup procedures, order ready notification and ID requirements",
+      "stopReason": "end_turn",
+      "inputTokens": 123,
+      "outputTokens": 61,
+      "cost": 0.000856,
+      "ms": 1554
+    },
+    {
+      "kind": "embed",
+      "text": "Annapolis showroom in-store pickup policy for online orders (buy online pick up in store, BOPIS), eligibility, pickup procedures, order ready notification and ID requirements",
+      "ms": 14
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Can I pick my order up instead?\n### Can I pick my order up instead?\n\nYes, at the Frederick showroom only. Choose curbside pickup at checkout and your order is ready\nwithin 2 hours during store hours, Monday through Saturday 9:00 AM to 6:00 PM. Pickup is free.\nThe Annapolis showroom does not offer curbside pickup.\n\n[2] shipping.md > Curbside pickup\n## Curbside pickup\n\nCurbside pickup is available at the Frederick showroom only, at 412 East Patrick Street. It is\nfree and orders are ready within 2 hours of being placed during showroom hours (Monday to\nSaturday, 9:00 AM to 6:00 PM ET). An order placed after 4:00 PM is ready the next morning.\nThe customer receives a \"ready for pickup\" email, parks in the loading zone on East Patrick\nStreet and calls the showroom; staff bring the order out. Pickup orders are held for 7 days,\nafter which they are cancelled and refunded.\n\nThe Annapolis showroom does not offer curbside pickup; its stock is not connected to the online\nstore's inventory. Customers near Annapolis can order online and have the order shipped, or buy\nfrom the showroom floor.\n\nFuel may be collected curbside, which is the simplest way for a Frederick customer to buy it.\n\n[3] faq.md > Can I return something at a showroom?\n### Can I return something at a showroom?\n\nYes, at either the Frederick or the Annapolis showroom. Bring the packing slip or the order number\nand the showroom will process the return on the spot.\n\n[4] showrooms.md > Services\n### Services\n\nRepair drop-off: bring the lantern to the register. We open the repair ticket and hold the lantern\nin the back room. Annapolis repairs are shipped to the Hagerstown Repair Center once a week, on\nTuesdays, so an Annapolis drop-off takes about a week longer than one in Frederick. Fuel lanterns\nmust be empty; Annapolis has no drain tray, so please empty the lantern at home first.\n\nThere is no curbside pickup at Annapolis, and no wick-trimming clinic. Online orders cannot be\ncollected here. Customers who want to collect an order should choose Curbside pickup, Frederick, or\nhave it shipped.\n\nIn-store returns are accepted with the packing slip or the order number, and no RA number is\nneeded.\n\n[5] warranty.md > Shipping for an approved claim\n### Shipping for an approved claim\n\nFor an approved claim the company pays shipping both ways. The customer receives a prepaid UPS\nGround label addressed to:\n\nLantern Supply Co. Repair Center\n1180 Downsville Pike, Dock B\nHagerstown, MD 21740\n\nThe product must be packed in a box with enough padding that it does not move. Fuel lanterns and\noil lamps must be completely drained and left open to air for 24 hours before packing; the\nRepair Center refuses any package that smells of fuel, and the carrier may fine the sender. The\nRepair Center acknowledges arrival by email the same business day.\n\nCustomers may also drop a product at either showroom. Frederick sends it to Hagerstown on the\nTuesday van; Annapolis does the same. A drop-off at a showroom still needs a WC- number.\n\nQuestion: Can I collect my online order at the Annapolis showroom?",
+      "reply": "No. The Annapolis showroom doesn't offer curbside pickup, and online orders can't be collected there [1][2][4]. You can have the order shipped, or choose curbside pickup at the Frederick showroom instead [2][4].",
+      "stopReason": "end_turn",
+      "inputTokens": 1220,
+      "outputTokens": 78,
+      "cost": 0.00322,
+      "ms": 1553
+    }
+  ],
+  "ms": 3122,
+  "tokens": {
+    "input": 1343,
+    "output": 139
+  }
+}

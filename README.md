@@ -706,6 +706,82 @@ sentence are as common as a bad prompt, and a harness that is only ever used to 
 will make the code worse to satisfy a bad case. And widening, measured again here, costs twice
 as much ($0.2547) for nothing these thirty cases need.
 
+### 7. The harness as a gate (`s2e7`)
+
+The eval stops a bad change before it merges, learns from real questions, and runs every month
+whether anyone changed anything or not.
+
+Files: `evals/run-eval.ts` is the run of episodes 3 to 6 as a function, `runEval(run, options,
+budget)`, so two scripts can share it: `evals/eval.ts`, as before, and `evals/gate.ts`, the
+gate. The gate runs the served pipeline on the golden set with a $0.50 budget and fails, with
+exit code 1, when less than `THRESHOLD` (85%) of the cases pass, when any fallback case
+answered, or when the budget stopped the run. The threshold sits under the noise: the served
+pipeline has scored between 26 and 30 of 30 across runs, so a change that trips it has done real
+harm, and a fallback case that answers fails the gate on its own because an invented answer is
+the failure that costs most. `.github/workflows/eval.yml` runs the gate on every pull request
+that touches `src/`, `docs/`, `evals/` or the dependencies, on the 1st of every month, and by
+hand: it installs, restores the embedding model from the cache, checks the golden set, builds
+the index, runs the gate with the key from the repository secret `ANTHROPIC_API_KEY`, and keeps
+the run's traces and results as an artifact, so a red check can be read with `evals/trace.ts`. A
+newer push cancels the running check, so one pull request never pays twice; the ledger's caps
+apply in CI as well, against the ledger committed in the branch. There is no remote yet: the
+secret is set in the repository's settings (Settings, Secrets and variables, Actions) once it
+has one, and making the check required is a branch protection rule.
+
+`src/log.ts` appends every question the server answers to `logs/questions.jsonl` (gitignored),
+with the answer and what it cited; questions can carry personal details, so that file belongs
+where your other production logs live, under the same retention. `evals/sample.ts [n]` turns the
+log into draft cases: it drops questions the golden set already has and repeats, takes a random
+sample of n, and writes `evals/drafts.jsonl` (gitignored too) with what the pipeline said. A
+draft is not a case: a person reads it against the documents, writes the facts, forbidden claims
+and quotes or marks it a fallback, moves it into `golden.jsonl`, and runs `check-golden.ts`. The
+first draft built that way is in the set: asked through the server while this episode was built,
+"Does the Northstar come with a carry case?" got "I don't know.", and the catalog's Northstar
+table says "In the box | Lantern, two mantles, funnel, carry case". It is case 31,
+`northstar-carry-case`, and it fails: the next thing to diagnose. Its first match terms included
+"comes with a carry case", which a later answer matched by saying the passages do not say
+whether it "comes with a carry case"; they are now "yes" and phrases that only an affirmative
+answer contains, the lesson of episode 6 again.
+
+```sh
+npx tsx --env-file=.env src/server.ts &
+curl -s localhost:3000/ask -d '{"question": "Does the Northstar come with a carry case?"}'
+npx tsx evals/sample.ts 5
+npx tsx --env-file=.env evals/gate.ts
+```
+
+The transcript, `transcripts/s2e7-the-harness-as-a-gate.txt`, shows two questions asked through
+the server, both answered "I don't know.", and the sample drafting the one the golden set does
+not have yet (the dog in Annapolis; the carry case is already case 31). Then the bad change: one
+line deleted from the system prompt, the rule "When the passages do not answer the question,
+reply exactly: I don't know.", the kind of cleanup that looks harmless in review. The gate fails
+it: every one of the eight fallback cases now answered (with the CEO's salary, the dental
+deductible and the brass spinner's name, the model now explains what the passages do not say
+instead of saying so in four words), two answer cases failed too, 21 of 31 against the 27
+needed, exit code 1, for $0.1373. The line is restored and the gate passes: 30 of 31, every
+fallback right, the carry case the one failure, exit code 0, for $0.1323.
+
+#### The monthly run, drift and a model deprecation
+
+The model behind the API is not part of this repository and it changes: a model version is
+retired on a published date, and its replacement answers differently. The pipeline's code can be
+identical and its answers worse. The scheduled run of `eval.yml` catches the bad case: a gate
+that fails on the 1st of the month with no pull request behind it is drift. Every month, and
+before any model change:
+
+1. Rerun: `npx tsx --env-file=.env evals/eval.ts monthly-2026-12`.
+2. Compare with the last run in the ledger at the same settings (`jq -r '.runs[] | "\(.run)
+   \(.at) \(.passed)"' evals/runs/ledger.json`): `npx tsx evals/compare.ts rewrite
+   monthly-2026-12`. Read every case that moved with `evals/trace.ts`, and label the failures
+   with `evals/diagnose.ts`.
+3. To move to a new model, or off a deprecated one: change `MODEL` in `src/claude.ts` and its
+   line in `PRICES` (and `model` in `ask.sh`), rerun under a new name, compare. The judge is a
+   model too: when `JUDGE_MODEL` changes, run `evals/judge-eval.ts` first and trust the new
+   judge only at the same agreement. So is the reranker: `RERANK_MODEL` in `src/rerank.ts`
+   changes the same way, measured with the reranker switched on (`evals/ladder.ts`).
+4. Ship the swap when the comparison shows nothing lost that matters, and the ledger keeps the
+   run that proved it.
+
 ## Tags
 
 | Tag | Episode |
@@ -724,6 +800,7 @@ as much ($0.2547) for nothing these thirty cases need.
 | `s2e4` | Scoring |
 | `s2e5` | Caps, the ledger and comparing runs |
 | `s2e6` | Diagnosing a failure |
+| `s2e7` | The harness as a gate |
 
 ## Dependencies
 

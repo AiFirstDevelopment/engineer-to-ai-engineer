@@ -1,0 +1,192 @@
+{
+  "run": "bad-prompt",
+  "case": "northstar-carry-case",
+  "question": "Does the Northstar come with a carry case?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Northstar carry case included accessories in the box package contents",
+  "answer": "The passages don't say whether the Northstar comes with a carry case. They mention the Northstar only in terms of its parts [1], where it is stocked [4], and the Annapolis showroom not carrying it on the floor [5].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "repair-manual.pdf p.9"
+    },
+    {
+      "n": 4,
+      "where": "catalog.md > Ordering and availability"
+    },
+    {
+      "n": 5,
+      "where": "showrooms.md > What is stocked"
+    }
+  ],
+  "cost": 0.004072,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.3374757642721346
+    },
+    {
+      "id": 251,
+      "where": "shipping.md > Packaging",
+      "score": 0.3093654586029871
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.3023992335527884
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.2973491217110419
+    },
+    {
+      "id": 266,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.2752228615445065
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.2724656006752013
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.26264270103028275
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.24965279777053487
+    },
+    {
+      "id": 179,
+      "where": "release-notes.md > Highlights",
+      "score": 0.24855138668213578
+    },
+    {
+      "id": 249,
+      "where": "shipping.md > Damaged on arrival",
+      "score": 0.24577743096548482
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.24470152411671628
+    },
+    {
+      "id": 114,
+      "where": "faq.md > What can't be returned at all?",
+      "score": 0.244179721495269
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.24102383372674072
+    },
+    {
+      "id": 23,
+      "where": "catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99",
+      "score": 0.23859308876128016
+    },
+    {
+      "id": 180,
+      "where": "release-notes.md > Changes",
+      "score": 0.2374656411181093
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.23366770294964712
+    },
+    {
+      "id": 223,
+      "where": "returns-policy.md > Final sale, no returns",
+      "score": 0.2302078096217088
+    },
+    {
+      "id": 29,
+      "where": "catalog.md > Bundles",
+      "score": 0.22552005400722164
+    },
+    {
+      "id": 243,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.2245092230554104
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.22192211972871806
+    }
+  ],
+  "shown": [
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.3374757642721346
+    },
+    {
+      "id": 251,
+      "where": "shipping.md > Packaging",
+      "score": 0.3093654586029871
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.3023992335527884
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.2973491217110419
+    },
+    {
+      "id": 266,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.2752228615445065
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Does the Northstar come with a carry case?",
+      "reply": "Northstar carry case included accessories in the box package contents",
+      "stopReason": "end_turn",
+      "inputTokens": 118,
+      "outputTokens": 19,
+      "cost": 0.000426,
+      "ms": 1432
+    },
+    {
+      "kind": "embed",
+      "text": "Northstar carry case included accessories in the box package contents",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.9\nPart Fits Bin Price\nG-GEN2 generator Northstar LS-ND2 1 $13.00\nP-CUP2 pump cup Northstar LS-ND2 1 $4.50\nM-21 mantle 2-pack Northstar LS-ND2 2 $6.99\nG-ND2 globe Northstar LS-ND2 3 $18.99\nG-600 globe Beacon 600 4 $14.99\nG-600G globe gasket Beacon 600 4 $2.50\nG-400 globe Beacon 400 5 $12.99\nG-400G globe gasket Beacon 400 5 $2.50\nB-1000-21 battery pack Sentinel 1000 6 (LI cabinet) $39.00\nB-1000P-21 battery pack Sentinel 1000 Pro 6 (LI cabinet) $64.00\nL-1000S latch spring Sentinel 1000, 1000 Pro 7 $1.25\nPCB-1000C charge board Sentinel 1000, 1000 Pro 7 $11.00\nW-78 #2 flat wick 5-pack Hagerstown LS-HK12 8 $4.99\nBR-12 burner Hagerstown LS-HK12 8 $8.50\nSW-220 switch Firefly 220 9 $2.00\nSW-220R switch Firefly 220R 9 $2.00\nB-220R battery pack Firefly 220R 6 (LI cabinet) $12.00\nPCB-220R main board Firefly 220R 9 $9.00\nC-15 USB-C cable Firefly 220R 9 $5.99\nCH-7 chimney Heritage No. 7 10 $21.99\nW-H7 7/8-inch wick Heritage No. 7 10 $3.50\nBin counts are taken on the first Monday of each month by whoever has the earliest shift.\nAny part below five in stock is written on the whiteboard and ordered that day.\n\n[2] shipping.md > Packaging\n## Packaging\n\nOrders ship in plain brown cartons with the company logo stamped on one side. Gift orders can\ninclude a handwritten note of up to 200 characters at no charge. The warehouse uses paper fill\nand recycled corrugate; the only plastic in an outbound package is the carrier's label pouch and\nthe retail packaging the manufacturer supplied.\n\n[3] faq.md > Can I send something back if I changed my mind?\n### Can I send something back if I changed my mind?\n\nYes. You have 40 days from the day your order was delivered to return any unused item in its\noriginal packaging with all its accessories. Start a return on the online store, or call us, and\nyou will get an RA number to put on the box.\n\n[4] catalog.md > Ordering and availability\n## Ordering and availability\n\nEvery item in this catalogue is stocked at the Hagerstown warehouse and ships from there. The\nshowrooms carry the full LED line, the Hagerstown Kerosene Lantern and the Heritage No. 7 on the\nfloor; the Northstar and the Sentinel 1000 Pro are kept in the back room and brought out on\nrequest. An item shown as backordered on the online store ships in the order the orders were\nplaced, and the order confirmation gives the expected ship date. We do not charge a card until\nthe item ships.\n\n[5] showrooms.md > What is stocked\n### What is stocked\n\nThe Annapolis showroom leans toward what people on and around the water buy: the Sentinel 1000\nand Sentinel 1000 Pro, the Firefly 220 and Firefly 220R, the Beacon 600, the Hagerstown Kerosene\nLantern in galvanized and black, the Heritage No. 7 and the Porchlight Solar. It does not stock the\nNorthstar Dual-Fuel on the floor, though it can be ordered for shipping, and it carries Clearburn\nlamp oil and kerosene but not Clearburn white gas. Mantles, wicks and chimneys are stocked; globes\nare ordered. No Second Light items.\n\nQuestion: Does the Northstar come with a carry case?",
+      "reply": "The passages don't say whether the Northstar comes with a carry case. They mention the Northstar only in terms of its parts [1], where it is stocked [4], and the Annapolis showroom not carrying it on the floor [5].",
+      "stopReason": "end_turn",
+      "inputTokens": 1458,
+      "outputTokens": 73,
+      "cost": 0.003646,
+      "ms": 1577
+    }
+  ],
+  "ms": 3016,
+  "tokens": {
+    "input": 1576,
+    "output": 92
+  }
+}

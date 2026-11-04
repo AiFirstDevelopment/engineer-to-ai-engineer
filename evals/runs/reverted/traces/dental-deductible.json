@@ -1,0 +1,178 @@
+{
+  "run": "reverted",
+  "case": "dental-deductible",
+  "question": "What is the annual deductible on the employee dental plan?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "employee dental plan annual deductible amount individual family benefits summary",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.0029100000000000003,
+  "retrieved": [
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.40502929365622764
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.3645078536718184
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.3172425598187323
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.302352824611826
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.28689479833159093
+    },
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.26335026727491023
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.23858520378595952
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.23045466301485906
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.21250512930932475
+    },
+    {
+      "id": 77,
+      "where": "employee-handbook.md > Retirement",
+      "score": 0.1976911331664423
+    },
+    {
+      "id": 72,
+      "where": "employee-handbook.md > Sick and safe leave",
+      "score": 0.1953067414705509
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.18681918743603304
+    },
+    {
+      "id": 277,
+      "where": "warranty.md > Making a claim",
+      "score": 0.18447887638549135
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.17779789398579826
+    },
+    {
+      "id": 75,
+      "where": "employee-handbook.md > Benefits",
+      "score": 0.16933647796211224
+    },
+    {
+      "id": 190,
+      "where": "release-notes.md > Changes",
+      "score": 0.16339113654379003
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.16285291940375163
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.1590545526906563
+    },
+    {
+      "id": 216,
+      "where": "returns-policy.md > Returns Policy",
+      "score": 0.15767504947516667
+    },
+    {
+      "id": 85,
+      "where": "employee-handbook.md > Breaks and meal periods",
+      "score": 0.1573852054855639
+    }
+  ],
+  "shown": [
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.40502929365622764
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.3645078536718184
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.3172425598187323
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.302352824611826
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.28689479833159093
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the annual deductible on the employee dental plan?",
+      "reply": "employee dental plan annual deductible amount individual family benefits summary",
+      "stopReason": "end_turn",
+      "inputTokens": 121,
+      "outputTokens": 23,
+      "cost": 0.000472,
+      "ms": 1327
+    },
+    {
+      "kind": "embed",
+      "text": "employee dental plan annual deductible amount individual family benefits summary",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] employee-handbook.md > Health insurance\n### Health insurance\n\nMedical, dental and vision coverage is through the CareFirst Keystone Select plan. Eligibility\nbegins on the first day of the month after 30 days of full-time employment. The company pays 75% of\nthe employee premium and 50% of the premium for dependents. Open enrollment runs November 1\nthrough November 20 each year, for coverage starting January 1. Outside open enrollment you can\nchange your election only after a qualifying life event, within 30 days of the event.\n\n[2] employee-handbook.md > Other benefits\n### Other benefits\n\nFull-time employees receive a company-paid life insurance policy of $25,000, a pretax commuter\nbenefit of up to $150 a month, and an annual stipend of $200 for work boots or safety footwear for\nwarehouse and repair staff. The company pays for the ServSafe-style fuel handling certification\nrequired for warehouse staff and renews it every three years.\n\n[3] employee-handbook.md > Employee discount\n## Employee discount\n\nEvery employee, full-time or part-time, gets 30% off the retail price of anything we sell, in the\nshowrooms or on the online store, and 50% off Second Light refurbished items. The discount applies\nto merchandise, not to shipping, repairs or gift cards. Employees may spend up to $2,000 a year at\nthe discounted price; purchases past the cap are at retail. The cap resets on January 1.\n\nThe discount is for you and the people in your household. Buying discounted items to resell, or\nfor friends outside your household, is a conduct violation and ends the discount. Use the\ndiscount code on your employee ID card online, or give your employee number at the register. Your\ndiscounted purchases still earn Lumen Rewards points on the amount you actually paid.\n\n[4] employee-handbook.md > Expenses\n## Expenses\n\nSubmit expense claims in Expensify within 30 days of the expense. Receipts are required for any\nitem over $25. Mileage for driving your own car on company business, for example between\nshowrooms or to the Hagerstown warehouse, is paid at the IRS standard rate in effect that year.\nMeals are reimbursed at actual cost up to $20 for lunch and $35 for dinner when you are away from\nyour home location over a mealtime. Your manager approves claims under $250; Harold Nkemelu\napproves claims of $250 and up. Approved claims are paid with the next payroll.\n\n[5] employee-handbook.md > Employee Handbook (excerpt)\n# Employee Handbook (excerpt)\n\nLast updated: September 8, 2026\nOwner: Beth Carrow, People Operations Manager\n\nThis excerpt covers the sections of the Lantern Supply Co. employee handbook that new hires ask\nabout most: hours, pay, time off, benefits, the employee discount, dress code, expenses, fuel\nsafety on the showroom floor, customer service standards and conduct. The full handbook is on the\nshared drive under People Operations and in the binder at the front desk of each showroom. Where\nthis excerpt and the full handbook disagree, the full handbook governs. Questions go to Beth\nCarrow, People Operations Manager, or to your manager.\n\nQuestion: What is the annual deductible on the employee dental plan?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1184,
+      "outputTokens": 7,
+      "cost": 0.002438,
+      "ms": 1324
+    }
+  ],
+  "ms": 2660,
+  "tokens": {
+    "input": 1305,
+    "output": 30
+  }
+}

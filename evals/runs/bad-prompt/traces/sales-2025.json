@@ -1,0 +1,179 @@
+{
+  "run": "bad-prompt",
+  "case": "sales-2025",
+  "question": "How many lanterns did Lantern Supply Co. sell in 2025?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Lantern Supply Co. 2025 annual sales report total lantern units sold fiscal year 2025",
+  "answer": "The passages don't say how many lanterns Lantern Supply Co. sold in 2025, so I can't answer that from what I have.",
+  "citations": [],
+  "cost": 0.002692,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.6801656078903059
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.6546417360033876
+    },
+    {
+      "id": 240,
+      "where": "shipping.md > Where we ship",
+      "score": 0.5839178659171272
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.5780398890154649
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.5660633712957784
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5641541529960662
+    },
+    {
+      "id": 57,
+      "where": "customer-service-playbook.md > WAR-01 Warranty claim opened",
+      "score": 0.5497273845928247
+    },
+    {
+      "id": 235,
+      "where": "shipping.md > Scope",
+      "score": 0.5390901272527518
+    },
+    {
+      "id": 133,
+      "where": "faq.md > Do you sell refurbished lanterns?",
+      "score": 0.5368069527125294
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.5343278834290108
+    },
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.5302909257400232
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.5280578845082341
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.5173195245954793
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.5167107501562621
+    },
+    {
+      "id": 13,
+      "where": "catalog.md > How to read a model number",
+      "score": 0.5162910104123222
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5142585080096844
+    },
+    {
+      "id": 270,
+      "where": "warranty.md > What the warranty promises",
+      "score": 0.5101298580679916
+    },
+    {
+      "id": 148,
+      "where": "fuel-safety.md > Fuel Safety Guide",
+      "score": 0.5088279107676167
+    },
+    {
+      "id": 198,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.5078194379201317
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.5067088547406108
+    }
+  ],
+  "shown": [
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.6801656078903059
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.6546417360033876
+    },
+    {
+      "id": 240,
+      "where": "shipping.md > Where we ship",
+      "score": 0.5839178659171272
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.5780398890154649
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.5660633712957784
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How many lanterns did Lantern Supply Co. sell in 2025?",
+      "reply": "Lantern Supply Co. 2025 annual sales report total lantern units sold fiscal year 2025",
+      "stopReason": "end_turn",
+      "inputTokens": 128,
+      "outputTokens": 36,
+      "cost": 0.000616,
+      "ms": 1581
+    },
+    {
+      "kind": "embed",
+      "text": "Lantern Supply Co. 2025 annual sales report total lantern units sold fiscal year 2025",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > The company\n## The company\n\nLantern Supply Co. is a Maryland corporation, privately held and family owned. The fiscal year\nruns from February 1 to January 31. The company has no outside investors and no debt beyond the\nmortgage on the Hagerstown building.\n\n[2] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n[3] shipping.md > Where we ship\n## Where we ship\n\nLantern Supply Co. ships to all 50 US states and to Canada. The company does not ship to any\nother country, to US territories, or to APO/FPO addresses. Customers outside the United States\nand Canada are referred to the authorized retailer list on the website.\n\n[4] catalog.md > Firefly 100 (LS-100)\n### Firefly 100 (LS-100)\n\nThe Firefly 100, our first LED lantern, was discontinued in 2018. No parts are stocked and the\nRepair Center no longer services it.\n\n[5] employee-handbook.md > Welcome\n## Welcome\n\nLantern Supply Co. was founded in 1987 by Marjorie and Dale Whitcomb in Frederick, Maryland, and\nis still owned and run by the family. Priya Whitcomb-Nair, the founders' daughter, has been chief\nexecutive since 2019. As of October 2026 there are 63 of us across the Frederick headquarters and\nshowroom, the Annapolis showroom and the Hagerstown warehouse and Repair Center. We are a small\ncompany that sells a small range of things well. Most of the people who buy from us are repeat\ncustomers, and most of them know a great deal about lanterns. Treat them that way.\n\nQuestion: How many lanterns did Lantern Supply Co. sell in 2025?",
+      "reply": "The passages don't say how many lanterns Lantern Supply Co. sold in 2025, so I can't answer that from what I have.",
+      "stopReason": "end_turn",
+      "inputTokens": 823,
+      "outputTokens": 43,
+      "cost": 0.002076,
+      "ms": 1988
+    }
+  ],
+  "ms": 3577,
+  "tokens": {
+    "input": 951,
+    "output": 79
+  }
+}

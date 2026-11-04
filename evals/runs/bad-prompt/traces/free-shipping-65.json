@@ -1,0 +1,196 @@
+{
+  "run": "bad-prompt",
+  "case": "free-shipping-65",
+  "question": "Does a $65 order qualify for free shipping?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "free shipping threshold minimum order amount shipping policy eligibility $65 order",
+  "answer": "Yes. The release notes say the free standard shipping threshold is now $60, down from $75 [2][5], so a $65 order qualifies. The FAQ and shipping page still say $75 [1][3], but the release notes are the more recent source, so I went with them. The threshold applies to the subtotal before shipping and tax [5].",
+  "citations": [
+    {
+      "n": 2,
+      "where": "release-notes.md > Changes"
+    },
+    {
+      "n": 5,
+      "where": "release-notes.md > Highlights"
+    },
+    {
+      "n": 1,
+      "where": "faq.md > Is shipping free?"
+    },
+    {
+      "n": 3,
+      "where": "shipping.md > Rates and delivery times"
+    }
+  ],
+  "cost": 0.004086,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 97,
+      "where": "faq.md > Is shipping free?",
+      "score": 0.5517295079265429
+    },
+    {
+      "id": 175,
+      "where": "release-notes.md > Changes",
+      "score": 0.5019714217374872
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.4577747834652301
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.444956528164381
+    },
+    {
+      "id": 174,
+      "where": "release-notes.md > Highlights",
+      "score": 0.4152538425531322
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.39027600809991936
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.3843843710152875
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.3768125389731464
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.3726357901988142
+    },
+    {
+      "id": 95,
+      "where": "faq.md > Orders and shipping",
+      "score": 0.36773873079684183
+    },
+    {
+      "id": 103,
+      "where": "faq.md > Why does my order need a signature?",
+      "score": 0.3602093870885719
+    },
+    {
+      "id": 98,
+      "where": "faq.md > Do you ship outside the United States?",
+      "score": 0.35251707306908314
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.3399806085176122
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.33169218270467643
+    },
+    {
+      "id": 191,
+      "where": "release-notes.md > Fixes",
+      "score": 0.33124387264836486
+    },
+    {
+      "id": 165,
+      "where": "lumen-rewards.md > Flame",
+      "score": 0.3271669294826942
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.3268809790221011
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.3259512668142867
+    },
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.32282672863142736
+    },
+    {
+      "id": 179,
+      "where": "release-notes.md > Highlights",
+      "score": 0.3211953272501754
+    }
+  ],
+  "shown": [
+    {
+      "id": 97,
+      "where": "faq.md > Is shipping free?",
+      "score": 0.5517295079265429
+    },
+    {
+      "id": 175,
+      "where": "release-notes.md > Changes",
+      "score": 0.5019714217374872
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.4577747834652301
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.444956528164381
+    },
+    {
+      "id": 174,
+      "where": "release-notes.md > Highlights",
+      "score": 0.4152538425531322
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Does a $65 order qualify for free shipping?",
+      "reply": "free shipping threshold minimum order amount shipping policy eligibility $65 order",
+      "stopReason": "end_turn",
+      "inputTokens": 120,
+      "outputTokens": 28,
+      "cost": 0.00052,
+      "ms": 1221
+    },
+    {
+      "kind": "embed",
+      "text": "free shipping threshold minimum order amount shipping policy eligibility $65 order",
+      "ms": 4
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Is shipping free?\n### Is shipping free?\n\nStandard shipping is free on orders of $75 or more. Below that, standard shipping is a flat $6.95.\nExpedited shipping is $14.95 and overnight is $29.95 on any order size.\n\n[2] release-notes.md > Changes\n### Changes\n\n- Free shipping threshold: $60 (was $75). The old threshold was in place since the store\n  launched; this is the first change to it.\n- Gift card purchase, delivery and redemption, online and in-store.\n- Points preview and reward redemption at checkout for signed-in Lumen Rewards members.\n- The order confirmation email now lists the delivery estimate as a date range rather than\n  \"3–6 business days\".\n- Signature-required orders (over $400) now say so on the checkout page, not only in the\n  confirmation email.\n\n[3] shipping.md > Rates and delivery times\n| Service   | Cost                             | Delivery time         | Same-day cutoff |\n|-----------|----------------------------------|-----------------------|-----------------|\n| Standard  | $6.95, free on orders of $75 or more | 3 to 6 business days | 2:00 PM ET    |\n| Expedited | $14.95                           | 2 business days       | 2:00 PM ET      |\n| Overnight | $29.95                           | Next business day     | 1:00 PM ET      |\n| Canada    | $19.95 flat                      | 5 to 10 business days | 2:00 PM ET      |\n\nStandard shipping is free on orders with a merchandise subtotal of $75 or more, calculated after\ndiscounts and before tax. Fuel and oversized items count toward the subtotal. Orders under $75\npay the flat $6.95. Expedited and overnight are never free, though Flame and Beacon tier Lumen\nRewards members receive free upgrades from standard to expedited under the terms of that program.\n\nOvernight service is available only to addresses in the contiguous 48 states and only for orders\nplaced by 1:00 PM ET on a business day. An overnight order placed on a Friday before the cutoff is\ndelivered on Monday.\n\n[4] shipping.md > Signature on delivery\n### Signature on delivery\n\nOrders over $400 ship with a signature required. The threshold is applied to the merchandise\nsubtotal. Customers who cannot be present may redirect the package to a UPS Access Point through\nthe carrier's tracking page. The warehouse does not waive the signature requirement on request.\n\n[5] release-notes.md > Highlights\n### Highlights\n\nFree standard shipping now starts at $60, down from $75. The threshold is applied to the order\nsubtotal before shipping and tax, the same way the $75 threshold was. The shipping page and the\ncart both show the new amount, and the cart shows how much more a customer needs to add to\nqualify. We expect the change to move a good share of the $60–$75 orders that used to stall at\nthe cart.\n\nGift cards are on sale for the first time. They come in $25, $50, $100 and $200 amounts, are\ndelivered by email within an hour of purchase, and can be redeemed online or at either\nshowroom. Gift cards are final sale and do not earn Lumen Rewards points when bought, though\npurchases paid with them do.\n\nLumen Rewards points now appear at checkout. A member sees the points the order will earn next\nto the order total, and any reward they have available is offered as a payment line before the\ncard step.\n\nQuestion: Does a $65 order qualify for free shipping?",
+      "reply": "Yes. The release notes say the free standard shipping threshold is now $60, down from $75 [2][5], so a $65 order qualifies. The FAQ and shipping page still say $75 [1][3], but the release notes are the more recent source, so I went with them. The threshold applies to the subtotal before shipping and tax [5].",
+      "stopReason": "end_turn",
+      "inputTokens": 1248,
+      "outputTokens": 107,
+      "cost": 0.003566,
+      "ms": 1951
+    }
+  ],
+  "ms": 3177,
+  "tokens": {
+    "input": 1368,
+    "output": 135
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "run": "bad-prompt",
+  "case": "bench-fee",
+  "question": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+  "answer": "The bench fee is $25.00, which covers the inspection and the quote. It's charged even if the customer declines the repair [1][2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "warranty.md > Out of warranty"
+    },
+    {
+      "n": 2,
+      "where": "repair-manual.pdf p.1"
+    }
+  ],
+  "cost": 0.004616,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6791365507151531
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.6032850810091228
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5486692593925248
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4991351437176315
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.47685036258012153
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.4626934371548125
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.45419637626706844
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.43731015424621894
+    },
+    {
+      "id": 198,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.4349036351506291
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.42692899524808486
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.4188910273426682
+    },
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.40179565149456303
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.4013039752813094
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.38909127873400656
+    },
+    {
+      "id": 279,
+      "where": "warranty.md > Decision",
+      "score": 0.3866639955063753
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.38492299666009133
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.3817509023673469
+    },
+    {
+      "id": 278,
+      "where": "warranty.md > Decision",
+      "score": 0.37776076771251343
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.3668166747653963
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.36261909234400075
+    }
+  ],
+  "shown": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6791365507151531
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.6032850810091228
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5486692593925248
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4991351437176315
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.47685036258012153
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+      "stopReason": "end_turn",
+      "inputTokens": 131,
+      "outputTokens": 34,
+      "cost": 0.000602,
+      "ms": 1510
+    },
+    {
+      "kind": "embed",
+      "text": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Out of warranty\n## Out of warranty\n\nProducts outside their warranty period, and declined claims, can be repaired by the Repair Center\nfor a fee. The customer is quoted before any work is done and can decline the quote, in which\ncase the product is returned at the customer's shipping cost. The bench fee of $25.00 pays for\nthe inspection and the quote, and is charged whether or not the customer goes ahead with the\nrepair. The Repair Center's own manual\ndescribes the fee schedule and the shop procedures.\n\n[2] repair-manual.pdf p.1\nEach ticket gets a coloured tag tied to the bail or handle:\nRed tag: warranty repair. The claim already has a WC- number from Customer Service.\nNo charge to the customer, and the return shipping is on us.\nYellow tag: paid repair. The customer has agreed to the bench fee and to an estimate\nfor parts.\nGreen tag: Second Light refurbishment. These are returns and trade-ins being rebuilt\nfor the refurbished shelf. There is no customer waiting, so they are worked after red\nand yellow tags.\nThe bench fee for a paid repair is $25.00 plus parts at the catalogue price of the part. The fee\nis waived under warranty. If a yellow-tag repair turns out to need parts beyond the estimate\nby more than $10, stop and have Customer Service call the customer before you continue. Do\nnot guess at what the customer would want.\n\n[3] repair-manual.pdf p.3\nThe Northstar is our most repaired product by a wide margin, which is a function of how\nmany we sell and of how it is used, not of any weakness. Nearly every Northstar fault is one\nof four things: a clogged generator, a dry pump cup, a torn mantle, or the wrong fuel. Ask\nabout the fuel first. The Northstar burns Clearburn white gas or unleaded gasoline. It does\nnot burn kerosene, and a tank that has had kerosene in it will have a varnished generator\nand a sticky check valve. That is a paid repair even inside the warranty period.\nTools for the Northstar bench: 11 mm and 13 mm open-ended wrenches, the generator\nwrench (part T-ND2, the thin 9 mm one with the bent handle), a small flat screwdriver, the\npump cup oil bottle, a nylon brush, and the torque driver set to 2.5 N·m for checking.\nGenerator tube replacement\nThe generator (part G-GEN2) is the tube that runs up through the burner and carries fuel\nfrom the tank to the mantles. Signs of a bad generator are a weak yellow flame that will not\nsteady, pulsing light, and a tank that holds pressure but will not deliver it. The part is\n$13.00, so a typical generator replacement on a yellow tag comes to $38.00 with the bench\nfee.\n\n[4] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\n[5] returns-policy.md > Restocking fee\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\nQuestion: My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "The bench fee is $25.00, which covers the inspection and the quote. It's charged even if the customer declines the repair [1][2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1787,
+      "outputTokens": 44,
+      "cost": 0.004014,
+      "ms": 1534
+    }
+  ],
+  "ms": 3052,
+  "tokens": {
+    "input": 1918,
+    "output": 78
+  }
+}

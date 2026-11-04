@@ -1,0 +1,188 @@
+{
+  "run": "reverted",
+  "case": "fuel-to-canada",
+  "question": "Can you ship Clearburn white gas to me in Toronto?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Clearburn white gas shipping restrictions hazardous materials flammable liquid Canada international destinations Toronto Ontario",
+  "answer": "No. Clearburn white gas never ships to Canada [1][2]. If a Canadian order includes fuel, the fuel is removed and refunded before the rest of the order ships [1].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "faq.md > Do you ship fuel to Canada?"
+    },
+    {
+      "n": 2,
+      "where": "shipping.md > Fuel and hazardous materials"
+    }
+  ],
+  "cost": 0.004532,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 99,
+      "where": "faq.md > Do you ship fuel to Canada?",
+      "score": 0.6383789931593785
+    },
+    {
+      "id": 243,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.616617715404529
+    },
+    {
+      "id": 58,
+      "where": "customer-service-playbook.md > FUEL-01 Fuel shipping limits",
+      "score": 0.6014344799600814
+    },
+    {
+      "id": 83,
+      "where": "employee-handbook.md > Fuel safety in the showrooms",
+      "score": 0.5231479850850226
+    },
+    {
+      "id": 157,
+      "where": "fuel-safety.md > Shipping fuel",
+      "score": 0.5082844999203389
+    },
+    {
+      "id": 82,
+      "where": "employee-handbook.md > Fuel safety in the showrooms",
+      "score": 0.4989467372325529
+    },
+    {
+      "id": 138,
+      "where": "faq.md > How should I store fuel at home?",
+      "score": 0.4807038084672249
+    },
+    {
+      "id": 156,
+      "where": "fuel-safety.md > Disposal",
+      "score": 0.4735098196090998
+    },
+    {
+      "id": 196,
+      "where": "release-notes.md > Planned: 4.4 — December 2026",
+      "score": 0.4670093061511082
+    },
+    {
+      "id": 151,
+      "where": "fuel-safety.md > The fuels we sell",
+      "score": 0.4607478299377532
+    },
+    {
+      "id": 244,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.4516354697095166
+    },
+    {
+      "id": 241,
+      "where": "shipping.md > Canada",
+      "score": 0.41890858236769324
+    },
+    {
+      "id": 136,
+      "where": "faq.md > What fuel goes in the Heritage No. 7?",
+      "score": 0.4178354824171681
+    },
+    {
+      "id": 176,
+      "where": "release-notes.md > Fixes",
+      "score": 0.415416258676555
+    },
+    {
+      "id": 240,
+      "where": "shipping.md > Where we ship",
+      "score": 0.4130212578452755
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.4076711743269825
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.4040591484716643
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.3917333188519135
+    },
+    {
+      "id": 223,
+      "where": "returns-policy.md > Final sale, no returns",
+      "score": 0.39142050982192256
+    },
+    {
+      "id": 98,
+      "where": "faq.md > Do you ship outside the United States?",
+      "score": 0.39051578110522206
+    }
+  ],
+  "shown": [
+    {
+      "id": 99,
+      "where": "faq.md > Do you ship fuel to Canada?",
+      "score": 0.6383789931593785
+    },
+    {
+      "id": 243,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.616617715404529
+    },
+    {
+      "id": 58,
+      "where": "customer-service-playbook.md > FUEL-01 Fuel shipping limits",
+      "score": 0.6014344799600814
+    },
+    {
+      "id": 83,
+      "where": "employee-handbook.md > Fuel safety in the showrooms",
+      "score": 0.5231479850850226
+    },
+    {
+      "id": 157,
+      "where": "fuel-safety.md > Shipping fuel",
+      "score": 0.5082844999203389
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Can you ship Clearburn white gas to me in Toronto?",
+      "reply": "Clearburn white gas shipping restrictions hazardous materials flammable liquid Canada international destinations Toronto Ontario",
+      "stopReason": "end_turn",
+      "inputTokens": 125,
+      "outputTokens": 44,
+      "cost": 0.00069,
+      "ms": 1797
+    },
+    {
+      "kind": "embed",
+      "text": "Clearburn white gas shipping restrictions hazardous materials flammable liquid Canada international destinations Toronto Ontario",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Do you ship fuel to Canada?\n### Do you ship fuel to Canada?\n\nNo. Clearburn white gas, lamp oil and kerosene ship by ground only inside the United States, and\nnever to Canada, Alaska, Hawaii or a PO box. If a Canadian order contains fuel, we remove the fuel\nand refund it before the rest of the order ships.\n\n[2] shipping.md > Fuel and hazardous materials\n## Fuel and hazardous materials\n\nClearburn White Gas (LS-FUEL1), Clearburn Lamp Oil (LS-OIL1) and kerosene are limited-quantity\nhazardous materials, shipped as ORM-D. The rules are:\n\n- Fuel ships by ground only. It cannot go expedited or overnight; an order containing fuel is\n  downgraded to standard shipping and the customer is told at checkout.\n- Fuel does not ship to PO boxes.\n- Fuel does not ship to Alaska, Hawaii or Canada.\n- No more than 8 quarts of fuel ship in one package. Larger fuel orders are split.\n- Fuel ships only in its original sealed container, in the warehouse's partitioned fuel cartons.\n\nAn order that mixes fuel with other items ships as two packages when the non-fuel items are\neligible for a faster service the customer has paid for. Otherwise the whole order ships ground.\n\nFuel-burning lanterns that have never had fuel in them are ordinary goods and ship by any\nservice. A fueled lantern, for example one coming back for repair, must be fully drained and\naired out before it ships; the Repair Center's instructions cover this.\n\n[3] customer-service-playbook.md > FUEL-01 Fuel shipping limits\n### FUEL-01 Fuel shipping limits\n\nHello {name}, Clearburn white gas, lamp oil and kerosene can only ship by ground within the lower\n48 states, and not to a PO box, to Alaska, to Hawaii or to Canada. I am sorry we cannot send the\nfuel in order {order} to that address. Both of our showrooms stock fuel for pickup, and the rest of\nyour order can ship as usual if you would like me to remove the fuel from it.\n\n[4] employee-handbook.md > Fuel safety in the showrooms\nDemonstration lanterns on the floor run on Clearburn white gas or lamp oil as the product\nrequires. Never fuel a demonstration lantern on the sales floor; take it to the back-room fueling\ntray. Never fuel a hot lantern; let it cool for 10 minutes. Spills are cleaned at once with the\nabsorbent pads in the cabinet, and the pads go in the red bin, not the trash.\n\nFire extinguishers at every location are checked monthly by Denise Okafor, the Warehouse\nManager, or by a person she designates in writing, and the check is recorded on the tag. If a tag\nis more than 31 days old, tell your manager that day. Every employee is shown how to use an\nextinguisher in their first week. A showroom never has fewer than two working extinguishers on\nthe floor.\n\nFuel sold in a showroom goes out in the customer's hands; we never ship fuel from a showroom.\nFuel ordered online ships by ground only from Hagerstown, never to a PO box and never to Alaska,\nHawaii or Canada. If a customer asks you to make an exception, the answer is no.\n\n[5] fuel-safety.md > Shipping fuel\n## Shipping fuel\n\nFuel ships by ground only, as a limited-quantity hazardous material (ORM-D), from the\nHagerstown warehouse. It cannot ship expedited or overnight, cannot be delivered to a PO box,\nand cannot be shipped to Alaska, Hawaii or Canada. An order that contains fuel ships as a whole\nby ground; if you want the rest of your order faster, place the fuel on its own order. Fuel is\nfinal sale once opened and cannot be returned by mail at all, opened or not; an unopened can\nbought in error can be returned to either showroom for a refund.\n\nNever ship a lantern with fuel in it, including for a warranty or repair return. Drain it,\nlet it air for a day, and pack it with the cap off. A lantern that arrives at Dock B with fuel\nin it is drained before it is looked at, and we charge nothing for that, but the carrier can\nrefuse the box and the law is on their side.\n\nQuestion: Can you ship Clearburn white gas to me in Toronto?",
+      "reply": "No. Clearburn white gas never ships to Canada [1][2]. If a Canadian order includes fuel, the fuel is removed and refunded before the rest of the order ships [1].",
+      "stopReason": "end_turn",
+      "inputTokens": 1616,
+      "outputTokens": 61,
+      "cost": 0.003842,
+      "ms": 1585
+    }
+  ],
+  "ms": 3392,
+  "tokens": {
+    "input": 1741,
+    "output": 105
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "total": 0.684,
+  "total": 0.9536,
   "runs": [
     {
       "run": "five",
@@ -128,6 +128,48 @@
       "failed": 2,
       "notRun": 0,
       "cost": 0.2547
+    },
+    {
+      "run": "bad-prompt",
+      "at": "2026-11-04T21:04:52.426Z",
+      "git": "09f27c1+changes",
+      "config": {
+        "options": {
+          "citeCheck": true,
+          "rewrite": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 0.5
+      },
+      "passed": 21,
+      "failed": 10,
+      "notRun": 0,
+      "cost": 0.1373
+    },
+    {
+      "run": "reverted",
+      "at": "2026-11-04T21:07:26.510Z",
+      "git": "09f27c1+changes",
+      "config": {
+        "options": {
+          "citeCheck": true,
+          "rewrite": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 0.5
+      },
+      "passed": 30,
+      "failed": 1,
+      "notRun": 0,
+      "cost": 0.1323
     }
   ]
 }

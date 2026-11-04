@@ -1,0 +1,188 @@
+{
+  "run": "bad-prompt",
+  "case": "sentinel-low-runtime",
+  "question": "How long does the Sentinel 1000 run on low?",
+  "options": {
+    "citeCheck": true,
+    "rewrite": true
+  },
+  "query": "Sentinel 1000 battery runtime in low power mode, battery life specifications, low setting operating duration",
+  "answer": "The Sentinel 1000 runs about 190 hours on low [2]. (The Pro runs 380 hours on low [3].)",
+  "citations": [
+    {
+      "n": 2,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99"
+    },
+    {
+      "n": 3,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99"
+    }
+  ],
+  "cost": 0.00498,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.5935634458649133
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5744976713619998
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5744134808893606
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.47657829198947566
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4261750651364621
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4213003642564028
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.39770624883967864
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.3761482970838546
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.3759584162407468
+    },
+    {
+      "id": 128,
+      "where": "faq.md > Does the Beacon 600 come with batteries?",
+      "score": 0.36097861109181206
+    },
+    {
+      "id": 286,
+      "where": "warranty.md > Safety notices",
+      "score": 0.3605418330017883
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3507436526209021
+    },
+    {
+      "id": 182,
+      "where": "release-notes.md > Known issues",
+      "score": 0.3487244846394604
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.34777930747403835
+    },
+    {
+      "id": 126,
+      "where": "faq.md > Is the Sentinel 1000 waterproof?",
+      "score": 0.34597721007448695
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3417029671868677
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.3411026333683184
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.3361031692468682
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.33529503328256743
+    },
+    {
+      "id": 34,
+      "where": "catalog.md > Beacon 400 (LS-400)",
+      "score": 0.33031479650509465
+    }
+  ],
+  "shown": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.5935634458649133
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5744976713619998
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5744134808893606
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.47657829198947566
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4261750651364621
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How long does the Sentinel 1000 run on low?",
+      "reply": "Sentinel 1000 battery runtime in low power mode, battery life specifications, low setting operating duration",
+      "stopReason": "end_turn",
+      "inputTokens": 121,
+      "outputTokens": 36,
+      "cost": 0.000602,
+      "ms": 1684
+    },
+    {
+      "kind": "embed",
+      "text": "Sentinel 1000 battery runtime in low power mode, battery life specifications, low setting operating duration",
+      "ms": 9
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.5\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n[2] catalog.md > Sentinel 1000 (LS-1000) — $149.99\n### Sentinel 1000 (LS-1000) — $149.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 10,000 mAh lithium-ion battery, USB-C charging |\n| Runtime, low | 190 hours |\n| Runtime, high | 12 hours |\n| Weight | 1.4 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Two detachable panels |\n| Colors | Slate |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, two panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 is the lantern we sell to people who lose power often. Its two light panels pull\noff the body and run on their own for up to 6 hours each, so one lantern lights the kitchen while a\npanel goes to the bathroom and another to the stairs. The body is sealed to IP67 and floats. The\n10,000 mAh battery charges over USB-C in about 7 hours and can run a phone from the USB-A port for\nseveral days. The Sentinel line carries a 5-year warranty on the lantern and panels; the battery,\nas on every rechargeable product, is covered for 1 year.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000.\n\n[3] catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n[4] faq.md > Can I use the Sentinel 1000 to charge my phone?\n### Can I use the Sentinel 1000 to charge my phone?\n\nYes. The Sentinel 1000 and the Sentinel 1000 Pro have a USB-A port that charges a phone, and the\n10,000 mAh battery in the Sentinel 1000 will charge a typical phone about three times with the\nlantern off. Charging a phone from the lantern shortens the lantern's own runtime accordingly.\n\n[5] warranty.md > Warranty periods\nThe standard warranty is 2 years. The Sentinel 1000 and Sentinel 1000 Pro carry 5 years because\ntheir housings and electronics are designed for it, and the company has the parts to honor it.\nThe Heritage No. 7 carries 10 years under the Heritage Promise, which dates from the lamp's\nintroduction in 1994 and has never been shortened.\n\nRechargeable batteries and battery packs, whether built in or removable, are covered for 1 year\nfrom the date of purchase, regardless of the warranty period of the product they are in. A\nbattery is considered defective if it holds less than 70% of its rated capacity within the first\nyear under normal charging; capacity loss beyond that is wear.\n\nSecond Light refurbished items are covered for 1 year from purchase, whatever the model's new\nwarranty would be. The refurbished warranty is noted on the receipt.\n\nQuestion: How long does the Sentinel 1000 run on low?",
+      "reply": "The Sentinel 1000 runs about 190 hours on low [2]. (The Pro runs 380 hours on low [3].)",
+      "stopReason": "end_turn",
+      "inputTokens": 1969,
+      "outputTokens": 44,
+      "cost": 0.004378,
+      "ms": 1702
+    }
+  ],
+  "ms": 3397,
+  "tokens": {
+    "input": 2090,
+    "output": 80
+  }
+}

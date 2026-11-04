@@ -4,6 +4,7 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { SERVED } from "./config";
 import { allChunks } from "./db";
+import { logQuestion } from "./log";
 import { realModels } from "./models";
 import { answer } from "./pipeline";
 
@@ -18,7 +19,9 @@ createServer(async (request, response) => {
     const { question } = JSON.parse(await body(request)) as { question?: string };
     if (!question) return reply(response, 400, { error: "a question is required" });
     // Switch on what your numbers justify (src/config.ts). The cite check is always cheap.
-    reply(response, 200, await answer(question, SERVED, deps));
+    const result = await answer(question, SERVED, deps);
+    logQuestion(question, result);
+    reply(response, 200, result);
   } catch (error) {
     reply(response, 500, { error: String(error) });
   }
