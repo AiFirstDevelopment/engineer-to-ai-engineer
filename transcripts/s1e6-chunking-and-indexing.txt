@@ -1,0 +1,30 @@
+$ npx tsx src/index.ts
+about.md: 11 chunks
+catalog.md: 24 chunks
+customer-service-playbook.md: 26 chunks
+employee-handbook.md: 32 chunks
+faq.md: 54 chunks
+fuel-safety.md: 11 chunks
+lumen-rewards.md: 13 chunks
+release-notes.md: 26 chunks
+repair-manual.pdf: 18 chunks
+returns-policy.md: 18 chunks
+shipping.md: 20 chunks
+showrooms.md: 15 chunks
+warranty.md: 19 chunks
+13 of 13 files indexed, 0 unchanged, 287 chunks in the store, 3.5s
+
+$ npx tsx src/index.ts
+0 of 13 files indexed, 13 unchanged, 287 chunks in the store, 0.0s
+
+$ npx tsx src/search.ts "what is the bench fee for an out-of-warranty repair"
+0.685  repair-manual.pdf p.1
+       Each ticket gets a coloured tag tied to the bail or handle: Red tag: warranty re...
+0.682  warranty.md > Out of warranty
+       ## Out of warranty Products outside their warranty period, and declined claims, ...
+0.471  warranty.md > Turnaround
+       ### Turnaround A warranty repair is completed within 10 business days of arrival...
+0.464  customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging
+       ### Scenario 2: a Sentinel 1000 Pro that stopped charging On Thursday, September...
+0.436  warranty.md > Decision
+       ### Decision A decision is made within 5 business days of the claim being opened...

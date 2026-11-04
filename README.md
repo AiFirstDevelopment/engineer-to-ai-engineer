@@ -208,6 +208,43 @@ rows, or many searches a second, you add a vector index (`sqlite-vec`, `pgvector
 database), which is the same decision as adding an index to any other table, made for the same
 reason, and not before.
 
+### 6. Chunking and indexing is ETL (`s1e6`)
+
+Extract, transform, load. You have written this job before.
+
+Files: `src/extract.ts` turns a file into text: a Markdown file as it is, a PDF page by page
+through `unpdf`, with the page number kept, because "page 3 of the repair manual" is how a
+person wants it cited. `src/chunk.ts` turns text into chunks, the unit we embed, store, search
+and show the model: it splits at headings first, because a heading is where the author changed
+the subject, then packs long sections paragraph by paragraph into pieces of about 1,200
+characters (300 tokens or so), each starting with the last paragraph of the one before, the
+overlap, so a fact on a boundary is whole in one of them. A PDF comes out as lines, not
+paragraphs, so there a line is the unit, and it has no headings, so its chunks carry a page
+instead. Every chunk keeps its source, heading and page. `src/db.ts` grows those columns, a
+`position` (the chunk's place in its file, for episode 8), a `files` table with a SHA-256 hash
+of each file, and a schema version: the store is a cache of `docs/`, and when its shape changes
+it is thrown away and rebuilt. `src/index.ts` is the job: for each file in `docs/`, hash it;
+if the hash is the one stored, skip it; otherwise delete its old chunks, extract, chunk, embed,
+insert, and remember the hash; files that disappeared are removed. `src/search.ts` now only
+searches, and shows where each hit came from.
+
+```sh
+npx tsx src/index.ts
+npx tsx src/index.ts
+npx tsx src/search.ts "what is the bench fee for an out-of-warranty repair"
+```
+
+The transcript, `transcripts/s1e6-chunking-and-indexing.txt`, shows the first run indexing
+13 files into 287 chunks in 3.5 seconds (the 414 bare paragraphs of episode 5 are gone;
+headings travel with their text now, and the FAQ's 54 question-and-answer pairs are the largest
+share), the second run skipping all 13 in no time, and a search for the bench fee landing on
+page 1 of the repair manual at 0.685: a fact that exists nowhere else in the corpus, found in a
+PDF, with its page number. Nothing here calls Claude.
+
+Why `unpdf` and not `pdf-parse`, the usual answer: it is plain JavaScript (pdf.js underneath),
+an ES module, with no native build, and it gives the text page by page in one call; `pdf-parse`
+is CommonJS and returns one blob for the whole file unless you hook into its page renderer.
+
 ## Tags
 
 | Tag | Episode |
@@ -217,6 +254,7 @@ reason, and not before.
 | `s1e3` | Prompts are code |
 | `s1e4` | Why it can't read your documents |
 | `s1e5` | Embeddings, for people who know SQL |
+| `s1e6` | Chunking and indexing is ETL |
 
 ## Dependencies
 
@@ -226,6 +264,7 @@ Every dependency, with its one-line reason.
   underneath); no embedding API, no key.
 - `better-sqlite3`: SQLite in-process and synchronous, the simplest database there is; npm
   installs a prebuilt binary.
+- `unpdf`: text out of a PDF, page by page; plain JavaScript on top of pdf.js, no native build.
 
 Development dependencies:
 
