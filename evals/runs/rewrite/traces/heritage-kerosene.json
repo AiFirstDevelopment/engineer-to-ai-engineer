@@ -1,0 +1,199 @@
+{
+  "run": "rewrite",
+  "case": "heritage-kerosene",
+  "question": "Can I burn kerosene in my Heritage No. 7?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Heritage No. 7 approved fuels, permitted fuel types, kerosene use, fuel specifications and warnings in owner's manual",
+  "answer": "Kerosene will physically work in the Heritage No. 7, but it smokes, smells, and stains the brass gallery [3]. It also voids the 10-year Heritage Promise warranty [1][4], so use Clearburn lamp oil only [2].",
+  "citations": [
+    {
+      "n": 3,
+      "where": "fuel-safety.md > Approved fuels by product"
+    },
+    {
+      "n": 1,
+      "where": "faq.md > What fuel goes in the Heritage No. 7?"
+    },
+    {
+      "n": 4,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99"
+    },
+    {
+      "n": 2,
+      "where": "fuel-safety.md > Approved fuels by product"
+    }
+  ],
+  "cost": 0.005592,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 136,
+      "where": "faq.md > What fuel goes in the Heritage No. 7?",
+      "score": 0.6700956465904048
+    },
+    {
+      "id": 149,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.5954583788419137
+    },
+    {
+      "id": 150,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.5481155933315146
+    },
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.5134768882450069
+    },
+    {
+      "id": 151,
+      "where": "fuel-safety.md > The fuels we sell",
+      "score": 0.510377509737046
+    },
+    {
+      "id": 222,
+      "where": "returns-policy.md > Fuel put in means no return",
+      "score": 0.49763673927800806
+    },
+    {
+      "id": 139,
+      "where": "faq.md > Can I run a fuel lantern indoors?",
+      "score": 0.4969514246906916
+    },
+    {
+      "id": 58,
+      "where": "customer-service-playbook.md > FUEL-01 Fuel shipping limits",
+      "score": 0.4938561585105576
+    },
+    {
+      "id": 243,
+      "where": "shipping.md > Fuel and hazardous materials",
+      "score": 0.48593384737299256
+    },
+    {
+      "id": 148,
+      "where": "fuel-safety.md > Fuel Safety Guide",
+      "score": 0.4851269529067067
+    },
+    {
+      "id": 276,
+      "where": "warranty.md > What is not covered",
+      "score": 0.48314053072997326
+    },
+    {
+      "id": 137,
+      "where": "faq.md > What fuel goes in the Hagerstown Kerosene Lantern?",
+      "score": 0.48270531814703393
+    },
+    {
+      "id": 135,
+      "where": "faq.md > Can I burn kerosene in the Northstar?",
+      "score": 0.4717802177608233
+    },
+    {
+      "id": 156,
+      "where": "fuel-safety.md > Disposal",
+      "score": 0.470725076354322
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.4686940330061734
+    },
+    {
+      "id": 223,
+      "where": "returns-policy.md > Final sale, no returns",
+      "score": 0.45956770473048386
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.44521208132259826
+    },
+    {
+      "id": 195,
+      "where": "release-notes.md > 3.7 — April 15, 2025",
+      "score": 0.4399781723821383
+    },
+    {
+      "id": 23,
+      "where": "catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99",
+      "score": 0.4396565515605938
+    },
+    {
+      "id": 22,
+      "where": "catalog.md > Fuel lanterns and oil lamps",
+      "score": 0.42306011827143
+    }
+  ],
+  "shown": [
+    {
+      "id": 136,
+      "where": "faq.md > What fuel goes in the Heritage No. 7?",
+      "score": 0.6700956465904048
+    },
+    {
+      "id": 149,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.5954583788419137
+    },
+    {
+      "id": 150,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.5481155933315146
+    },
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.5134768882450069
+    },
+    {
+      "id": 151,
+      "where": "fuel-safety.md > The fuels we sell",
+      "score": 0.510377509737046
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Can I burn kerosene in my Heritage No. 7?",
+      "reply": "Heritage No. 7 approved fuels, permitted fuel types, kerosene use, fuel specifications and warnings in owner's manual",
+      "stopReason": "end_turn",
+      "inputTokens": 124,
+      "outputTokens": 47,
+      "cost": 0.000718,
+      "ms": 1726
+    },
+    {
+      "kind": "embed",
+      "text": "Heritage No. 7 approved fuels, permitted fuel types, kerosene use, fuel specifications and warnings in owner's manual",
+      "ms": 11
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > What fuel goes in the Heritage No. 7?\n### What fuel goes in the Heritage No. 7?\n\nClearburn lamp oil only. Kerosene will burn but smokes, smells, and voids the 10-year warranty.\n\n[2] fuel-safety.md > Approved fuels by product\n## Approved fuels by product\n\nEach fuel lantern is designed for a particular fuel, and the fuels are not interchangeable.\nUsing the wrong fuel is the most common cause of damage we see at the Repair Center, and\ndamage from an unapproved fuel is not covered by the warranty.\n\n| Product | Approved fuel | Never use |\n|---|---|---|\n| Northstar Dual-Fuel (LS-ND2) | Clearburn white gas or unleaded gasoline | Kerosene, lamp oil |\n| Hagerstown Kerosene Lantern (LS-HK12) | K-1 kerosene or Clearburn lamp oil | White gas, gasoline |\n| Heritage No. 7 Brass Oil Lamp (LS-H7) | Clearburn lamp oil only | Kerosene, white gas |\n\nThe Northstar is called dual-fuel because it burns either Clearburn white gas or ordinary\nunleaded gasoline from the pump. White gas burns cleaner and keeps the generator clear for\nlonger; unleaded is a fallback for when you cannot get white gas, not an everyday fuel. It must\nnever be fed kerosene. Kerosene will not vaporise in the Northstar's generator; it varnishes the\ntube and sticks the check valve, and the lantern will need a paid repair.\n\n[3] fuel-safety.md > Approved fuels by product\nThe Northstar is called dual-fuel because it burns either Clearburn white gas or ordinary\nunleaded gasoline from the pump. White gas burns cleaner and keeps the generator clear for\nlonger; unleaded is a fallback for when you cannot get white gas, not an everyday fuel. It must\nnever be fed kerosene. Kerosene will not vaporise in the Northstar's generator; it varnishes the\ntube and sticks the check valve, and the lantern will need a paid repair.\n\nThe Hagerstown Kerosene Lantern is a wick lantern and burns K-1 kerosene, which is the clear,\nlow-sulphur grade sold for heaters, or Clearburn lamp oil. Lamp oil burns with less smell and\nis the better choice indoors. Do not use white gas or gasoline in any wick lantern; both are\nfar too volatile for an open wick and the flame can run back into the tank.\n\nThe Heritage No. 7 burns Clearburn lamp oil only. Kerosene will work mechanically, but it\nsmokes, smells and stains the brass gallery, and scented or coloured decorative oils leave a\nresidue that clogs the wick. The 10-year Heritage Promise warranty does not cover damage from\nany fuel other than lamp oil.\n\n[4] catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n### Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n\n| Specification | Value |\n| --- | --- |\n| Type | Table oil lamp |\n| Fuel | Clearburn lamp oil only |\n| Font | 7-inch solid brass, holds 14 oz |\n| Runtime | About 30 hours per fill |\n| Chimney | Glass, part CH-7 |\n| Wick | #2 flat wick, part W-78 |\n| Weight | 1.2 kg |\n| Warranty | 10 years (the Heritage Promise) |\n| In the box | Lamp, chimney, one wick fitted |\n\nThe Heritage No. 7 is the oil lamp we have made in one form or another since 1987, and the only\nproduct in this catalogue that carries a 10-year warranty. The font is spun from solid brass and\npolished by hand; the burner is nickel-plated brass; the chimney is borosilicate glass. It burns\nClearburn lamp oil only. Kerosene will work but smokes and smells, and it voids the Heritage\nPromise. A full 14-ounce font gives about 30 hours of light. The chimney is part CH-7 and is the\nonly part that breaks in normal use; it is sold separately and ships in a padded box.\n\nCompatible parts: chimney CH-7, #2 flat wick 5-pack W-78, Clearburn Lamp Oil LS-OIL1.\n\n[5] fuel-safety.md > The fuels we sell\n## The fuels we sell\n\nClearburn White Gas (LS-FUEL1) is sold in 1-quart cans at $12.99. It is a naphtha fuel, highly\nrefined, with no additives, and it is what the Northstar was designed around. Clearburn Lamp\nOil (LS-OIL1) is sold in 1-quart bottles at $9.99; it is a clear paraffin oil for wick lanterns\nand lamps. We do not sell kerosene. K-1 kerosene is available at most hardware stores and some\nfuel stations; buy it in a container marked for kerosene, never in a gasoline can.\n\nShelf life of Clearburn white gas is 5 years in a sealed can and about 1 year once the can has\nbeen opened; write the date you opened it on the can with a marker. Lamp oil keeps indefinitely\nif the bottle is closed. Old white gas does not become dangerous, but it gums the generator and\nthe lantern will burn poorly. If a can has been open for more than a year, dispose of it as\ndescribed below and buy fresh.\n\nQuestion: Can I burn kerosene in my Heritage No. 7?",
+      "reply": "Kerosene will physically work in the Heritage No. 7, but it smokes, smells, and stains the brass gallery [3]. It also voids the 10-year Heritage Promise warranty [1][4], so use Clearburn lamp oil only [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 2017,
+      "outputTokens": 84,
+      "cost": 0.004874,
+      "ms": 1642
+    }
+  ],
+  "ms": 3380,
+  "tokens": {
+    "input": 2141,
+    "output": 131
+  }
+}

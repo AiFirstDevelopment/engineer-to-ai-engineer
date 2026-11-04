@@ -1,0 +1,195 @@
+{
+  "run": "rewrite",
+  "case": "restocking-fee",
+  "question": "What is the restocking fee on an opened item that is not defective?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "restocking fee opened non-defective merchandise returns policy percentage",
+  "answer": "The restocking fee is 12% of the item price (calculated on the price paid after discounts, before tax and shipping) [3]. It is also stated as 12% in [1] and [2].",
+  "citations": [
+    {
+      "n": 3,
+      "where": "returns-policy.md > Restocking fee"
+    },
+    {
+      "n": 1,
+      "where": "faq.md > Is there a restocking fee?"
+    },
+    {
+      "n": 2,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping"
+    }
+  ],
+  "cost": 0.00383,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.7894020685767495
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.7356184126848414
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.57784251595607
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.5366065622313978
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4914242136476982
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.46762613768183836
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.4668239661451834
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.4652390930911148
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.45003908974134876
+    },
+    {
+      "id": 229,
+      "where": "returns-policy.md > Exchanges",
+      "score": 0.4432230426643524
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.441362716239902
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.43771867095369626
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.4349960774547134
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.4255101843332931
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.41843141355923075
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.4100790951830228
+    },
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.4082514630936985
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.38811898449389665
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.38785599977060947
+    },
+    {
+      "id": 51,
+      "where": "customer-service-playbook.md > Chargebacks",
+      "score": 0.37764667456779266
+    }
+  ],
+  "shown": [
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.7894020685767495
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.7356184126848414
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.57784251595607
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.5366065622313978
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4914242136476982
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the restocking fee on an opened item that is not defective?",
+      "reply": "restocking fee opened non-defective merchandise returns policy percentage",
+      "stopReason": "end_turn",
+      "inputTokens": 123,
+      "outputTokens": 24,
+      "cost": 0.000486,
+      "ms": 1048
+    },
+    {
+      "kind": "embed",
+      "text": "restocking fee opened non-defective merchandise returns policy percentage",
+      "ms": 10
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Is there a restocking fee?\n### Is there a restocking fee?\n\nA 12 percent restocking fee applies to opened items that are not defective. There is no fee on an\nexchange, on an item that arrived defective, or on an item that is still sealed.\n\n[2] customer-service-playbook.md > Restocking fee and return shipping\n### Restocking fee and return shipping\n\nA 12% restocking fee applies to opened, non-defective items. It is waived on exchanges and on\ndefective items. It is not charged on items returned unopened. Say the fee before you issue the RA\nnumber; nobody should learn about it from the refund amount.\n\nReturn shipping is paid by the customer unless the item is defective or we shipped the wrong item.\nWe offer a prepaid return label for a flat $8.50, deducted from the refund. For a defective item\nor our mistake, send the label at no charge and do not charge the restocking fee.\n\n[3] returns-policy.md > Restocking fee\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\n[4] returns-policy.md > Return shipping\n## Return shipping\n\nThe customer pays return shipping unless the item is defective or the wrong item was shipped.\nCustomers may use any carrier they like and are responsible for the package until it arrives\nat the Hagerstown warehouse; the Customer Service team recommends tracking and insurance on\nanything over $100.\n\nA prepaid return label is offered on every mailed return for a flat $8.50, deducted from the\nrefund. The label is a UPS Ground label addressed to the warehouse and is good for 14 days from\nthe day it is issued. One label covers one package; a return of more than one package needs a\nlabel per package, each at $8.50.\n\nWhen the item is defective or the wrong item was shipped, the prepaid label is free and no\nrestocking fee applies.\n\n[5] customer-service-playbook.md > Scenario 1: a return just outside the window\n### Scenario 1: a return just outside the window\n\nOn Monday, October 12, 2026, a customer emails about order LS-2026-008316, a Beacon 600 ordered\non August 20 and delivered on August 29. She wants to return it because she bought a Sentinel 1000\ninstead. Forty days from August 29 is October 8, so the window closed four days before she wrote.\nThe agent replies with RET-01, adjusted: the lantern is unused and boxed, so the agent offers,\nwith the shift lead's okay, an exchange toward the Sentinel 1000 as a one-time courtesy, with the\n12% restocking fee waived because it is an exchange. The customer accepts. The agent issues\nRA-121877, offers the $8.50 prepaid label, and notes the courtesy on the ticket. The exchange\ndifference is charged when the Beacon 600 arrives at Hagerstown.\n\nQuestion: What is the restocking fee on an opened item that is not defective?",
+      "reply": "The restocking fee is 12% of the item price (calculated on the price paid after discounts, before tax and shipping) [3]. It is also stated as 12% in [1] and [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1377,
+      "outputTokens": 59,
+      "cost": 0.003344,
+      "ms": 2188
+    }
+  ],
+  "ms": 3247,
+  "tokens": {
+    "input": 1500,
+    "output": 83
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "total": 0.1994,
+  "total": 0.684,
   "runs": [
     {
       "run": "five",
@@ -60,6 +60,74 @@
       "failed": 1,
       "notRun": 24,
       "cost": 0.0224
+    },
+    {
+      "run": "corpus",
+      "at": "2026-11-04T20:52:50.931Z",
+      "git": "fa53488+changes",
+      "config": {
+        "options": {
+          "citeCheck": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 1
+      },
+      "passed": 29,
+      "failed": 1,
+      "notRun": 0,
+      "cost": 0.1042
+    },
+    {
+      "run": "rewrite",
+      "at": "2026-11-04T20:54:12.694Z",
+      "git": "fa53488+changes",
+      "config": {
+        "options": {
+          "hybrid": false,
+          "rerank": false,
+          "widen": false,
+          "citeCheck": false,
+          "rewrite": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 1
+      },
+      "passed": 30,
+      "failed": 0,
+      "notRun": 0,
+      "cost": 0.1257
+    },
+    {
+      "run": "widen",
+      "at": "2026-11-04T20:56:46.993Z",
+      "git": "fa53488+changes",
+      "config": {
+        "options": {
+          "hybrid": false,
+          "rerank": false,
+          "widen": true,
+          "citeCheck": false,
+          "rewrite": true
+        },
+        "MIN_SCORE": 0.25,
+        "SHOWN": 5,
+        "POOL": 20,
+        "model": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+        "budget": 1
+      },
+      "passed": 28,
+      "failed": 2,
+      "notRun": 0,
+      "cost": 0.2547
     }
   ]
 }

@@ -1,0 +1,191 @@
+{
+  "run": "widen",
+  "case": "restocking-fee",
+  "question": "What is the restocking fee on an opened item that is not defective?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "restocking fee opened non-defective merchandise returns policy percentage",
+  "answer": "The restocking fee is 12% of the price paid (after discounts, before tax and shipping) [3][1]. It's waived for exchanges, defective items, wrong items shipped, and a Beacon-tier member's first return of the year [3].",
+  "citations": [
+    {
+      "n": 3,
+      "where": "returns-policy.md > Restocking fee"
+    },
+    {
+      "n": 1,
+      "where": "faq.md > Is there a restocking fee?"
+    }
+  ],
+  "cost": 0.00793,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.7894020685767495
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.7356184126848414
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.57784251595607
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.5366065622313978
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4914242136476982
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.46762613768183836
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.4668239661451834
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.4652390930911148
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.45003908974134876
+    },
+    {
+      "id": 229,
+      "where": "returns-policy.md > Exchanges",
+      "score": 0.4432230426643524
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.441362716239902
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.43771867095369626
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.4349960774547134
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.4255101843332931
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.41843141355923075
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.4100790951830228
+    },
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.4082514630936985
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.38811898449389665
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.38785599977060947
+    },
+    {
+      "id": 51,
+      "where": "customer-service-playbook.md > Chargebacks",
+      "score": 0.37764667456779266
+    }
+  ],
+  "shown": [
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.7894020685767495
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.7356184126848414
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.57784251595607
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.5366065622313978
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4914242136476982
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the restocking fee on an opened item that is not defective?",
+      "reply": "restocking fee opened non-defective merchandise returns policy percentage",
+      "stopReason": "end_turn",
+      "inputTokens": 123,
+      "outputTokens": 24,
+      "cost": 0.000486,
+      "ms": 1186
+    },
+    {
+      "kind": "embed",
+      "text": "restocking fee opened non-defective merchandise returns policy percentage",
+      "ms": 9
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Is there a restocking fee?\n### Does the return period start when I order or when I receive it?\n\nIt starts on the delivery date recorded by the carrier, not the day you ordered or the day we\nshipped. Since May 2026 the online store counts the 40 days from delivery automatically.\n\n### Is there a restocking fee?\n\nA 12 percent restocking fee applies to opened items that are not defective. There is no fee on an\nexchange, on an item that arrived defective, or on an item that is still sealed.\n\n### Who pays for return shipping?\n\nYou do, unless the item is defective or we sent the wrong thing. If you would rather not arrange\nshipping yourself, we can email you a prepaid label for a flat $8.50, which we deduct from your\nrefund.\n\n[2] customer-service-playbook.md > Restocking fee and return shipping\n### Issuing an RA number\n\nEvery mailed return needs a return authorization number in the form RA-xxxxxx (six digits), for\nexample RA-118204. Customers get one themselves through Start a return on the online store, which\nhas issued RA numbers automatically since Hearth 4.1. On the phone, open the order in the Hearth\nadmin, choose Create return, pick the items and the reason, and read the RA number back to the\ncustomer. Also email it. A return that arrives at Hagerstown without an RA number waits in the\n\"no RA\" bin until someone matches it, which adds days to the refund, so always issue one.\n\nIn-store returns at either showroom do not need an RA number, only the packing slip or the order\nnumber.\n\n### Restocking fee and return shipping\n\nA 12% restocking fee applies to opened, non-defective items. It is waived on exchanges and on\ndefective items. It is not charged on items returned unopened. Say the fee before you issue the RA\nnumber; nobody should learn about it from the refund amount.\n\nReturn shipping is paid by the customer unless the item is defective or we shipped the wrong item.\nWe offer a prepaid return label for a flat $8.50, deducted from the refund. For a defective item\nor our mistake, send the label at no charge and do not charge the restocking fee.\n\n### Refunds\n\nA refund goes to the original payment method within 7 business days of the return arriving at\nthe Hagerstown warehouse. Tell the customer the clock starts on arrival, not on the day they\nship, and that their bank may take a few more days to show it. Refunds over $500 need Tomas\nReyes's approval before they are released (see Goodwill and approvals).\n\n[3] returns-policy.md > Restocking fee\n### Final sale, no returns\n\nThe following are sold as final sale and cannot be returned or exchanged:\n\n- Clearance items marked \"Last Light\" on the product page, the price tag or the receipt.\n- Custom-engraved items, including engraved Heritage No. 7 lamps and engraved gift sets.\n- Gift cards, physical and electronic.\n- Opened fuel: Clearburn White Gas (LS-FUEL1), Clearburn Lamp Oil (LS-OIL1) and kerosene.\n- Mantles (M-21), wicks (W-78), chimneys (CH-7), globes and other consumables once the\n  packaging has been opened.\n\nUnopened fuel and unopened consumables may be returned under the ordinary rules, but fuel cannot\nbe mailed back; it must be brought to a showroom.\n\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\n## Return shipping\n\nThe customer pays return shipping unless the item is defective or the wrong item was shipped.\nCustomers may use any carrier they like and are responsible for the package until it arrives\nat the Hagerstown warehouse; the Customer Service team recommends tracking and insurance on\nanything over $100.\n\nA prepaid return label is offered on every mailed return for a flat $8.50, deducted from the\nrefund. The label is a UPS Ground label addressed to the warehouse and is good for 14 days from\nthe day it is issued. One label covers one package; a return of more than one package needs a\nlabel per package, each at $8.50.\n\nWhen the item is defective or the wrong item was shipped, the prepaid label is free and no\nrestocking fee applies.\n\n[4] returns-policy.md > Return shipping\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\n## Return shipping\n\nThe customer pays return shipping unless the item is defective or the wrong item was shipped.\nCustomers may use any carrier they like and are responsible for the package until it arrives\nat the Hagerstown warehouse; the Customer Service team recommends tracking and insurance on\nanything over $100.\n\nA prepaid return label is offered on every mailed return for a flat $8.50, deducted from the\nrefund. The label is a UPS Ground label addressed to the warehouse and is good for 14 days from\nthe day it is issued. One label covers one package; a return of more than one package needs a\nlabel per package, each at $8.50.\n\nWhen the item is defective or the wrong item was shipped, the prepaid label is free and no\nrestocking fee applies.\n\n## Return authorization numbers\n\nEvery mailed return needs a return authorization number before it ships. RA numbers have the form\nRA- followed by six digits, for example RA-118204. The number is printed on the packing slip\nthat comes with the prepaid label and must also be written on the outside of the box.\n\nCustomers obtain an RA number by:\n\n- Using \"Start a return\" on the online store, which issues the number immediately for any\n  eligible order and emails it with a packing slip.\n- Calling (301) 555-0147 during support hours. The agent creates the return in Hearth and reads\n  the number back.\n\nA package that arrives at the warehouse without an RA number is held for 10 business days while\nthe warehouse tries to match it to an order. If it cannot be matched it is returned to the sender\nat the sender's cost. The RA number is valid for 30 days from issue.\n\n[5] customer-service-playbook.md > Scenario 1: a return just outside the window\n## Worked scenarios\n\n### Scenario 1: a return just outside the window\n\nOn Monday, October 12, 2026, a customer emails about order LS-2026-008316, a Beacon 600 ordered\non August 20 and delivered on August 29. She wants to return it because she bought a Sentinel 1000\ninstead. Forty days from August 29 is October 8, so the window closed four days before she wrote.\nThe agent replies with RET-01, adjusted: the lantern is unused and boxed, so the agent offers,\nwith the shift lead's okay, an exchange toward the Sentinel 1000 as a one-time courtesy, with the\n12% restocking fee waived because it is an exchange. The customer accepts. The agent issues\nRA-121877, offers the $8.50 prepaid label, and notes the courtesy on the ticket. The exchange\ndifference is charged when the Beacon 600 arrives at Hagerstown.\n\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\nQuestion: What is the restocking fee on an opened item that is not defective?",
+      "reply": "The restocking fee is 12% of the price paid (after discounts, before tax and shipping) [3][1]. It's waived for exchanges, defective items, wrong items shipped, and a Beacon-tier member's first return of the year [3].",
+      "stopReason": "end_turn",
+      "inputTokens": 3332,
+      "outputTokens": 78,
+      "cost": 0.007444,
+      "ms": 1759
+    }
+  ],
+  "ms": 2956,
+  "tokens": {
+    "input": 3455,
+    "output": 102
+  }
+}

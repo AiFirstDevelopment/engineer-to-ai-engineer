@@ -52,3 +52,16 @@ test("the reranker brings an answer from outside the top five into view", async 
 function deps(chunks: Awaited<ReturnType<typeof corpus>>) {
   return { models: fakeModels(), chunks };
 }
+
+test("a rewritten query finds what the question's own words do not", async () => {
+  const chunks = await corpus([
+    "Employee discount: half price on Second Light items. <<say: Half price.>>",
+    "Can I buy refurbished lanterns for less? They sell at a discount.",
+  ]);
+  const question = "Can staff buy refurbished lanterns for less?";
+  const plain = await answer(question, {}, deps(chunks));
+  const rewritten = await answer(question, { rewrite: true }, deps(chunks));
+  assert.equal(plain.shown[0].id, 2);
+  assert.equal(rewritten.query, "employee discount");
+  assert.equal(rewritten.shown[0].id, 1);
+});

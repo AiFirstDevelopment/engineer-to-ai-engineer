@@ -1,7 +1,8 @@
 // The judge: what a rule cannot decide. A string match can say "340" is in the answer; it
 // cannot say whether every statement is backed by the passages, or whether [2] points at the
 // passage that says it. A cheap model reads what the answering model read (its instructions and
-// its prompt) and the answer it wrote, once per case, and returns a verdict in a fixed shape.
+// its prompt) and the answer it wrote, once per case, and returns a verdict in a fixed shape:
+// grounded or not, and a verdict per citation, from which the code decides "cited".
 import type { Models } from "../src/models";
 
 export const JUDGE_MODEL = "claude-haiku-5-5";
@@ -12,22 +13,36 @@ the facts, not the style: wording, caution and hedging do not matter. Decide two
 grounded: every statement of fact in the answer is supported by the passages, directly or by
 a plain reading of them under the instructions. Saying the passages do not state something is
 grounded when they indeed do not state it.
-cited: every citation [n] points at a passage that supports the statement it is attached to.
-A statement without a citation is not a citation error. An answer with no citations at all is
-not cited. Give the reason first, in one sentence.`;
+citations: for each citation [n] in the answer, the statement it is attached to (the sentence
+or clause just before it, not a later one) and whether passage n supports that statement. A
+statement without a citation is not a citation error. Give the reason first, in one sentence.`;
 
 const schema = {
   type: "object",
   properties: {
     reason: { type: "string" },
     grounded: { type: "boolean" },
-    cited: { type: "boolean" },
+    citations: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          n: { type: "integer" },
+          statement: { type: "string" },
+          supports: { type: "boolean" },
+        },
+        required: ["n", "statement", "supports"],
+        additionalProperties: false,
+      },
+    },
   },
-  required: ["reason", "grounded", "cited"],
+  required: ["reason", "grounded", "citations"],
   additionalProperties: false,
 };
 
-export type Verdict = { reason: string; grounded: boolean; cited: boolean };
+type Reply = { reason: string; grounded: boolean; citations: { n: number; supports: boolean }[] };
+// cited: the answer has citations and the judge found every one supports its statement.
+export type Verdict = Reply & { cited: boolean };
 
 export async function judge(
   read: { system?: string; prompt: string }, // what the answering model was given
@@ -40,5 +55,7 @@ export async function judge(
     [{ role: "user", content }],
     { model: JUDGE_MODEL, system: SYSTEM, format: schema, maxTokens: 1024 },
   );
-  return { ...(JSON.parse(reply.text) as Verdict), cost: reply.cost };
+  const verdict = JSON.parse(reply.text) as Reply;
+  const cited = verdict.citations.length > 0 && verdict.citations.every((c) => c.supports);
+  return { ...verdict, cited, cost: reply.cost };
 }

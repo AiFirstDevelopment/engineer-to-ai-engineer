@@ -1,0 +1,181 @@
+{
+  "run": "widen",
+  "case": "sentinel-2000",
+  "question": "When does the Sentinel 2000 come out?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Sentinel 2000 release date, launch schedule, product availability, general availability date",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.00949,
+  "retrieved": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.45493973308985713
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4455252849063261
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.42412612531598765
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.41587438353088946
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.41240534349169516
+    },
+    {
+      "id": 4,
+      "where": "about.md > Timeline",
+      "score": 0.3922324872633267
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3916934153861453
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.37969434341963804
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.3733320716739306
+    },
+    {
+      "id": 129,
+      "where": "faq.md > Do you still sell the Beacon 400?",
+      "score": 0.3705324448026877
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.36805866265197174
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3602089943699993
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.35961654343561744
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.3411477497081476
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.3358920034680445
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.3205781447535911
+    },
+    {
+      "id": 214,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.3170588907501237
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.3114693375493112
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.3054679348759816
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.3036678964880405
+    }
+  ],
+  "shown": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.45493973308985713
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4455252849063261
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.42412612531598765
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.41587438353088946
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.41240534349169516
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "When does the Sentinel 2000 come out?",
+      "reply": "Sentinel 2000 release date, launch schedule, product availability, general availability date",
+      "stopReason": "end_turn",
+      "inputTokens": 119,
+      "outputTokens": 28,
+      "cost": 0.000518,
+      "ms": 1454
+    },
+    {
+      "kind": "embed",
+      "text": "Sentinel 2000 release date, launch schedule, product availability, general availability date",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.5\n1. Unscrew the top cap (counter-clockwise, four full turns) and lift the globe (part G-600)\nstraight up.\n2. The globe gasket is part G-600G. Lift it out with the pick, not with a screwdriver.\nReplace it if it is flattened, cracked, or if there was water in the base.\n3. Seat the new G-600G in the channel with the lip facing up. Press it down all the way\nround.\n4. Fit the globe and screw the cap down until it stops, then back it off a quarter turn so\nthe gasket is not crushed.\n5. Water test: run the shower head over the lantern for 2 minutes on the wet bench, then\nopen it and check the base is dry. The Beacon 600 is rated IPX5 and a repaired one\nmust meet it.\nBattery contacts\n1. Remove the base plate (three Phillips screws, 0.6 N·m on refit).\n2. If a cell has leaked, neutralise the deposit with the vinegar swab, then rinse with the\ncontact cleaner and dry.\n3. Brush the four contacts and the two springs with the fibre brush until they are bright.\n4. Fit four fresh test cells from the bench stock, check the lantern lights on both levels\nand in red night mode, then remove the test cells. We do not ship the Beacon 600 with\ncells.\nSentinel 1000 and 1000 Pro\n\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n2. Open the base: the four T8 Torx screws are under the rubber feet. Lift the feet with the\nspudger and keep them; they are not sold separately.\n3. Lift the pack out by the pull tab and unplug the three-pin connector. Do not pull on the\nwires.\n4. Fit the new B-1000-21 (or B-1000P-21), connect, and run the self-test by holding the\npower button for 8 seconds. Four blinks is a pass.\n5. Refit the screws to 0.5 N·m and press the feet back on.\n6. A bad pack goes to the LI cabinet with the ticket number written on it in marker.\nPanel latch\n1. Each detachable panel is held by a latch with a spring (part L-1000S). A panel that\ndrops when the lantern is tilted has a tired spring.\n2. Remove the panel. Press the latch tab in with the spring tool and lift the latch out.\n3. Fit the new spring with the long leg toward the body, press the latch back until it clicks.\n4. Fit the panel, invert the lantern and shake it gently. The panel must stay put.\nCharge port\nThe USB-C charge port is on a small board (part PCB-1000C) and is replaced as a unit. A\nport that charges only when the cable is held at an angle is replaced, not re-soldered. The\n\n[2] warranty.md > Warranty periods\n| Product                        | Model    | Warranty period | Notes                             |\n|--------------------------------|----------|-----------------|-----------------------------------|\n| Firefly 220                    | LS-220   | 2 years         | Standard                          |\n| Firefly 220R                   | LS-220R  | 2 years         | Internal battery: 1 year          |\n| Beacon 600                     | LS-600   | 2 years         | Standard                          |\n| Sentinel 1000                  | LS-1000  | 5 years         | Internal battery pack: 1 year     |\n| Sentinel 1000 Pro              | LS-1000P | 5 years         | Internal battery pack: 1 year     |\n| Porchlight Solar               | LS-PS1   | 2 years         | Internal battery: 1 year          |\n| Northstar Dual-Fuel            | LS-ND2   | 2 years         | Mantles and globe not covered     |\n| Hagerstown Kerosene Lantern    | LS-HK12  | 2 years         | Wick not covered                  |\n| Heritage No. 7 Brass Oil Lamp  | LS-H7    | 10 years        | The Heritage Promise              |\n| Second Light refurbished items | any      | 1 year          | Regardless of the model's period  |\n| Fuel, parts and accessories    | various  | none            | Replaced if defective on arrival  |\n\nThe standard warranty is 2 years. The Sentinel 1000 and Sentinel 1000 Pro carry 5 years because\ntheir housings and electronics are designed for it, and the company has the parts to honor it.\nThe Heritage No. 7 carries 10 years under the Heritage Promise, which dates from the lamp's\nintroduction in 1994 and has never been shortened.\n\nThe standard warranty is 2 years. The Sentinel 1000 and Sentinel 1000 Pro carry 5 years because\ntheir housings and electronics are designed for it, and the company has the parts to honor it.\nThe Heritage No. 7 carries 10 years under the Heritage Promise, which dates from the lamp's\nintroduction in 1994 and has never been shortened.\n\nRechargeable batteries and battery packs, whether built in or removable, are covered for 1 year\nfrom the date of purchase, regardless of the warranty period of the product they are in. A\nbattery is considered defective if it holds less than 70% of its rated capacity within the first\nyear under normal charging; capacity loss beyond that is wear.\n\nSecond Light refurbished items are covered for 1 year from purchase, whatever the model's new\nwarranty would be. The refurbished warranty is noted on the receipt.\n\n## What is not covered\n\nThe warranty does not cover:\n\n- Consumables: mantles (M-21), globes (G-600, G-ND2), wicks (W-78), chimneys (CH-7), bulbs, fuel\n  caps, pump cups, O-rings and gaskets. These wear by design and are sold as parts.\n- Damage from a drop, a crush, or being run over, including a cracked housing or a bent frame.\n- Water intrusion beyond the product's rated IP level. A Firefly 220 (IPX4) left out in a storm\n  is not a warranty case; a Sentinel 1000 (IP67) that leaks after a 30-minute dunk at one meter\n  is.\n- Use of an unapproved fuel. Kerosene in a Northstar, gasoline in a Hagerstown Kerosene Lantern,\n  or anything other than lamp oil in a Heritage No. 7 voids the warranty for the affected parts\n  and usually for the whole product.\n- Modifications, including replacement parts not supplied by Lantern Supply Co., drilled\n  housings and rewired switches.\n- Commercial rental use. A lantern bought for a rental fleet is covered for 90 days only, and the\n  customer should say so at purchase.\n- Cosmetic wear: scratches, fading, tarnish on brass, and discoloration of globes from use.\n- Loss or theft.\n\n[3] faq.md > How long is the warranty?\n## Warranty and repairs\n\n### How long is the warranty?\n\nEvery lantern and lamp is covered against manufacturing defects for 2 years from the purchase\ndate. The Sentinel 1000 and Sentinel 1000 Pro are covered for 5 years. The Heritage No. 7 brass\noil lamp is covered for 10 years under the Heritage Promise. Rechargeable batteries and Second\nLight refurbished items are covered for 1 year.\n\n### How do I make a warranty claim?\n\nEmail help@lanternsupply.example with your order number and photos of the problem. You will get a\nclaim number starting with WC- and a decision within 5 business days. If the claim is approved we\nsend you a prepaid label to our Repair Center in Hagerstown and either repair the lantern or\nreplace it.\n\n[4] catalog.md > Ordering and availability\n### Base Camp Bundle — $199.99\n\nOne Sentinel 1000 and two Firefly 220 lanterns in one box, for a household that wants one big\nlight for the main room and two small ones for bedrooms. Bought separately the three lanterns\ncost $219.97, so the bundle saves $19.98. The Firefly 220s come in slate. Each lantern carries its\nown warranty: 5 years on the Sentinel, 2 years on each Firefly. A bundle can be returned only as a\nwhole; one lantern from a bundle cannot be returned on its own.\n\n## Ordering and availability\n\nEvery item in this catalogue is stocked at the Hagerstown warehouse and ships from there. The\nshowrooms carry the full LED line, the Hagerstown Kerosene Lantern and the Heritage No. 7 on the\nfloor; the Northstar and the Sentinel 1000 Pro are kept in the back room and brought out on\nrequest. An item shown as backordered on the online store ships in the order the orders were\nplaced, and the order confirmation gives the expected ship date. We do not charge a card until\nthe item ships.\n\n## Price Promise\n\nIf you find a lower price on the same product from an authorized retailer within 14 days of your\npurchase from us, send the link or the receipt to help@lanternsupply.example and we will refund\nthe difference. The product must be new, the same model number, and in stock at the other\nretailer at the time you write. Marketplace sellers, auctions and clearance pricing are excluded.\n\n[5] customer-service-playbook.md > Warranty claims\n### Lost in transit\n\nA package counts as lost when it has not arrived 10 business days after the expected delivery\ndate shown in tracking. Before that, ask the customer to check with neighbors and the carrier.\nOnce a package is lost, ship a replacement first and file the carrier claim afterwards; the\ncustomer does not wait for the carrier. Note the carrier claim number on the ticket. If the\nreplacement is also fuel, confirm the address is not a PO box.\n\nA package shown as delivered that the customer says did not arrive is handled the same way after\na 2-business-day wait, with one exception: for orders over $400, which require a signature, pull\nthe signature image from the carrier before replacing.\n\n## Warranty claims\n\nThe standard warranty is 2 years from the purchase date and covers manufacturing defects. The\nSentinel 1000 and Sentinel 1000 Pro carry 5 years, the Heritage No. 7 carries 10 years,\nrechargeable batteries and battery packs carry 1 year, and Second Light refurbished items carry\n1 year. Mantles, globes, wicks, bulbs and fuel caps are consumables and are not covered. Drops,\nwater beyond the IP rating, unapproved fuel, modifications and commercial rental use are not\ncovered.\n\nA customer starts a claim by emailing help@lanternsupply.example with the order number and\nphotos. Open a warranty claim in the Hearth admin; it issues a number in the form WC-xxxxxx, for\nexample WC-030517. The Repair Center decides within 5 business days whether to repair or replace,\nand the choice is ours. For an approved claim, send the customer a prepaid label to the\nHagerstown Repair Center at no charge. A claim with no order number can be matched by email\naddress or by the serial number on the base of the lantern.\n\nThe warranty transfers with a gift but not with a resale. If a customer bought the item second\nhand, explain this and offer a paid repair.\n\n## Repairs\n\nAny repair, under warranty or paid, gets a repair ticket in the form RT-xxxxx (five digits), for\nexample RT-20931. Create it in the Hearth admin from the warranty claim or from scratch for a paid\nrepair. The ticket number goes on the box and in the email to the customer.\n\nCustomers can drop a lantern off at either showroom or mail it to Lantern Supply Co. Repair\nCenter, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. Annapolis drop-offs are shipped to\nHagerstown weekly on Tuesdays, so tell Annapolis customers to add a week. Walt Brannigan, Head\nof Repairs, emails a quote for paid repairs before any work is done; nothing is charged until the\ncustomer approves the quote. Fuel lanterns must be emptied before they are mailed; tell the\ncustomer, and put it in the email.\n\nQuestion: When does the Sentinel 2000 come out?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 4451,
+      "outputTokens": 7,
+      "cost": 0.008972,
+      "ms": 1338
+    }
+  ],
+  "ms": 2802,
+  "tokens": {
+    "input": 4570,
+    "output": 35
+  }
+}

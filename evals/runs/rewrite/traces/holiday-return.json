@@ -1,0 +1,191 @@
+{
+  "run": "rewrite",
+  "case": "holiday-return",
+  "question": "My lantern was delivered on November 20. What is the last day I can return it?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise, delivered November 20",
+  "answer": "The last day is January 31, because orders delivered between November 1 and December 24 may be returned until then [3]. This assumes the lantern is eligible (unused, in original packaging, and not one that has had fuel in it) [2][3].",
+  "citations": [
+    {
+      "n": 3,
+      "where": "customer-service-playbook.md > Returns"
+    },
+    {
+      "n": 2,
+      "where": "returns-policy.md > What can be returned"
+    }
+  ],
+  "cost": 0.004024,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.7261328011472187
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.6996702607302838
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.6474416577231196
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.6200741467061163
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.6145839945291456
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.614299226710595
+    },
+    {
+      "id": 230,
+      "where": "returns-policy.md > Holiday extension",
+      "score": 0.5995386035434317
+    },
+    {
+      "id": 115,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?",
+      "score": 0.5935594548471437
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5933051380519317
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.5835944441760781
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.5806385426900967
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.5785258006911504
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.5778501638530391
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.5728282217015942
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.5613800655258774
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.5507018259161075
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.5412365851027698
+    },
+    {
+      "id": 121,
+      "where": "faq.md > If I give a lantern as a gift, is it still under warranty?",
+      "score": 0.5291427714349348
+    },
+    {
+      "id": 200,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.5268061911263476
+    },
+    {
+      "id": 253,
+      "where": "shipping.md > Contacts",
+      "score": 0.5205188154093469
+    }
+  ],
+  "shown": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.7261328011472187
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.6996702607302838
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.6474416577231196
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.6200741467061163
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.6145839945291456
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "My lantern was delivered on November 20. What is the last day I can return it?",
+      "reply": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise, delivered November 20",
+      "stopReason": "end_turn",
+      "inputTokens": 127,
+      "outputTokens": 42,
+      "cost": 0.000674,
+      "ms": 1483
+    },
+    {
+      "kind": "embed",
+      "text": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise, delivered November 20",
+      "ms": 10
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Relationship to the returns policy\n## Relationship to the returns policy\n\nThe returns policy covers a change of mind within 40 days of delivery for an unused item. The\nwarranty covers a defect at any time within the warranty period, used or not. A fueled lantern\ncannot be returned but can always be claimed under warranty. Agents should route a customer with\na working product who does not want it to the returns policy, and a customer with a product that\ndoes not work to this document.\n\n[2] returns-policy.md > What can be returned\n## What can be returned\n\nAn item is eligible for return when all of the following are true:\n\n- It is unused. A lantern that has been switched on to check that it works is still unused. A\n  lantern that has been taken on a trip is not.\n- It is in its original packaging with all accessories, inserts, manuals and the warranty card.\n- It was purchased from Lantern Supply Co. directly: the online store, by phone, or at the\n  Frederick or Annapolis showroom. Items bought from another retailer go back to that retailer.\n- It is not on the final-sale list below.\n\n[3] customer-service-playbook.md > Returns\n## Returns\n\nThe return window is 40 days from the delivery date recorded by the carrier. It is not counted\nfrom the order date and, since Hearth 4.1 on May 19, 2026, not from the ship date. Check the\ndelivery scan in the Hearth admin before you tell a customer whether they are inside the window.\nOrders delivered between November 1 and December 24 may be returned until January 31.\n\nReturned items must be unused, in the original packaging, with all accessories. Any fuel lantern\nor oil lamp that has had fuel in it cannot be returned; those go to warranty if there is a defect.\nClearance items marked \"Last Light\", custom-engraved items, gift cards, opened fuel, mantles,\nwicks and other consumables are final sale.\n\n[4] returns-policy.md > The return window\n## The return window\n\nA customer may return an eligible item within 40 days of the delivery date. The window is counted\nfrom the date the carrier recorded delivery, not from the date the order was placed and not from\nthe date it shipped. For showroom purchases, the delivery date is the purchase date on the\nreceipt. For curbside pickup orders, it is the date the order was handed over at the Frederick\nshowroom.\n\nDay one is the day after delivery. A return is on time if the customer starts it (requests an RA\nnumber online or by phone, or brings the item to a showroom) on or before day 40. The item itself\nmay arrive at the warehouse after day 40 as long as the RA number was issued on time and the\npackage is postmarked within 7 days of the RA number being issued.\n\n[5] release-notes.md > Highlights\n### Highlights\n\nStart a return online. A customer can begin a return from the order page, choose the items and\nthe reason, and get a return authorization number (RA-, six digits) at once instead of calling.\nThe prepaid return label at $8.50 is offered as an option and the amount is shown as a deduction\nfrom the refund before the customer confirms.\n\nThe return window is now counted from the delivery date instead of the ship date. The window is\nstill 40 days, but the clock starts when the carrier records delivery, not when the box leaves\nHagerstown. This came out of the winter returns review: a box that sat with the carrier for\nnine days was costing the customer nine days of their window. Orders shipped before May 19 had\ntheir windows recalculated from the delivery date too.\n\nOrder lookup without an account. The order number and the email address on the order are enough\nto see the status, tracking and the return option.\n\nQuestion: My lantern was delivered on November 20. What is the last day I can return it?",
+      "reply": "The last day is January 31, because orders delivered between November 1 and December 24 may be returned until then [3]. This assumes the lantern is eligible (unused, in original packaging, and not one that has had fuel in it) [2][3].",
+      "stopReason": "end_turn",
+      "inputTokens": 1300,
+      "outputTokens": 75,
+      "cost": 0.00335,
+      "ms": 1701
+    }
+  ],
+  "ms": 3196,
+  "tokens": {
+    "input": 1427,
+    "output": 117
+  }
+}

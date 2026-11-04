@@ -1,0 +1,745 @@
+{
+  "run": "five-recased",
+  "judge": "claude-haiku-5-5",
+  "passed": 28,
+  "results": [
+    {
+      "id": "return-window",
+      "expect": "answer",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.0029727,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "40 days from delivery",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly states the 40-day window, unused and original packaging conditions, RA number process, and the fuel exclusion, all supported by passages 1 and 3 with correct citations; no unsupported facts appear.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00019270000000000002
+      }
+    },
+    {
+      "id": "restocking-fee",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 3,
+        "shown": true
+      },
+      "cost": 0.0034898,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "12% of the item price",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's core fact (12% of item price, calculated after discounts and before tax and shipping, on opened non-defective items) is supported by passage 3, and the waiver examples (exchanges, defective, wrong item) are also in passage 3; citations to [1] and [2] for the 12% rate are accurate, and the claim that the fee is calculated on price after discounts is from [3]. No passage conflicts, so all statements are grounded and cited correctly.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00025780000000000003
+      }
+    },
+    {
+      "id": "sentinel-pro-warranty",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0044288,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "5 years",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's 5-year warranty for the Sentinel 1000 Pro is supported by passages 1, 2, and 3, and the 1-year battery pack coverage is stated in passage 1; all cited passages support their attached statements, and nothing unsupported is asserted.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00028480000000000004
+      }
+    },
+    {
+      "id": "firefly-220r-weight",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 4,
+        "shown": true
+      },
+      "cost": 0.0040163,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "340 g",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's facts (220R weighs 340 g, 220 weighs 310 g, 30 g difference) are all stated in passages 4, 1, and 2, and each citation points to a passage supporting its claim.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002583
+      }
+    },
+    {
+      "id": "free-shipping-65",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 7,
+        "shown": false
+      },
+      "cost": 0.0034116999999999997,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "free shipping starts at $60",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly relies on the more recent release notes [3] stating the threshold is $60, so a $65 order qualifies, and the caveat about subtotal is supported by [2]; the citations match the claims made.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002077
+      }
+    },
+    {
+      "id": "bench-fee",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.004382,
+      "status": "fail",
+      "why": "said I don't know"
+    },
+    {
+      "id": "generator-torque",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 4,
+        "shown": true
+      },
+      "cost": 0.0052236,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "hand-tight plus a quarter turn, never more than 2.5 N·m",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 1,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's torque guidance (hand-tight plus a quarter turn, never more than 2.5 N·m, brass strips easily, same for generator nut) is supported by passage [4], which is cited correctly; the 2.5 N·m and brass details come from [4] step 6 and 7 with the generator nut said to be tightened the same way.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00032960000000000004
+      }
+    },
+    {
+      "id": "staff-discount",
+      "expect": "answer",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.002594,
+      "status": "fail",
+      "why": "said I don't know"
+    },
+    {
+      "id": "sentinel-low-runtime",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 4,
+        "shown": true
+      },
+      "cost": 0.0048438000000000005,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "190 hours",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 1,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states 190 hours on low for the Sentinel 1000, which matches passage [4]'s runtime table, and the citation [4] points to that passage.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002998
+      }
+    },
+    {
+      "id": "firefly-220-low-runtime",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 4,
+        "shown": true
+      },
+      "cost": 0.0038793,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "42 hours",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's fact that the Firefly 220 runs 42 hours on low is supported by passages 4 and 5, and passage 1 does mention 42 hours as the 220's runtime with 48 hours for the 220R, so the facts are grounded; citations [4][5] support the 42-hour claim and [1] supports the release-notes statement, so all citations point at supporting passages.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00027330000000000003
+      }
+    },
+    {
+      "id": "fuel-to-canada",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 3,
+        "shown": true
+      },
+      "cost": 0.003824,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "fuel does not ship to Canada",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's claims are all supported: no shipping to Canada (passages 1, 3, 5), ground-only within the U.S. (1, 3), and showrooms stocking fuel for pickup (2); the Toronto inclusion is a plain reading of Canada, and passage 2 is cited for the showroom pickup point which it does state, so all citations are accurate.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.000266
+      }
+    },
+    {
+      "id": "prepaid-label",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0031494,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "$8.50",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states the flat $8.50 label cost deducted from refund and the free label for defective or wrong items, both supported by passages 1, 2 and 3 with correct citations.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002094
+      }
+    },
+    {
+      "id": "points-for-reward",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 3,
+        "shown": true
+      },
+      "cost": 0.0025473,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "500 points",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states 500 points for a $25 reward, supported by passages 1 and 3, and that points are redeemed in multiples of 500, supported by passage 3; both citations point at supporting passages.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00019130000000000001
+      }
+    },
+    {
+      "id": "flame-tier",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0035171,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "1,000 points in a calendar year",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states Flame requires 1,000 points in a calendar year, which passage [2] (the more detailed, lumen-rewards document) supports, and passage [1] also gives the 1,000 to 2,499 range; both citations support the statement.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00024310000000000003
+      }
+    },
+    {
+      "id": "pump-cup",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.004825,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "every 10 fills",
+            "met": true
+          },
+          {
+            "fact": "3 drops of pump oil",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 1,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states oiling every 10 fills with 3 drops of Clearburn pump oil, which passage [1] directly supports, and the citation [1] points to that passage.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.000297
+      }
+    },
+    {
+      "id": "sentinel-pro-pack",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0058323,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "B-1000P-21",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer states the Sentinel 1000 Pro battery pack is B-1000P-21, which passage [1] explicitly gives ('The Pro's pack is part B-1000P-21') and passage [5] lists in the parts table for the Sentinel 1000 Pro, so both citations support the statement.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0003663
+      }
+    },
+    {
+      "id": "holiday-return",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 16,
+        "shown": false
+      },
+      "cost": 0.0031639999999999997,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "January 31",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly states the holiday extension to January 31 from passage [5] and the worked example [3] supports January 31, 2027 for a November 14 delivery, but the claim that the user's November 20 delivery falls in the window is a valid inference from [5]; however the answer's citation to [3] for 'Your lantern also falls in that window' is not a citation error, and the statement 'The last day ... is January 31 of the following year' is supported by [5] yet cited to [5] only implicitly in the first sentence, which is uncited and thus not a citation error. All facts are supported, and each citation points at a supporting passage.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.000264
+      }
+    },
+    {
+      "id": "annapolis-pickup",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 7,
+        "shown": false
+      },
+      "cost": 0.0031856999999999996,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "pickup is at Frederick only",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": false
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly says Annapolis does not offer curbside pickup, citing [2] and [3] which state this, and the claims about inventory and shipping alternatives are supported by [3]; all cited passages match their statements.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00020370000000000002
+      }
+    },
+    {
+      "id": "pto-first-year",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0032625,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "15 days",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 1,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "Passage 1 states full-time employees earn 15 days of PTO in each of their first three years, accrued monthly in twelve equal parts, and may use PTO after 60 days, so the answer is fully supported and correctly cited.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002225
+      }
+    },
+    {
+      "id": "refund-approval",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 2,
+        "shown": true
+      },
+      "cost": 0.0034209,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "Tomas Reyes",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer correctly states that a $700 refund needs Tomas Reyes's approval and that Priya Whitcomb-Nair is needed only above $2,000, which passages [1], [2], and [5] all support, so it is grounded and the citations point to supporting passages.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002309
+      }
+    },
+    {
+      "id": "lost-package",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0023706,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "10 business days after the expected delivery date",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 2,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's statement that a package counts as lost after 10 business days past the expected delivery date with no delivery scan is supported by passages [1] and [2], and both cited passages support it, so it is grounded and correctly cited.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.00018659999999999998
+      }
+    },
+    {
+      "id": "heritage-kerosene",
+      "expect": "answer",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.0045138,
+      "status": "pass",
+      "why": "",
+      "checked": {
+        "facts": [
+          {
+            "fact": "lamp oil only",
+            "met": true
+          },
+          {
+            "fact": "kerosene voids the warranty",
+            "met": true
+          }
+        ],
+        "forbidden": [],
+        "citations": {
+          "count": 3,
+          "unresolved": [],
+          "sourceCited": true
+        }
+      },
+      "verdict": {
+        "reason": "The answer's claims that kerosene works mechanically but smokes, smells, stains the gallery, and voids the 10-year warranty are all supported by passages 1, 3 and 4, and the citations point to those passages correctly.",
+        "grounded": true,
+        "cited": true,
+        "cost": 0.0002698
+      }
+    },
+    {
+      "id": "ceo-salary",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.002302,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "sales-2025",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.002028,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "sentinel-2000",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.003182,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "dental-deductible",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": 1,
+        "shown": true
+      },
+      "cost": 0.002552,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "ups-account",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": 6,
+        "shown": false
+      },
+      "cost": 0.00213,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "showroom-wifi",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": null,
+        "shown": false
+      },
+      "cost": 0.002226,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "firefly-euros",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": 3,
+        "shown": true
+      },
+      "cost": 0.003296,
+      "status": "pass",
+      "why": ""
+    },
+    {
+      "id": "brass-spinner",
+      "expect": "fallback",
+      "retrieval": {
+        "rank": 2,
+        "shown": true
+      },
+      "cost": 0.00411,
+      "status": "pass",
+      "why": ""
+    }
+  ]
+}

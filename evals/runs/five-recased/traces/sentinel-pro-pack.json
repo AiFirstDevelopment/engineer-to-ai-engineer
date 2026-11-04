@@ -1,0 +1,174 @@
+{
+  "run": "five",
+  "case": "sentinel-pro-pack",
+  "question": "What is the part number of the Sentinel 1000 Pro battery pack?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "The Sentinel 1000 Pro battery pack is part B-1000P-21 [1][5].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "repair-manual.pdf p.5"
+    },
+    {
+      "n": 5,
+      "where": "repair-manual.pdf p.9"
+    }
+  ],
+  "cost": 0.005466,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.6785175397944481
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5545243725213828
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5397181462170015
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4898490977293025
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.43393286931530367
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.41170813467373957
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.39490042418403276
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.39109184236516414
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.3877257447332343
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3837179289422473
+    },
+    {
+      "id": 13,
+      "where": "catalog.md > How to read a model number",
+      "score": 0.3774129275071917
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.37504099319248857
+    },
+    {
+      "id": 34,
+      "where": "catalog.md > Beacon 400 (LS-400)",
+      "score": 0.3746977090485998
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.36908491985015157
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3678515581618306
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.357890523201557
+    },
+    {
+      "id": 128,
+      "where": "faq.md > Does the Beacon 600 come with batteries?",
+      "score": 0.3567062616167086
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.35506712419427705
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.35377341653722116
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.35289221424349804
+    }
+  ],
+  "shown": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.6785175397944481
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5545243725213828
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5397181462170015
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4898490977293025
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.43393286931530367
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "What is the part number of the Sentinel 1000 Pro battery pack?",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.5\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n[2] catalog.md > Sentinel 1000 (LS-1000) — $149.99\n### Sentinel 1000 (LS-1000) — $149.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 10,000 mAh lithium-ion battery, USB-C charging |\n| Runtime, low | 190 hours |\n| Runtime, high | 12 hours |\n| Weight | 1.4 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Two detachable panels |\n| Colors | Slate |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, two panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 is the lantern we sell to people who lose power often. Its two light panels pull\noff the body and run on their own for up to 6 hours each, so one lantern lights the kitchen while a\npanel goes to the bathroom and another to the stairs. The body is sealed to IP67 and floats. The\n10,000 mAh battery charges over USB-C in about 7 hours and can run a phone from the USB-A port for\nseveral days. The Sentinel line carries a 5-year warranty on the lantern and panels; the battery,\nas on every rechargeable product, is covered for 1 year.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000.\n\n[3] catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n[4] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\n[5] repair-manual.pdf p.9\nPart Fits Bin Price\nG-GEN2 generator Northstar LS-ND2 1 $13.00\nP-CUP2 pump cup Northstar LS-ND2 1 $4.50\nM-21 mantle 2-pack Northstar LS-ND2 2 $6.99\nG-ND2 globe Northstar LS-ND2 3 $18.99\nG-600 globe Beacon 600 4 $14.99\nG-600G globe gasket Beacon 600 4 $2.50\nG-400 globe Beacon 400 5 $12.99\nG-400G globe gasket Beacon 400 5 $2.50\nB-1000-21 battery pack Sentinel 1000 6 (LI cabinet) $39.00\nB-1000P-21 battery pack Sentinel 1000 Pro 6 (LI cabinet) $64.00\nL-1000S latch spring Sentinel 1000, 1000 Pro 7 $1.25\nPCB-1000C charge board Sentinel 1000, 1000 Pro 7 $11.00\nW-78 #2 flat wick 5-pack Hagerstown LS-HK12 8 $4.99\nBR-12 burner Hagerstown LS-HK12 8 $8.50\nSW-220 switch Firefly 220 9 $2.00\nSW-220R switch Firefly 220R 9 $2.00\nB-220R battery pack Firefly 220R 6 (LI cabinet) $12.00\nPCB-220R main board Firefly 220R 9 $9.00\nC-15 USB-C cable Firefly 220R 9 $5.99\nCH-7 chimney Heritage No. 7 10 $21.99\nW-H7 7/8-inch wick Heritage No. 7 10 $3.50\nBin counts are taken on the first Monday of each month by whoever has the earliest shift.\nAny part below five in stock is written on the whiteboard and ordered that day.\n\nQuestion: What is the part number of the Sentinel 1000 Pro battery pack?",
+      "reply": "The Sentinel 1000 Pro battery pack is part B-1000P-21 [1][5].",
+      "stopReason": "end_turn",
+      "inputTokens": 2563,
+      "outputTokens": 34,
+      "cost": 0.005466,
+      "ms": 1682
+    }
+  ],
+  "ms": 1689,
+  "tokens": {
+    "input": 2563,
+    "output": 34
+  }
+}

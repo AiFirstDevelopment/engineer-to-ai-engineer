@@ -1,0 +1,181 @@
+{
+  "run": "widen",
+  "case": "firefly-euros",
+  "question": "How much is the Firefly 220 in euros?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Firefly 220 price EUR catalog price list euro pricing",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.007968,
+  "retrieved": [
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.5233273183708136
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.4816558838271411
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.45050955230408113
+    },
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.4388312464378211
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.4383276379830223
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.43806783983086506
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.40511793663241674
+    },
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.40388333309266644
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.40296320868568614
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.4016879857074768
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.3916485762964687
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.38462104866836333
+    },
+    {
+      "id": 32,
+      "where": "catalog.md > Price Promise",
+      "score": 0.38362189735922325
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.36841455322631855
+    },
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.3619860838642764
+    },
+    {
+      "id": 212,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.3579038414392696
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3548874928634171
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.34839916408382043
+    },
+    {
+      "id": 151,
+      "where": "fuel-safety.md > The fuels we sell",
+      "score": 0.3408387300206433
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.33156084097810695
+    }
+  ],
+  "shown": [
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.5233273183708136
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.4816558838271411
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.45050955230408113
+    },
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.4388312464378211
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.4383276379830223
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How much is the Firefly 220 in euros?",
+      "reply": "Firefly 220 price EUR catalog price list euro pricing",
+      "stopReason": "end_turn",
+      "inputTokens": 119,
+      "outputTokens": 23,
+      "cost": 0.000468,
+      "ms": 1252
+    },
+    {
+      "kind": "embed",
+      "text": "Firefly 220 price EUR catalog price list euro pricing",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Product Catalogue\n# Product Catalogue\n\nLast updated: October 20, 2026\nOwner: Ana Lindqvist\n\nThis is the current catalogue for the online store and both showrooms. Prices are in US dollars\nand include no shipping or tax. Specifications are the ones printed on the box; where a runtime\nis given it was measured by the Repair Center on fresh batteries or a full charge at 70°F.\nPrices change only with a catalogue revision; the date at the top of this page is the revision.\n\n## How to read a model number\n\nEvery product we make carries a model number that starts with LS-. For LED lanterns the number\nthat follows is the lumen class: an LS-220 is a 220-lumen lantern, an LS-600 is a 600-lumen\nlantern, an LS-1000 is a 1,000-lumen lantern. A P suffix means Pro, the larger version of the\nsame lantern. An R suffix means rechargeable: the lantern has a built-in battery and charges over\nUSB-C instead of taking replaceable cells. Fuel lanterns and lamps use letters instead of a lumen\nclass (ND for Northstar Dual-Fuel, HK for Hagerstown Kerosene, H for Heritage), because the light\noutput of a flame depends on the fuel and the mantle or wick.\n\nParts have their own prefixes: M for mantles, G for globes, W for wicks, CH for chimneys, C for\ncables and B for battery packs. A part number is printed inside the base of every lantern so a\ncustomer can read it off without looking anything up.\n\n[2] catalog.md > Base Camp Bundle — $199.99\n## Bundles\n\n### Base Camp Bundle — $199.99\n\nOne Sentinel 1000 and two Firefly 220 lanterns in one box, for a household that wants one big\nlight for the main room and two small ones for bedrooms. Bought separately the three lanterns\ncost $219.97, so the bundle saves $19.98. The Firefly 220s come in slate. Each lantern carries its\nown warranty: 5 years on the Sentinel, 2 years on each Firefly. A bundle can be returned only as a\nwhole; one lantern from a bundle cannot be returned on its own.\n\n## Ordering and availability\n\nEvery item in this catalogue is stocked at the Hagerstown warehouse and ships from there. The\nshowrooms carry the full LED line, the Hagerstown Kerosene Lantern and the Heritage No. 7 on the\nfloor; the Northstar and the Sentinel 1000 Pro are kept in the back room and brought out on\nrequest. An item shown as backordered on the online store ships in the order the orders were\nplaced, and the order confirmation gives the expected ship date. We do not charge a card until\nthe item ships.\n\n[3] catalog.md > Firefly 220R (LS-220R) — $54.99\n### Firefly 220 (LS-220) — $34.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | 3 AA alkaline batteries (included) |\n| Runtime, low | 42 hours |\n| Runtime, high | 9 hours |\n| Weight | 310 g with batteries |\n| Water rating | IPX4 (splash resistant) |\n| Brightness levels | Two (low, high) |\n| Colors | Moss, slate, ember |\n| Warranty | 2 years |\n| In the box | Lantern, 3 AA batteries, wrist lanyard |\n\nThe Firefly 220 is the lantern most of our customers start with. It is the size of a coffee mug,\nruns on three AA cells, and gives a soft, even light from a frosted polycarbonate globe. The base\nis flat and rubberized, the bail handle folds flat for packing, and there is a hook under the base\nfor hanging it upside down from a tent loop. Two brightness levels are all it has, and that is on\npurpose: it is a lantern for reading in a tent, lighting a picnic table, or keeping on the kitchen\ncounter for the next power outage. Alkaline cells are included; it also runs on NiMH\nrechargeables, with about 15 percent less runtime.\n\nCompatible parts: wrist lanyard L-22.\n\n### Firefly 220R (LS-220R) — $54.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | Built-in 2,600 mAh lithium-ion battery, USB-C charging |\n| Charge time | 3.5 hours from empty with a 5 V 2 A charger |\n| Runtime, low | 48 hours |\n| Runtime, high | 10 hours |\n| Weight | 340 g |\n| Water rating | IPX4 (splash resistant) |\n| Power bank output | USB-A, 5 V 1 A |\n| Colors | Moss, slate |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, USB-C cable C-15, wrist lanyard |\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | Built-in 2,600 mAh lithium-ion battery, USB-C charging |\n| Charge time | 3.5 hours from empty with a 5 V 2 A charger |\n| Runtime, low | 48 hours |\n| Runtime, high | 10 hours |\n| Weight | 340 g |\n| Water rating | IPX4 (splash resistant) |\n| Power bank output | USB-A, 5 V 1 A |\n| Colors | Moss, slate |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, USB-C cable C-15, wrist lanyard |\n\nThe Firefly 220R is the same lantern as the Firefly 220 with the battery compartment replaced by a\nsealed 2,600 mAh lithium-ion pack. It is the same size, gives the same 220 lumens from the same\nglobe, and uses the same two brightness levels, but it charges from any USB-C source in 3.5 hours\nand never needs cells. The extra 30 grams are the battery. A USB-A port under a rubber flap lets\nit charge a phone in an emergency; the port supplies 5 volts at 1 amp, enough to top up a phone\nbut not to charge a tablet. The battery is not user-replaceable and is covered for 1 year, while\nthe rest of the lantern carries the standard 2-year warranty. Four blue LEDs beside the USB-C port\nshow the state of charge.\n\n[4] release-notes.md > Fixes\n### Changes\n\n- Wishlists, with sharing by link.\n- Canada as a shipping destination; address forms accept provinces and postal codes.\n- Product compare for up to three products.\n- The product page shows the model number under the product name, since customers ordering\n  parts kept asking for it.\n\n### Fixes\n\n- The Firefly 220R product page showed the Firefly 220's runtime (42 hours on low) instead of\n  its own (48 hours on low). The two products share a page template and the runtime field was\n  pointing at the wrong product record. Customers who bought a 220R between May 19 and August\n  11 and asked about the difference were offered a 40-day return by Customer Service.\n- Order lookup rejected order numbers typed in lower case.\n- The holiday return extension banner was showing in July.\n\n### Known issues\n\n- Compare does not include discontinued products, so a Beacon 400 owner cannot compare it to\n  the Beacon 600.\n\n[5] repair-manual.pdf p.7\nport that charges only when the cable is held at an angle is replaced, not re-soldered. The\nboard is held by two T8 screws and a ribbon cable. Handle the ribbon with the spudger only.\nHagerstown Kerosene Lantern (LS-HK12)\nThe Hagerstown is a plain 12-inch hurricane lantern and there is not much to go wrong with\nit. It burns K-1 kerosene or Clearburn lamp oil and uses a #2 flat wick, part W-78, sold in a\n5-pack. Faults are a smoky flame (wick), a flame that will not stay lit (wick or air tubes), and\na tank that weeps at the seam (replace the lantern; we do not repair tanks).\nWick trimming and replacement\n1. Raise the globe with the lever and lift the burner cone off.\n2. Wind the wick up 10 mm. Trim it straight across with the wick scissors, then take the\ntwo corners off at 45 degrees. A square-cut wick smokes at the corners.\n3. If the wick is charred for more than 25 mm, or is less than 100 mm long, replace it.\nFeed the new W-78 down through the burner with the raised side toward the winder\nknob.\n4. Soak a new wick in lamp oil for 10 minutes before lighting it.\n\n5. Light under the hood and set the flame so that it is just below the point where it\nsmokes. Run the 30-minute burn-in.\nAir tubes and burner\nThe two side tubes carry air to the burner. If they are dented so that a 4 mm rod will not\npass, straighten them with the tube mandrel or replace the lantern. The burner itself (part\nBR-12) is replaced only when the winder gear strips, which happens about twice a year\nacross the whole fleet.\nFirefly 220 and 220R\nThe Firefly 220 (LS-220) runs on three AA cells; the Firefly 220R (LS-220R) is the\nrechargeable model with the 2,600 mAh pack and a USB-C port. They look the same from\nthe outside except for the port cover, and the 220R weighs 30 g more. Check the model\nnumber on the base plate before you order parts: the switches are different and the 220's\nswitch will not fit the 220R.\nSwitch\n1. Remove the base (two Phillips screws on the 220, three on the 220R).\n2. The switch is a tactile switch on the main board. Switch part numbers: SW-220 for the\n220, SW-220R for the 220R. Both are soldered; this is the one soldering job on the\nFirefly bench.\n3. Replace the switch, refit, and check both brightness levels.\nFirefly 220R USB-C port\n\nFirefly 220R USB-C port\nA 220R that will not charge is usually the cable, then the port, then the pack, in that order.\nTest with the bench cable (part C-15) before opening anything.\n1. Open the base (three screws) and lift out the pack. Pack part is B-220R.\n2. The port is part of the main board (PCB-220R); the board is replaced as a unit, $9.00\non a paid repair.\n3. On refit, check the port cover seals; the 220R is IPX4 and the cover is part of that\nrating.\n4. Charge to full on the bench (about 3.5 hours) and check the power bank output with\nthe load tester: it should hold 5 V at 1 A for 10 minutes.\n\nQuestion: How much is the Firefly 220 in euros?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 3715,
+      "outputTokens": 7,
+      "cost": 0.0075,
+      "ms": 1134
+    }
+  ],
+  "ms": 2395,
+  "tokens": {
+    "input": 3834,
+    "output": 30
+  }
+}

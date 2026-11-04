@@ -1,0 +1,181 @@
+{
+  "run": "widen",
+  "case": "brass-spinner",
+  "question": "What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Heritage No. 7 brass spinner Baltimore manufacturer supplier artisan craftsman name product catalog",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.010064,
+  "retrieved": [
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.3850338465063912
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.34709031580823824
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.3449862878532661
+    },
+    {
+      "id": 213,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.34330338917502684
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.32027325106030147
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.31255381192391724
+    },
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.3122861108609884
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.3090503398255335
+    },
+    {
+      "id": 266,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.30816803277548005
+    },
+    {
+      "id": 11,
+      "where": "about.md > Contact",
+      "score": 0.30577120395733126
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.3007294348252309
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.2986691924655059
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.29169227688158716
+    },
+    {
+      "id": 86,
+      "where": "employee-handbook.md > Training",
+      "score": 0.2791423525352409
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.27690026378216787
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.27392731177033314
+    },
+    {
+      "id": 6,
+      "where": "about.md > People",
+      "score": 0.2733877283686361
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.2700164287054962
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.2689524127490909
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.2684891485251519
+    }
+  ],
+  "shown": [
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.3850338465063912
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.34709031580823824
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.3449862878532661
+    },
+    {
+      "id": 213,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.34330338917502684
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.32027325106030147
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+      "reply": "Heritage No. 7 brass spinner Baltimore manufacturer supplier artisan craftsman name product catalog",
+      "stopReason": "end_turn",
+      "inputTokens": 134,
+      "outputTokens": 41,
+      "cost": 0.000678,
+      "ms": 1574
+    },
+    {
+      "kind": "embed",
+      "text": "Heritage No. 7 brass spinner Baltimore manufacturer supplier artisan craftsman name product catalog",
+      "ms": 9
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n### Hagerstown Kerosene Lantern (LS-HK12) — $44.99\n\n| Specification | Value |\n| --- | --- |\n| Type | 12-inch hurricane lantern |\n| Fuel | K-1 kerosene or Clearburn lamp oil |\n| Tank | 12 oz |\n| Runtime | About 20 hours per fill |\n| Wick | #2 flat wick, part W-78 |\n| Body | Steel |\n| Colors | Galvanized, red, black |\n| Warranty | 2 years |\n| In the box | Lantern, one wick fitted, one spare wick |\n\nThe Hagerstown is a classic cold-blast hurricane lantern, named for the town where it is assembled\nand tested. It is the lantern on the porch of half the farmhouses in Washington County. A 12-ounce\ntank gives about 20 hours of light on a trimmed wick, the globe lifts for lighting with the lever\non the side, and the whole lantern can be carried in the rain. It uses a standard #2 flat wick,\npart W-78, and we stock the wicks in 5-packs. The galvanized finish is bare steel and will develop\na patina outdoors; the red and black are powder coated.\n\nCompatible parts: #2 flat wick 5-pack W-78, globe G-HK12, Clearburn Lamp Oil LS-OIL1.\n\n### Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n\n| Specification | Value |\n| --- | --- |\n| Type | Table oil lamp |\n| Fuel | Clearburn lamp oil only |\n| Font | 7-inch solid brass, holds 14 oz |\n| Runtime | About 30 hours per fill |\n| Chimney | Glass, part CH-7 |\n| Wick | #2 flat wick, part W-78 |\n| Weight | 1.2 kg |\n| Warranty | 10 years (the Heritage Promise) |\n| In the box | Lamp, chimney, one wick fitted |\n\nThe Heritage No. 7 is the oil lamp we have made in one form or another since 1987, and the only\nproduct in this catalogue that carries a 10-year warranty. The font is spun from solid brass and\npolished by hand; the burner is nickel-plated brass; the chimney is borosilicate glass. It burns\nClearburn lamp oil only. Kerosene will work but smokes and smells, and it voids the Heritage\nPromise. A full 14-ounce font gives about 30 hours of light. The chimney is part CH-7 and is the\nonly part that breaks in normal use; it is sold separately and ships in a padded box.\n\nCompatible parts: chimney CH-7, #2 flat wick 5-pack W-78, Clearburn Lamp Oil LS-OIL1.\n\n## Solar\n\n[2] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n## The story\n\nMarjorie and Dale Whitcomb opened the first store in 1987 in a former hardware shop at 412 East\nPatrick Street in Frederick, Maryland, the same building we occupy today. Dale had repaired\npressure lanterns for the Boy Scouts for years and could not find a shop that would sell a decent\noil lamp or a spare mantle; Marjorie ran the books and the counter. The first product with our\nname on it was the Heritage No. 7 brass oil lamp, which Dale designed and had made by a brass\nspinner in Baltimore, and which we still sell with a 10-year warranty.\n\nFor the first ten years the business was lamps, wicks, fuel and repairs. In 2003 the company\nassembled its first Hagerstown Kerosene Lantern in a rented bay in Hagerstown, and in 2009 it\nsold its first LED lantern, the Firefly 100. The online store opened in 2011. The Annapolis\nshowroom opened in May 2014, and in 2016 the warehouse and Repair Center moved into the current\nbuilding at 1180 Downsville Pike in Hagerstown, with the loading dock at Dock B that every return\nand repair comes through.\n\n[3] about.md > The story\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n## The story\n\nMarjorie and Dale Whitcomb opened the first store in 1987 in a former hardware shop at 412 East\nPatrick Street in Frederick, Maryland, the same building we occupy today. Dale had repaired\npressure lanterns for the Boy Scouts for years and could not find a shop that would sell a decent\noil lamp or a spare mantle; Marjorie ran the books and the counter. The first product with our\nname on it was the Heritage No. 7 brass oil lamp, which Dale designed and had made by a brass\nspinner in Baltimore, and which we still sell with a 10-year warranty.\n\nFor the first ten years the business was lamps, wicks, fuel and repairs. In 2003 the company\nassembled its first Hagerstown Kerosene Lantern in a rented bay in Hagerstown, and in 2009 it\nsold its first LED lantern, the Firefly 100. The online store opened in 2011. The Annapolis\nshowroom opened in May 2014, and in 2016 the warehouse and Repair Center moved into the current\nbuilding at 1180 Downsville Pike in Hagerstown, with the loading dock at Dock B that every return\nand repair comes through.\n\nFor the first ten years the business was lamps, wicks, fuel and repairs. In 2003 the company\nassembled its first Hagerstown Kerosene Lantern in a rented bay in Hagerstown, and in 2009 it\nsold its first LED lantern, the Firefly 100. The online store opened in 2011. The Annapolis\nshowroom opened in May 2014, and in 2016 the warehouse and Repair Center moved into the current\nbuilding at 1180 Downsville Pike in Hagerstown, with the loading dock at Dock B that every return\nand repair comes through.\n\nPriya Whitcomb-Nair, Marjorie and Dale's daughter, joined the company in 2010 to run the online\nstore and became CEO in 2019. Marjorie and Dale retired the same year and still visit the\nFrederick showroom most Saturdays. The company remains privately held and family owned.\n\n[4] repair-manual.pdf p.8\nFirefly 220R USB-C port\nA 220R that will not charge is usually the cable, then the port, then the pack, in that order.\nTest with the bench cable (part C-15) before opening anything.\n1. Open the base (three screws) and lift out the pack. Pack part is B-220R.\n2. The port is part of the main board (PCB-220R); the board is replaced as a unit, $9.00\non a paid repair.\n3. On refit, check the port cover seals; the 220R is IPX4 and the cover is part of that\nrating.\n4. Charge to full on the bench (about 3.5 hours) and check the power bank output with\nthe load tester: it should hold 5 V at 1 A for 10 minutes.\n\nHeritage No. 7 (LS-H7)\nThe Heritage No. 7 is a solid brass oil lamp with a 10-year warranty, so treat every one as a\nred tag unless the ticket says otherwise. It burns Clearburn lamp oil only. Faults are a\ncracked chimney (part CH-7), a wick that will not wind, and tarnish that the customer wants\nremoved. Tarnish is not a defect, but we polish the lamp as a courtesy on any repair.\nChimney\n1. Lift the chimney straight up out of the gallery. Do not twist it; the gallery prongs will\nscratch the glass.\n2. Fit the new CH-7 with the seam at the back, and check the four prongs hold it without\nplay.\nWick\n1. The Heritage takes a 7/8-inch flat wick, part W-H7. Wind the old wick up and out.\n2. Feed the new wick with the weave running lengthwise. Trim it level with the top of the\nburner, then round the corners.\n3. Soak it for 10 minutes in lamp oil before lighting.\nBrass care\n1. Polish with the brass polish in the Heritage drawer and a soft cloth, in straight strokes.\n2. Never use the polish on the burner threads; wipe them with a dry cloth only.\n3. A customer who asks how to keep the lamp bright is told: a soft cloth after each use,\npolish twice a year, and no lacquer.\n\npolish twice a year, and no lacquer.\nBeacon 400 (LS-400), discontinued\nThe Beacon 400 was discontinued in March 2025. We stock its parts until March 2028 and\nrepair it on yellow and red tags until then. The procedure is the same as the Beacon 600's;\nthe globe is part G-400 and the gasket G-400G. There is no red night mode to test.\nParts bins\nParts are in the numbered bins along the north wall. The bin number is on the ticket when\nthe part is picked. Catalogue prices apply on paid repairs.\n\n[5] catalog.md > Fuel and parts\n### Porchlight Solar (LS-PS1) — $39.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 150 lumens |\n| Power | 2.2 W solar panel, built-in 1,800 mAh battery |\n| Runtime | 8 hours per full charge |\n| Water rating | IP44 |\n| Modes | Auto-on at dusk, manual on, off |\n| Colors | Galvanized, black |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, hanging bracket, two screws |\n\nThe Porchlight is a solar lantern for a porch, a fence post or a dock. The panel in the lid\ncharges the battery through the day and a light sensor turns the lantern on at dusk and off at\ndawn. A full day of sun gives the full 8 hours; a cloudy day gives about half that. There is\nnothing to fill, change or plug in. The bracket in the box mounts to a post or a wall, and the\nlantern lifts off the bracket to be carried.\n\nCompatible parts: hanging bracket BR-PS1.\n\n## Fuel and parts\n\n| Item | Part or model number | Price | Notes |\n| --- | --- | --- | --- |\n| Clearburn White Gas, 1 quart | LS-FUEL1 | $12.99 | Ground shipping only |\n| Clearburn Lamp Oil, 1 quart | LS-OIL1 | $9.99 | Ground shipping only |\n| Mantle 2-pack (Northstar) | M-21 | $6.99 | |\n| Beacon 600 globe | G-600 | $14.99 | Glass |\n| Northstar globe | G-ND2 | $18.99 | Glass |\n| Hagerstown globe | G-HK12 | $11.99 | Glass |\n| #2 flat wick 5-pack | W-78 | $4.99 | Fits Hagerstown and Heritage |\n| Heritage chimney | CH-7 | $21.99 | Borosilicate glass, padded box |\n| Firefly USB-C cable | C-15 | $5.99 | 1 m, USB-C to USB-A |\n| Sentinel replacement panel | P-1000 | $29.99 | Fits Sentinel 1000 and 1000 Pro |\n| Wrist lanyard | L-22 | $2.99 | Fits Firefly 220 and 220R |\n\nClearburn is our own brand of fuel, blended for us in Pennsylvania. White gas is for the\nNorthstar; lamp oil is for the Hagerstown and the Heritage. Fuel ships by ground only, in a\nlimited-quantity carton, and cannot go to a PO box, to Alaska, to Hawaii, or to Canada. Mantles,\nwicks, globes and chimneys are consumables and are not covered by warranty; they are also final\nsale once opened.\n\n## Bundles\n\nQuestion: What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+      "reply": "I don't know. The passages say Dale had the Heritage No. 7 made by a brass spinner in Baltimore [2], but they don't name the spinner.",
+      "stopReason": "end_turn",
+      "inputTokens": 4433,
+      "outputTokens": 52,
+      "cost": 0.009386,
+      "ms": 1665
+    }
+  ],
+  "ms": 3249,
+  "tokens": {
+    "input": 4567,
+    "output": 93
+  }
+}

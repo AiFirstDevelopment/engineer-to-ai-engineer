@@ -1,0 +1,191 @@
+{
+  "run": "rewrite",
+  "case": "return-window",
+  "question": "I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "return policy window for returns after delivery, eligibility of items for return or refund after 21 days, change of mind returns, lamp product category exceptions",
+  "answer": "Yes, most likely. The return window is 40 days from the carrier's delivery date, so three weeks is inside it [2]. The item must be unused (switching it on to test it still counts as unused), in its original packaging with all accessories, and bought directly from Lantern Supply Co. [5]. It also can't be final sale, and a lamp that has had fuel in it can't be returned [2].",
+  "citations": [
+    {
+      "n": 2,
+      "where": "customer-service-playbook.md > Returns"
+    },
+    {
+      "n": 5,
+      "where": "returns-policy.md > What can be returned"
+    }
+  ],
+  "cost": 0.0044480000000000006,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.6661443146285674
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.5816517593923282
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.565564968854801
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.5523981367674604
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.5505675667460671
+    },
+    {
+      "id": 114,
+      "where": "faq.md > What can't be returned at all?",
+      "score": 0.5024860071606335
+    },
+    {
+      "id": 115,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?",
+      "score": 0.5017268475929292
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.4956906450153275
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.4905191471586804
+    },
+    {
+      "id": 223,
+      "where": "returns-policy.md > Final sale, no returns",
+      "score": 0.48314615134078276
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.47584673100476493
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.4641885932183566
+    },
+    {
+      "id": 230,
+      "where": "returns-policy.md > Holiday extension",
+      "score": 0.4622988493036545
+    },
+    {
+      "id": 228,
+      "where": "returns-policy.md > In-store returns",
+      "score": 0.4407301194538721
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.4310417922527696
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.4188853825450911
+    },
+    {
+      "id": 113,
+      "where": "faq.md > Can I return a lantern I have already put fuel in?",
+      "score": 0.41660050686716016
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.4160318193920668
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4095604412703289
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.408521602178897
+    }
+  ],
+  "shown": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.6661443146285674
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.5816517593923282
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.565564968854801
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.5523981367674604
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.5505675667460671
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?",
+      "reply": "return policy window for returns after delivery, eligibility of items for return or refund after 21 days, change of mind returns, lamp product category exceptions",
+      "stopReason": "end_turn",
+      "inputTokens": 134,
+      "outputTokens": 47,
+      "cost": 0.000738,
+      "ms": 2800
+    },
+    {
+      "kind": "embed",
+      "text": "return policy window for returns after delivery, eligibility of items for return or refund after 21 days, change of mind returns, lamp product category exceptions",
+      "ms": 132
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Relationship to the returns policy\n## Relationship to the returns policy\n\nThe returns policy covers a change of mind within 40 days of delivery for an unused item. The\nwarranty covers a defect at any time within the warranty period, used or not. A fueled lantern\ncannot be returned but can always be claimed under warranty. Agents should route a customer with\na working product who does not want it to the returns policy, and a customer with a product that\ndoes not work to this document.\n\n[2] customer-service-playbook.md > Returns\n## Returns\n\nThe return window is 40 days from the delivery date recorded by the carrier. It is not counted\nfrom the order date and, since Hearth 4.1 on May 19, 2026, not from the ship date. Check the\ndelivery scan in the Hearth admin before you tell a customer whether they are inside the window.\nOrders delivered between November 1 and December 24 may be returned until January 31.\n\nReturned items must be unused, in the original packaging, with all accessories. Any fuel lantern\nor oil lamp that has had fuel in it cannot be returned; those go to warranty if there is a defect.\nClearance items marked \"Last Light\", custom-engraved items, gift cards, opened fuel, mantles,\nwicks and other consumables are final sale.\n\n[3] customer-service-playbook.md > RET-01 Return window passed\n### RET-01 Return window passed\n\nHello {name}, thank you for getting in touch about order {order}. Our return window is 40 days\nfrom the delivery date, and tracking shows this order was delivered on {delivered}, which puts it\noutside the window as of {deadline}. I am sorry I cannot open a return for it. If the item has a\ndefect, the standard warranty covers it for 2 years from purchase, and I would be glad to start a\nwarranty claim for you.\n\n[4] release-notes.md > Highlights\n### Highlights\n\nStart a return online. A customer can begin a return from the order page, choose the items and\nthe reason, and get a return authorization number (RA-, six digits) at once instead of calling.\nThe prepaid return label at $8.50 is offered as an option and the amount is shown as a deduction\nfrom the refund before the customer confirms.\n\nThe return window is now counted from the delivery date instead of the ship date. The window is\nstill 40 days, but the clock starts when the carrier records delivery, not when the box leaves\nHagerstown. This came out of the winter returns review: a box that sat with the carrier for\nnine days was costing the customer nine days of their window. Orders shipped before May 19 had\ntheir windows recalculated from the delivery date too.\n\nOrder lookup without an account. The order number and the email address on the order are enough\nto see the status, tracking and the return option.\n\n[5] returns-policy.md > What can be returned\n## What can be returned\n\nAn item is eligible for return when all of the following are true:\n\n- It is unused. A lantern that has been switched on to check that it works is still unused. A\n  lantern that has been taken on a trip is not.\n- It is in its original packaging with all accessories, inserts, manuals and the warranty card.\n- It was purchased from Lantern Supply Co. directly: the online store, by phone, or at the\n  Frederick or Annapolis showroom. Items bought from another retailer go back to that retailer.\n- It is not on the final-sale list below.\n\nQuestion: I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?",
+      "reply": "Yes, most likely. The return window is 40 days from the carrier's delivery date, so three weeks is inside it [2]. The item must be unused (switching it on to test it still counts as unused), in its original packaging with all accessories, and bought directly from Lantern Supply Co. [5]. It also can't be final sale, and a lamp that has had fuel in it can't be returned [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1230,
+      "outputTokens": 125,
+      "cost": 0.00371,
+      "ms": 1860
+    }
+  ],
+  "ms": 4797,
+  "tokens": {
+    "input": 1364,
+    "output": 172
+  }
+}

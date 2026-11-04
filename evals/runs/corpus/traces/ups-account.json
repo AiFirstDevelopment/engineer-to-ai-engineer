@@ -1,0 +1,165 @@
+{
+  "run": "corpus",
+  "case": "ups-account",
+  "question": "What is the warehouse's UPS account number?",
+  "options": {
+    "citeCheck": true
+  },
+  "query": "What is the warehouse's UPS account number?",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.00213,
+  "retrieved": [
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.4948258733502714
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.4888353125910587
+    },
+    {
+      "id": 253,
+      "where": "shipping.md > Contacts",
+      "score": 0.4675786526580669
+    },
+    {
+      "id": 226,
+      "where": "returns-policy.md > Return authorization numbers",
+      "score": 0.4609621242236064
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.4447366448639686
+    },
+    {
+      "id": 239,
+      "where": "shipping.md > Carriers",
+      "score": 0.443591355875527
+    },
+    {
+      "id": 106,
+      "where": "faq.md > Where do I find my order number?",
+      "score": 0.43294427067891966
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.412331462123338
+    },
+    {
+      "id": 185,
+      "where": "release-notes.md > Changes",
+      "score": 0.40621690144647105
+    },
+    {
+      "id": 238,
+      "where": "shipping.md > Dispatch",
+      "score": 0.4061722554282708
+    },
+    {
+      "id": 39,
+      "where": "customer-service-playbook.md > Looking up an order",
+      "score": 0.3884772986889772
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.38694308702253594
+    },
+    {
+      "id": 190,
+      "where": "release-notes.md > Changes",
+      "score": 0.3852122472024343
+    },
+    {
+      "id": 161,
+      "where": "lumen-rewards.md > Joining",
+      "score": 0.37666294324089633
+    },
+    {
+      "id": 6,
+      "where": "about.md > People",
+      "score": 0.3733491292651393
+    },
+    {
+      "id": 216,
+      "where": "returns-policy.md > Returns Policy",
+      "score": 0.37292958887306216
+    },
+    {
+      "id": 94,
+      "where": "faq.md > Frequently Asked Questions",
+      "score": 0.36520462215151744
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.36424780829165293
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.3595271311379403
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.3584658054777187
+    }
+  ],
+  "shown": [
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.4948258733502714
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.4888353125910587
+    },
+    {
+      "id": 253,
+      "where": "shipping.md > Contacts",
+      "score": 0.4675786526580669
+    },
+    {
+      "id": 226,
+      "where": "returns-policy.md > Return authorization numbers",
+      "score": 0.4609621242236064
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.4447366448639686
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "What is the warehouse's UPS account number?",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] shipping.md > Shipping Policy and Operations\n# Shipping Policy and Operations\n\nLast updated: September 28, 2026\nOwner: Denise Okafor, Warehouse Manager\n\n[2] warranty.md > Shipping for an approved claim\n### Shipping for an approved claim\n\nFor an approved claim the company pays shipping both ways. The customer receives a prepaid UPS\nGround label addressed to:\n\nLantern Supply Co. Repair Center\n1180 Downsville Pike, Dock B\nHagerstown, MD 21740\n\nThe product must be packed in a box with enough padding that it does not move. Fuel lanterns and\noil lamps must be completely drained and left open to air for 24 hours before packing; the\nRepair Center refuses any package that smells of fuel, and the carrier may fine the sender. The\nRepair Center acknowledges arrival by email the same business day.\n\nCustomers may also drop a product at either showroom. Frederick sends it to Hagerstown on the\nTuesday van; Annapolis does the same. A drop-off at a showroom still needs a WC- number.\n\n[3] shipping.md > Contacts\n## Contacts\n\nShipping questions from customers go to help@lanternsupply.example or (301) 555-0147. Questions\nfrom agents about a specific package go to the warehouse office line, extension 240, staffed by\nDenise Okafor's team from 7:00 AM to 5:00 PM ET on business days.\n\n[4] returns-policy.md > Return authorization numbers\n## Return authorization numbers\n\nEvery mailed return needs a return authorization number before it ships. RA numbers have the form\nRA- followed by six digits, for example RA-118204. The number is printed on the packing slip\nthat comes with the prepaid label and must also be written on the outside of the box.\n\nCustomers obtain an RA number by:\n\n- Using \"Start a return\" on the online store, which issues the number immediately for any\n  eligible order and emails it with a packing slip.\n- Calling (301) 555-0147 during support hours. The agent creates the return in Hearth and reads\n  the number back.\n\nA package that arrives at the warehouse without an RA number is held for 10 business days while\nthe warehouse tries to match it to an order. If it cannot be matched it is returned to the sender\nat the sender's cost. The RA number is valid for 30 days from issue.\n\n[5] shipping.md > Signature on delivery\n### Signature on delivery\n\nOrders over $400 ship with a signature required. The threshold is applied to the merchandise\nsubtotal. Customers who cannot be present may redirect the package to a UPS Access Point through\nthe carrier's tracking page. The warehouse does not waive the signature requirement on request.\n\nQuestion: What is the warehouse's UPS account number?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1030,
+      "outputTokens": 7,
+      "cost": 0.00213,
+      "ms": 1136
+    }
+  ],
+  "ms": 1144,
+  "tokens": {
+    "input": 1030,
+    "output": 7
+  }
+}

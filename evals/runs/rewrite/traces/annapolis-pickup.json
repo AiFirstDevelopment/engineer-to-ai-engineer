@@ -1,0 +1,195 @@
+{
+  "run": "rewrite",
+  "case": "annapolis-pickup",
+  "question": "Can I collect my online order at the Annapolis showroom?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Annapolis showroom in-store pickup policy for online orders (buy online pickup in store, BOPIS), eligibility, availability, and pickup procedures",
+  "answer": "No. Online orders can't be collected at the Annapolis showroom, which doesn't offer curbside pickup [1][2][4]. Pickup is available only at the Frederick showroom, or you can have the order shipped [2][4].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "faq.md > Can I pick my order up instead?"
+    },
+    {
+      "n": 2,
+      "where": "shipping.md > Curbside pickup"
+    },
+    {
+      "n": 4,
+      "where": "showrooms.md > Services"
+    }
+  ],
+  "cost": 0.004062,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 100,
+      "where": "faq.md > Can I pick my order up instead?",
+      "score": 0.6318133055658682
+    },
+    {
+      "id": 245,
+      "where": "shipping.md > Curbside pickup",
+      "score": 0.6207720618079489
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.5764279779303632
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.5457584430829854
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.5426076514675583
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.5353608111173745
+    },
+    {
+      "id": 228,
+      "where": "returns-policy.md > In-store returns",
+      "score": 0.49400006217395065
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.49003370688060327
+    },
+    {
+      "id": 239,
+      "where": "shipping.md > Carriers",
+      "score": 0.4663236669503351
+    },
+    {
+      "id": 48,
+      "where": "customer-service-playbook.md > Repairs",
+      "score": 0.4634714344213111
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.4554742560557678
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.44805751735570337
+    },
+    {
+      "id": 252,
+      "where": "shipping.md > Internal transfers",
+      "score": 0.4442011498990013
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.4417331394667782
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.4416043190350639
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.44035728554595205
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.4379145072139601
+    },
+    {
+      "id": 145,
+      "where": "faq.md > Where are your stores?",
+      "score": 0.4367596674734427
+    },
+    {
+      "id": 263,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.4351102607048662
+    },
+    {
+      "id": 238,
+      "where": "shipping.md > Dispatch",
+      "score": 0.43480067445050624
+    }
+  ],
+  "shown": [
+    {
+      "id": 100,
+      "where": "faq.md > Can I pick my order up instead?",
+      "score": 0.6318133055658682
+    },
+    {
+      "id": 245,
+      "where": "shipping.md > Curbside pickup",
+      "score": 0.6207720618079489
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.5764279779303632
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.5457584430829854
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.5426076514675583
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Can I collect my online order at the Annapolis showroom?",
+      "reply": "Annapolis showroom in-store pickup policy for online orders (buy online pickup in store, BOPIS), eligibility, availability, and pickup procedures",
+      "stopReason": "end_turn",
+      "inputTokens": 123,
+      "outputTokens": 53,
+      "cost": 0.000776,
+      "ms": 1522
+    },
+    {
+      "kind": "embed",
+      "text": "Annapolis showroom in-store pickup policy for online orders (buy online pickup in store, BOPIS), eligibility, availability, and pickup procedures",
+      "ms": 10
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > Can I pick my order up instead?\n### Can I pick my order up instead?\n\nYes, at the Frederick showroom only. Choose curbside pickup at checkout and your order is ready\nwithin 2 hours during store hours, Monday through Saturday 9:00 AM to 6:00 PM. Pickup is free.\nThe Annapolis showroom does not offer curbside pickup.\n\n[2] shipping.md > Curbside pickup\n## Curbside pickup\n\nCurbside pickup is available at the Frederick showroom only, at 412 East Patrick Street. It is\nfree and orders are ready within 2 hours of being placed during showroom hours (Monday to\nSaturday, 9:00 AM to 6:00 PM ET). An order placed after 4:00 PM is ready the next morning.\nThe customer receives a \"ready for pickup\" email, parks in the loading zone on East Patrick\nStreet and calls the showroom; staff bring the order out. Pickup orders are held for 7 days,\nafter which they are cancelled and refunded.\n\nThe Annapolis showroom does not offer curbside pickup; its stock is not connected to the online\nstore's inventory. Customers near Annapolis can order online and have the order shipped, or buy\nfrom the showroom floor.\n\nFuel may be collected curbside, which is the simplest way for a Frederick customer to buy it.\n\n[3] faq.md > Can I return something at a showroom?\n### Can I return something at a showroom?\n\nYes, at either the Frederick or the Annapolis showroom. Bring the packing slip or the order number\nand the showroom will process the return on the spot.\n\n[4] showrooms.md > Services\n### Services\n\nRepair drop-off: bring the lantern to the register. We open the repair ticket and hold the lantern\nin the back room. Annapolis repairs are shipped to the Hagerstown Repair Center once a week, on\nTuesdays, so an Annapolis drop-off takes about a week longer than one in Frederick. Fuel lanterns\nmust be empty; Annapolis has no drain tray, so please empty the lantern at home first.\n\nThere is no curbside pickup at Annapolis, and no wick-trimming clinic. Online orders cannot be\ncollected here. Customers who want to collect an order should choose Curbside pickup, Frederick, or\nhave it shipped.\n\nIn-store returns are accepted with the packing slip or the order number, and no RA number is\nneeded.\n\n[5] shipping.md > Rates and delivery times\n## Rates and delivery times\n\nAll orders ship from the warehouse at 1180 Downsville Pike, Hagerstown, MD 21740. Delivery times\nare in business days (Monday to Friday, excluding the six company holidays) and count from the\nday the order leaves the warehouse, not the day it was placed.\n\n| Service   | Cost                             | Delivery time         | Same-day cutoff |\n|-----------|----------------------------------|-----------------------|-----------------|\n| Standard  | $6.95, free on orders of $75 or more | 3 to 6 business days | 2:00 PM ET    |\n| Expedited | $14.95                           | 2 business days       | 2:00 PM ET      |\n| Overnight | $29.95                           | Next business day     | 1:00 PM ET      |\n| Canada    | $19.95 flat                      | 5 to 10 business days | 2:00 PM ET      |\n\nQuestion: Can I collect my online order at the Annapolis showroom?",
+      "reply": "No. Online orders can't be collected at the Annapolis showroom, which doesn't offer curbside pickup [1][2][4]. Pickup is available only at the Frederick showroom, or you can have the order shipped [2][4].",
+      "stopReason": "end_turn",
+      "inputTokens": 1263,
+      "outputTokens": 76,
+      "cost": 0.003286,
+      "ms": 1527
+    }
+  ],
+  "ms": 3060,
+  "tokens": {
+    "input": 1386,
+    "output": 129
+  }
+}

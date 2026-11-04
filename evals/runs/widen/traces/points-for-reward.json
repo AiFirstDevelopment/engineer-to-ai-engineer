@@ -1,0 +1,191 @@
+{
+  "run": "widen",
+  "case": "points-for-reward",
+  "question": "How many Lumen Rewards points do I need for a $25 reward?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Lumen Rewards points redemption rate $25 reward certificate points required rewards program terms",
+  "answer": "You need 500 points for each $25 reward [1][4]. Points are redeemed in multiples of 500 [4].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "faq.md > How do I earn points?"
+    },
+    {
+      "n": 4,
+      "where": "lumen-rewards.md > Redeeming points"
+    }
+  ],
+  "cost": 0.006252000000000001,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 141,
+      "where": "faq.md > How do I earn points?",
+      "score": 0.8128206118055475
+    },
+    {
+      "id": 160,
+      "where": "lumen-rewards.md > Overview",
+      "score": 0.7199063779117114
+    },
+    {
+      "id": 174,
+      "where": "release-notes.md > Highlights",
+      "score": 0.7048794514571596
+    },
+    {
+      "id": 163,
+      "where": "lumen-rewards.md > Redeeming points",
+      "score": 0.6691321746779066
+    },
+    {
+      "id": 175,
+      "where": "release-notes.md > Changes",
+      "score": 0.6059216387061778
+    },
+    {
+      "id": 140,
+      "where": "faq.md > Lumen Rewards",
+      "score": 0.5927481075325265
+    },
+    {
+      "id": 159,
+      "where": "lumen-rewards.md > Lumen Rewards Program",
+      "score": 0.585984273432986
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.552368563785992
+    },
+    {
+      "id": 171,
+      "where": "lumen-rewards.md > Program contact",
+      "score": 0.5357533846439198
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.5210276621194005
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.4911922559845472
+    },
+    {
+      "id": 186,
+      "where": "release-notes.md > Fixes",
+      "score": 0.48554675005852393
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.46169991903143215
+    },
+    {
+      "id": 168,
+      "where": "lumen-rewards.md > Expiry",
+      "score": 0.44554223823004996
+    },
+    {
+      "id": 143,
+      "where": "faq.md > What do the tiers get me?",
+      "score": 0.4114989043948752
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.40343260838113604
+    },
+    {
+      "id": 167,
+      "where": "lumen-rewards.md > Birthday reward",
+      "score": 0.39202643689811123
+    },
+    {
+      "id": 170,
+      "where": "lumen-rewards.md > Questions agents are asked",
+      "score": 0.381694803552524
+    },
+    {
+      "id": 161,
+      "where": "lumen-rewards.md > Joining",
+      "score": 0.3773348203901613
+    },
+    {
+      "id": 142,
+      "where": "faq.md > Do points expire?",
+      "score": 0.35525189726887363
+    }
+  ],
+  "shown": [
+    {
+      "id": 141,
+      "where": "faq.md > How do I earn points?",
+      "score": 0.8128206118055475
+    },
+    {
+      "id": 160,
+      "where": "lumen-rewards.md > Overview",
+      "score": 0.7199063779117114
+    },
+    {
+      "id": 174,
+      "where": "release-notes.md > Highlights",
+      "score": 0.7048794514571596
+    },
+    {
+      "id": 163,
+      "where": "lumen-rewards.md > Redeeming points",
+      "score": 0.6691321746779066
+    },
+    {
+      "id": 175,
+      "where": "release-notes.md > Changes",
+      "score": 0.6059216387061778
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How many Lumen Rewards points do I need for a $25 reward?",
+      "reply": "Lumen Rewards points redemption rate $25 reward certificate points required rewards program terms",
+      "stopReason": "end_turn",
+      "inputTokens": 126,
+      "outputTokens": 32,
+      "cost": 0.000572,
+      "ms": 1373
+    },
+    {
+      "kind": "embed",
+      "text": "Lumen Rewards points redemption rate $25 reward certificate points required rewards program terms",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > How do I earn points?\n## Lumen Rewards\n\n### How do I earn points?\n\nJoin Lumen Rewards for free and you earn 1 point for every dollar you spend, before shipping and\ntax. Every 500 points is a $25 reward.\n\n### Do points expire?\n\nPoints expire after 18 months without a purchase. Any purchase, in store or online, resets the\nclock.\n\n[2] lumen-rewards.md > Overview\n# Lumen Rewards Program\n\nLast updated: October 16, 2026\nOwner: Tomas Reyes, Head of Customer Service\n\n## Overview\n\nLumen Rewards is the loyalty program of Lantern Supply Co. It launched in April 2023 and is free\nto join. Members earn points on every purchase, redeem points for rewards, and move up through\nthree tiers as they earn. The program is run by customer service; the points ledger lives in\nHearth and is visible to the member on the online store and to agents on the order screen.\n\nAs of October 2026 the program has 11,480 members, of whom about 9,600 are in the Ember tier,\n1,650 in Flame and 230 in Beacon.\n\n## Joining\n\nAny customer with an email address may join on the online store, by phone, or at either\nshowroom. There is no fee and no minimum purchase. Each member receives a member number of the\nform LR- followed by seven digits, for example LR-0048213. The member number is printed on\nreceipts and quoted on points emails. A customer may hold one membership; duplicate accounts\nfound at the same email address are merged by customer service, with the points combined.\n\nEmployees may join, and earn points on their own purchases at the discounted price actually\npaid.\n\n[3] release-notes.md > Highlights\n## 4.3 — October 15, 2026\n\n### Highlights\n\nFree standard shipping now starts at $60, down from $75. The threshold is applied to the order\nsubtotal before shipping and tax, the same way the $75 threshold was. The shipping page and the\ncart both show the new amount, and the cart shows how much more a customer needs to add to\nqualify. We expect the change to move a good share of the $60–$75 orders that used to stall at\nthe cart.\n\nGift cards are on sale for the first time. They come in $25, $50, $100 and $200 amounts, are\ndelivered by email within an hour of purchase, and can be redeemed online or at either\nshowroom. Gift cards are final sale and do not earn Lumen Rewards points when bought, though\npurchases paid with them do.\n\nLumen Rewards points now appear at checkout. A member sees the points the order will earn next\nto the order total, and any reward they have available is offered as a payment line before the\ncard step.\n\n### Changes\n\n- Free shipping threshold: $60 (was $75). The old threshold was in place since the store\n  launched; this is the first change to it.\n- Gift card purchase, delivery and redemption, online and in-store.\n- Points preview and reward redemption at checkout for signed-in Lumen Rewards members.\n- The order confirmation email now lists the delivery estimate as a date range rather than\n  \"3–6 business days\".\n- Signature-required orders (over $400) now say so on the checkout page, not only in the\n  confirmation email.\n\n[4] lumen-rewards.md > Redeeming points\n## Earning points\n\nMembers earn 1 point for every $1 spent on merchandise, calculated on the amount paid after\ndiscounts and before shipping and tax. Fractions of a dollar are dropped: a $34.99 Firefly 220\nearns 34 points, and a $219.99 Sentinel 1000 Pro earns 219 points. Gift card purchases earn no\npoints; purchases paid with a gift card earn points as usual.\n\nPoints post 48 hours after the order is delivered, or 48 hours after a showroom purchase. The\ndelay exists so that an order cancelled before delivery never shows points that then have to be\nremoved. Points from a showroom purchase post only if the member number was given at the\nregister; receipts can be added to an account within 30 days by calling customer service.\n\nPoints also come from:\n\n- Writing a product review on the online store: 25 points per review, up to 100 points a year.\n- The birthday reward, described below.\n- Occasional double-points events, announced by email; the last was the week of\n  September 14, 2026, which was double points on the Sentinel line.\n\nPoints do not come from shipping charges, tax, repair fees, gift cards, or purchases from other\nretailers.\n\n## Redeeming points\n\nEvery 500 points can be exchanged for a $25 reward. Rewards are issued as a code that can be\napplied to any order on the online store or quoted at a showroom register. A reward code is valid\nfor 90 days from issue. Points are redeemed in multiples of 500; a member with 1,200 points can\ntake two rewards and keep 200 points.\n\nA reward can be applied to any merchandise, including fuel, parts and Last Light clearance items,\nbut not to gift cards or shipping charges. One reward code may be used per order. The reward\nreduces the amount paid and therefore the points earned on that order.\n\n## Tiers\n\nTiers are set by the points earned in a calendar year, January 1 to December 31, counting points\nfrom purchases and reviews but not the birthday reward. A member who reaches a tier keeps it for\nthe rest of that year and all of the following year, then is re-qualified on the new year's\nearnings.\n\n| Tier   | Points in a calendar year | Perks                                           |\n|--------|---------------------------|-------------------------------------------------|\n| Ember  | 0 to 999                  | Points, rewards, birthday reward, member emails |\n| Flame  | 1,000 to 2,499            | Ember perks, plus free expedited upgrades       |\n| Beacon | 2,500 and up              | Flame perks, early Second Light access, a free repair |\n\n[5] release-notes.md > Changes\n### Highlights\n\nFree standard shipping now starts at $60, down from $75. The threshold is applied to the order\nsubtotal before shipping and tax, the same way the $75 threshold was. The shipping page and the\ncart both show the new amount, and the cart shows how much more a customer needs to add to\nqualify. We expect the change to move a good share of the $60–$75 orders that used to stall at\nthe cart.\n\nGift cards are on sale for the first time. They come in $25, $50, $100 and $200 amounts, are\ndelivered by email within an hour of purchase, and can be redeemed online or at either\nshowroom. Gift cards are final sale and do not earn Lumen Rewards points when bought, though\npurchases paid with them do.\n\nLumen Rewards points now appear at checkout. A member sees the points the order will earn next\nto the order total, and any reward they have available is offered as a payment line before the\ncard step.\n\n### Changes\n\n- Free shipping threshold: $60 (was $75). The old threshold was in place since the store\n  launched; this is the first change to it.\n- Gift card purchase, delivery and redemption, online and in-store.\n- Points preview and reward redemption at checkout for signed-in Lumen Rewards members.\n- The order confirmation email now lists the delivery estimate as a date range rather than\n  \"3–6 business days\".\n- Signature-required orders (over $400) now say so on the checkout page, not only in the\n  confirmation email.\n\n### Fixes\n\n- The Canada shipping option no longer appears for carts that contain fuel. Fuel does not ship\n  to Canada and the cart said so only at the final step.\n- Saved addresses with an apartment number were losing the apartment line when edited.\n- The compare page listed the Sentinel 1000 Pro's weight as 1.4 kg; it is 1.9 kg.\n\nQuestion: How many Lumen Rewards points do I need for a $25 reward?",
+      "reply": "You need 500 points for each $25 reward [1][4]. Points are redeemed in multiples of 500 [4].",
+      "stopReason": "end_turn",
+      "inputTokens": 2645,
+      "outputTokens": 39,
+      "cost": 0.00568,
+      "ms": 1500
+    }
+  ],
+  "ms": 2880,
+  "tokens": {
+    "input": 2771,
+    "output": 71
+  }
+}

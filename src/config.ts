@@ -2,4 +2,4 @@
 // so what is measured is what is served. Change them only with numbers (evals/compare.ts).
 import type { Options } from "./pipeline";
 
-export const SERVED: Options = { citeCheck: true };
+export const SERVED: Options = { citeCheck: true, rewrite: true };

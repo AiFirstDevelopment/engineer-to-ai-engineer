@@ -1,0 +1,181 @@
+{
+  "run": "rewrite",
+  "case": "ups-account",
+  "question": "What is the warehouse's UPS account number?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "warehouse UPS shipping account number carrier accounts shipping procedures",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.0029259999999999998,
+  "retrieved": [
+    {
+      "id": 239,
+      "where": "shipping.md > Carriers",
+      "score": 0.531387139408773
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.4826961697455093
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.4485592062261434
+    },
+    {
+      "id": 238,
+      "where": "shipping.md > Dispatch",
+      "score": 0.4466441545064848
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.4404534016232893
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.43736316212597437
+    },
+    {
+      "id": 253,
+      "where": "shipping.md > Contacts",
+      "score": 0.4324806356978393
+    },
+    {
+      "id": 185,
+      "where": "release-notes.md > Changes",
+      "score": 0.42116136630814416
+    },
+    {
+      "id": 226,
+      "where": "returns-policy.md > Return authorization numbers",
+      "score": 0.40242645877294636
+    },
+    {
+      "id": 95,
+      "where": "faq.md > Orders and shipping",
+      "score": 0.39273063507338596
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.39251735941537214
+    },
+    {
+      "id": 190,
+      "where": "release-notes.md > Changes",
+      "score": 0.3892372353995789
+    },
+    {
+      "id": 235,
+      "where": "shipping.md > Scope",
+      "score": 0.3884676257621057
+    },
+    {
+      "id": 186,
+      "where": "release-notes.md > Fixes",
+      "score": 0.3863249377353813
+    },
+    {
+      "id": 106,
+      "where": "faq.md > Where do I find my order number?",
+      "score": 0.37945185189349323
+    },
+    {
+      "id": 236,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.3727919456774814
+    },
+    {
+      "id": 39,
+      "where": "customer-service-playbook.md > Looking up an order",
+      "score": 0.3697571847402178
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.36824930551198765
+    },
+    {
+      "id": 251,
+      "where": "shipping.md > Packaging",
+      "score": 0.36352039865160996
+    },
+    {
+      "id": 96,
+      "where": "faq.md > How long will my order take to arrive?",
+      "score": 0.35850812827759315
+    }
+  ],
+  "shown": [
+    {
+      "id": 239,
+      "where": "shipping.md > Carriers",
+      "score": 0.531387139408773
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.4826961697455093
+    },
+    {
+      "id": 280,
+      "where": "warranty.md > Shipping for an approved claim",
+      "score": 0.4485592062261434
+    },
+    {
+      "id": 238,
+      "where": "shipping.md > Dispatch",
+      "score": 0.4466441545064848
+    },
+    {
+      "id": 242,
+      "where": "shipping.md > Signature on delivery",
+      "score": 0.4404534016232893
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the warehouse's UPS account number?",
+      "reply": "warehouse UPS shipping account number carrier accounts shipping procedures",
+      "stopReason": "end_turn",
+      "inputTokens": 118,
+      "outputTokens": 26,
+      "cost": 0.000496,
+      "ms": 1270
+    },
+    {
+      "kind": "embed",
+      "text": "warehouse UPS shipping account number carrier accounts shipping procedures",
+      "ms": 13
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] shipping.md > Carriers\n## Carriers\n\nStandard orders ship by UPS Ground or USPS, chosen by the warehouse management system by weight\nand destination. As a rule, packages under 1 lb go USPS and everything else goes UPS Ground.\nExpedited orders ship UPS 2nd Day Air. Overnight orders ship UPS Next Day Air Saver. Canadian\norders ship UPS Standard to Canada.\n\nThe warehouse can ship by FedEx on request for a customer who cannot receive UPS, at the UPS\nrate; this is set up by Denise Okafor's team on a per-order basis.\n\nCarrier pickups are at 4:30 PM each business day. The UPS account number and the USPS permit are\nheld by the warehouse office; agents do not need them.\n\n[2] shipping.md > Shipping Policy and Operations\n# Shipping Policy and Operations\n\nLast updated: September 28, 2026\nOwner: Denise Okafor, Warehouse Manager\n\n[3] warranty.md > Shipping for an approved claim\n### Shipping for an approved claim\n\nFor an approved claim the company pays shipping both ways. The customer receives a prepaid UPS\nGround label addressed to:\n\nLantern Supply Co. Repair Center\n1180 Downsville Pike, Dock B\nHagerstown, MD 21740\n\nThe product must be packed in a box with enough padding that it does not move. Fuel lanterns and\noil lamps must be completely drained and left open to air for 24 hours before packing; the\nRepair Center refuses any package that smells of fuel, and the carrier may fine the sender. The\nRepair Center acknowledges arrival by email the same business day.\n\nCustomers may also drop a product at either showroom. Frederick sends it to Hagerstown on the\nTuesday van; Annapolis does the same. A drop-off at a showroom still needs a WC- number.\n\n[4] shipping.md > Dispatch\n## Dispatch\n\nOrders placed before 2:00 PM ET on a business day ship the same day. Orders placed after 2:00 PM\nET, on a weekend or on a holiday ship the next business day. The warehouse runs two pick waves, at\n10:30 AM and 2:15 PM; the afternoon wave is the one that catches orders placed just before the\ncutoff. Carriers collect at 4:30 PM.\n\nEvery order gets a tracking number by email when the label is printed. If the email has not\narrived by the next morning the order is almost always still in the warehouse; agents should check\nthe order status in Hearth before offering anything to the customer.\n\nOrders that contain a backordered item are held until the whole order can ship, unless the\ncustomer asks for a split shipment. A split shipment costs the customer nothing; the warehouse\nabsorbs the second label.\n\n[5] shipping.md > Signature on delivery\n### Signature on delivery\n\nOrders over $400 ship with a signature required. The threshold is applied to the merchandise\nsubtotal. Customers who cannot be present may redirect the package to a UPS Access Point through\nthe carrier's tracking page. The warehouse does not waive the signature requirement on request.\n\nQuestion: What is the warehouse's UPS account number?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1180,
+      "outputTokens": 7,
+      "cost": 0.00243,
+      "ms": 1013
+    }
+  ],
+  "ms": 2298,
+  "tokens": {
+    "input": 1298,
+    "output": 33
+  }
+}

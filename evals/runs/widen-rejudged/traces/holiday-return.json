@@ -1,0 +1,191 @@
+{
+  "run": "widen",
+  "case": "holiday-return",
+  "question": "My lantern was delivered on November 20. What is the last day I can return it?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise",
+  "answer": "The last day is January 31 (of the following year). Orders delivered between November 1 and December 24 get the holiday extension [3], and the returns policy's worked example confirms this [2].",
+  "citations": [
+    {
+      "n": 3,
+      "where": "customer-service-playbook.md > Returns"
+    },
+    {
+      "n": 2,
+      "where": "returns-policy.md > What can be returned"
+    }
+  ],
+  "cost": 0.00666,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.7377379027003754
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.7066182248020771
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.6519862156835499
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.6357838915175705
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.6276440629181845
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.6246472503602327
+    },
+    {
+      "id": 230,
+      "where": "returns-policy.md > Holiday extension",
+      "score": 0.5978687773187688
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.5883539782447647
+    },
+    {
+      "id": 115,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?",
+      "score": 0.5844892810510679
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.5790714878486405
+    },
+    {
+      "id": 217,
+      "where": "returns-policy.md > Purpose",
+      "score": 0.5757824053397869
+    },
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.5708310765338896
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.563382533313417
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.5516914596805848
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.546740843707263
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.543526334425412
+    },
+    {
+      "id": 36,
+      "where": "customer-service-playbook.md > Customer Service Playbook",
+      "score": 0.5328691642579365
+    },
+    {
+      "id": 200,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.5160023286189391
+    },
+    {
+      "id": 114,
+      "where": "faq.md > What can't be returned at all?",
+      "score": 0.5105695291033994
+    },
+    {
+      "id": 113,
+      "where": "faq.md > Can I return a lantern I have already put fuel in?",
+      "score": 0.5081484288740057
+    }
+  ],
+  "shown": [
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.7377379027003754
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.7066182248020771
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.6519862156835499
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.6357838915175705
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.6276440629181845
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "My lantern was delivered on November 20. What is the last day I can return it?",
+      "reply": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise",
+      "stopReason": "end_turn",
+      "inputTokens": 127,
+      "outputTokens": 35,
+      "cost": 0.000604,
+      "ms": 1445
+    },
+    {
+      "kind": "embed",
+      "text": "lantern return policy return window deadline days from delivery date, eligibility for returns of delivered merchandise",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Relationship to the returns policy\n## Safety notices\n\nIf a defect is found that affects safety, the company notifies registered owners directly,\npublishes a notice on the website and offers a free repair or replacement regardless of warranty\nstatus. The last such notice was in February 2021 for a batch of Beacon 400 battery springs; it\nis closed.\n\n## Relationship to the returns policy\n\nThe returns policy covers a change of mind within 40 days of delivery for an unused item. The\nwarranty covers a defect at any time within the warranty period, used or not. A fueled lantern\ncannot be returned but can always be claimed under warranty. Agents should route a customer with\na working product who does not want it to the returns policy, and a customer with a product that\ndoes not work to this document.\n\n[2] returns-policy.md > What can be returned\n### Worked examples\n\nOrder LS-2026-004871 shipped on June 2, 2026 and was delivered on June 5, 2026. Day one is June 6.\nThe last day to start a return is July 15, 2026.\n\nOrder LS-2026-011302 was delivered on November 14, 2026. Under the ordinary rule the window\nwould close on December 24, 2026. Because the order was delivered between November 1 and\nDecember 24, the holiday extension applies and the customer has until January 31, 2027.\n\nOrder LS-2026-009140 was picked up curbside at Frederick on September 9, 2026. The last day to\nstart a return is October 19, 2026.\n\n## What can be returned\n\nAn item is eligible for return when all of the following are true:\n\n- It is unused. A lantern that has been switched on to check that it works is still unused. A\n  lantern that has been taken on a trip is not.\n- It is in its original packaging with all accessories, inserts, manuals and the warranty card.\n- It was purchased from Lantern Supply Co. directly: the online store, by phone, or at the\n  Frederick or Annapolis showroom. Items bought from another retailer go back to that retailer.\n- It is not on the final-sale list below.\n\n### Fuel put in means no return\n\nAny fuel lantern or oil lamp that has had fuel put in it cannot be returned for a refund or an\nexchange, regardless of how little fuel was used or whether it was lit. This covers the Northstar\nDual-Fuel (LS-ND2), the Hagerstown Kerosene Lantern (LS-HK12) and the Heritage No. 7 (LS-H7).\nOnce fuel has been in the tank or font the item is a hazardous-materials shipment and the\nwarehouse cannot restock it. A fueled lantern with a defect is handled under the warranty policy,\nnot the returns policy. Agents should ask directly whether fuel has been put in before issuing an\nRA number for any of these three models.\n\n[3] customer-service-playbook.md > Returns\n## Looking up an order\n\nEvery order has a number in the form LS-2026-xxxxxx: the letters LS, the year the order was\nplaced, and six digits. An example is LS-2026-004871. Customers find it in the confirmation email\nand on the packing slip. Look orders up in the Hearth admin by number, by email address or by the\nlast four digits of the card.\n\nIf the customer does not have the number, ask for the email on the order and the approximate\ndate. Since Hearth 4.1 a customer can also look up their own order on the online store without an\naccount using the order number and the postal code on the shipping address.\n\nNever read a full card number, a full address or the contents of an order to anyone who cannot\ngive you the order number or the email it was placed with.\n\n## Returns\n\nThe return window is 40 days from the delivery date recorded by the carrier. It is not counted\nfrom the order date and, since Hearth 4.1 on May 19, 2026, not from the ship date. Check the\ndelivery scan in the Hearth admin before you tell a customer whether they are inside the window.\nOrders delivered between November 1 and December 24 may be returned until January 31.\n\nReturned items must be unused, in the original packaging, with all accessories. Any fuel lantern\nor oil lamp that has had fuel in it cannot be returned; those go to warranty if there is a defect.\nClearance items marked \"Last Light\", custom-engraved items, gift cards, opened fuel, mantles,\nwicks and other consumables are final sale.\n\n### Issuing an RA number\n\nEvery mailed return needs a return authorization number in the form RA-xxxxxx (six digits), for\nexample RA-118204. Customers get one themselves through Start a return on the online store, which\nhas issued RA numbers automatically since Hearth 4.1. On the phone, open the order in the Hearth\nadmin, choose Create return, pick the items and the reason, and read the RA number back to the\ncustomer. Also email it. A return that arrives at Hagerstown without an RA number waits in the\n\"no RA\" bin until someone matches it, which adds days to the refund, so always issue one.\n\nIn-store returns at either showroom do not need an RA number, only the packing slip or the order\nnumber.\n\n[4] returns-policy.md > The return window\n## Purpose\n\nThis document is the returns policy of Lantern Supply Co. as it applies to orders placed on the\nonline store, by phone, and in either showroom. Customer service agents, showroom staff and the\nHagerstown warehouse follow it as written. The customer-facing summary on lanternsupply.example\nis derived from this document and must not promise more than it does. Questions about an\nexception go to the shift lead first, then to Tomas Reyes.\n\n## The return window\n\nA customer may return an eligible item within 40 days of the delivery date. The window is counted\nfrom the date the carrier recorded delivery, not from the date the order was placed and not from\nthe date it shipped. For showroom purchases, the delivery date is the purchase date on the\nreceipt. For curbside pickup orders, it is the date the order was handed over at the Frederick\nshowroom.\n\nDay one is the day after delivery. A return is on time if the customer starts it (requests an RA\nnumber online or by phone, or brings the item to a showroom) on or before day 40. The item itself\nmay arrive at the warehouse after day 40 as long as the RA number was issued on time and the\npackage is postmarked within 7 days of the RA number being issued.\n\n### How the window is counted\n\nSince Hearth 4.1, released May 19, 2026, the online store counts the 40 days from the delivery\ndate as recorded by the carrier. Before 4.1 the store counted the window from the ship date, which\ncost customers two to six days and produced a steady stream of complaints about packages that\nspent a week in transit. Orders placed before May 19, 2026 that are still open for any reason\nare handled under the delivery-date rule as well; agents do not need to look up which rule was in\nforce.\n\n[5] release-notes.md > Highlights\n## 4.1 — May 19, 2026\n\n### Highlights\n\nStart a return online. A customer can begin a return from the order page, choose the items and\nthe reason, and get a return authorization number (RA-, six digits) at once instead of calling.\nThe prepaid return label at $8.50 is offered as an option and the amount is shown as a deduction\nfrom the refund before the customer confirms.\n\nThe return window is now counted from the delivery date instead of the ship date. The window is\nstill 40 days, but the clock starts when the carrier records delivery, not when the box leaves\nHagerstown. This came out of the winter returns review: a box that sat with the carrier for\nnine days was costing the customer nine days of their window. Orders shipped before May 19 had\ntheir windows recalculated from the delivery date too.\n\nOrder lookup without an account. The order number and the email address on the order are enough\nto see the status, tracking and the return option.\n\n### Changes\n\n- Start a return online; RA numbers issued automatically and emailed with the instructions.\n- Return window counted from the delivery date (was the ship date).\n- Order lookup by order number and email, no account needed.\n- Returns on orders delivered to a showroom for pickup can be started online too, for return\n  in store.\n\nQuestion: My lantern was delivered on November 20. What is the last day I can return it?",
+      "reply": "The last day is January 31 (of the following year). Orders delivered between November 1 and December 24 get the holiday extension [3], and the returns policy's worked example confirms this [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 2733,
+      "outputTokens": 59,
+      "cost": 0.006056,
+      "ms": 1556
+    }
+  ],
+  "ms": 3011,
+  "tokens": {
+    "input": 2860,
+    "output": 94
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "run": "widen",
+  "case": "sentinel-pro-pack",
+  "question": "What is the part number of the Sentinel 1000 Pro battery pack?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Sentinel 1000 Pro battery pack part number, replacement parts list, accessories and spare parts catalog",
+  "answer": "The Sentinel 1000 Pro battery pack is part B-1000P-21 [1].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "repair-manual.pdf p.5"
+    }
+  ],
+  "cost": 0.011850000000000001,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.6671510635832651
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5982187636106964
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5826666406806282
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.49448254720476476
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.4615143707331971
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.42097276202406025
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.41761977596380395
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.41378723457071886
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.40898631838602295
+    },
+    {
+      "id": 34,
+      "where": "catalog.md > Beacon 400 (LS-400)",
+      "score": 0.40392541553483724
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.401922721666141
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.40009802959172325
+    },
+    {
+      "id": 286,
+      "where": "warranty.md > Safety notices",
+      "score": 0.3989277991089008
+    },
+    {
+      "id": 31,
+      "where": "catalog.md > Ordering and availability",
+      "score": 0.39344699352075646
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.37993611987790776
+    },
+    {
+      "id": 279,
+      "where": "warranty.md > Decision",
+      "score": 0.3719458543184348
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.36942420714901925
+    },
+    {
+      "id": 129,
+      "where": "faq.md > Do you still sell the Beacon 400?",
+      "score": 0.36913192032799885
+    },
+    {
+      "id": 118,
+      "where": "faq.md > How long is the warranty?",
+      "score": 0.36739035301544054
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.36060834113596885
+    }
+  ],
+  "shown": [
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.6671510635832651
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5982187636106964
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5826666406806282
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.49448254720476476
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.4615143707331971
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the part number of the Sentinel 1000 Pro battery pack?",
+      "reply": "Sentinel 1000 Pro battery pack part number, replacement parts list, accessories and spare parts catalog",
+      "stopReason": "end_turn",
+      "inputTokens": 128,
+      "outputTokens": 39,
+      "cost": 0.000646,
+      "ms": 1660
+    },
+    {
+      "kind": "embed",
+      "text": "Sentinel 1000 Pro battery pack part number, replacement parts list, accessories and spare parts catalog",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.5\n1. Unscrew the top cap (counter-clockwise, four full turns) and lift the globe (part G-600)\nstraight up.\n2. The globe gasket is part G-600G. Lift it out with the pick, not with a screwdriver.\nReplace it if it is flattened, cracked, or if there was water in the base.\n3. Seat the new G-600G in the channel with the lip facing up. Press it down all the way\nround.\n4. Fit the globe and screw the cap down until it stops, then back it off a quarter turn so\nthe gasket is not crushed.\n5. Water test: run the shower head over the lantern for 2 minutes on the wet bench, then\nopen it and check the base is dry. The Beacon 600 is rated IPX5 and a repaired one\nmust meet it.\nBattery contacts\n1. Remove the base plate (three Phillips screws, 0.6 N·m on refit).\n2. If a cell has leaked, neutralise the deposit with the vinegar swab, then rinse with the\ncontact cleaner and dry.\n3. Brush the four contacts and the two springs with the fibre brush until they are bright.\n4. Fit four fresh test cells from the bench stock, check the lantern lights on both levels\nand in red night mode, then remove the test cells. We do not ship the Beacon 600 with\ncells.\nSentinel 1000 and 1000 Pro\n\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n2. Open the base: the four T8 Torx screws are under the rubber feet. Lift the feet with the\nspudger and keep them; they are not sold separately.\n3. Lift the pack out by the pull tab and unplug the three-pin connector. Do not pull on the\nwires.\n4. Fit the new B-1000-21 (or B-1000P-21), connect, and run the self-test by holding the\npower button for 8 seconds. Four blinks is a pass.\n5. Refit the screws to 0.5 N·m and press the feet back on.\n6. A bad pack goes to the LI cabinet with the ticket number written on it in marker.\nPanel latch\n1. Each detachable panel is held by a latch with a spring (part L-1000S). A panel that\ndrops when the lantern is tilted has a tired spring.\n2. Remove the panel. Press the latch tab in with the spring tool and lift the latch out.\n3. Fit the new spring with the long leg toward the body, press the latch back until it clicks.\n4. Fit the panel, invert the lantern and shake it gently. The panel must stay put.\nCharge port\nThe USB-C charge port is on a small board (part PCB-1000C) and is replaced as a unit. A\nport that charges only when the cable is held at an angle is replaced, not re-soldered. The\n\n[2] catalog.md > Sentinel 1000 (LS-1000) — $149.99\n### Beacon 600 (LS-600) — $79.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 600 lumens |\n| Power | 4 D alkaline batteries (not included) |\n| Runtime, low | 120 hours |\n| Runtime, high | 14 hours |\n| Weight | 1.1 kg without batteries |\n| Water rating | IPX5 (rain resistant) |\n| Modes | Low, high, red night mode |\n| Colors | Slate |\n| Warranty | 2 years |\n| In the box | Lantern, hanging hook, shoulder strap |\n\nThe Beacon 600 is our camp lantern: big enough to light a four-person tent or a picnic shelter,\nheavy enough to stay put in wind. Four D cells last five nights of evening use on high, and on low\nthe lantern runs for five days straight. The red night mode keeps night vision while you find your\nway to the car. A steel hanging hook screws into the top, and the shoulder strap clips to the bail.\nThe globe is glass, which gives a cleaner light than polycarbonate but can break; a replacement\nglobe is part G-600 and fits in two minutes with no tools. Batteries are not included because D\ncells ship badly and most customers have a preference.\n\nCompatible parts: globe G-600, hanging hook H-600, shoulder strap S-600.\n\n### Sentinel 1000 (LS-1000) — $149.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 10,000 mAh lithium-ion battery, USB-C charging |\n| Runtime, low | 190 hours |\n| Runtime, high | 12 hours |\n| Weight | 1.4 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Two detachable panels |\n| Colors | Slate |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, two panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 is the lantern we sell to people who lose power often. Its two light panels pull\noff the body and run on their own for up to 6 hours each, so one lantern lights the kitchen while a\npanel goes to the bathroom and another to the stairs. The body is sealed to IP67 and floats. The\n10,000 mAh battery charges over USB-C in about 7 hours and can run a phone from the USB-A port for\nseveral days. The Sentinel line carries a 5-year warranty on the lantern and panels; the battery,\nas on every rechargeable product, is covered for 1 year.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000.\n\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n[3] catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99\n### Sentinel 1000 (LS-1000) — $149.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 10,000 mAh lithium-ion battery, USB-C charging |\n| Runtime, low | 190 hours |\n| Runtime, high | 12 hours |\n| Weight | 1.4 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Two detachable panels |\n| Colors | Slate |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, two panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 is the lantern we sell to people who lose power often. Its two light panels pull\noff the body and run on their own for up to 6 hours each, so one lantern lights the kitchen while a\npanel goes to the bathroom and another to the stairs. The body is sealed to IP67 and floats. The\n10,000 mAh battery charges over USB-C in about 7 hours and can run a phone from the USB-A port for\nseveral days. The Sentinel line carries a 5-year warranty on the lantern and panels; the battery,\nas on every rechargeable product, is covered for 1 year.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000.\n\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n## Fuel lanterns and oil lamps\n\n[4] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 1: a return just outside the window\n\nOn Monday, October 12, 2026, a customer emails about order LS-2026-008316, a Beacon 600 ordered\non August 20 and delivered on August 29. She wants to return it because she bought a Sentinel 1000\ninstead. Forty days from August 29 is October 8, so the window closed four days before she wrote.\nThe agent replies with RET-01, adjusted: the lantern is unused and boxed, so the agent offers,\nwith the shift lead's okay, an exchange toward the Sentinel 1000 as a one-time courtesy, with the\n12% restocking fee waived because it is an exchange. The customer accepts. The agent issues\nRA-121877, offers the $8.50 prepaid label, and notes the courtesy on the ticket. The exchange\ndifference is charged when the Beacon 600 arrives at Hagerstown.\n\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\n[5] customer-service-playbook.md > Warranty claims\n### Lost in transit\n\nA package counts as lost when it has not arrived 10 business days after the expected delivery\ndate shown in tracking. Before that, ask the customer to check with neighbors and the carrier.\nOnce a package is lost, ship a replacement first and file the carrier claim afterwards; the\ncustomer does not wait for the carrier. Note the carrier claim number on the ticket. If the\nreplacement is also fuel, confirm the address is not a PO box.\n\nA package shown as delivered that the customer says did not arrive is handled the same way after\na 2-business-day wait, with one exception: for orders over $400, which require a signature, pull\nthe signature image from the carrier before replacing.\n\n## Warranty claims\n\nThe standard warranty is 2 years from the purchase date and covers manufacturing defects. The\nSentinel 1000 and Sentinel 1000 Pro carry 5 years, the Heritage No. 7 carries 10 years,\nrechargeable batteries and battery packs carry 1 year, and Second Light refurbished items carry\n1 year. Mantles, globes, wicks, bulbs and fuel caps are consumables and are not covered. Drops,\nwater beyond the IP rating, unapproved fuel, modifications and commercial rental use are not\ncovered.\n\nA customer starts a claim by emailing help@lanternsupply.example with the order number and\nphotos. Open a warranty claim in the Hearth admin; it issues a number in the form WC-xxxxxx, for\nexample WC-030517. The Repair Center decides within 5 business days whether to repair or replace,\nand the choice is ours. For an approved claim, send the customer a prepaid label to the\nHagerstown Repair Center at no charge. A claim with no order number can be matched by email\naddress or by the serial number on the base of the lantern.\n\nThe warranty transfers with a gift but not with a resale. If a customer bought the item second\nhand, explain this and offer a paid repair.\n\n## Repairs\n\nAny repair, under warranty or paid, gets a repair ticket in the form RT-xxxxx (five digits), for\nexample RT-20931. Create it in the Hearth admin from the warranty claim or from scratch for a paid\nrepair. The ticket number goes on the box and in the email to the customer.\n\nCustomers can drop a lantern off at either showroom or mail it to Lantern Supply Co. Repair\nCenter, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. Annapolis drop-offs are shipped to\nHagerstown weekly on Tuesdays, so tell Annapolis customers to add a week. Walt Brannigan, Head\nof Repairs, emails a quote for paid repairs before any work is done; nothing is charged until the\ncustomer approves the quote. Fuel lanterns must be emptied before they are mailed; tell the\ncustomer, and put it in the email.\n\nQuestion: What is the part number of the Sentinel 1000 Pro battery pack?",
+      "reply": "The Sentinel 1000 Pro battery pack is part B-1000P-21 [1].",
+      "stopReason": "end_turn",
+      "inputTokens": 5442,
+      "outputTokens": 32,
+      "cost": 0.011204,
+      "ms": 1376
+    }
+  ],
+  "ms": 3042,
+  "tokens": {
+    "input": 5570,
+    "output": 71
+  }
+}

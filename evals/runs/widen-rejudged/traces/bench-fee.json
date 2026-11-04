@@ -1,0 +1,191 @@
+{
+  "run": "widen",
+  "case": "bench-fee",
+  "question": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+  "answer": "The bench fee of $25.00 covers the inspection and the quote, and it is charged even if the customer declines the repair [1]. Any parts are extra, at catalogue price, and are only quoted after inspection [2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "warranty.md > Out of warranty"
+    },
+    {
+      "n": 2,
+      "where": "repair-manual.pdf p.1"
+    }
+  ],
+  "cost": 0.009424,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6791365507151531
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.6032850810091228
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5486692593925248
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4991351437176315
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.47685036258012153
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.4626934371548125
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.45419637626706844
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.43731015424621894
+    },
+    {
+      "id": 198,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.4349036351506291
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.42692899524808486
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.4188910273426682
+    },
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.40179565149456303
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.4013039752813094
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.38909127873400656
+    },
+    {
+      "id": 279,
+      "where": "warranty.md > Decision",
+      "score": 0.3866639955063753
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.38492299666009133
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.3817509023673469
+    },
+    {
+      "id": 278,
+      "where": "warranty.md > Decision",
+      "score": 0.37776076771251343
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.3668166747653963
+    },
+    {
+      "id": 237,
+      "where": "shipping.md > Rates and delivery times",
+      "score": 0.36261909234400075
+    }
+  ],
+  "shown": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6791365507151531
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.6032850810091228
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5486692593925248
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4991351437176315
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.47685036258012153
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+      "stopReason": "end_turn",
+      "inputTokens": 131,
+      "outputTokens": 34,
+      "cost": 0.000602,
+      "ms": 1343
+    },
+    {
+      "kind": "embed",
+      "text": "Northstar out-of-warranty repair diagnostic fee bench evaluation charge service pricing",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Out of warranty\n## Registration\n\nRegistration is optional. A customer who registers a product on the online store, with the order\nnumber and the serial number, is contacted directly if the company issues a safety notice for\nthat model, and does not need to produce a receipt for a claim. Registration does not extend the\nwarranty period.\n\n## Out of warranty\n\nProducts outside their warranty period, and declined claims, can be repaired by the Repair Center\nfor a fee. The customer is quoted before any work is done and can decline the quote, in which\ncase the product is returned at the customer's shipping cost. The bench fee of $25.00 pays for\nthe inspection and the quote, and is charged whether or not the customer goes ahead with the\nrepair. The Repair Center's own manual\ndescribes the fee schedule and the shop procedures.\n\n## Safety notices\n\nIf a defect is found that affects safety, the company notifies registered owners directly,\npublishes a notice on the website and offers a free repair or replacement regardless of warranty\nstatus. The last such notice was in February 2021 for a batch of Beacon 400 battery springs; it\nis closed.\n\n[2] repair-manual.pdf p.1\nLantern Supply Co. Repair Center Bench\nManual\nLast updated: September 8, 2026 Owner: Walt Brannigan, Head of Repairs\nThis manual is for the technicians at the Repair Center, 1180 Downsville Pike, Dock B,\nHagerstown. It covers intake, the bench rules, and the service procedures for every current\nproduct and for the Beacon 400, which we discontinued in March 2025 and still repair while\nparts last. Read the whole manual before your first unsupervised bench day. If a procedure\nhere disagrees with the product's own service bulletin, the bulletin wins; tell Walt so the\nmanual gets fixed.\nIntake\nEvery lantern that comes through Dock B gets a repair ticket before anyone touches it. Ticket\nnumbers are RT- followed by five digits (for example RT-20931) and are issued by the intake\nterminal. The ticket records the customer's name, the order number if there is one, the\nmodel, the serial number from the base plate, the fault as the customer described it, and the\ncondition on arrival, including scratches, dents and missing parts. Photograph every lantern\nfrom the front and from the base before you open the box flaps the rest of the way.\nEach ticket gets a coloured tag tied to the bail or handle:\n\nEach ticket gets a coloured tag tied to the bail or handle:\nRed tag: warranty repair. The claim already has a WC- number from Customer Service.\nNo charge to the customer, and the return shipping is on us.\nYellow tag: paid repair. The customer has agreed to the bench fee and to an estimate\nfor parts.\nGreen tag: Second Light refurbishment. These are returns and trade-ins being rebuilt\nfor the refurbished shelf. There is no customer waiting, so they are worked after red\nand yellow tags.\nThe bench fee for a paid repair is $25.00 plus parts at the catalogue price of the part. The fee\nis waived under warranty. If a yellow-tag repair turns out to need parts beyond the estimate\nby more than $10, stop and have Customer Service call the customer before you continue. Do\nnot guess at what the customer would want.\n\nTurnaround for a paid repair is 10 business days from the day the lantern arrives at Dock B,\ncounting the arrival day as day zero. Warranty repairs are worked in the same queue and\ncarry the same target. If a part is on backorder, the ticket is flagged \"waiting on parts\" and\nthe customer is emailed on the third day of waiting and every five business days after that.\nFuel lanterns arrive with fuel in them more often than you would think, whatever the\npacking instructions say. Drain any fuel lantern over the drain tray at the intake bench\nbefore it goes to a shelf, and log the drained fuel in the fuel room book. A lantern that smells\nof kerosene when the ticket says white gas gets a note on the ticket; it changes what you look\nfor.\nBench rules\n1. Every repaired lantern runs for 30 minutes on the bench before it goes back to the\ncustomer. LED lanterns run on high for the first 10 minutes and low for the rest. Fuel\nlanterns run on high for the whole 30 minutes on the vented bench, bench 3 or bench 4\nonly. Record the start and end time on the ticket. A lantern that fails the burn-in goes\nback to the start of the procedure, not to the shipping bench.\n\n[3] repair-manual.pdf p.3\nback twice costs us the customer.\nNorthstar Dual-Fuel (LS-ND2)\n\nThe Northstar is our most repaired product by a wide margin, which is a function of how\nmany we sell and of how it is used, not of any weakness. Nearly every Northstar fault is one\nof four things: a clogged generator, a dry pump cup, a torn mantle, or the wrong fuel. Ask\nabout the fuel first. The Northstar burns Clearburn white gas or unleaded gasoline. It does\nnot burn kerosene, and a tank that has had kerosene in it will have a varnished generator\nand a sticky check valve. That is a paid repair even inside the warranty period.\nTools for the Northstar bench: 11 mm and 13 mm open-ended wrenches, the generator\nwrench (part T-ND2, the thin 9 mm one with the bent handle), a small flat screwdriver, the\npump cup oil bottle, a nylon brush, and the torque driver set to 2.5 N·m for checking.\nGenerator tube replacement\nThe generator (part G-GEN2) is the tube that runs up through the burner and carries fuel\nfrom the tank to the mantles. Signs of a bad generator are a weak yellow flame that will not\nsteady, pulsing light, and a tank that holds pressure but will not deliver it. The part is\n$13.00, so a typical generator replacement on a yellow tag comes to $38.00 with the bench\nfee.\n\nfee.\n1. Confirm the tank is drained and depressurised. Open the filler cap slowly over the tray.\n2. Lift off the ventilator and the globe (part G-ND2). Set the globe on the padded shelf,\nnot on the bench.\n3. Turn the control valve to the fully open position so the cleaning needle is clear of the\ngenerator tip.\n4. Loosen the generator nut at the base of the burner with the 11 mm wrench, then the\nfitting at the valve body with the generator wrench. Draw the old generator straight up\nand out.\n5. Fit the new G-GEN2 with the tip toward the burner. Start both fittings by hand.\n6. Tighten the valve body fitting hand-tight plus a quarter turn. Never more than 2.5\nN·m. Check with the torque driver if you are new to this; the fitting is brass and strips\neasily.\n7. Tighten the generator nut the same way.\n8. Pressurise with 20 strokes of the pump, no fuel in the tank, and soap-test both fittings.\nAny bubbles, back off and reseat. Do not tighten further.\n9. Fill with Clearburn white gas, fit the mantles, light under the hood and run the 30-\nminute burn-in.\nPump cup service\n\n[4] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 1: a return just outside the window\n\nOn Monday, October 12, 2026, a customer emails about order LS-2026-008316, a Beacon 600 ordered\non August 20 and delivered on August 29. She wants to return it because she bought a Sentinel 1000\ninstead. Forty days from August 29 is October 8, so the window closed four days before she wrote.\nThe agent replies with RET-01, adjusted: the lantern is unused and boxed, so the agent offers,\nwith the shift lead's okay, an exchange toward the Sentinel 1000 as a one-time courtesy, with the\n12% restocking fee waived because it is an exchange. The customer accepts. The agent issues\nRA-121877, offers the $8.50 prepaid label, and notes the courtesy on the ticket. The exchange\ndifference is charged when the Beacon 600 arrives at Hagerstown.\n\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\n[5] returns-policy.md > Restocking fee\n### Final sale, no returns\n\nThe following are sold as final sale and cannot be returned or exchanged:\n\n- Clearance items marked \"Last Light\" on the product page, the price tag or the receipt.\n- Custom-engraved items, including engraved Heritage No. 7 lamps and engraved gift sets.\n- Gift cards, physical and electronic.\n- Opened fuel: Clearburn White Gas (LS-FUEL1), Clearburn Lamp Oil (LS-OIL1) and kerosene.\n- Mantles (M-21), wicks (W-78), chimneys (CH-7), globes and other consumables once the\n  packaging has been opened.\n\nUnopened fuel and unopened consumables may be returned under the ordinary rules, but fuel cannot\nbe mailed back; it must be brought to a showroom.\n\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\n## Return shipping\n\nThe customer pays return shipping unless the item is defective or the wrong item was shipped.\nCustomers may use any carrier they like and are responsible for the package until it arrives\nat the Hagerstown warehouse; the Customer Service team recommends tracking and insurance on\nanything over $100.\n\nA prepaid return label is offered on every mailed return for a flat $8.50, deducted from the\nrefund. The label is a UPS Ground label addressed to the warehouse and is good for 14 days from\nthe day it is issued. One label covers one package; a return of more than one package needs a\nlabel per package, each at $8.50.\n\nWhen the item is defective or the wrong item was shipped, the prepaid label is free and no\nrestocking fee applies.\n\nQuestion: My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "The bench fee of $25.00 covers the inspection and the quote, and it is charged even if the customer declines the repair [1]. Any parts are extra, at catalogue price, and are only quoted after inspection [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 4056,
+      "outputTokens": 71,
+      "cost": 0.008822,
+      "ms": 2112
+    }
+  ],
+  "ms": 3465,
+  "tokens": {
+    "input": 4187,
+    "output": 105
+  }
+}

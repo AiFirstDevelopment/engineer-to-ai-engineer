@@ -617,6 +617,95 @@ run with a two-cent budget: it ran six cases, spent $0.0224, one case past the b
 check allows, and recorded the other 24 as not run, so its 5 passes cannot be read as a score.
 The ledger then reads back all three runs, with the setting that differed: $0.1994 of the $5.
 
+### 6. Diagnosing a failure (`s2e6`)
+
+Four ways a case fails, told apart from the record, and each fixed where it was actually wrong.
+
+A failing case is a question for the engineer: what broke? There are four answers, and each
+points somewhere different. A retrieval miss: no passage holding the answer was shown, so the
+model could not have answered; look at the query and the chunks. A wrong fallback: the model
+said "I don't know" with the source in front of it, or answered a question the corpus does not
+answer; look at the prompt and the passage. An answer miss: the model saw the source, answered,
+and got it wrong; look at the answer against the passage, and at the case's own terms. A
+citation miss: the facts are right and the citations are missing or point at a passage that does
+not say it; look at the `[n]` against the passages. And the fix is not always in the code: the
+code, the corpus, the case or the harness can each be the thing that is wrong, and the trace
+says which.
+
+Files: `evals/stages.ts` is the labelling, in an order that matters: a fallback case that
+answered is a wrong fallback; then, for an answer case, a source never shown is a retrieval
+miss, whatever the answer; a source shown and "I don't know" is a wrong fallback; a wrong fact,
+a forbidden claim or an ungrounded answer is an answer miss; what is left is a citation miss.
+`evals/diagnose.ts <run>` groups a run's failures by stage, with the reason and where the source
+ranked, and says where to look first. `test/stages.test.ts` checks each label. `src/rewrite.ts`
+and the pipeline's `rewrite` option (`--rewrite` on the command line) are the fix for the
+retrieval miss, below; `src/config.ts` now serves it.
+
+The four, found in the runs of episode 5 and this one, and fixed:
+
+- **Retrieval miss, fixed in the code.** `staff-discount` in run `five`: source not in the top
+  20, as in every run since series 1. The question says staff, the handbook says employee, and
+  an embedding of the question lands among the Second Light passages. The fix is query
+  rewriting: one call to the model turns the question into a search query in the words company
+  documents use ("Second Light lantern employee discount staff purchase policy"), and the
+  rewrite is what is searched. That query alone puts the handbook's employee discount 4th.
+  Searching both the question and the rewrite and fusing the lists was tried first and lost it
+  again: the question's list, all Second Light, outvoted the one passage the rewrite found.
+  Measured (run `rewrite`, `--cite-check --rewrite`, against run `corpus`, the same without the
+  rewrite): the staff discount passes with its source 4th and shown, no other case changed, 30
+  of 30, for 21% more ($0.1257 against $0.1042, the rewrite call costs about $0.0004). It is now
+  served.
+
+- **Answer miss, fixed in the case.** `firefly-220r-weight` and `firefly-220-low-runtime` in run
+  `five`: source 4th and shown, the right figure in the answer, and a forbidden claim matched.
+  The answers were right ("340 g, 30 grams more than the Firefly 220's 310 g"); the case's
+  forbidden term, "310", was wrong, because it matched the contrast as well as the mistake. The
+  terms are now the mistake itself ("220R weighs 310", "220 runs 48"). Measured by scoring run
+  `five` again under the new cases without running the pipeline (`evals/runs/five-recased/`,
+  `evals/score.ts`): both pass, nothing else moved, 26 to 28.
+
+- **Wrong fallback, fixed in the corpus.** `bench-fee` in run `five`: source 1st and shown, and
+  the answer was "I don't know. The passages give the paid-repair bench fee of $25.00 plus parts
+  [1], but none of them mentions a charge just for inspecting". The pipeline keeps only "I don't
+  know." of such a reply, as it should. The model was right: the manual gives the fee for a
+  repair, the warranty policy says a customer can decline the quote, and nothing says what
+  declining costs. That is a gap in the documentation, the question customers will ask, and the
+  eval found it. `docs/warranty.md` now says it: "The bench fee of $25.00 pays for the
+  inspection and the quote, and is charged whether or not the customer goes ahead with the
+  repair." The policy is the fictional company's to decide; deciding it is the fix. The case
+  lists the new sentence as a second source. Measured (run `corpus` against `five-recased`):
+  bench-fee passes, citing the new sentence, nothing else moved, 28 to 29.
+
+- **Citation miss, fixed in the harness.** No run of the served pipeline produced one; run
+  `widen` (`--cite-check --rewrite --widen`, each passage shown with its neighbours) did:
+  `refund-approval` failed as miscited. Read from the trace, the answer was right and so were
+  its citations: "[1][2][4]" follow "Tomas Reyes must approve it", and passage 4, the handbook,
+  says exactly that. The judge had attached [4] to the next sentence. The judge was wrong, so
+  the judge is what changed: it now returns a verdict per citation, each with the statement it
+  is attached to ("the sentence or clause just before it, not a later one"), and the code
+  decides "cited" from those. The answer joined the judge's labelled cases (now sixteen); the
+  judge agreed with all sixteen on two runs. Measured by scoring `widen` again with the new
+  judge (`widen-rejudged`): refund-approval passes. So did `staff-discount`, which `widen` had
+  failed as an answer miss for saying the employee discount applies "on top of" the Second Light
+  price; that is a reading of the handbook, not a quote, and the judge called it ungrounded once
+  and grounded once. A borderline verdict that flips on a rerun is noise in the judge, and the
+  right response is to read it, not to tune for it.
+
+```sh
+npx tsx evals/diagnose.ts five
+npx tsx --env-file=.env evals/eval.ts rewrite --cite-check --rewrite
+npx tsx evals/compare.ts five rewrite
+```
+
+The transcript, `transcripts/s2e6-diagnosing-a-failure.txt`, shows run `five` diagnosed (two
+answer misses, a wrong fallback, a retrieval miss), run `widen` diagnosed (an answer miss and
+the citation miss), then the comparisons: `five` to `rewrite`, all three fixes together, 26 to
+30 of 30, for 20% more; and `widen` to `widen-rejudged`, 28 to 30. Two lessons from the four.
+Half the fixes were not in the pipeline: a case that was wrong and a document that was missing a
+sentence are as common as a bad prompt, and a harness that is only ever used to change the code
+will make the code worse to satisfy a bad case. And widening, measured again here, costs twice
+as much ($0.2547) for nothing these thirty cases need.
+
 ## Tags
 
 | Tag | Episode |
@@ -634,6 +723,7 @@ The ledger then reads back all three runs, with the setting that differed: $0.19
 | `s2e3` | The tracer |
 | `s2e4` | Scoring |
 | `s2e5` | Caps, the ledger and comparing runs |
+| `s2e6` | Diagnosing a failure |
 
 ## Dependencies
 

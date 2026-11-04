@@ -1,0 +1,195 @@
+{
+  "run": "widen",
+  "case": "prepaid-label",
+  "question": "How much does the prepaid return label cost?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "prepaid return label fee cost deducted from refund return shipping charges returns policy",
+  "answer": "The prepaid return label costs a flat $8.50, deducted from the refund [1][2][3]. It is free if the item is defective or the wrong item was shipped [1][3].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "returns-policy.md > Return shipping"
+    },
+    {
+      "n": 2,
+      "where": "faq.md > Who pays for return shipping?"
+    },
+    {
+      "n": 3,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping"
+    }
+  ],
+  "cost": 0.006402,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.7600785801570051
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.6777847892664579
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.6747975898313828
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.5645797305650578
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.5151306623572932
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.4942350365174413
+    },
+    {
+      "id": 51,
+      "where": "customer-service-playbook.md > Chargebacks",
+      "score": 0.48488565413968243
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.4706711967585445
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.45904675485920565
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.4305179669605386
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.4288215746143864
+    },
+    {
+      "id": 97,
+      "where": "faq.md > Is shipping free?",
+      "score": 0.42004536981188106
+    },
+    {
+      "id": 102,
+      "where": "faq.md > My order arrived damaged. Do I have to send it back?",
+      "score": 0.41545728409613397
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.410908981127119
+    },
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.40814639177608564
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.39919257233493477
+    },
+    {
+      "id": 229,
+      "where": "returns-policy.md > Exchanges",
+      "score": 0.3961759155178484
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.39329046029043774
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.3914750882413913
+    },
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.39053900077275233
+    }
+  ],
+  "shown": [
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.7600785801570051
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.6777847892664579
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.6747975898313828
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.5645797305650578
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.5151306623572932
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How much does the prepaid return label cost?",
+      "reply": "prepaid return label fee cost deducted from refund return shipping charges returns policy",
+      "stopReason": "end_turn",
+      "inputTokens": 117,
+      "outputTokens": 28,
+      "cost": 0.000514,
+      "ms": 1579
+    },
+    {
+      "kind": "embed",
+      "text": "prepaid return label fee cost deducted from refund return shipping charges returns policy",
+      "ms": 4
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] returns-policy.md > Return shipping\n## Restocking fee\n\nA restocking fee of 12% of the item price applies to any opened, non-defective item. \"Opened\"\nmeans the factory seal or shrink wrap has been broken, or the item has been removed from its\ninner packaging. An item returned in an unopened, sealed box carries no fee.\n\nThe fee is waived when:\n\n- The return is an exchange for another item of equal or greater value.\n- The item is defective, as confirmed by customer service or the Repair Center.\n- The wrong item was shipped, or the item does not match its product page.\n- The customer is a Beacon-tier Lumen Rewards member and the return is their first of the\n  calendar year.\n\nThe fee is calculated on the price paid after discounts and before tax and shipping. On a Beacon\n600 (LS-600) bought at $79.99, the fee is $9.60. On a Sentinel 1000 Pro (LS-1000P) at $219.99,\nthe fee is $26.40. The fee is never charged on a showroom return made within 7 days of purchase\nwith the receipt.\n\n## Return shipping\n\nThe customer pays return shipping unless the item is defective or the wrong item was shipped.\nCustomers may use any carrier they like and are responsible for the package until it arrives\nat the Hagerstown warehouse; the Customer Service team recommends tracking and insurance on\nanything over $100.\n\nA prepaid return label is offered on every mailed return for a flat $8.50, deducted from the\nrefund. The label is a UPS Ground label addressed to the warehouse and is good for 14 days from\nthe day it is issued. One label covers one package; a return of more than one package needs a\nlabel per package, each at $8.50.\n\nWhen the item is defective or the wrong item was shipped, the prepaid label is free and no\nrestocking fee applies.\n\n## Return authorization numbers\n\nEvery mailed return needs a return authorization number before it ships. RA numbers have the form\nRA- followed by six digits, for example RA-118204. The number is printed on the packing slip\nthat comes with the prepaid label and must also be written on the outside of the box.\n\nCustomers obtain an RA number by:\n\n- Using \"Start a return\" on the online store, which issues the number immediately for any\n  eligible order and emails it with a packing slip.\n- Calling (301) 555-0147 during support hours. The agent creates the return in Hearth and reads\n  the number back.\n\nA package that arrives at the warehouse without an RA number is held for 10 business days while\nthe warehouse tries to match it to an order. If it cannot be matched it is returned to the sender\nat the sender's cost. The RA number is valid for 30 days from issue.\n\n[2] faq.md > Who pays for return shipping?\n### Is there a restocking fee?\n\nA 12 percent restocking fee applies to opened items that are not defective. There is no fee on an\nexchange, on an item that arrived defective, or on an item that is still sealed.\n\n### Who pays for return shipping?\n\nYou do, unless the item is defective or we sent the wrong thing. If you would rather not arrange\nshipping yourself, we can email you a prepaid label for a flat $8.50, which we deduct from your\nrefund.\n\n### How long until I see my refund?\n\nYour refund goes back to the original payment method within 7 business days of the return\narriving at our Hagerstown warehouse. Your bank may take a few more days to post it.\n\n[3] customer-service-playbook.md > Restocking fee and return shipping\n### Issuing an RA number\n\nEvery mailed return needs a return authorization number in the form RA-xxxxxx (six digits), for\nexample RA-118204. Customers get one themselves through Start a return on the online store, which\nhas issued RA numbers automatically since Hearth 4.1. On the phone, open the order in the Hearth\nadmin, choose Create return, pick the items and the reason, and read the RA number back to the\ncustomer. Also email it. A return that arrives at Hagerstown without an RA number waits in the\n\"no RA\" bin until someone matches it, which adds days to the refund, so always issue one.\n\nIn-store returns at either showroom do not need an RA number, only the packing slip or the order\nnumber.\n\n### Restocking fee and return shipping\n\nA 12% restocking fee applies to opened, non-defective items. It is waived on exchanges and on\ndefective items. It is not charged on items returned unopened. Say the fee before you issue the RA\nnumber; nobody should learn about it from the refund amount.\n\nReturn shipping is paid by the customer unless the item is defective or we shipped the wrong item.\nWe offer a prepaid return label for a flat $8.50, deducted from the refund. For a defective item\nor our mistake, send the label at no charge and do not charge the restocking fee.\n\n### Refunds\n\nA refund goes to the original payment method within 7 business days of the return arriving at\nthe Hagerstown warehouse. Tell the customer the clock starts on arrival, not on the day they\nship, and that their bank may take a few more days to show it. Refunds over $500 need Tomas\nReyes's approval before they are released (see Goodwill and approvals).\n\n[4] release-notes.md > Highlights\n## 4.1 — May 19, 2026\n\n### Highlights\n\nStart a return online. A customer can begin a return from the order page, choose the items and\nthe reason, and get a return authorization number (RA-, six digits) at once instead of calling.\nThe prepaid return label at $8.50 is offered as an option and the amount is shown as a deduction\nfrom the refund before the customer confirms.\n\nThe return window is now counted from the delivery date instead of the ship date. The window is\nstill 40 days, but the clock starts when the carrier records delivery, not when the box leaves\nHagerstown. This came out of the winter returns review: a box that sat with the carrier for\nnine days was costing the customer nine days of their window. Orders shipped before May 19 had\ntheir windows recalculated from the delivery date too.\n\nOrder lookup without an account. The order number and the email address on the order are enough\nto see the status, tracking and the return option.\n\n### Changes\n\n- Start a return online; RA numbers issued automatically and emailed with the instructions.\n- Return window counted from the delivery date (was the ship date).\n- Order lookup by order number and email, no account needed.\n- Returns on orders delivered to a showroom for pickup can be started online too, for return\n  in store.\n\n[5] customer-service-playbook.md > RET-02 RA number issued\n### RET-01 Return window passed\n\nHello {name}, thank you for getting in touch about order {order}. Our return window is 40 days\nfrom the delivery date, and tracking shows this order was delivered on {delivered}, which puts it\noutside the window as of {deadline}. I am sorry I cannot open a return for it. If the item has a\ndefect, the standard warranty covers it for 2 years from purchase, and I would be glad to start a\nwarranty claim for you.\n\n### RET-02 RA number issued\n\nHello {name}, your return of {items} from order {order} is authorized under RA-{ra}. Please write\nthat number on the outside of the box and include the packing slip. Send it to Lantern Supply Co.\nReturns, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. {label_sentence} Your refund of\n{amount} will go to your original payment method within 7 business days of the return arriving\nat our warehouse.\n\n### SHP-01 Package lost\n\nHello {name}, I am sorry your order {order} has not arrived. Tracking shows it has been more than\n10 business days past the expected delivery date, so I have shipped a replacement today under\norder {replacement}; tracking will follow by email. We will take the claim up with the carrier\nourselves, and you do not need to do anything further.\n\nQuestion: How much does the prepaid return label cost?",
+      "reply": "The prepaid return label costs a flat $8.50, deducted from the refund [1][2][3]. It is free if the item is defective or the wrong item was shipped [1][3].",
+      "stopReason": "end_turn",
+      "inputTokens": 2654,
+      "outputTokens": 58,
+      "cost": 0.005888,
+      "ms": 2101
+    }
+  ],
+  "ms": 3685,
+  "tokens": {
+    "input": 2771,
+    "output": 86
+  }
+}

@@ -3,7 +3,7 @@
 // and the run's line in evals/runs/ledger.json is rewritten after every case, so a run that
 // dies still counts what it spent. Once the budget is spent the remaining cases are not run.
 // Usage: npx tsx --env-file=.env evals/eval.ts <run> [--budget 0.50] [--hybrid] [--rerank]
-//        [--widen] [--cite-check]. With no pipeline flags it runs what the server serves.
+//        [--widen] [--cite-check] [--rewrite]. With no pipeline flags it runs what is served.
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { MODEL } from "../src/claude";
 import { SERVED } from "../src/config";

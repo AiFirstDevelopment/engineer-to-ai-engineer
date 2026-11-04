@@ -1,0 +1,170 @@
+{
+  "run": "five",
+  "case": "generator-torque",
+  "question": "How tight should the Northstar generator tube be?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "Tighten the fittings hand-tight plus a quarter turn, never more than 2.5 N·m, since the brass strips easily. Use the same method for both the valve body fitting and the generator nut [4].",
+  "citations": [
+    {
+      "n": 4,
+      "where": "repair-manual.pdf p.3"
+    }
+  ],
+  "cost": 0.004894,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5157862508427691
+    },
+    {
+      "id": 23,
+      "where": "catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99",
+      "score": 0.4196719227063602
+    },
+    {
+      "id": 135,
+      "where": "faq.md > Can I burn kerosene in the Northstar?",
+      "score": 0.40121392883295254
+    },
+    {
+      "id": 204,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.3947651985139554
+    },
+    {
+      "id": 154,
+      "where": "fuel-safety.md > Lighting and ventilation",
+      "score": 0.37447450139622696
+    },
+    {
+      "id": 149,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.3531667506414818
+    },
+    {
+      "id": 205,
+      "where": "repair-manual.pdf p.4",
+      "score": 0.30165608779297665
+    },
+    {
+      "id": 150,
+      "where": "fuel-safety.md > Approved fuels by product",
+      "score": 0.2984737893007652
+    },
+    {
+      "id": 153,
+      "where": "fuel-safety.md > Refuelling",
+      "score": 0.2962197516372395
+    },
+    {
+      "id": 201,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.2577571897115345
+    },
+    {
+      "id": 158,
+      "where": "fuel-safety.md > When to stop using a lantern",
+      "score": 0.25384936502871547
+    },
+    {
+      "id": 206,
+      "where": "repair-manual.pdf p.4",
+      "score": 0.2359934341779596
+    },
+    {
+      "id": 148,
+      "where": "fuel-safety.md > Fuel Safety Guide",
+      "score": 0.2337862342697048
+    },
+    {
+      "id": 152,
+      "where": "fuel-safety.md > Storage",
+      "score": 0.22779639047721104
+    },
+    {
+      "id": 139,
+      "where": "faq.md > Can I run a fuel lantern indoors?",
+      "score": 0.22114622696213337
+    },
+    {
+      "id": 86,
+      "where": "employee-handbook.md > Training",
+      "score": 0.21967611915930194
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.2185073439514921
+    },
+    {
+      "id": 207,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.21457602051112926
+    },
+    {
+      "id": 276,
+      "where": "warranty.md > What is not covered",
+      "score": 0.21043236718997166
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.1988289009060404
+    }
+  ],
+  "shown": [
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.5157862508427691
+    },
+    {
+      "id": 23,
+      "where": "catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99",
+      "score": 0.4196719227063602
+    },
+    {
+      "id": 135,
+      "where": "faq.md > Can I burn kerosene in the Northstar?",
+      "score": 0.40121392883295254
+    },
+    {
+      "id": 204,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.3947651985139554
+    },
+    {
+      "id": 154,
+      "where": "fuel-safety.md > Lighting and ventilation",
+      "score": 0.37447450139622696
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How tight should the Northstar generator tube be?",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] repair-manual.pdf p.3\nThe Northstar is our most repaired product by a wide margin, which is a function of how\nmany we sell and of how it is used, not of any weakness. Nearly every Northstar fault is one\nof four things: a clogged generator, a dry pump cup, a torn mantle, or the wrong fuel. Ask\nabout the fuel first. The Northstar burns Clearburn white gas or unleaded gasoline. It does\nnot burn kerosene, and a tank that has had kerosene in it will have a varnished generator\nand a sticky check valve. That is a paid repair even inside the warranty period.\nTools for the Northstar bench: 11 mm and 13 mm open-ended wrenches, the generator\nwrench (part T-ND2, the thin 9 mm one with the bent handle), a small flat screwdriver, the\npump cup oil bottle, a nylon brush, and the torque driver set to 2.5 N·m for checking.\nGenerator tube replacement\nThe generator (part G-GEN2) is the tube that runs up through the burner and carries fuel\nfrom the tank to the mantles. Signs of a bad generator are a weak yellow flame that will not\nsteady, pulsing light, and a tank that holds pressure but will not deliver it. The part is\n$13.00, so a typical generator replacement on a yellow tag comes to $38.00 with the bench\nfee.\n\n[2] catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99\n### Northstar Dual-Fuel (LS-ND2) — $169.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | About 1,500 lumens on high |\n| Fuel | Clearburn white gas or unleaded gasoline |\n| Tank | 0.6 L |\n| Runtime, high | 7 hours per fill |\n| Runtime, low | About 14 hours per fill |\n| Mantles | Two, part M-21 |\n| Weight | 2.4 kg empty |\n| Colors | Forest green |\n| Warranty | 2 years |\n| In the box | Lantern, two mantles, funnel, carry case |\n\nThe Northstar is a pressurized dual-fuel lantern: you pump the tank, light the mantles, and get\nthe brightest light we sell, bright enough to work under at night. It burns Clearburn white gas,\nwhich is cleaner and keeps the generator clear longer, or regular unleaded gasoline in a pinch. It\nmust never be run on kerosene or lamp oil, which will clog the generator in a single evening. A\nnew Northstar should be run outdoors for its first 10 minutes to burn in the mantles. The glass\nglobe is part G-ND2, and spare mantles are M-21, sold in a 2-pack. The pump, generator and valve\nare all serviceable at the Repair Center.\n\nCompatible parts: mantle 2-pack M-21, globe G-ND2, Clearburn White Gas LS-FUEL1, carry case CC-ND2.\n\n[3] faq.md > Can I burn kerosene in the Northstar?\n### Can I burn kerosene in the Northstar?\n\nNo. The Northstar Dual-Fuel burns Clearburn white gas or unleaded gasoline only. Kerosene or\nlamp oil will clog its generator in a single evening and the damage is not covered by warranty.\n\n[4] repair-manual.pdf p.3\nfee.\n1. Confirm the tank is drained and depressurised. Open the filler cap slowly over the tray.\n2. Lift off the ventilator and the globe (part G-ND2). Set the globe on the padded shelf,\nnot on the bench.\n3. Turn the control valve to the fully open position so the cleaning needle is clear of the\ngenerator tip.\n4. Loosen the generator nut at the base of the burner with the 11 mm wrench, then the\nfitting at the valve body with the generator wrench. Draw the old generator straight up\nand out.\n5. Fit the new G-GEN2 with the tip toward the burner. Start both fittings by hand.\n6. Tighten the valve body fitting hand-tight plus a quarter turn. Never more than 2.5\nN·m. Check with the torque driver if you are new to this; the fitting is brass and strips\neasily.\n7. Tighten the generator nut the same way.\n8. Pressurise with 20 strokes of the pump, no fuel in the tank, and soap-test both fittings.\nAny bubbles, back off and reseat. Do not tighten further.\n9. Fill with Clearburn white gas, fit the mantles, light under the hood and run the 30-\nminute burn-in.\nPump cup service\n\n[5] fuel-safety.md > Lighting and ventilation\n## Lighting and ventilation\n\nLight fuel lanterns outdoors, in a tent vestibule with the door open, or in a room with a window\nopen. Every fuel lantern produces carbon monoxide, and the Northstar produces enough that it\nmust never be used in a closed tent, a camper, a vehicle or a small room. The Hagerstown and the\nHeritage produce less but are not exempt. If you use a fuel lamp indoors regularly, fit a carbon\nmonoxide alarm in that room.\n\nLight the Northstar with the control valve barely open and a match or lighter held at the\nmantle from below; open the valve once the mantles glow. If the lantern flares, close the valve\nand wait for the flame to settle before trying again. Light wick lanterns with the wick turned\nlow and raise it slowly; a wick turned up too fast smokes and the flame can jump.\n\nKeep lanterns on a flat, stable surface or hung from a hook rated for the weight. The Northstar\nweighs 2.4 kg full and is top-heavy. Keep it a metre from tent walls, bedding and anything that\ncan burn, and keep children and pets away from it; the globe is hot enough to burn skin for\n20 minutes after the lantern is turned off.\n\nQuestion: How tight should the Northstar generator tube be?",
+      "reply": "Tighten the fittings hand-tight plus a quarter turn, never more than 2.5 N·m, since the brass strips easily. Use the same method for both the valve body fitting and the generator nut [4].",
+      "stopReason": "end_turn",
+      "inputTokens": 2107,
+      "outputTokens": 68,
+      "cost": 0.004894,
+      "ms": 1864
+    }
+  ],
+  "ms": 1871,
+  "tokens": {
+    "input": 2107,
+    "output": 68
+  }
+}

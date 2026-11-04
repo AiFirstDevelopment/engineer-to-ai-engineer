@@ -1,0 +1,187 @@
+{
+  "run": "rewrite",
+  "case": "sentinel-low-runtime",
+  "question": "How long does the Sentinel 1000 run on low?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Sentinel 1000 battery runtime in low power mode, battery life specifications, estimated operating hours at low setting",
+  "answer": "The Sentinel 1000 runs about 190 hours on low [2].",
+  "citations": [
+    {
+      "n": 2,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99"
+    }
+  ],
+  "cost": 0.0050160000000000005,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5539499182647994
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5482668623352693
+    },
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.547288841076134
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.44687022908241053
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.41093703756745176
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4063729023880092
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.3862328521345784
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.37094302903452164
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.37082961040752027
+    },
+    {
+      "id": 128,
+      "where": "faq.md > Does the Beacon 600 come with batteries?",
+      "score": 0.3563896642732158
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.3525215525270806
+    },
+    {
+      "id": 286,
+      "where": "warranty.md > Safety notices",
+      "score": 0.3427304810568721
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.3407614921371784
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.33230680943350765
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3320452845671753
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.33144861055606967
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.33000198594050406
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.32745953489344065
+    },
+    {
+      "id": 182,
+      "where": "release-notes.md > Known issues",
+      "score": 0.3220582756052445
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.31949212796118154
+    }
+  ],
+  "shown": [
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.5539499182647994
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.5482668623352693
+    },
+    {
+      "id": 208,
+      "where": "repair-manual.pdf p.5",
+      "score": 0.547288841076134
+    },
+    {
+      "id": 131,
+      "where": "faq.md > Can I use the Sentinel 1000 to charge my phone?",
+      "score": 0.44687022908241053
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.41093703756745176
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How long does the Sentinel 1000 run on low?",
+      "reply": "Sentinel 1000 battery runtime in low power mode, battery life specifications, estimated operating hours at low setting",
+      "stopReason": "end_turn",
+      "inputTokens": 121,
+      "outputTokens": 40,
+      "cost": 0.000642,
+      "ms": 1569
+    },
+    {
+      "kind": "embed",
+      "text": "Sentinel 1000 battery runtime in low power mode, battery life specifications, estimated operating hours at low setting",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99\n### Sentinel 1000 Pro (LS-1000P) — $219.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 20,000 mAh lithium-ion battery, USB-C charging, 4 W solar top |\n| Runtime, low | 380 hours |\n| Runtime, high | 24 hours |\n| Weight | 1.9 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Four detachable panels |\n| Colors | Slate, ember |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, four panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 Pro doubles the battery and the panel count of the Sentinel 1000 and adds a\n4-watt solar panel in the lid. In full sun the solar top adds about 2 hours of high-mode runtime\nper day, which is not enough to run the lantern on sun alone but will keep it topped up between\noutages. Four panels mean four rooms lit from one base. At 1.9 kg it is a lantern to carry to the\ncar, not up a trail. Same IP67 sealing and the same 5-year warranty as the Sentinel 1000.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000P.\n\n[2] catalog.md > Sentinel 1000 (LS-1000) — $149.99\n### Sentinel 1000 (LS-1000) — $149.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 1,000 lumens |\n| Power | Built-in 10,000 mAh lithium-ion battery, USB-C charging |\n| Runtime, low | 190 hours |\n| Runtime, high | 12 hours |\n| Weight | 1.4 kg |\n| Water rating | IP67 (dust tight, 1 m immersion for 30 minutes) |\n| Light panels | Two detachable panels |\n| Colors | Slate |\n| Warranty | 5 years (battery 1 year) |\n| In the box | Lantern, two panels, USB-C cable C-15, carry bag |\n\nThe Sentinel 1000 is the lantern we sell to people who lose power often. Its two light panels pull\noff the body and run on their own for up to 6 hours each, so one lantern lights the kitchen while a\npanel goes to the bathroom and another to the stairs. The body is sealed to IP67 and floats. The\n10,000 mAh battery charges over USB-C in about 7 hours and can run a phone from the USB-A port for\nseveral days. The Sentinel line carries a 5-year warranty on the lantern and panels; the battery,\nas on every rechargeable product, is covered for 1 year.\n\nCompatible parts: USB-C cable C-15, replacement panel P-1000, carry bag BG-1000.\n\n[3] repair-manual.pdf p.5\nSentinel 1000 and 1000 Pro\nThe Sentinel 1000 (LS-1000) and Sentinel 1000 Pro (LS-1000P) share one body and one\nservice procedure; the Pro has the larger pack, four light panels instead of two, and the solar\ntop. They carry a 5-year warranty, so most Sentinels on the bench are red tags. The faults are\na pack that will not hold charge, a panel latch that will not hold a panel, and the charge port.\nTools: a T8 Torx driver, the plastic spudger, the pack tester, and the latch spring tool.\nBattery pack\nThe Sentinel 1000 battery pack is part B-1000-21 and is held by four T8 Torx screws. The\nPro's pack is part B-1000P-21, same mounting. A pack tests bad if it holds less than 70% of\nits rated capacity after a full charge on the pack tester, or if it is swollen at all.\n1. Discharge the lantern to below 20% on low before opening it. The charge indicator\nshows one bar.\n\n[4] faq.md > Can I use the Sentinel 1000 to charge my phone?\n### Can I use the Sentinel 1000 to charge my phone?\n\nYes. The Sentinel 1000 and the Sentinel 1000 Pro have a USB-A port that charges a phone, and the\n10,000 mAh battery in the Sentinel 1000 will charge a typical phone about three times with the\nlantern off. Charging a phone from the lantern shortens the lantern's own runtime accordingly.\n\n[5] customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging\n### Scenario 2: a Sentinel 1000 Pro that stopped charging\n\nOn Thursday, September 3, 2026, a customer calls about a Sentinel 1000 Pro bought on June 14,\n2025, order LS-2025-002210. It no longer charges from the wall or the solar top. The lantern is\ninside its 5-year warranty, but the battery pack is inside its own 1-year battery warranty only\nuntil June 14, 2026, which has passed. The agent opens warranty claim WC-030517 anyway, because\nthe fault may be the charging circuit rather than the pack, and explains that the Repair Center\nwill decide within 5 business days. On September 8 Walt Brannigan's team finds a failed charge\ncontroller, which is a manufacturing defect covered by the 5-year warranty, and repairs it at no\ncharge under repair ticket RT-20931. The lantern ships back on September 11. Had the fault been\nthe pack alone, the agent would have quoted a paid pack replacement instead.\n\nQuestion: How long does the Sentinel 1000 run on low?",
+      "reply": "The Sentinel 1000 runs about 190 hours on low [2].",
+      "stopReason": "end_turn",
+      "inputTokens": 2062,
+      "outputTokens": 25,
+      "cost": 0.004374,
+      "ms": 1226
+    }
+  ],
+  "ms": 2802,
+  "tokens": {
+    "input": 2183,
+    "output": 65
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "run": "rewrite",
+  "case": "brass-spinner",
+  "question": "What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Heritage No. 7 brass spinner Baltimore manufacturer artisan craftsman supplier vendor name",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.00441,
+  "retrieved": [
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.36213883948282416
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.3532634956956779
+    },
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.3337356084846248
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.3303041241306332
+    },
+    {
+      "id": 213,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.3260318661806368
+    },
+    {
+      "id": 11,
+      "where": "about.md > Contact",
+      "score": 0.3136024413086328
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.3120192199092117
+    },
+    {
+      "id": 6,
+      "where": "about.md > People",
+      "score": 0.2945771490424331
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.2933385506744024
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.28993818196189186
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.28869189698325115
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.2839247798896509
+    },
+    {
+      "id": 94,
+      "where": "faq.md > Frequently Asked Questions",
+      "score": 0.28165787076137094
+    },
+    {
+      "id": 48,
+      "where": "customer-service-playbook.md > Repairs",
+      "score": 0.27772517876274516
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.2758592153912273
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.2755833841568757
+    },
+    {
+      "id": 87,
+      "where": "employee-handbook.md > Training",
+      "score": 0.2718239065982755
+    },
+    {
+      "id": 266,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.2702905894301891
+    },
+    {
+      "id": 80,
+      "where": "employee-handbook.md > Dress code",
+      "score": 0.2677544193900732
+    },
+    {
+      "id": 86,
+      "where": "employee-handbook.md > Training",
+      "score": 0.2664905594734206
+    }
+  ],
+  "shown": [
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.36213883948282416
+    },
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.3532634956956779
+    },
+    {
+      "id": 10,
+      "where": "about.md > The company",
+      "score": 0.3337356084846248
+    },
+    {
+      "id": 2,
+      "where": "about.md > The story",
+      "score": 0.3303041241306332
+    },
+    {
+      "id": 213,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.3260318661806368
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+      "reply": "Heritage No. 7 brass spinner Baltimore manufacturer artisan craftsman supplier vendor name",
+      "stopReason": "end_turn",
+      "inputTokens": 134,
+      "outputTokens": 40,
+      "cost": 0.000668,
+      "ms": 1619
+    },
+    {
+      "kind": "embed",
+      "text": "Heritage No. 7 brass spinner Baltimore manufacturer artisan craftsman supplier vendor name",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n### Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99\n\n| Specification | Value |\n| --- | --- |\n| Type | Table oil lamp |\n| Fuel | Clearburn lamp oil only |\n| Font | 7-inch solid brass, holds 14 oz |\n| Runtime | About 30 hours per fill |\n| Chimney | Glass, part CH-7 |\n| Wick | #2 flat wick, part W-78 |\n| Weight | 1.2 kg |\n| Warranty | 10 years (the Heritage Promise) |\n| In the box | Lamp, chimney, one wick fitted |\n\nThe Heritage No. 7 is the oil lamp we have made in one form or another since 1987, and the only\nproduct in this catalogue that carries a 10-year warranty. The font is spun from solid brass and\npolished by hand; the burner is nickel-plated brass; the chimney is borosilicate glass. It burns\nClearburn lamp oil only. Kerosene will work but smokes and smells, and it voids the Heritage\nPromise. A full 14-ounce font gives about 30 hours of light. The chimney is part CH-7 and is the\nonly part that breaks in normal use; it is sold separately and ships in a padded box.\n\nCompatible parts: chimney CH-7, #2 flat wick 5-pack W-78, Clearburn Lamp Oil LS-OIL1.\n\n[2] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n[3] about.md > The company\n## The company\n\nLantern Supply Co. is a Maryland corporation, privately held and family owned. The fiscal year\nruns from February 1 to January 31. The company has no outside investors and no debt beyond the\nmortgage on the Hagerstown building.\n\n[4] about.md > The story\n## The story\n\nMarjorie and Dale Whitcomb opened the first store in 1987 in a former hardware shop at 412 East\nPatrick Street in Frederick, Maryland, the same building we occupy today. Dale had repaired\npressure lanterns for the Boy Scouts for years and could not find a shop that would sell a decent\noil lamp or a spare mantle; Marjorie ran the books and the counter. The first product with our\nname on it was the Heritage No. 7 brass oil lamp, which Dale designed and had made by a brass\nspinner in Baltimore, and which we still sell with a 10-year warranty.\n\nFor the first ten years the business was lamps, wicks, fuel and repairs. In 2003 the company\nassembled its first Hagerstown Kerosene Lantern in a rented bay in Hagerstown, and in 2009 it\nsold its first LED lantern, the Firefly 100. The online store opened in 2011. The Annapolis\nshowroom opened in May 2014, and in 2016 the warehouse and Repair Center moved into the current\nbuilding at 1180 Downsville Pike in Hagerstown, with the loading dock at Dock B that every return\nand repair comes through.\n\n[5] repair-manual.pdf p.8\nHeritage No. 7 (LS-H7)\nThe Heritage No. 7 is a solid brass oil lamp with a 10-year warranty, so treat every one as a\nred tag unless the ticket says otherwise. It burns Clearburn lamp oil only. Faults are a\ncracked chimney (part CH-7), a wick that will not wind, and tarnish that the customer wants\nremoved. Tarnish is not a defect, but we polish the lamp as a courtesy on any repair.\nChimney\n1. Lift the chimney straight up out of the gallery. Do not twist it; the gallery prongs will\nscratch the glass.\n2. Fit the new CH-7 with the seam at the back, and check the four prongs hold it without\nplay.\nWick\n1. The Heritage takes a 7/8-inch flat wick, part W-H7. Wind the old wick up and out.\n2. Feed the new wick with the weave running lengthwise. Trim it level with the top of the\nburner, then round the corners.\n3. Soak it for 10 minutes in lamp oil before lighting.\nBrass care\n1. Polish with the brass polish in the Heritage drawer and a soft cloth, in straight strokes.\n2. Never use the polish on the burner threads; wipe them with a dry cloth only.\n3. A customer who asks how to keep the lamp bright is told: a soft cloth after each use,\npolish twice a year, and no lacquer.\n\nQuestion: What is the name of the brass spinner in Baltimore who makes the Heritage No. 7?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1836,
+      "outputTokens": 7,
+      "cost": 0.003742,
+      "ms": 1320
+    }
+  ],
+  "ms": 2950,
+  "tokens": {
+    "input": 1970,
+    "output": 47
+  }
+}

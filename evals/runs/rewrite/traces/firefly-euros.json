@@ -1,0 +1,181 @@
+{
+  "run": "rewrite",
+  "case": "firefly-euros",
+  "question": "How much is the Firefly 220 in euros?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Firefly 220 price EUR euro list price catalog pricing",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.00295,
+  "retrieved": [
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.5406572712500107
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5078764115829533
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.45066172253394654
+    },
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.44179714370833806
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.4374975347042698
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.42503309850369897
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.4246189756074129
+    },
+    {
+      "id": 32,
+      "where": "catalog.md > Price Promise",
+      "score": 0.40994161445385313
+    },
+    {
+      "id": 28,
+      "where": "catalog.md > Fuel and parts",
+      "score": 0.40701975154138126
+    },
+    {
+      "id": 215,
+      "where": "repair-manual.pdf p.9",
+      "score": 0.39838847390181314
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.39660063025457315
+    },
+    {
+      "id": 35,
+      "where": "catalog.md > Firefly 100 (LS-100)",
+      "score": 0.3936462963109044
+    },
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.3930842725664177
+    },
+    {
+      "id": 9,
+      "where": "about.md > Second Light",
+      "score": 0.3818408990251049
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.3740302153821876
+    },
+    {
+      "id": 179,
+      "where": "release-notes.md > Highlights",
+      "score": 0.35780741885817796
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3558231390982548
+    },
+    {
+      "id": 151,
+      "where": "fuel-safety.md > The fuels we sell",
+      "score": 0.3465211980956434
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.3447155793544131
+    },
+    {
+      "id": 130,
+      "where": "faq.md > Do you price match?",
+      "score": 0.34165298787256393
+    }
+  ],
+  "shown": [
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.5406572712500107
+    },
+    {
+      "id": 30,
+      "where": "catalog.md > Base Camp Bundle — $199.99",
+      "score": 0.5078764115829533
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.45066172253394654
+    },
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.44179714370833806
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.4374975347042698
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How much is the Firefly 220 in euros?",
+      "reply": "Firefly 220 price EUR euro list price catalog pricing",
+      "stopReason": "end_turn",
+      "inputTokens": 119,
+      "outputTokens": 23,
+      "cost": 0.000468,
+      "ms": 1408
+    },
+    {
+      "kind": "embed",
+      "text": "Firefly 220 price EUR euro list price catalog pricing",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Product Catalogue\n# Product Catalogue\n\nLast updated: October 20, 2026\nOwner: Ana Lindqvist\n\nThis is the current catalogue for the online store and both showrooms. Prices are in US dollars\nand include no shipping or tax. Specifications are the ones printed on the box; where a runtime\nis given it was measured by the Repair Center on fresh batteries or a full charge at 70°F.\nPrices change only with a catalogue revision; the date at the top of this page is the revision.\n\n[2] catalog.md > Base Camp Bundle — $199.99\n### Base Camp Bundle — $199.99\n\nOne Sentinel 1000 and two Firefly 220 lanterns in one box, for a household that wants one big\nlight for the main room and two small ones for bedrooms. Bought separately the three lanterns\ncost $219.97, so the bundle saves $19.98. The Firefly 220s come in slate. Each lantern carries its\nown warranty: 5 years on the Sentinel, 2 years on each Firefly. A bundle can be returned only as a\nwhole; one lantern from a bundle cannot be returned on its own.\n\n[3] catalog.md > Firefly 220R (LS-220R) — $54.99\n### Firefly 220R (LS-220R) — $54.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | Built-in 2,600 mAh lithium-ion battery, USB-C charging |\n| Charge time | 3.5 hours from empty with a 5 V 2 A charger |\n| Runtime, low | 48 hours |\n| Runtime, high | 10 hours |\n| Weight | 340 g |\n| Water rating | IPX4 (splash resistant) |\n| Power bank output | USB-A, 5 V 1 A |\n| Colors | Moss, slate |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, USB-C cable C-15, wrist lanyard |\n\n[4] release-notes.md > Fixes\n### Fixes\n\n- The Firefly 220R product page showed the Firefly 220's runtime (42 hours on low) instead of\n  its own (48 hours on low). The two products share a page template and the runtime field was\n  pointing at the wrong product record. Customers who bought a 220R between May 19 and August\n  11 and asked about the difference were offered a 40-day return by Customer Service.\n- Order lookup rejected order numbers typed in lower case.\n- The holiday return extension banner was showing in July.\n\n[5] faq.md > What is the difference between the Firefly 220 and the Firefly 220R?\n### What is the difference between the Firefly 220 and the Firefly 220R?\n\nThey are the same size and give the same 220 lumens. The Firefly 220 ($34.99) runs on three AA\nbatteries, which are included, for 42 hours on low or 9 hours on high. The Firefly 220R ($54.99)\nhas a built-in 2,600 mAh rechargeable battery that charges over USB-C, runs 48 hours on low or 10\nhours on high, and can charge a phone from its USB-A port. The 220R weighs 30 grams more.\n\nQuestion: How much is the Firefly 220 in euros?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1206,
+      "outputTokens": 7,
+      "cost": 0.002482,
+      "ms": 1259
+    }
+  ],
+  "ms": 2676,
+  "tokens": {
+    "input": 1325,
+    "output": 30
+  }
+}

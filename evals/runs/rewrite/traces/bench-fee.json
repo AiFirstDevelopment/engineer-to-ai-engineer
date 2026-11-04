@@ -1,0 +1,191 @@
+{
+  "run": "rewrite",
+  "case": "bench-fee",
+  "question": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Northstar out-of-warranty repair diagnostic fee, bench evaluation charge, non-warranty service pricing",
+  "answer": "The bench fee is $25.00. It covers the inspection and the quote, and it is charged even if the customer declines the repair [1][3].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "warranty.md > Out of warranty"
+    },
+    {
+      "n": 3,
+      "where": "repair-manual.pdf p.1"
+    }
+  ],
+  "cost": 0.00433,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6518739368514749
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.6025080723617653
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.5956579730628372
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.4962023989150614
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.4617391463128374
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.4576672328293877
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.4564931208426169
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4513373214908321
+    },
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.4476200017088276
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.43940200177912697
+    },
+    {
+      "id": 117,
+      "where": "faq.md > Warranty and repairs",
+      "score": 0.43802758754731497
+    },
+    {
+      "id": 198,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.4287721091168468
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.42428856819298677
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.4239777365700136
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.4204674088831701
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.41917584938884345
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.41029845248096825
+    },
+    {
+      "id": 279,
+      "where": "warranty.md > Decision",
+      "score": 0.40488584040219683
+    },
+    {
+      "id": 276,
+      "where": "warranty.md > What is not covered",
+      "score": 0.4030575743925762
+    },
+    {
+      "id": 278,
+      "where": "warranty.md > Decision",
+      "score": 0.3989364612979741
+    }
+  ],
+  "shown": [
+    {
+      "id": 285,
+      "where": "warranty.md > Out of warranty",
+      "score": 0.6518739368514749
+    },
+    {
+      "id": 203,
+      "where": "repair-manual.pdf p.3",
+      "score": 0.6025080723617653
+    },
+    {
+      "id": 199,
+      "where": "repair-manual.pdf p.1",
+      "score": 0.5956579730628372
+    },
+    {
+      "id": 202,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.4962023989150614
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.4617391463128374
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "Northstar out-of-warranty repair diagnostic fee, bench evaluation charge, non-warranty service pricing",
+      "stopReason": "end_turn",
+      "inputTokens": 131,
+      "outputTokens": 41,
+      "cost": 0.000672,
+      "ms": 1236
+    },
+    {
+      "kind": "embed",
+      "text": "Northstar out-of-warranty repair diagnostic fee, bench evaluation charge, non-warranty service pricing",
+      "ms": 10
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] warranty.md > Out of warranty\n## Out of warranty\n\nProducts outside their warranty period, and declined claims, can be repaired by the Repair Center\nfor a fee. The customer is quoted before any work is done and can decline the quote, in which\ncase the product is returned at the customer's shipping cost. The bench fee of $25.00 pays for\nthe inspection and the quote, and is charged whether or not the customer goes ahead with the\nrepair. The Repair Center's own manual\ndescribes the fee schedule and the shop procedures.\n\n[2] repair-manual.pdf p.3\nThe Northstar is our most repaired product by a wide margin, which is a function of how\nmany we sell and of how it is used, not of any weakness. Nearly every Northstar fault is one\nof four things: a clogged generator, a dry pump cup, a torn mantle, or the wrong fuel. Ask\nabout the fuel first. The Northstar burns Clearburn white gas or unleaded gasoline. It does\nnot burn kerosene, and a tank that has had kerosene in it will have a varnished generator\nand a sticky check valve. That is a paid repair even inside the warranty period.\nTools for the Northstar bench: 11 mm and 13 mm open-ended wrenches, the generator\nwrench (part T-ND2, the thin 9 mm one with the bent handle), a small flat screwdriver, the\npump cup oil bottle, a nylon brush, and the torque driver set to 2.5 N·m for checking.\nGenerator tube replacement\nThe generator (part G-GEN2) is the tube that runs up through the burner and carries fuel\nfrom the tank to the mantles. Signs of a bad generator are a weak yellow flame that will not\nsteady, pulsing light, and a tank that holds pressure but will not deliver it. The part is\n$13.00, so a typical generator replacement on a yellow tag comes to $38.00 with the bench\nfee.\n\n[3] repair-manual.pdf p.1\nEach ticket gets a coloured tag tied to the bail or handle:\nRed tag: warranty repair. The claim already has a WC- number from Customer Service.\nNo charge to the customer, and the return shipping is on us.\nYellow tag: paid repair. The customer has agreed to the bench fee and to an estimate\nfor parts.\nGreen tag: Second Light refurbishment. These are returns and trade-ins being rebuilt\nfor the refurbished shelf. There is no customer waiting, so they are worked after red\nand yellow tags.\nThe bench fee for a paid repair is $25.00 plus parts at the catalogue price of the part. The fee\nis waived under warranty. If a yellow-tag repair turns out to need parts beyond the estimate\nby more than $10, stop and have Customer Service call the customer before you continue. Do\nnot guess at what the customer would want.\n\n[4] repair-manual.pdf p.2\nback twice costs us the customer.\nNorthstar Dual-Fuel (LS-ND2)\n\n[5] warranty.md > What is not covered\n## What is not covered\n\nThe warranty does not cover:\n\n- Consumables: mantles (M-21), globes (G-600, G-ND2), wicks (W-78), chimneys (CH-7), bulbs, fuel\n  caps, pump cups, O-rings and gaskets. These wear by design and are sold as parts.\n- Damage from a drop, a crush, or being run over, including a cracked housing or a bent frame.\n- Water intrusion beyond the product's rated IP level. A Firefly 220 (IPX4) left out in a storm\n  is not a warranty case; a Sentinel 1000 (IP67) that leaks after a 30-minute dunk at one meter\n  is.\n- Use of an unapproved fuel. Kerosene in a Northstar, gasoline in a Hagerstown Kerosene Lantern,\n  or anything other than lamp oil in a Heritage No. 7 voids the warranty for the affected parts\n  and usually for the whole product.\n- Modifications, including replacement parts not supplied by Lantern Supply Co., drilled\n  housings and rewired switches.\n- Commercial rental use. A lantern bought for a rental fleet is covered for 90 days only, and the\n  customer should say so at purchase.\n- Cosmetic wear: scratches, fading, tarnish on brass, and discoloration of globes from use.\n- Loss or theft.\n\nQuestion: My Northstar is out of warranty. What does it cost just to have the bench look at it?",
+      "reply": "The bench fee is $25.00. It covers the inspection and the quote, and it is charged even if the customer declines the repair [1][3].",
+      "stopReason": "end_turn",
+      "inputTokens": 1604,
+      "outputTokens": 45,
+      "cost": 0.003658,
+      "ms": 1524
+    }
+  ],
+  "ms": 2771,
+  "tokens": {
+    "input": 1735,
+    "output": 86
+  }
+}

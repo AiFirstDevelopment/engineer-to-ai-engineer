@@ -1,0 +1,195 @@
+{
+  "run": "widen",
+  "case": "refund-approval",
+  "question": "Who has to approve a $700 refund?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "refund approval authority matrix thresholds $700 manager approval required customer refund policy",
+  "answer": "Tomas Reyes must approve it, since any refund, credit or goodwill over $500 needs his approval (up to $2,000) [1][2][4]. The approval is recorded as a note on the ticket or order [1][2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "customer-service-playbook.md > Goodwill and approvals"
+    },
+    {
+      "n": 2,
+      "where": "returns-policy.md > Approvals: the Three Lights rule"
+    },
+    {
+      "n": 4,
+      "where": "employee-handbook.md > Customer service standards"
+    }
+  ],
+  "cost": 0.008960000000000001,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.4524892547491496
+    },
+    {
+      "id": 231,
+      "where": "returns-policy.md > Approvals: the Three Lights rule",
+      "score": 0.43847770560321775
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.40614978548621095
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.39966290192301074
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.37102836703086856
+    },
+    {
+      "id": 43,
+      "where": "customer-service-playbook.md > Refunds",
+      "score": 0.34773824764849137
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.3450730135125185
+    },
+    {
+      "id": 224,
+      "where": "returns-policy.md > Restocking fee",
+      "score": 0.3360597465001789
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.33185191794878827
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.32914516910889974
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.3163623686608105
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.3134013399038295
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.3022671865829037
+    },
+    {
+      "id": 107,
+      "where": "faq.md > Returns and refunds",
+      "score": 0.297374366011592
+    },
+    {
+      "id": 112,
+      "where": "faq.md > How long until I see my refund?",
+      "score": 0.29267899308176154
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.29145787535499473
+    },
+    {
+      "id": 175,
+      "where": "release-notes.md > Changes",
+      "score": 0.28157187464650935
+    },
+    {
+      "id": 51,
+      "where": "customer-service-playbook.md > Chargebacks",
+      "score": 0.2814308680484859
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.28020080444907336
+    },
+    {
+      "id": 110,
+      "where": "faq.md > Is there a restocking fee?",
+      "score": 0.2799141285814831
+    }
+  ],
+  "shown": [
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.4524892547491496
+    },
+    {
+      "id": 231,
+      "where": "returns-policy.md > Approvals: the Three Lights rule",
+      "score": 0.43847770560321775
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.40614978548621095
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.39966290192301074
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.37102836703086856
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "Who has to approve a $700 refund?",
+      "reply": "refund approval authority matrix thresholds $700 manager approval required customer refund policy",
+      "stopReason": "end_turn",
+      "inputTokens": 117,
+      "outputTokens": 29,
+      "cost": 0.000524,
+      "ms": 1513
+    },
+    {
+      "kind": "embed",
+      "text": "refund approval authority matrix thresholds $700 manager approval required customer refund policy",
+      "ms": 8
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] customer-service-playbook.md > Goodwill and approvals\n## Repairs\n\nAny repair, under warranty or paid, gets a repair ticket in the form RT-xxxxx (five digits), for\nexample RT-20931. Create it in the Hearth admin from the warranty claim or from scratch for a paid\nrepair. The ticket number goes on the box and in the email to the customer.\n\nCustomers can drop a lantern off at either showroom or mail it to Lantern Supply Co. Repair\nCenter, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. Annapolis drop-offs are shipped to\nHagerstown weekly on Tuesdays, so tell Annapolis customers to add a week. Walt Brannigan, Head\nof Repairs, emails a quote for paid repairs before any work is done; nothing is charged until the\ncustomer approves the quote. Fuel lanterns must be emptied before they are mailed; tell the\ncustomer, and put it in the email.\n\n## Goodwill and approvals\n\nYou may give a goodwill credit of up to $25 per incident without approval: a discount code, a\nfree mantle pack, a refunded shipping charge. Log it on the ticket with a one-line reason.\n\nAbove $25, ask the shift lead. The Three Lights rule covers larger amounts: any refund, credit or\ngoodwill over $500 needs the approval of Tomas Reyes, and anything over $2,000 needs the approval\nof Priya Whitcomb-Nair. \"Any\" means any: a refund that is simply the price of a returned Sentinel\n1000 Pro and a Northstar together is over $500 and needs Tomas's sign-off before it is released,\neven though the policy clearly allows it. Approvals are recorded on the ticket as a note from the\napprover, not as a verbal okay.\n\n## Escalation path\n\nAgent, then shift lead, then Tomas Reyes. Escalate when a customer asks for a manager twice, when\na decision needs an approval you cannot give, when a customer mentions a lawyer, a regulator or\nthe press, or when you are not sure. Hand the ticket over with a two-line summary at the top: what\nhappened, what the customer wants. Do not promise a callback time for someone else; say that the\nshift lead will be in touch by the end of the next business day.\n\nSafety reports, meaning any claim that a product caught fire, leaked fuel, overheated or injured\nsomeone, go to Tomas Reyes and Walt Brannigan the same day, whatever the amount, and the product is\nrecalled to Hagerstown for inspection at our expense.\n\n[2] returns-policy.md > Approvals: the Three Lights rule\n## Holiday extension\n\nOrders delivered between November 1 and December 24 may be returned until January 31 of the\nfollowing year. All other terms of this policy still apply: the item must be unused, in its\npackaging, not final sale, and fuel-free. The extension applies automatically in Hearth; agents do\nnot need to adjust the window by hand.\n\n## Approvals: the Three Lights rule\n\nAny refund, credit or goodwill gesture over $500 on a single order needs the approval of Tomas\nReyes before it is issued. Anything over $2,000 needs the approval of Priya Whitcomb-Nair. Agents\nmay issue goodwill credits of up to $25 per incident on their own authority. The approval is\nrecorded as a note on the order in Hearth with the approver's name and the date. The rule takes\nits name from the three lights on the old warehouse sign and is explained in full in the Customer\nService Playbook.\n\n## Common situations\n\nA customer wants to return a lantern after 40 days. The answer is no, unless the holiday extension\napplies. Agents may offer to check the item under warranty if there is a defect.\n\nA customer bought a Firefly 220R (LS-220R) and meant to buy the Firefly 220 (LS-220). This is a\nsimple exchange; no restocking fee, and the replacement ships at once because the price\ndifference is under $50.\n\nA customer has lit their new Northstar once in the backyard and does not like the sound of the\npressurized tank. The item cannot be returned; fuel has been put in it. The agent should explain\nwhy and note that the warranty still covers any defect.\n\nA customer's return arrived at the warehouse damaged in transit without insurance. The warehouse\nphotographs the damage and customer service offers a partial refund at the shift lead's\ndiscretion; the customer is responsible for a return package until it arrives.\n\n[3] employee-handbook.md > Employee discount\n### Other benefits\n\nFull-time employees receive a company-paid life insurance policy of $25,000, a pretax commuter\nbenefit of up to $150 a month, and an annual stipend of $200 for work boots or safety footwear for\nwarehouse and repair staff. The company pays for the ServSafe-style fuel handling certification\nrequired for warehouse staff and renews it every three years.\n\n## Employee discount\n\nEvery employee, full-time or part-time, gets 30% off the retail price of anything we sell, in the\nshowrooms or on the online store, and 50% off Second Light refurbished items. The discount applies\nto merchandise, not to shipping, repairs or gift cards. Employees may spend up to $2,000 a year at\nthe discounted price; purchases past the cap are at retail. The cap resets on January 1.\n\nThe discount is for you and the people in your household. Buying discounted items to resell, or\nfor friends outside your household, is a conduct violation and ends the discount. Use the\ndiscount code on your employee ID card online, or give your employee number at the register. Your\ndiscounted purchases still earn Lumen Rewards points on the amount you actually paid.\n\n## Dress code\n\nShowroom and support staff wear the lantern green polo (we provide three) with your name tag,\nwith dark trousers, jeans without holes, or a knee-length skirt, and closed-toe shoes. Warehouse\nand repair staff wear the grey Lantern Supply Co. work shirt, long trousers and steel-toe or\ncomposite-toe boots; the boot stipend above covers them. Hats are fine in the warehouse, not in\nthe showrooms. Replacement polos and name tags come from Beth Carrow; a replacement name tag\ntakes about a week.\n\n[4] employee-handbook.md > Customer service standards\nDemonstration lanterns on the floor run on Clearburn white gas or lamp oil as the product\nrequires. Never fuel a demonstration lantern on the sales floor; take it to the back-room fueling\ntray. Never fuel a hot lantern; let it cool for 10 minutes. Spills are cleaned at once with the\nabsorbent pads in the cabinet, and the pads go in the red bin, not the trash.\n\nFire extinguishers at every location are checked monthly by Denise Okafor, the Warehouse\nManager, or by a person she designates in writing, and the check is recorded on the tag. If a tag\nis more than 31 days old, tell your manager that day. Every employee is shown how to use an\nextinguisher in their first week. A showroom never has fewer than two working extinguishers on\nthe floor.\n\nFuel sold in a showroom goes out in the customer's hands; we never ship fuel from a showroom.\nFuel ordered online ships by ground only from Hagerstown, never to a PO box and never to Alaska,\nHawaii or Canada. If a customer asks you to make an exception, the answer is no.\n\n## Customer service standards\n\nEvery email to help@lanternsupply.example is answered within 1 business day, and most are answered\nthe same day. A phone caller should wait less than 3 minutes; if the queue is longer than that,\nthe shift lead pulls in a second person. Chat on the online store follows the same 3-minute\nstandard during support hours and shows the next-day email promise outside them.\n\nKnow the policies before you quote them. The return window is 40 days from the delivery date,\nthe standard warranty is 2 years, and the full details are in the returns policy, the shipping\npolicy, the warranty policy and the customer service playbook. Any refund, credit or goodwill over\n$500 needs approval from Tomas Reyes, Head of Customer Service, and anything over $2,000 needs\nPriya Whitcomb-Nair's. Do not promise what you cannot approve.\n\n## Breaks and meal periods\n\nAnyone working more than 6 consecutive hours takes an unpaid meal break of at least 30 minutes,\nas Maryland's Healthy Retail Employee Act requires for retail staff, and a paid 15-minute break\nfor every 4 hours worked. Showroom breaks are staggered so that at least two people are on the\nfloor at all times; the shift lead sets the order each morning. Meal breaks are clocked out in\nDeputy. Warehouse breaks follow the bell at 9:30 AM, noon and 2:15 PM. Nobody eats at the repair\nbench or near the fuel cabinet.\n\n[5] returns-policy.md > Refunds\n## Return authorization numbers\n\nEvery mailed return needs a return authorization number before it ships. RA numbers have the form\nRA- followed by six digits, for example RA-118204. The number is printed on the packing slip\nthat comes with the prepaid label and must also be written on the outside of the box.\n\nCustomers obtain an RA number by:\n\n- Using \"Start a return\" on the online store, which issues the number immediately for any\n  eligible order and emails it with a packing slip.\n- Calling (301) 555-0147 during support hours. The agent creates the return in Hearth and reads\n  the number back.\n\nA package that arrives at the warehouse without an RA number is held for 10 business days while\nthe warehouse tries to match it to an order. If it cannot be matched it is returned to the sender\nat the sender's cost. The RA number is valid for 30 days from issue.\n\n## Refunds\n\nRefunds go to the original payment method. The warehouse inspects each return within 2 business\ndays of arrival and the refund is issued within 7 business days of the return arriving at the\nHagerstown warehouse. Card refunds typically appear on the customer's statement 3 to 5 business\ndays after they are issued; this is the card issuer's timing and the company cannot speed it up.\n\nThe refund covers the item price paid, less any restocking fee and less the $8.50 prepaid label\nfee if one was used. Original outbound shipping charges are refunded only when the item was\ndefective or the wrong item was shipped.\n\nIf the original payment method is a card that has since been closed, the refund is issued as a\nstore credit to the customer's Lumen Rewards account, or as a check mailed within 14 business\ndays if the customer has no account.\n\nGift recipients returning an item without the original payment details receive store credit for\nthe item's price on the gift receipt.\n\n## In-store returns\n\nBoth showrooms accept returns of items bought online, by phone, or in either showroom. The\ncustomer should bring the packing slip or the order number and the payment card used. Showroom\nstaff process the return in Hearth on the spot; the refund timing is the same 7 business days.\nItems returned in store are held in the showroom's returns cage and shipped to Hagerstown on the\nweekly Tuesday transfer.\n\nShowrooms may accept unopened fuel and unopened consumables, which cannot be mailed. Showrooms do\nnot accept items that have had fuel put in them, for the same reason the warehouse does not.\n\nQuestion: Who has to approve a $700 refund?",
+      "reply": "Tomas Reyes must approve it, since any refund, credit or goodwill over $500 needs his approval (up to $2,000) [1][2][4]. The approval is recorded as a note on the ticket or order [1][2].",
+      "stopReason": "end_turn",
+      "inputTokens": 3848,
+      "outputTokens": 74,
+      "cost": 0.008436,
+      "ms": 2336
+    }
+  ],
+  "ms": 3859,
+  "tokens": {
+    "input": 3965,
+    "output": 103
+  }
+}

@@ -3,7 +3,8 @@
 // The fake embedder hashes each word into one of 384 dimensions, so texts that share words point
 // the same way. The fake chat model answers from markers: a passage containing <<say: ...>> is
 // the answer, cited with that passage's number; with no marker it says "I don't know". Asked to
-// score passages (the reranker), it gives 10 to a passage with a marker and 1 to the rest.
+// score passages (the reranker), it gives 10 to a passage with a marker and 1 to the rest. Asked
+// to rewrite a search query about staff, it searches for "employee discount".
 import type { Answer, Message, Options } from "../src/claude";
 import type { StoredChunk } from "../src/db";
 import type { Models } from "../src/models";
@@ -27,6 +28,8 @@ export function fakeModels(): Models & { calls: Message[][] } {
     async chat(messages: Message[], options: Options = {}): Promise<Answer> {
       calls.push(messages);
       const prompt = String(messages[0].content);
+      const rewriting = options.system?.includes("search query");
+      if (rewriting) return reply(prompt.includes("staff") ? "employee discount" : prompt);
       const passages = prompt
         .split(/\n\n(?=\[\d+\] )/)
         .map((block) => /^\[(\d+)\] ([^]*)/.exec(block))

@@ -1,0 +1,195 @@
+{
+  "run": "widen",
+  "case": "lost-package",
+  "question": "How long before a package that never showed up counts as lost?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": true,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "lost package claim policy: time threshold before undelivered shipment is considered lost, delivery exception, carrier investigation, refund or replacement eligibility",
+  "answer": "A package counts as lost once 10 business days have passed since the expected delivery date with no delivery scan [1][2]. If tracking shows it as delivered but the customer never received it, the wait is shorter, though the passages disagree on how much shorter: 3 business days in the shipping document [1][4] versus 2 in the playbook [2]. I can't tell which is more recent, so I can't say which figure is right.",
+  "citations": [
+    {
+      "n": 1,
+      "where": "shipping.md > Lost"
+    },
+    {
+      "n": 2,
+      "where": "customer-service-playbook.md > Lost in transit"
+    },
+    {
+      "n": 4,
+      "where": "shipping.md > Late"
+    }
+  ],
+  "cost": 0.007346,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6822276202654823
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.6496829506902861
+    },
+    {
+      "id": 55,
+      "where": "customer-service-playbook.md > SHP-01 Package lost",
+      "score": 0.5388751222164218
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5182075004002908
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.4864371654714175
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.485286326874531
+    },
+    {
+      "id": 246,
+      "where": "shipping.md > Lost, late and damaged packages",
+      "score": 0.4795961193423057
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.4701245082026223
+    },
+    {
+      "id": 102,
+      "where": "faq.md > My order arrived damaged. Do I have to send it back?",
+      "score": 0.4641312708197847
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.4623173704605935
+    },
+    {
+      "id": 278,
+      "where": "warranty.md > Decision",
+      "score": 0.4609786959573896
+    },
+    {
+      "id": 249,
+      "where": "shipping.md > Damaged on arrival",
+      "score": 0.45515454900478924
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.4496516536624973
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.44803609031601954
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.4452770049422849
+    },
+    {
+      "id": 45,
+      "where": "customer-service-playbook.md > Damaged on arrival",
+      "score": 0.4441196248987577
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.43989183982703145
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.4397203865834156
+    },
+    {
+      "id": 250,
+      "where": "shipping.md > Address problems",
+      "score": 0.4273646351640907
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.4270341164693194
+    }
+  ],
+  "shown": [
+    {
+      "id": 248,
+      "where": "shipping.md > Lost",
+      "score": 0.6822276202654823
+    },
+    {
+      "id": 46,
+      "where": "customer-service-playbook.md > Lost in transit",
+      "score": 0.6496829506902861
+    },
+    {
+      "id": 55,
+      "where": "customer-service-playbook.md > SHP-01 Package lost",
+      "score": 0.5388751222164218
+    },
+    {
+      "id": 247,
+      "where": "shipping.md > Late",
+      "score": 0.5182075004002908
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.4864371654714175
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How long before a package that never showed up counts as lost?",
+      "reply": "lost package claim policy: time threshold before undelivered shipment is considered lost, delivery exception, carrier investigation, refund or replacement eligibility",
+      "stopReason": "end_turn",
+      "inputTokens": 120,
+      "outputTokens": 51,
+      "cost": 0.00075,
+      "ms": 1636
+    },
+    {
+      "kind": "embed",
+      "text": "lost package claim policy: time threshold before undelivered shipment is considered lost, delivery exception, carrier investigation, refund or replacement eligibility",
+      "ms": 12
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] shipping.md > Lost\n### Late\n\nA package is late when it has not arrived by the last day of its delivery window. Agents should\nfirst check the carrier's tracking; most late packages are moving and arrive within two business\ndays. For an expedited or overnight order that misses its window, the difference between the\nservice paid for and standard shipping is refunded without the customer asking.\n\n### Lost\n\nA package is treated as lost when 10 business days have passed since the expected delivery date\nwith no delivery scan. At that point customer service files a claim with the carrier and, without\nwaiting for the claim to settle, ships a replacement at no charge. If the original package later\nturns up, the customer is asked to refuse it or to return it with a free prepaid label. Lost\npackage replacements over $500 need Tomas Reyes's approval under the Three Lights rule, like any\nother credit of that size.\n\nA package that tracking shows as delivered but that the customer did not receive is handled the\nsame way after a 3 business day wait, during which the customer checks with neighbors and the\nbuilding office. The carrier is asked for the GPS delivery scan.\n\n### Damaged on arrival\n\nDamage must be reported within 5 days of delivery, with photos of the item and the packaging. For\nitems under $50, a replacement ships at once and the customer keeps or discards the damaged item;\nno return is needed. For items of $50 or more, a replacement ships at once and a free prepaid\nlabel is sent for the damaged item, which the warehouse needs for the carrier claim. Damage\nreported after 5 days is handled under the warranty policy where a defect can be shown, and\notherwise at the shift lead's discretion.\n\nGlass globes and chimneys are the most common damage. The warehouse packs every item with a glass\npart in a double-wall carton with the glass separately wrapped; a damaged globe reported with a\nphoto is replaced from parts stock (G-600, G-ND2, CH-7) without a full-unit replacement.\n\n[2] customer-service-playbook.md > Lost in transit\n### Damaged on arrival\n\nA customer who receives a damaged item has 5 days from delivery to report it, with photos of the\nitem and the box. Open a damage claim in the Hearth admin and attach the photos. Ship a\nreplacement right away. For items under $50 we do not ask for the damaged item back; tell the\ncustomer to dispose of it or keep it. For items of $50 and over, send a prepaid label at no\ncharge and note on the ticket that the damaged item is expected.\n\nIf a fuel product arrives leaking, tell the customer not to open the box further, to put it\noutside or in a garage, and to dispose of it through their county's household hazardous waste\ncollection. Do not ask them to ship fuel back. Replace it.\n\n### Lost in transit\n\nA package counts as lost when it has not arrived 10 business days after the expected delivery\ndate shown in tracking. Before that, ask the customer to check with neighbors and the carrier.\nOnce a package is lost, ship a replacement first and file the carrier claim afterwards; the\ncustomer does not wait for the carrier. Note the carrier claim number on the ticket. If the\nreplacement is also fuel, confirm the address is not a PO box.\n\nA package shown as delivered that the customer says did not arrive is handled the same way after\na 2-business-day wait, with one exception: for orders over $400, which require a signature, pull\nthe signature image from the carrier before replacing.\n\n## Warranty claims\n\nThe standard warranty is 2 years from the purchase date and covers manufacturing defects. The\nSentinel 1000 and Sentinel 1000 Pro carry 5 years, the Heritage No. 7 carries 10 years,\nrechargeable batteries and battery packs carry 1 year, and Second Light refurbished items carry\n1 year. Mantles, globes, wicks, bulbs and fuel caps are consumables and are not covered. Drops,\nwater beyond the IP rating, unapproved fuel, modifications and commercial rental use are not\ncovered.\n\nA customer starts a claim by emailing help@lanternsupply.example with the order number and\nphotos. Open a warranty claim in the Hearth admin; it issues a number in the form WC-xxxxxx, for\nexample WC-030517. The Repair Center decides within 5 business days whether to repair or replace,\nand the choice is ours. For an approved claim, send the customer a prepaid label to the\nHagerstown Repair Center at no charge. A claim with no order number can be matched by email\naddress or by the serial number on the base of the lantern.\n\nThe warranty transfers with a gift but not with a resale. If a customer bought the item second\nhand, explain this and offer a paid repair.\n\n[3] customer-service-playbook.md > SHP-01 Package lost\n### RET-02 RA number issued\n\nHello {name}, your return of {items} from order {order} is authorized under RA-{ra}. Please write\nthat number on the outside of the box and include the packing slip. Send it to Lantern Supply Co.\nReturns, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. {label_sentence} Your refund of\n{amount} will go to your original payment method within 7 business days of the return arriving\nat our warehouse.\n\n### SHP-01 Package lost\n\nHello {name}, I am sorry your order {order} has not arrived. Tracking shows it has been more than\n10 business days past the expected delivery date, so I have shipped a replacement today under\norder {replacement}; tracking will follow by email. We will take the claim up with the carrier\nourselves, and you do not need to do anything further.\n\n### SHP-02 Damaged on arrival\n\nHello {name}, thank you for the photos of order {order}. I have shipped a replacement of {items}\ntoday. {return_sentence} If any part of the order contained fuel and the bottle is leaking, please\nkeep the box outside or in a garage and dispose of it through your county's household hazardous\nwaste program rather than returning it.\n\n[4] shipping.md > Late\n## Lost, late and damaged packages\n\n### Late\n\nA package is late when it has not arrived by the last day of its delivery window. Agents should\nfirst check the carrier's tracking; most late packages are moving and arrive within two business\ndays. For an expedited or overnight order that misses its window, the difference between the\nservice paid for and standard shipping is refunded without the customer asking.\n\n### Lost\n\nA package is treated as lost when 10 business days have passed since the expected delivery date\nwith no delivery scan. At that point customer service files a claim with the carrier and, without\nwaiting for the claim to settle, ships a replacement at no charge. If the original package later\nturns up, the customer is asked to refuse it or to return it with a free prepaid label. Lost\npackage replacements over $500 need Tomas Reyes's approval under the Three Lights rule, like any\nother credit of that size.\n\nA package that tracking shows as delivered but that the customer did not receive is handled the\nsame way after a 3 business day wait, during which the customer checks with neighbors and the\nbuilding office. The carrier is asked for the GPS delivery scan.\n\n[5] faq.md > Can I send something back if I changed my mind?\n## Returns and refunds\n\n### Can I send something back if I changed my mind?\n\nYes. You have 40 days from the day your order was delivered to return any unused item in its\noriginal packaging with all its accessories. Start a return on the online store, or call us, and\nyou will get an RA number to put on the box.\n\n### Does the return period start when I order or when I receive it?\n\nIt starts on the delivery date recorded by the carrier, not the day you ordered or the day we\nshipped. Since May 2026 the online store counts the 40 days from delivery automatically.\n\nQuestion: How long before a package that never showed up counts as lost?",
+      "reply": "A package counts as lost once 10 business days have passed since the expected delivery date with no delivery scan [1][2]. If tracking shows it as delivered but the customer never received it, the wait is shorter, though the passages disagree on how much shorter: 3 business days in the shipping document [1][4] versus 2 in the playbook [2]. I can't tell which is more recent, so I can't say which figure is right.",
+      "stopReason": "end_turn",
+      "inputTokens": 2638,
+      "outputTokens": 132,
+      "cost": 0.006596,
+      "ms": 2118
+    }
+  ],
+  "ms": 3768,
+  "tokens": {
+    "input": 2758,
+    "output": 183
+  }
+}

@@ -1,0 +1,37 @@
+$ npx tsx evals/diagnose.ts five
+answer miss (2): look at the answer against the passage, and the case's own terms
+  firefly-220r-weight: forbidden: the Firefly 220's 310 g; source #4, shown
+  firefly-220-low-runtime: forbidden: the 220R's 48 hours; source #4, shown
+wrong fallback (1): look at the prompt and the passage: why the model would not answer from it
+  bench-fee: said I don't know; source #1, shown
+retrieval miss (1): look at the query and the chunks: why the source did not rank
+  staff-discount: said I don't know; source not in the top 20
+4 failing of 30 in five
+$ npx tsx evals/diagnose.ts widen
+answer miss (1): look at the answer against the passage, and the case's own terms
+  staff-discount: judge: not grounded; source #2, shown
+citation miss (1): look at the [n] in the answer against the passages shown
+  refund-approval: judge: citation does not support; source #2, shown
+2 failing of 30 in widen
+$ npx tsx evals/compare.ts five rewrite
+case                     five           rewrite        why
+firefly-220r-weight      fail           pass           forbidden: the Firefly 220's 310 g
+                         source #4 shown then #3 shown
+bench-fee                fail           pass           said I don't know
+                         source #1 shown then #1 shown
+staff-discount           fail           pass           said I don't know
+                         source - then #4 shown
+firefly-220-low-runtime  fail           pass           forbidden: the 220R's 48 hours
+                         source #4 shown then #1 shown
+26 of 30 cases unchanged
+passed  26 -> 30 of 30
+cost    $0.1046 -> $0.1257 (20%)
+$ npx tsx evals/compare.ts widen widen-rejudged
+case                     widen          widen-rejudged why
+staff-discount           fail           pass           judge: not grounded
+                         source #2 shown then #2 shown
+refund-approval          fail           pass           judge: citation does not support
+                         source #2 shown then #2 shown
+28 of 30 cases unchanged
+passed  28 -> 30 of 30
+cost    $0.2547 -> $0.2568 (1%)

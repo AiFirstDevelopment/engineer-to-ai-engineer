@@ -1,0 +1,191 @@
+{
+  "run": "rewrite",
+  "case": "firefly-220-low-runtime",
+  "question": "How long does the Firefly 220 run on low?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Firefly 220 battery runtime on low setting, specifications, rated run time per charge at lowest power/brightness mode",
+  "answer": "The Firefly 220 runs 42 hours on low [1][4].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99"
+    },
+    {
+      "n": 4,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?"
+    }
+  ],
+  "cost": 0.004954,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.621039117437741
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.6115443835074127
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.5897465069694644
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.588022303573962
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.5830498603104266
+    },
+    {
+      "id": 125,
+      "where": "faq.md > How long does the Firefly 220R take to charge?",
+      "score": 0.5615590265664969
+    },
+    {
+      "id": 15,
+      "where": "catalog.md > Firefly 220 (LS-220) — $34.99",
+      "score": 0.5560648346193581
+    },
+    {
+      "id": 181,
+      "where": "release-notes.md > Fixes",
+      "score": 0.5351778202596355
+    },
+    {
+      "id": 14,
+      "where": "catalog.md > LED lanterns",
+      "score": 0.4685159851994063
+    },
+    {
+      "id": 212,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.4338764200045009
+    },
+    {
+      "id": 27,
+      "where": "catalog.md > Porchlight Solar (LS-PS1) — $39.99",
+      "score": 0.4247584060761298
+    },
+    {
+      "id": 20,
+      "where": "catalog.md > Sentinel 1000 (LS-1000) — $149.99",
+      "score": 0.40934258834705406
+    },
+    {
+      "id": 272,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.40338944114185293
+    },
+    {
+      "id": 128,
+      "where": "faq.md > Does the Beacon 600 come with batteries?",
+      "score": 0.4024966095041583
+    },
+    {
+      "id": 21,
+      "where": "catalog.md > Sentinel 1000 Pro (LS-1000P) — $219.99",
+      "score": 0.3869607916497391
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.37114279191948757
+    },
+    {
+      "id": 127,
+      "where": "faq.md > Which lantern is brightest?",
+      "score": 0.3677505283828163
+    },
+    {
+      "id": 19,
+      "where": "catalog.md > Beacon 600 (LS-600) — $79.99",
+      "score": 0.3673163019883087
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.36362846072986077
+    },
+    {
+      "id": 13,
+      "where": "catalog.md > How to read a model number",
+      "score": 0.36330699012400847
+    }
+  ],
+  "shown": [
+    {
+      "id": 18,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.621039117437741
+    },
+    {
+      "id": 17,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.6115443835074127
+    },
+    {
+      "id": 16,
+      "where": "catalog.md > Firefly 220R (LS-220R) — $54.99",
+      "score": 0.5897465069694644
+    },
+    {
+      "id": 124,
+      "where": "faq.md > What is the difference between the Firefly 220 and the Firefly 220R?",
+      "score": 0.588022303573962
+    },
+    {
+      "id": 211,
+      "where": "repair-manual.pdf p.7",
+      "score": 0.5830498603104266
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "How long does the Firefly 220 run on low?",
+      "reply": "Firefly 220 battery runtime on low setting, specifications, rated run time per charge at lowest power/brightness mode",
+      "stopReason": "end_turn",
+      "inputTokens": 119,
+      "outputTokens": 41,
+      "cost": 0.000648,
+      "ms": 1671
+    },
+    {
+      "kind": "embed",
+      "text": "Firefly 220 battery runtime on low setting, specifications, rated run time per charge at lowest power/brightness mode",
+      "ms": 10
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] catalog.md > Firefly 220R (LS-220R) — $54.99\nThe Firefly 220R is the same lantern as the Firefly 220 with the battery compartment replaced by a\nsealed 2,600 mAh lithium-ion pack. It is the same size, gives the same 220 lumens from the same\nglobe, and uses the same two brightness levels, but it charges from any USB-C source in 3.5 hours\nand never needs cells. The extra 30 grams are the battery. A USB-A port under a rubber flap lets\nit charge a phone in an emergency; the port supplies 5 volts at 1 amp, enough to top up a phone\nbut not to charge a tablet. The battery is not user-replaceable and is covered for 1 year, while\nthe rest of the lantern carries the standard 2-year warranty. Four blue LEDs beside the USB-C port\nshow the state of charge.\n\nPlease note that the Firefly 220 and the Firefly 220R are different products with different\nruntimes and prices. The 220 takes batteries and runs 42 hours on low; the 220R is rechargeable\nand runs 48 hours on low.\n\nCompatible parts: USB-C cable C-15, wrist lanyard L-22.\n\n[2] catalog.md > Firefly 220R (LS-220R) — $54.99\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | Built-in 2,600 mAh lithium-ion battery, USB-C charging |\n| Charge time | 3.5 hours from empty with a 5 V 2 A charger |\n| Runtime, low | 48 hours |\n| Runtime, high | 10 hours |\n| Weight | 340 g |\n| Water rating | IPX4 (splash resistant) |\n| Power bank output | USB-A, 5 V 1 A |\n| Colors | Moss, slate |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, USB-C cable C-15, wrist lanyard |\n\nThe Firefly 220R is the same lantern as the Firefly 220 with the battery compartment replaced by a\nsealed 2,600 mAh lithium-ion pack. It is the same size, gives the same 220 lumens from the same\nglobe, and uses the same two brightness levels, but it charges from any USB-C source in 3.5 hours\nand never needs cells. The extra 30 grams are the battery. A USB-A port under a rubber flap lets\nit charge a phone in an emergency; the port supplies 5 volts at 1 amp, enough to top up a phone\nbut not to charge a tablet. The battery is not user-replaceable and is covered for 1 year, while\nthe rest of the lantern carries the standard 2-year warranty. Four blue LEDs beside the USB-C port\nshow the state of charge.\n\n[3] catalog.md > Firefly 220R (LS-220R) — $54.99\n### Firefly 220R (LS-220R) — $54.99\n\n| Specification | Value |\n| --- | --- |\n| Light output | 220 lumens |\n| Power | Built-in 2,600 mAh lithium-ion battery, USB-C charging |\n| Charge time | 3.5 hours from empty with a 5 V 2 A charger |\n| Runtime, low | 48 hours |\n| Runtime, high | 10 hours |\n| Weight | 340 g |\n| Water rating | IPX4 (splash resistant) |\n| Power bank output | USB-A, 5 V 1 A |\n| Colors | Moss, slate |\n| Warranty | 2 years (battery 1 year) |\n| In the box | Lantern, USB-C cable C-15, wrist lanyard |\n\n[4] faq.md > What is the difference between the Firefly 220 and the Firefly 220R?\n### What is the difference between the Firefly 220 and the Firefly 220R?\n\nThey are the same size and give the same 220 lumens. The Firefly 220 ($34.99) runs on three AA\nbatteries, which are included, for 42 hours on low or 9 hours on high. The Firefly 220R ($54.99)\nhas a built-in 2,600 mAh rechargeable battery that charges over USB-C, runs 48 hours on low or 10\nhours on high, and can charge a phone from its USB-A port. The 220R weighs 30 grams more.\n\n[5] repair-manual.pdf p.7\n5. Light under the hood and set the flame so that it is just below the point where it\nsmokes. Run the 30-minute burn-in.\nAir tubes and burner\nThe two side tubes carry air to the burner. If they are dented so that a 4 mm rod will not\npass, straighten them with the tube mandrel or replace the lantern. The burner itself (part\nBR-12) is replaced only when the winder gear strips, which happens about twice a year\nacross the whole fleet.\nFirefly 220 and 220R\nThe Firefly 220 (LS-220) runs on three AA cells; the Firefly 220R (LS-220R) is the\nrechargeable model with the 2,600 mAh pack and a USB-C port. They look the same from\nthe outside except for the port cover, and the 220R weighs 30 g more. Check the model\nnumber on the base plate before you order parts: the switches are different and the 220's\nswitch will not fit the 220R.\nSwitch\n1. Remove the base (two Phillips screws on the 220, three on the 220R).\n2. The switch is a tactile switch on the main board. Switch part numbers: SW-220 for the\n220, SW-220R for the 220R. Both are soldered; this is the one soldering job on the\nFirefly bench.\n3. Replace the switch, refit, and check both brightness levels.\nFirefly 220R USB-C port\n\nQuestion: How long does the Firefly 220 run on low?",
+      "reply": "The Firefly 220 runs 42 hours on low [1][4].",
+      "stopReason": "end_turn",
+      "inputTokens": 2033,
+      "outputTokens": 24,
+      "cost": 0.004306,
+      "ms": 1247
+    }
+  ],
+  "ms": 2930,
+  "tokens": {
+    "input": 2152,
+    "output": 65
+  }
+}

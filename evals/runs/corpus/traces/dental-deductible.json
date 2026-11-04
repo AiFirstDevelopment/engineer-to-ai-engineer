@@ -1,0 +1,165 @@
+{
+  "run": "corpus",
+  "case": "dental-deductible",
+  "question": "What is the annual deductible on the employee dental plan?",
+  "options": {
+    "citeCheck": true
+  },
+  "query": "What is the annual deductible on the employee dental plan?",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.002552,
+  "retrieved": [
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.4570274328594549
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.38679335652381114
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.37952785072806705
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.35241983748873873
+    },
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.33390162380417643
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.3216507530757714
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.2716469601808744
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.2439601095817953
+    },
+    {
+      "id": 47,
+      "where": "customer-service-playbook.md > Warranty claims",
+      "score": 0.24225539383014602
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.23521787084215603
+    },
+    {
+      "id": 72,
+      "where": "employee-handbook.md > Sick and safe leave",
+      "score": 0.23439826398056682
+    },
+    {
+      "id": 216,
+      "where": "returns-policy.md > Returns Policy",
+      "score": 0.23311778557328816
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.2328772988291743
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.2262747586217849
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.22520022272803902
+    },
+    {
+      "id": 270,
+      "where": "warranty.md > What the warranty promises",
+      "score": 0.22459304004150962
+    },
+    {
+      "id": 69,
+      "where": "employee-handbook.md > Pay",
+      "score": 0.21795055903450583
+    },
+    {
+      "id": 77,
+      "where": "employee-handbook.md > Retirement",
+      "score": 0.21615868581303183
+    },
+    {
+      "id": 271,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.21209012814898207
+    },
+    {
+      "id": 61,
+      "where": "customer-service-playbook.md > Scenario 2: a Sentinel 1000 Pro that stopped charging",
+      "score": 0.2116116140606119
+    }
+  ],
+  "shown": [
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.4570274328594549
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.38679335652381114
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.37952785072806705
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.35241983748873873
+    },
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.33390162380417643
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "What is the annual deductible on the employee dental plan?",
+      "ms": 7
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] employee-handbook.md > Health insurance\n### Health insurance\n\nMedical, dental and vision coverage is through the CareFirst Keystone Select plan. Eligibility\nbegins on the first day of the month after 30 days of full-time employment. The company pays 75% of\nthe employee premium and 50% of the premium for dependents. Open enrollment runs November 1\nthrough November 20 each year, for coverage starting January 1. Outside open enrollment you can\nchange your election only after a qualifying life event, within 30 days of the event.\n\n[2] employee-handbook.md > Expenses\n## Expenses\n\nSubmit expense claims in Expensify within 30 days of the expense. Receipts are required for any\nitem over $25. Mileage for driving your own car on company business, for example between\nshowrooms or to the Hagerstown warehouse, is paid at the IRS standard rate in effect that year.\nMeals are reimbursed at actual cost up to $20 for lunch and $35 for dinner when you are away from\nyour home location over a mealtime. Your manager approves claims under $250; Harold Nkemelu\napproves claims of $250 and up. Approved claims are paid with the next payroll.\n\n[3] employee-handbook.md > Employee discount\n## Employee discount\n\nEvery employee, full-time or part-time, gets 30% off the retail price of anything we sell, in the\nshowrooms or on the online store, and 50% off Second Light refurbished items. The discount applies\nto merchandise, not to shipping, repairs or gift cards. Employees may spend up to $2,000 a year at\nthe discounted price; purchases past the cap are at retail. The cap resets on January 1.\n\nThe discount is for you and the people in your household. Buying discounted items to resell, or\nfor friends outside your household, is a conduct violation and ends the discount. Use the\ndiscount code on your employee ID card online, or give your employee number at the register. Your\ndiscounted purchases still earn Lumen Rewards points on the amount you actually paid.\n\n[4] employee-handbook.md > Other benefits\n### Other benefits\n\nFull-time employees receive a company-paid life insurance policy of $25,000, a pretax commuter\nbenefit of up to $150 a month, and an annual stipend of $200 for work boots or safety footwear for\nwarehouse and repair staff. The company pays for the ServSafe-style fuel handling certification\nrequired for warehouse staff and renews it every three years.\n\n[5] employee-handbook.md > Paid time off (PTO)\n### Paid time off (PTO)\n\nFull-time employees earn 15 days of PTO in each of their first three years and 20 days a year once\nthey have completed three years of service. PTO accrues monthly, in twelve equal parts, on the last\nday of each month. New hires may use PTO once they have completed 60 days. Part-time employees\nearn PTO in proportion to scheduled hours.\n\nUp to 5 days of unused PTO carry over into the next calendar year; the rest is forfeited on\nDecember 31. Unused PTO is paid out when you leave, as Maryland requires when a written policy\nsays so, and this policy says so.\n\nRequest PTO in Deputy at least two weeks ahead for anything longer than two days. Showroom\nrequests for the week of Thanksgiving and the two weeks before Christmas are approved on a\nfirst-come basis and are limited to two people per showroom at a time.\n\nQuestion: What is the annual deductible on the employee dental plan?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1241,
+      "outputTokens": 7,
+      "cost": 0.002552,
+      "ms": 1072
+    }
+  ],
+  "ms": 1081,
+  "tokens": {
+    "input": 1241,
+    "output": 7
+  }
+}

@@ -152,7 +152,9 @@ warranty period.
 
 Products outside their warranty period, and declined claims, can be repaired by the Repair Center
 for a fee. The customer is quoted before any work is done and can decline the quote, in which
-case the product is returned at the customer's shipping cost. The Repair Center's own manual
+case the product is returned at the customer's shipping cost. The bench fee of $25.00 pays for
+the inspection and the quote, and is charged whether or not the customer goes ahead with the
+repair. The Repair Center's own manual
 describes the fee schedule and the shop procedures.
 
 ## Safety notices

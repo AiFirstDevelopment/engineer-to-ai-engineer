@@ -1,0 +1,181 @@
+{
+  "run": "rewrite",
+  "case": "showroom-wifi",
+  "question": "What is the Wi-Fi password at the Frederick showroom?",
+  "options": {
+    "hybrid": false,
+    "rerank": false,
+    "widen": false,
+    "citeCheck": false,
+    "rewrite": true
+  },
+  "query": "Frederick showroom Wi-Fi network name and password, guest wireless access credentials, showroom network access instructions",
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.002492,
+  "retrieved": [
+    {
+      "id": 256,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.4530719496497777
+    },
+    {
+      "id": 268,
+      "where": "showrooms.md > Contact",
+      "score": 0.41633137634911743
+    },
+    {
+      "id": 255,
+      "where": "showrooms.md > Frederick showroom",
+      "score": 0.41534240608859985
+    },
+    {
+      "id": 65,
+      "where": "employee-handbook.md > Showrooms",
+      "score": 0.39123653508618766
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.3666268041451863
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.3386322069165678
+    },
+    {
+      "id": 37,
+      "where": "customer-service-playbook.md > Channels and hours",
+      "score": 0.3330373007206242
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.3267325627786921
+    },
+    {
+      "id": 144,
+      "where": "faq.md > Showrooms",
+      "score": 0.32162160394083955
+    },
+    {
+      "id": 145,
+      "where": "faq.md > Where are your stores?",
+      "score": 0.31139643257517363
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.29922514356617425
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.2921587338880427
+    },
+    {
+      "id": 267,
+      "where": "showrooms.md > Accessibility",
+      "score": 0.2913099977122609
+    },
+    {
+      "id": 147,
+      "where": "faq.md > Where do I park in Frederick?",
+      "score": 0.2885720145152739
+    },
+    {
+      "id": 89,
+      "where": "employee-handbook.md > Keys, alarms and cash",
+      "score": 0.2830951560903905
+    },
+    {
+      "id": 262,
+      "where": "showrooms.md > Annapolis showroom",
+      "score": 0.28090556687676477
+    },
+    {
+      "id": 257,
+      "where": "showrooms.md > Parking and directions",
+      "score": 0.27155275768215587
+    },
+    {
+      "id": 105,
+      "where": "faq.md > What payment methods do you take?",
+      "score": 0.26103344540568224
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.25809015667345164
+    },
+    {
+      "id": 177,
+      "where": "release-notes.md > Known issues",
+      "score": 0.2572262025757787
+    }
+  ],
+  "shown": [
+    {
+      "id": 256,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.4530719496497777
+    },
+    {
+      "id": 268,
+      "where": "showrooms.md > Contact",
+      "score": 0.41633137634911743
+    },
+    {
+      "id": 255,
+      "where": "showrooms.md > Frederick showroom",
+      "score": 0.41534240608859985
+    },
+    {
+      "id": 65,
+      "where": "employee-handbook.md > Showrooms",
+      "score": 0.39123653508618766
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.3666268041451863
+    }
+  ],
+  "calls": [
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You turn a question into a search query for a company's internal documents:\nits policies, handbook, catalog and manuals. Reply with the query only, one line. Use the\nwords such documents use: formal terms for informal ones, the name of the policy or the\ndocument section the question is about. Keep every product name, number and code as given.",
+      "prompt": "What is the Wi-Fi password at the Frederick showroom?",
+      "reply": "Frederick showroom Wi-Fi network name and password, guest wireless access credentials, showroom network access instructions",
+      "stopReason": "end_turn",
+      "inputTokens": 125,
+      "outputTokens": 39,
+      "cost": 0.00064,
+      "ms": 1590
+    },
+    {
+      "kind": "embed",
+      "text": "Frederick showroom Wi-Fi network name and password, guest wireless access credentials, showroom network access instructions",
+      "ms": 9
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] showrooms.md > Address and hours\n### Address and hours\n\n412 East Patrick Street, Frederick, MD 21701. Monday through Saturday, 9:00 AM to 6:00 PM\nEastern. Closed Sundays. The showroom shares the building with the company headquarters and the\ncustomer support office, which occupy the second floor; the showroom is the whole ground floor,\nabout 3,200 square feet.\n\nThe showroom manager is Marcus Delacroix, who has been with the company since 2008. The assistant\nmanager is Yolanda Pruitt.\n\n[2] showrooms.md > Contact\n## Contact\n\nBoth showrooms are reached through the main number, (301) 555-0147: option 3 for Frederick, option\n4 for Annapolis. Email help@lanternsupply.example reaches customer support, which can pass a\nmessage to either showroom the same day.\n\n[3] showrooms.md > Frederick showroom\n## Frederick showroom\n\n[4] employee-handbook.md > Showrooms\n### Showrooms\n\nBoth showrooms, Frederick (412 East Patrick Street) and Annapolis (77 Compromise Street), are\nopen Monday through Saturday, 9:00 AM to 6:00 PM Eastern, and closed on Sundays. Showroom staff\narrive 30 minutes before opening to count the drawer, check display stock and turn on the\ndemonstration lanterns, and stay up to 30 minutes after closing to shut down. Those 30 minutes are\npaid time and should be on your timesheet.\n\n[5] showrooms.md > Showrooms\n# Showrooms\n\nLast updated: August 24, 2026\nOwner: Priya Whitcomb-Nair, Chief Executive\n\nLantern Supply Co. has two showrooms, both in Maryland: the flagship in Frederick, where the\ncompany started in 1987, and the Annapolis showroom, opened in May 2014. Both are open Monday\nthrough Saturday, 9:00 AM to 6:00 PM Eastern, and closed on Sundays and on the six company\nholidays. Both take in-store returns with the packing slip or order number, both accept repair\ndrop-offs, and both stock fuel for pickup. Only Frederick offers curbside pickup.\n\nQuestion: What is the Wi-Fi password at the Frederick showroom?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 891,
+      "outputTokens": 7,
+      "cost": 0.001852,
+      "ms": 1113
+    }
+  ],
+  "ms": 2714,
+  "tokens": {
+    "input": 1016,
+    "output": 46
+  }
+}
