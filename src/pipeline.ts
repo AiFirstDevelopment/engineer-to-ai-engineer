@@ -1,12 +1,12 @@
 // The pipeline: retrieve, prompt, answer. Two rules on top: every fact cites its passage, and
 // when there is nothing to cite, the answer is "I don't know." Four improvements sit behind
-// options, so the ten questions can measure each one on its own.
-import { ask } from "./claude";
+// options, so the evals can measure each one on its own. The models and the chunks are
+// parameters: the pipeline imports no model, so a test can hand it fakes.
 import { where } from "./chunk";
 import { checkCitations } from "./cite-check";
-import { allChunks } from "./db";
 import { fuse } from "./hybrid";
 import { keywordSearch } from "./keyword";
+import type { Deps } from "./models";
 import { layout, SYSTEM } from "./prompt";
 import { rerank } from "./rerank";
 import { retrieve, type Hit } from "./retrieve";
@@ -27,22 +27,22 @@ const MIN_SCORE = 0.25;
 const SHOWN = 5; // passages the model is shown
 const POOL = 20; // candidates to choose them from, when something does the choosing
 
-export async function answer(question: string, options: Options = {}): Promise<Result> {
+export async function answer(question: string, options: Options, deps: Deps): Promise<Result> {
   const pool = options.hybrid || options.rerank ? POOL : SHOWN;
-  let hits = await retrieve(question, pool);
+  let hits = await retrieve(question, pool, deps);
   if (hits.length === 0 || hits[0].score < MIN_SCORE) return dontKnow(0);
 
   let cost = 0;
-  if (options.hybrid) hits = fuse(hits, keywordSearch(question, allChunks(), pool), pool);
+  if (options.hybrid) hits = fuse(hits, keywordSearch(question, deps.chunks, pool), pool);
   if (options.rerank) {
-    const ranked = await rerank(question, hits, SHOWN);
+    const ranked = await rerank(question, hits, SHOWN, deps.models);
     hits = ranked.hits;
     cost += ranked.cost;
   }
   hits = hits.slice(0, SHOWN);
-  if (options.widen) hits = widen(hits);
+  if (options.widen) hits = widen(hits, deps.chunks);
 
-  const reply = await ask([{ role: "user", content: layout(question, hits) }], {
+  const reply = await deps.models.chat([{ role: "user", content: layout(question, hits) }], {
     system: SYSTEM,
   });
   cost += reply.cost;

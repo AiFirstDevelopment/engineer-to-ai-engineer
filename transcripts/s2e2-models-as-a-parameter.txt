@@ -1,0 +1,20 @@
+$ unset ANTHROPIC_API_KEY; echo "ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-<unset>}"
+ANTHROPIC_API_KEY=<unset>
+$ npm test
+
+> engineer-to-ai-engineer@1.0.0 test
+> node --import tsx --test --test-reporter=spec test/*.test.ts
+
+✔ answers from the passage that holds the answer, and cites it (1.553292ms)
+✔ says I don't know, citing nothing, when no passage answers (0.388292ms)
+✔ does not ask the model when nothing retrieved is about the question (0.173833ms)
+✔ the cite check removes a citation to a passage that was not shown (0.240959ms)
+✔ the reranker brings an answer from outside the top five into view (1.191667ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 131.42975

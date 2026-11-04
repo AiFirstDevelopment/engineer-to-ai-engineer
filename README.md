@@ -409,6 +409,51 @@ three points and not ten, few enough that a person can read every answer of a ru
 written from the document, not from memory. A golden set grows: episode 7 adds a way to turn
 real questions into new cases.
 
+### 2. Models as a parameter (`s2e2`)
+
+Dependency injection, so the pipeline can be tested without a model.
+
+Until now the pipeline imported its models: `pipeline.ts` called `ask` from `claude.ts`,
+`retrieve.ts` called `embed`, and the database opened itself when any of them was imported. A
+test of the pipeline's rules (cite the passage, say "I don't know" when nothing answers, do not
+even ask when nothing retrieved is about the question) would have needed a key, a network, a 97
+MB embedding model and money, and it would have answered differently each time. So the models
+become a parameter, the way a database connection is one.
+
+Files: `src/models.ts` is the `Models` interface, two functions, `chat(messages, options)` (the
+Messages API) and `embed(text)`, with `realModels`, the real pair, and `Deps`, everything the
+pipeline needs from outside: its models and the chunks it searches. `answer(question, options,
+deps)` in `src/pipeline.ts` imports no model any more; `retrieve`, `rerank` and `widen` take
+what they use as arguments; `src/server.ts` and `evals/suite.ts` pass `realModels` and the
+stored chunks. `src/db.ts` opens `lantern.db` on first use instead of on import.
+`test/fake-models.ts` is the fake pair: an embedder that hashes each word into one of the 384
+dimensions, so texts that share words point the same way, and a chat model that answers from
+markers in the prompt: a passage containing `<<say: ...>>` is the answer, cited with that
+passage's number, no marker means "I don't know", and asked to score passages it gives 10 to the
+one with a marker. Every behaviour a test needs is written into the test's own corpus, so a test
+reads as its own explanation. `test/pipeline.test.ts` has five tests on Node's built-in runner,
+`node:test` and `node:assert`, run through `tsx`: the answer cites its passage and the citation
+resolves to where it came from; no marker gives "I don't know" and no citations; a question
+about nothing in the corpus never reaches the model (the fake counts its calls: zero); the cite
+check removes a citation to a passage that was not shown and flags the answer; and the reranker
+brings an answer from seventh place into the five shown, where without it the answer is "I don't
+know". `npm test` runs them. `.github/workflows/test.yml` runs the type check, the tests and the
+golden-set check on every push and pull request, with no secret: none of the three calls a
+model.
+
+```sh
+npm test
+```
+
+The transcript, `transcripts/s2e2-models-as-a-parameter.txt`, shows `ANTHROPIC_API_KEY` unset
+and the five tests passing in about a tenth of a second. What these tests prove is the code
+around the model: the plumbing, the rules and the guards. They say nothing about whether the
+real model answers right; that is what the golden set is for, and the next three episodes build
+the harness that runs it. The two are different questions and need both: a fast test that runs
+on every change, and an eval that runs when the answers may have moved. The pipeline's behaviour
+with the real models did not change: the ten questions of series 1 still score 9/10 for four
+cents.
+
 ## Tags
 
 | Tag | Episode |
@@ -422,6 +467,7 @@ real questions into new cases.
 | `s1e7` | Your first pipeline |
 | `s1e8` | Making it good, with numbers |
 | `s2e1` | The golden set |
+| `s2e2` | Models as a parameter |
 
 ## Dependencies
 

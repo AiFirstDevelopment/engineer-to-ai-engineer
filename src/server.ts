@@ -2,9 +2,12 @@
 // Usage: npx tsx --env-file=.env src/server.ts
 //        curl -s localhost:3000/ask -d '{"question": "How long is the warranty?"}'
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
+import { allChunks } from "./db";
+import { realModels } from "./models";
 import { answer } from "./pipeline";
 
 const PORT = 3000;
+const deps = { models: realModels, chunks: allChunks() };
 
 createServer(async (request, response) => {
   if (request.method !== "POST" || request.url !== "/ask") {
@@ -14,7 +17,7 @@ createServer(async (request, response) => {
     const { question } = JSON.parse(await body(request)) as { question?: string };
     if (!question) return reply(response, 400, { error: "a question is required" });
     // Switch on what your numbers justify (evals/compare.ts). The cite check is always cheap.
-    reply(response, 200, await answer(question, { citeCheck: true }));
+    reply(response, 200, await answer(question, { citeCheck: true }, deps));
   } catch (error) {
     reply(response, 500, { error: String(error) });
   }

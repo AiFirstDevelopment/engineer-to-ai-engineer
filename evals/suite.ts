@@ -1,6 +1,8 @@
 // The ten questions, run through the pipeline with a given set of options.
 // A question passes when the answer contains one of the strings it expects.
 import { readFileSync } from "node:fs";
+import { allChunks } from "../src/db";
+import { realModels } from "../src/models";
 import { answer, type Options } from "../src/pipeline";
 
 export type Case = { question: string; expect: string[] };
@@ -15,8 +17,9 @@ export const cases: Case[] = readFileSync("evals/questions.jsonl", "utf8")
 export async function run(options: Options): Promise<Run> {
   const outcomes: Outcome[] = [];
   let cost = 0;
+  const deps = { models: realModels, chunks: allChunks() };
   for (const c of cases) {
-    const result = await answer(c.question, options);
+    const result = await answer(c.question, options, deps);
     const got = result.answer.toLowerCase();
     const passed = c.expect.some((expected) => got.includes(expected.toLowerCase()));
     outcomes.push({ ...c, passed, answer: result.answer, flagged: result.flagged ?? false });

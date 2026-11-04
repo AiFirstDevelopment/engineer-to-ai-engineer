@@ -7,7 +7,7 @@
 // The reranker runs on Claude Haiku 5.5, not the answering model. Scoring passages 0 to 10 is a
 // narrower job than writing a cited answer, it reads four times the text the answer does, and
 // Haiku does it well enough at a twentieth of the price per token. The answer stays on MODEL.
-import { ask } from "./claude";
+import type { Models } from "./models";
 import type { Hit } from "./retrieve";
 
 export const RERANK_MODEL = "claude-haiku-5-5";
@@ -34,13 +34,14 @@ type Scores = { scores: { n: number; score: number }[] };
 export async function rerank(
   question: string,
   candidates: Hit[],
-  k = 5,
+  k: number,
+  models: Models,
 ): Promise<{ hits: Hit[]; cost: number }> {
   const passages = candidates.map((c, i) => `[${i + 1}] ${c.text}`);
   const prompt = `Question: ${question}\n\nScore each passage from 0 to 10 for how well it
 answers the question: 10 answers it outright, 0 is unrelated.\n\n${passages.join("\n\n")}`;
 
-  const reply = await ask([{ role: "user", content: prompt }], {
+  const reply = await models.chat([{ role: "user", content: prompt }], {
     model: RERANK_MODEL,
     system: "You score passages for how well they answer a question.",
     format: schema,
