@@ -1,0 +1,26 @@
+$ npx tsx --env-file=.env src/structured.ts
+{
+  order_id: 'LS-2026-012077',
+  customer_name: 'Sam Okoye',
+  items: [
+    { product: 'Firefly 220', quantity: 2 },
+    { product: 'Northstar Dual-Fuel', quantity: 1 }
+  ],
+  intent: 'return'
+}
+cost: $0.0019
+
+$ npx tsx --env-file=.env src/tools.ts "Has order LS-2026-012077 arrived yet?"
+> lookup_order(LS-2026-012077)
+Yes. Order LS-2026-012077 was delivered on October 29, 2026.
+
+- **Carrier:** UPS Ground, tracking number 1Z4E8W120312456789
+- **Shipped:** October 26, 2026
+- **Items:**
+  - 2 × Firefly 220
+  - 1 × Northstar Dual-Fuel
+- **Total:** $254.37, with free shipping
+
+If you can't find the package, check around the delivery address and with neighbors. If it still
+doesn't turn up, contact UPS with the tracking number.
+cost: $0.0046

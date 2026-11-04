@@ -114,12 +114,40 @@ is 32 tokens: a token is a few characters, a short word is one, and numbers, mod
 punctuation split into several. Everything you pay for and every limit you will meet is counted
 in tokens. Cost of the three runs together: under half a cent.
 
+### 3. Prompts are code (`s1e3`)
+
+Two ways to make the model's output something a program can use.
+
+Files: `src/structured.ts` asks for JSON instead of prose. The shape is written twice, once as
+a TypeScript type for the code and once as JSON Schema for the API, which holds the model to
+it (`output_config.format`). The code still parses the text and checks the shape with a type
+guard, because the model's output is input. `src/tools.ts` is tool use: one tool,
+`lookup_order(order_id)`, read from `data/orders.json`, and the loop that runs it. The model
+answers with a `tool_use` block instead of text; we run the function, append the model's whole
+turn and a `tool_result` to the conversation, and call again; it repeats until the model
+answers in text. The loop is ours, and it is a plain `while`. `src/claude.ts` grows two options,
+`tools` and `format`, and returns the whole content of a turn, not only its text.
+
+```sh
+npx tsx --env-file=.env src/structured.ts
+npx tsx --env-file=.env src/tools.ts "Has order LS-2026-012077 arrived yet?"
+```
+
+The transcript, `transcripts/s1e3-prompts-are-code.txt`, shows a customer's email turned into
+an `OrderSummary` (the order id, the customer, two items with quantities, intent `return`) for
+a fifth of a cent, and the tool loop: the model asks for `lookup_order(LS-2026-012077)`, gets
+the order's JSON from the file, and answers that it was delivered on October 29 by UPS Ground,
+with the tracking number and the email's two Fireflies and Northstar, in two round trips for
+half a cent. The prompt, the schema and the tool's description are code: they live in the
+repository, they are reviewed, and from episode 7 on they are tested.
+
 ## Tags
 
 | Tag | Episode |
 | --- | --- |
 | `s1e1` | What actually changed, and what didn't |
 | `s1e2` | Calling a model from code |
+| `s1e3` | Prompts are code |
 
 ## Dependencies
 

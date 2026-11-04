@@ -1,0 +1,54 @@
+[
+  {
+    "order_id": "LS-2026-004871",
+    "customer": "Rosa Delgado",
+    "placed": "2026-06-01",
+    "shipped": "2026-06-02",
+    "delivered": "2026-06-05",
+    "status": "delivered",
+    "items": [{ "model": "LS-600", "name": "Beacon 600", "quantity": 1, "price": 79.99 }],
+    "shipping": 0.0,
+    "total": 84.79
+  },
+  {
+    "order_id": "LS-2026-008316",
+    "customer": "Meredith Okonjo",
+    "placed": "2026-08-20",
+    "shipped": "2026-08-21",
+    "delivered": "2026-08-29",
+    "status": "delivered",
+    "items": [{ "model": "LS-600", "name": "Beacon 600", "quantity": 1, "price": 79.99 }],
+    "shipping": 0.0,
+    "total": 84.79
+  },
+  {
+    "order_id": "LS-2026-009140",
+    "customer": "Daniel Reyes-Hart",
+    "placed": "2026-09-09",
+    "shipped": null,
+    "delivered": "2026-09-09",
+    "status": "picked up (curbside, Frederick)",
+    "items": [
+      { "model": "LS-220", "name": "Firefly 220", "quantity": 2, "price": 34.99 },
+      { "model": "W-78", "name": "#2 flat wick 5-pack", "quantity": 1, "price": 4.99 }
+    ],
+    "shipping": 0.0,
+    "total": 79.27
+  },
+  {
+    "order_id": "LS-2026-012077",
+    "customer": "Sam Okoye",
+    "placed": "2026-10-26",
+    "shipped": "2026-10-26",
+    "delivered": "2026-10-29",
+    "status": "delivered",
+    "carrier": "UPS Ground",
+    "tracking": "1Z4E8W120312456789",
+    "items": [
+      { "model": "LS-220", "name": "Firefly 220", "quantity": 2, "price": 34.99 },
+      { "model": "LS-ND2", "name": "Northstar Dual-Fuel", "quantity": 1, "price": 169.99 }
+    ],
+    "shipping": 0.0,
+    "total": 254.37
+  }
+]

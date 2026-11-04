@@ -7,16 +7,29 @@ const PRICE = { input: 2.0, output: 10.0 };
 
 const API = "https://api.anthropic.com/v1/messages";
 
-export type Message = { role: "user" | "assistant"; content: string };
+// A message is text, or a list of blocks. Thinking blocks come back from the model and are
+// passed back to it untouched.
+export type ContentBlock =
+  | { type: "text"; text: string }
+  | { type: "thinking"; thinking: string; signature: string }
+  | { type: "tool_use"; id: string; name: string; input: unknown }
+  | { type: "tool_result"; tool_use_id: string; content: string };
+
+export type Message = { role: "user" | "assistant"; content: string | ContentBlock[] };
+
+export type Tool = { name: string; description: string; input_schema: object };
 
 export type Options = {
   system?: string; // instructions that sit above the conversation
   maxTokens?: number; // the most the answer may be, in tokens
+  tools?: Tool[]; // functions the model may ask us to run
+  format?: object; // a JSON Schema the answer must follow
 };
 
 export type Answer = {
   text: string;
-  stopReason: string; // "end_turn" when the model finished; "max_tokens" when we cut it off
+  content: ContentBlock[]; // the whole turn, tool calls included
+  stopReason: string; // "end_turn", "tool_use", or "max_tokens" when we cut it off
   inputTokens: number;
   outputTokens: number;
   cost: number; // dollars
@@ -28,12 +41,17 @@ export async function ask(messages: Message[], options: Options = {}): Promise<A
     max_tokens: options.maxTokens ?? 1024,
     system: options.system,
     messages,
-    // Hidden reasoning is billed as output. These are lookups, not proofs: keep it short.
-    output_config: { effort: "low" },
+    tools: options.tools,
+    output_config: {
+      // Hidden reasoning is billed as output. These are lookups, not proofs: keep it short.
+      effort: "low",
+      format: options.format && { type: "json_schema", schema: options.format },
+    },
   };
   const data = await post(API, body);
   return {
     text: data.content.filter((b) => b.type === "text").map((b) => b.text).join(""),
+    content: data.content,
     stopReason: data.stop_reason,
     inputTokens: data.usage.input_tokens,
     outputTokens: data.usage.output_tokens,
@@ -74,7 +92,7 @@ function apiKey(): string {
 
 // The parts of the API's responses that we read.
 type ApiResponse = {
-  content: { type: string; text: string }[];
+  content: ContentBlock[];
   stop_reason: string;
   usage: { input_tokens: number; output_tokens: number };
   input_tokens: number; // count_tokens answers with this alone
