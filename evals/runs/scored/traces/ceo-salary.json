@@ -1,0 +1,164 @@
+{
+  "run": "scored",
+  "case": "ceo-salary",
+  "question": "What is Priya Whitcomb-Nair's salary?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.002302,
+  "retrieved": [
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.2959654758317105
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.2953713623793442
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.22178377299465463
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.20651130171444806
+    },
+    {
+      "id": 75,
+      "where": "employee-handbook.md > Benefits",
+      "score": 0.20635639966811134
+    },
+    {
+      "id": 216,
+      "where": "returns-policy.md > Returns Policy",
+      "score": 0.20633241777774136
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.19988649938447084
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.19148453376040467
+    },
+    {
+      "id": 171,
+      "where": "lumen-rewards.md > Program contact",
+      "score": 0.18257644111456892
+    },
+    {
+      "id": 12,
+      "where": "catalog.md > Product Catalogue",
+      "score": 0.1813779504037071
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.1804698100002754
+    },
+    {
+      "id": 64,
+      "where": "employee-handbook.md > Hours and schedules",
+      "score": 0.1796396034164403
+    },
+    {
+      "id": 234,
+      "where": "shipping.md > Shipping Policy and Operations",
+      "score": 0.17532478534455462
+    },
+    {
+      "id": 269,
+      "where": "warranty.md > Warranty Policy",
+      "score": 0.17053381031476172
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.16657248812072964
+    },
+    {
+      "id": 141,
+      "where": "faq.md > How do I earn points?",
+      "score": 0.16547098022510728
+    },
+    {
+      "id": 159,
+      "where": "lumen-rewards.md > Lumen Rewards Program",
+      "score": 0.16498012483754107
+    },
+    {
+      "id": 140,
+      "where": "faq.md > Lumen Rewards",
+      "score": 0.16086827020741085
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.1560965051325593
+    },
+    {
+      "id": 117,
+      "where": "faq.md > Warranty and repairs",
+      "score": 0.14939599777080823
+    }
+  ],
+  "shown": [
+    {
+      "id": 1,
+      "where": "about.md > About Lantern Supply Co.",
+      "score": 0.2959654758317105
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.2953713623793442
+    },
+    {
+      "id": 63,
+      "where": "employee-handbook.md > Welcome",
+      "score": 0.22178377299465463
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.20651130171444806
+    },
+    {
+      "id": 75,
+      "where": "employee-handbook.md > Benefits",
+      "score": 0.20635639966811134
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "What is Priya Whitcomb-Nair's salary?",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > About Lantern Supply Co.\n# About Lantern Supply Co.\n\nLast updated: October 1, 2026\nOwner: Priya Whitcomb-Nair\n\nLantern Supply Co. sells camping lanterns, oil lamps, fuel and parts from two showrooms in\nMaryland and from the online store at lanternsupply.example. We make some of what we sell, we\nrepair everything we sell, and we have been doing both since 1987. This page is the short version\nof who we are, for new employees and for customers who ask.\n\n[2] employee-handbook.md > Other benefits\n### Other benefits\n\nFull-time employees receive a company-paid life insurance policy of $25,000, a pretax commuter\nbenefit of up to $150 a month, and an annual stipend of $200 for work boots or safety footwear for\nwarehouse and repair staff. The company pays for the ServSafe-style fuel handling certification\nrequired for warehouse staff and renews it every three years.\n\n[3] employee-handbook.md > Welcome\n## Welcome\n\nLantern Supply Co. was founded in 1987 by Marjorie and Dale Whitcomb in Frederick, Maryland, and\nis still owned and run by the family. Priya Whitcomb-Nair, the founders' daughter, has been chief\nexecutive since 2019. As of October 2026 there are 63 of us across the Frederick headquarters and\nshowroom, the Annapolis showroom and the Hagerstown warehouse and Repair Center. We are a small\ncompany that sells a small range of things well. Most of the people who buy from us are repeat\ncustomers, and most of them know a great deal about lanterns. Treat them that way.\n\n[4] lumen-rewards.md > Earning points\n## Earning points\n\nMembers earn 1 point for every $1 spent on merchandise, calculated on the amount paid after\ndiscounts and before shipping and tax. Fractions of a dollar are dropped: a $34.99 Firefly 220\nearns 34 points, and a $219.99 Sentinel 1000 Pro earns 219 points. Gift card purchases earn no\npoints; purchases paid with a gift card earn points as usual.\n\nPoints post 48 hours after the order is delivered, or 48 hours after a showroom purchase. The\ndelay exists so that an order cancelled before delivery never shows points that then have to be\nremoved. Points from a showroom purchase post only if the member number was given at the\nregister; receipts can be added to an account within 30 days by calling customer service.\n\nPoints also come from:\n\n- Writing a product review on the online store: 25 points per review, up to 100 points a year.\n- The birthday reward, described below.\n- Occasional double-points events, announced by email; the last was the week of\n  September 14, 2026, which was double points on the Sentinel line.\n\nPoints do not come from shipping charges, tax, repair fees, gift cards, or purchases from other\nretailers.\n\n[5] employee-handbook.md > Benefits\n## Benefits\n\nQuestion: What is Priya Whitcomb-Nair's salary?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1116,
+      "outputTokens": 7,
+      "cost": 0.002302,
+      "ms": 1772
+    }
+  ],
+  "tokens": {
+    "input": 1116,
+    "output": 7
+  },
+  "ms": 1779
+}

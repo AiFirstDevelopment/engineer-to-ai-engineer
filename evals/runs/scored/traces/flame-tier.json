@@ -1,0 +1,174 @@
+{
+  "run": "scored",
+  "case": "flame-tier",
+  "question": "How many points a year does it take to reach the Flame tier?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "It takes 1,000 points earned in a calendar year to reach Flame (the range is 1,000 to 2,499) [1][2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "faq.md > What do the tiers get me?"
+    },
+    {
+      "n": 2,
+      "where": "lumen-rewards.md > Tiers"
+    }
+  ],
+  "cost": 0.003294,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 143,
+      "where": "faq.md > What do the tiers get me?",
+      "score": 0.6119988812767568
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.5747977588749563
+    },
+    {
+      "id": 170,
+      "where": "lumen-rewards.md > Questions agents are asked",
+      "score": 0.4693570052336223
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.4174518761714702
+    },
+    {
+      "id": 163,
+      "where": "lumen-rewards.md > Redeeming points",
+      "score": 0.4150107970487885
+    },
+    {
+      "id": 167,
+      "where": "lumen-rewards.md > Birthday reward",
+      "score": 0.3610091058641269
+    },
+    {
+      "id": 160,
+      "where": "lumen-rewards.md > Overview",
+      "score": 0.3603174875827813
+    },
+    {
+      "id": 168,
+      "where": "lumen-rewards.md > Expiry",
+      "score": 0.35360357267011183
+    },
+    {
+      "id": 141,
+      "where": "faq.md > How do I earn points?",
+      "score": 0.33702268406672314
+    },
+    {
+      "id": 213,
+      "where": "repair-manual.pdf p.8",
+      "score": 0.29326237212231954
+    },
+    {
+      "id": 25,
+      "where": "catalog.md > Heritage No. 7 Brass Oil Lamp (LS-H7) — $129.99",
+      "score": 0.28793087048260574
+    },
+    {
+      "id": 136,
+      "where": "faq.md > What fuel goes in the Heritage No. 7?",
+      "score": 0.28769423729133614
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.2854711436255539
+    },
+    {
+      "id": 142,
+      "where": "faq.md > Do points expire?",
+      "score": 0.2820774604257537
+    },
+    {
+      "id": 276,
+      "where": "warranty.md > What is not covered",
+      "score": 0.2807543703255216
+    },
+    {
+      "id": 273,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.27439138654190814
+    },
+    {
+      "id": 154,
+      "where": "fuel-safety.md > Lighting and ventilation",
+      "score": 0.26194064031768466
+    },
+    {
+      "id": 86,
+      "where": "employee-handbook.md > Training",
+      "score": 0.2533987240817691
+    },
+    {
+      "id": 23,
+      "where": "catalog.md > Northstar Dual-Fuel (LS-ND2) — $169.99",
+      "score": 0.2520390192115504
+    },
+    {
+      "id": 275,
+      "where": "warranty.md > What is not covered",
+      "score": 0.2511339179024847
+    }
+  ],
+  "shown": [
+    {
+      "id": 143,
+      "where": "faq.md > What do the tiers get me?",
+      "score": 0.6119988812767568
+    },
+    {
+      "id": 164,
+      "where": "lumen-rewards.md > Tiers",
+      "score": 0.5747977588749563
+    },
+    {
+      "id": 170,
+      "where": "lumen-rewards.md > Questions agents are asked",
+      "score": 0.4693570052336223
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.4174518761714702
+    },
+    {
+      "id": 163,
+      "where": "lumen-rewards.md > Redeeming points",
+      "score": 0.4150107970487885
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How many points a year does it take to reach the Flame tier?",
+      "ms": 14
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] faq.md > What do the tiers get me?\n### What do the tiers get me?\n\nTiers are set by the points you earn in a calendar year. Ember is 0 to 999, Flame is 1,000 to\n2,499, and Beacon is 2,500 and up. Flame members get free expedited shipping upgrades. Beacon\nmembers get early access to Second Light sales and one free bench repair a year. Every member\ngets a $10 birthday reward.\n\n[2] lumen-rewards.md > Tiers\n## Tiers\n\nTiers are set by the points earned in a calendar year, January 1 to December 31, counting points\nfrom purchases and reviews but not the birthday reward. A member who reaches a tier keeps it for\nthe rest of that year and all of the following year, then is re-qualified on the new year's\nearnings.\n\n| Tier   | Points in a calendar year | Perks                                           |\n|--------|---------------------------|-------------------------------------------------|\n| Ember  | 0 to 999                  | Points, rewards, birthday reward, member emails |\n| Flame  | 1,000 to 2,499            | Ember perks, plus free expedited upgrades       |\n| Beacon | 2,500 and up              | Flame perks, early Second Light access, a free repair |\n\n[3] lumen-rewards.md > Questions agents are asked\n## Questions agents are asked\n\nA member says points are missing from a showroom purchase. Ask for the receipt; the member\nnumber was probably not given at the register. Add the receipt in Hearth if it is within 30 days.\n\nA member wants to combine points with a spouse. Memberships are individual and cannot be\ncombined, but a reward code can be used on anyone's order.\n\nA member asks whether points earn on a repair. They do not; repair fees are not merchandise.\n\nA member reached 1,000 points in December and asks when Flame starts. At once, and it lasts\nthrough the end of the following year.\n\nA member's reward code was lost. Agents can look it up on the account and resend it; the\nexpiry date does not change.\n\n[4] lumen-rewards.md > Earning points\n## Earning points\n\nMembers earn 1 point for every $1 spent on merchandise, calculated on the amount paid after\ndiscounts and before shipping and tax. Fractions of a dollar are dropped: a $34.99 Firefly 220\nearns 34 points, and a $219.99 Sentinel 1000 Pro earns 219 points. Gift card purchases earn no\npoints; purchases paid with a gift card earn points as usual.\n\nPoints post 48 hours after the order is delivered, or 48 hours after a showroom purchase. The\ndelay exists so that an order cancelled before delivery never shows points that then have to be\nremoved. Points from a showroom purchase post only if the member number was given at the\nregister; receipts can be added to an account within 30 days by calling customer service.\n\nPoints also come from:\n\n- Writing a product review on the online store: 25 points per review, up to 100 points a year.\n- The birthday reward, described below.\n- Occasional double-points events, announced by email; the last was the week of\n  September 14, 2026, which was double points on the Sentinel line.\n\nPoints do not come from shipping charges, tax, repair fees, gift cards, or purchases from other\nretailers.\n\n[5] lumen-rewards.md > Redeeming points\n## Redeeming points\n\nEvery 500 points can be exchanged for a $25 reward. Rewards are issued as a code that can be\napplied to any order on the online store or quoted at a showroom register. A reward code is valid\nfor 90 days from issue. Points are redeemed in multiples of 500; a member with 1,200 points can\ntake two rewards and keep 200 points.\n\nA reward can be applied to any merchandise, including fuel, parts and Last Light clearance items,\nbut not to gift cards or shipping charges. One reward code may be used per order. The reward\nreduces the amount paid and therefore the points earned on that order.\n\nQuestion: How many points a year does it take to reach the Flame tier?",
+      "reply": "It takes 1,000 points earned in a calendar year to reach Flame (the range is 1,000 to 2,499) [1][2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1422,
+      "outputTokens": 45,
+      "cost": 0.003294,
+      "ms": 937
+    }
+  ],
+  "tokens": {
+    "input": 1422,
+    "output": 45
+  },
+  "ms": 952
+}

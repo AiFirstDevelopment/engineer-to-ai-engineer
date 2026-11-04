@@ -1,0 +1,164 @@
+{
+  "run": "scored",
+  "case": "showroom-wifi",
+  "question": "What is the Wi-Fi password at the Frederick showroom?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "I don't know.",
+  "citations": [],
+  "cost": 0.002226,
+  "retrieved": [
+    {
+      "id": 256,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.47601799604488876
+    },
+    {
+      "id": 255,
+      "where": "showrooms.md > Frederick showroom",
+      "score": 0.46502634358553446
+    },
+    {
+      "id": 37,
+      "where": "customer-service-playbook.md > Channels and hours",
+      "score": 0.43168744333923276
+    },
+    {
+      "id": 268,
+      "where": "showrooms.md > Contact",
+      "score": 0.4096045205630878
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.3944309170240896
+    },
+    {
+      "id": 254,
+      "where": "showrooms.md > Showrooms",
+      "score": 0.388866497957957
+    },
+    {
+      "id": 65,
+      "where": "employee-handbook.md > Showrooms",
+      "score": 0.37461937008253055
+    },
+    {
+      "id": 257,
+      "where": "showrooms.md > Parking and directions",
+      "score": 0.36027407168179426
+    },
+    {
+      "id": 66,
+      "where": "employee-handbook.md > Customer support",
+      "score": 0.3542070539541678
+    },
+    {
+      "id": 145,
+      "where": "faq.md > Where are your stores?",
+      "score": 0.34283533599495625
+    },
+    {
+      "id": 116,
+      "where": "faq.md > Can I return something at a showroom?",
+      "score": 0.3358272954843326
+    },
+    {
+      "id": 5,
+      "where": "about.md > Where we are",
+      "score": 0.33198266041248786
+    },
+    {
+      "id": 147,
+      "where": "faq.md > Where do I park in Frederick?",
+      "score": 0.3298799518259895
+    },
+    {
+      "id": 267,
+      "where": "showrooms.md > Accessibility",
+      "score": 0.31608601811038367
+    },
+    {
+      "id": 262,
+      "where": "showrooms.md > Annapolis showroom",
+      "score": 0.31311162854674207
+    },
+    {
+      "id": 89,
+      "where": "employee-handbook.md > Keys, alarms and cash",
+      "score": 0.30466914568485154
+    },
+    {
+      "id": 260,
+      "where": "showrooms.md > What is stocked",
+      "score": 0.2988846501553391
+    },
+    {
+      "id": 193,
+      "where": "release-notes.md > 3.9 — November 4, 2025",
+      "score": 0.29456780005163424
+    },
+    {
+      "id": 6,
+      "where": "about.md > People",
+      "score": 0.2871741814523981
+    },
+    {
+      "id": 4,
+      "where": "about.md > Timeline",
+      "score": 0.2869885100033929
+    }
+  ],
+  "shown": [
+    {
+      "id": 256,
+      "where": "showrooms.md > Address and hours",
+      "score": 0.47601799604488876
+    },
+    {
+      "id": 255,
+      "where": "showrooms.md > Frederick showroom",
+      "score": 0.46502634358553446
+    },
+    {
+      "id": 37,
+      "where": "customer-service-playbook.md > Channels and hours",
+      "score": 0.43168744333923276
+    },
+    {
+      "id": 268,
+      "where": "showrooms.md > Contact",
+      "score": 0.4096045205630878
+    },
+    {
+      "id": 3,
+      "where": "about.md > The story",
+      "score": 0.3944309170240896
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "What is the Wi-Fi password at the Frederick showroom?",
+      "ms": 15
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] showrooms.md > Address and hours\n### Address and hours\n\n412 East Patrick Street, Frederick, MD 21701. Monday through Saturday, 9:00 AM to 6:00 PM\nEastern. Closed Sundays. The showroom shares the building with the company headquarters and the\ncustomer support office, which occupy the second floor; the showroom is the whole ground floor,\nabout 3,200 square feet.\n\nThe showroom manager is Marcus Delacroix, who has been with the company since 2008. The assistant\nmanager is Yolanda Pruitt.\n\n[2] showrooms.md > Frederick showroom\n## Frederick showroom\n\n[3] customer-service-playbook.md > Channels and hours\n## Channels and hours\n\nSupport comes in by phone at (301) 555-0147, by email to help@lanternsupply.example, and by chat\non the online store. All three are handled from the Frederick office. Our hours are Monday through\nFriday, 8:30 AM to 6:00 PM Eastern, and Saturday 9:00 AM to 5:00 PM Eastern. We are closed on\nSundays and on the six company holidays.\n\nEvery email is answered within 1 business day; aim for the same day. Phone callers wait less than\n3 minutes; when the queue passes 3 minutes the shift lead takes calls too. Chat is answered within\n3 minutes during support hours. Outside hours, chat shows a form that becomes an email.\n\nAll three channels log in Gorgias, our help desk. One customer, one conversation: if someone\nemails and then calls, merge the tickets so the next person sees the whole story.\n\n[4] showrooms.md > Contact\n## Contact\n\nBoth showrooms are reached through the main number, (301) 555-0147: option 3 for Frederick, option\n4 for Annapolis. Email help@lanternsupply.example reaches customer support, which can pass a\nmessage to either showroom the same day.\n\n[5] about.md > The story\nFor the first ten years the business was lamps, wicks, fuel and repairs. In 2003 the company\nassembled its first Hagerstown Kerosene Lantern in a rented bay in Hagerstown, and in 2009 it\nsold its first LED lantern, the Firefly 100. The online store opened in 2011. The Annapolis\nshowroom opened in May 2014, and in 2016 the warehouse and Repair Center moved into the current\nbuilding at 1180 Downsville Pike in Hagerstown, with the loading dock at Dock B that every return\nand repair comes through.\n\nPriya Whitcomb-Nair, Marjorie and Dale's daughter, joined the company in 2010 to run the online\nstore and became CEO in 2019. Marjorie and Dale retired the same year and still visit the\nFrederick showroom most Saturdays. The company remains privately held and family owned.\n\nQuestion: What is the Wi-Fi password at the Frederick showroom?",
+      "reply": "I don't know.",
+      "stopReason": "end_turn",
+      "inputTokens": 1078,
+      "outputTokens": 7,
+      "cost": 0.002226,
+      "ms": 1388
+    }
+  ],
+  "tokens": {
+    "input": 1078,
+    "output": 7
+  },
+  "ms": 1404
+}

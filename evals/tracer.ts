@@ -3,6 +3,7 @@
 // the retrieval the pipeline reports in its result, that is every step of a case.
 import { MODEL } from "../src/claude";
 import type { Models } from "../src/models";
+import type { Options, Result } from "../src/pipeline";
 
 export type Call =
   | { kind: "embed"; text: string; ms: number }
@@ -19,6 +20,17 @@ export type Call =
       ms: number;
     };
 
+// One case of a run, as evals/eval.ts writes it to evals/runs/<run>/traces/<case>.json.
+export type Trace = Result & {
+  run: string;
+  case: string;
+  question: string;
+  options: Options;
+  calls: Call[];
+  tokens: { input: number; output: number };
+  ms: number;
+};
+
 export function traced(models: Models): { models: Models; calls: Call[] } {
   const calls: Call[] = [];
   const wrapped: Models = {
@@ -33,7 +45,7 @@ export function traced(models: Models): { models: Models; calls: Call[] } {
       const reply = await models.chat(messages, options);
       calls.push({
         kind: "chat",
-        model: MODEL,
+        model: options.model ?? MODEL,
         system: options.system,
         prompt: messages.map((m) => String(m.content)).join("\n\n"),
         reply: reply.text,

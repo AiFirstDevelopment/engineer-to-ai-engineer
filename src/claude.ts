@@ -6,7 +6,8 @@ export const MODEL = "claude-sonnet-5-5";
 // Change a model, change its line too: a model missing here is an error, never free.
 const PRICES: Record<string, { input: number; output: number }> = {
   "claude-sonnet-5-5": { input: 2.0, output: 10.0 },
-  "claude-haiku-5-5": { input: 0.1, output: 0.5 }, // the reranker (src/rerank.ts)
+  // the reranker (src/rerank.ts) and the eval's judge (evals/judge.ts)
+  "claude-haiku-5-5": { input: 0.1, output: 0.5 },
 };
 
 const API = "https://api.anthropic.com/v1/messages";

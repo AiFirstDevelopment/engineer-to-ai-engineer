@@ -1,0 +1,178 @@
+{
+  "run": "scored",
+  "case": "refund-approval",
+  "question": "Who has to approve a $700 refund?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "Tomas Reyes must approve it, since any refund over $500 needs his approval (and only amounts over $2,000 go to Priya Whitcomb-Nair) [1][2][5]. The approval is recorded as a note on the ticket/order [1][2].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "customer-service-playbook.md > Goodwill and approvals"
+    },
+    {
+      "n": 2,
+      "where": "returns-policy.md > Approvals: the Three Lights rule"
+    },
+    {
+      "n": 5,
+      "where": "employee-handbook.md > Customer service standards"
+    }
+  ],
+  "cost": 0.00332,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.5418066234097085
+    },
+    {
+      "id": 231,
+      "where": "returns-policy.md > Approvals: the Three Lights rule",
+      "score": 0.4611865642529222
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.4603097143305078
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.44047267101094767
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.44017612564739167
+    },
+    {
+      "id": 43,
+      "where": "customer-service-playbook.md > Refunds",
+      "score": 0.43455254697807677
+    },
+    {
+      "id": 107,
+      "where": "faq.md > Returns and refunds",
+      "score": 0.4181191450452706
+    },
+    {
+      "id": 112,
+      "where": "faq.md > How long until I see my refund?",
+      "score": 0.41332372222113256
+    },
+    {
+      "id": 51,
+      "where": "customer-service-playbook.md > Chargebacks",
+      "score": 0.41017376719348114
+    },
+    {
+      "id": 227,
+      "where": "returns-policy.md > Refunds",
+      "score": 0.4050957509630943
+    },
+    {
+      "id": 42,
+      "where": "customer-service-playbook.md > Restocking fee and return shipping",
+      "score": 0.3996884008121974
+    },
+    {
+      "id": 184,
+      "where": "release-notes.md > Highlights",
+      "score": 0.3953142221347905
+    },
+    {
+      "id": 169,
+      "where": "lumen-rewards.md > Returns and cancellations",
+      "score": 0.3846351369073041
+    },
+    {
+      "id": 225,
+      "where": "returns-policy.md > Return shipping",
+      "score": 0.35900595652122114
+    },
+    {
+      "id": 60,
+      "where": "customer-service-playbook.md > Scenario 1: a return just outside the window",
+      "score": 0.33446318819870946
+    },
+    {
+      "id": 81,
+      "where": "employee-handbook.md > Expenses",
+      "score": 0.3321732472811804
+    },
+    {
+      "id": 41,
+      "where": "customer-service-playbook.md > Issuing an RA number",
+      "score": 0.3288478807270033
+    },
+    {
+      "id": 114,
+      "where": "faq.md > What can't be returned at all?",
+      "score": 0.3284636450929069
+    },
+    {
+      "id": 223,
+      "where": "returns-policy.md > Final sale, no returns",
+      "score": 0.32357729063820606
+    },
+    {
+      "id": 53,
+      "where": "customer-service-playbook.md > RET-01 Return window passed",
+      "score": 0.3187844579763287
+    }
+  ],
+  "shown": [
+    {
+      "id": 49,
+      "where": "customer-service-playbook.md > Goodwill and approvals",
+      "score": 0.5418066234097085
+    },
+    {
+      "id": 231,
+      "where": "returns-policy.md > Approvals: the Three Lights rule",
+      "score": 0.4611865642529222
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.4603097143305078
+    },
+    {
+      "id": 111,
+      "where": "faq.md > Who pays for return shipping?",
+      "score": 0.44047267101094767
+    },
+    {
+      "id": 84,
+      "where": "employee-handbook.md > Customer service standards",
+      "score": 0.44017612564739167
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "Who has to approve a $700 refund?",
+      "ms": 6
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] customer-service-playbook.md > Goodwill and approvals\n## Goodwill and approvals\n\nYou may give a goodwill credit of up to $25 per incident without approval: a discount code, a\nfree mantle pack, a refunded shipping charge. Log it on the ticket with a one-line reason.\n\nAbove $25, ask the shift lead. The Three Lights rule covers larger amounts: any refund, credit or\ngoodwill over $500 needs the approval of Tomas Reyes, and anything over $2,000 needs the approval\nof Priya Whitcomb-Nair. \"Any\" means any: a refund that is simply the price of a returned Sentinel\n1000 Pro and a Northstar together is over $500 and needs Tomas's sign-off before it is released,\neven though the policy clearly allows it. Approvals are recorded on the ticket as a note from the\napprover, not as a verbal okay.\n\n[2] returns-policy.md > Approvals: the Three Lights rule\n## Approvals: the Three Lights rule\n\nAny refund, credit or goodwill gesture over $500 on a single order needs the approval of Tomas\nReyes before it is issued. Anything over $2,000 needs the approval of Priya Whitcomb-Nair. Agents\nmay issue goodwill credits of up to $25 per incident on their own authority. The approval is\nrecorded as a note on the order in Hearth with the approver's name and the date. The rule takes\nits name from the three lights on the old warehouse sign and is explained in full in the Customer\nService Playbook.\n\n[3] customer-service-playbook.md > RET-02 RA number issued\n### RET-02 RA number issued\n\nHello {name}, your return of {items} from order {order} is authorized under RA-{ra}. Please write\nthat number on the outside of the box and include the packing slip. Send it to Lantern Supply Co.\nReturns, 1180 Downsville Pike, Dock B, Hagerstown, MD 21740. {label_sentence} Your refund of\n{amount} will go to your original payment method within 7 business days of the return arriving\nat our warehouse.\n\n[4] faq.md > Who pays for return shipping?\n### Who pays for return shipping?\n\nYou do, unless the item is defective or we sent the wrong thing. If you would rather not arrange\nshipping yourself, we can email you a prepaid label for a flat $8.50, which we deduct from your\nrefund.\n\n[5] employee-handbook.md > Customer service standards\n## Customer service standards\n\nEvery email to help@lanternsupply.example is answered within 1 business day, and most are answered\nthe same day. A phone caller should wait less than 3 minutes; if the queue is longer than that,\nthe shift lead pulls in a second person. Chat on the online store follows the same 3-minute\nstandard during support hours and shows the next-day email promise outside them.\n\nKnow the policies before you quote them. The return window is 40 days from the delivery date,\nthe standard warranty is 2 years, and the full details are in the returns policy, the shipping\npolicy, the warranty policy and the customer service playbook. Any refund, credit or goodwill over\n$500 needs approval from Tomas Reyes, Head of Customer Service, and anything over $2,000 needs\nPriya Whitcomb-Nair's. Do not promise what you cannot approve.\n\nQuestion: Who has to approve a $700 refund?",
+      "reply": "Tomas Reyes must approve it, since any refund over $500 needs his approval (and only amounts over $2,000 go to Priya Whitcomb-Nair) [1][2][5]. The approval is recorded as a note on the ticket/order [1][2].",
+      "stopReason": "end_turn",
+      "inputTokens": 1230,
+      "outputTokens": 86,
+      "cost": 0.00332,
+      "ms": 1662
+    }
+  ],
+  "tokens": {
+    "input": 1230,
+    "output": 86
+  },
+  "ms": 1669
+}

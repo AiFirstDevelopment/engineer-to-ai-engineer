@@ -500,6 +500,71 @@ bench-fee answer quotes the $25.00 fee and then says it does not know what an in
 costs, a hedge a string match would count as a pass. Telling those apart is scoring, the next
 episode.
 
+### 4. Scoring (`s2e4`)
+
+A pass or a fail per case, and for every fail the stage that failed: retrieval, the rules, the
+judge.
+
+Files: `evals/checks.ts` is what rules can decide. `retrieval` finds where the first chunk
+holding one of the case's quotes came in the search's top 20, and whether one was shown; a chunk
+holds a quote when it is from the same file and page and contains the quote, or either half of
+it, because a chunk boundary can cut a quote in two (a half under 30 characters could match by
+chance and does not count). `checkAnswer` finds which required facts the answer states, by their
+match terms; which forbidden claims it makes, by theirs; and its citations: how many, any number
+that points past the passages shown, and whether a cited passage holds a source.
+`evals/judge.ts` is what rules cannot decide: whether every statement in the answer is backed by
+the passages, and whether each `[n]` points at the passage that says it. A string match can find
+"340" in an answer; it cannot tell "the 220R weighs 340 g, 30 g more than the 220's 310 g" from
+"the 220R weighs 310 g". The judge is Claude Haiku 5.5, twenty times cheaper than the answering
+model and the same model the reranker has used since series 1, episode 8 (`JUDGE_MODEL`, through
+the `model` option of `ask`, which prices each model it calls and refuses one it has no price
+for, so no call can escape the cost). It reads what the answering model read, its system prompt and its prompt, and the answer,
+and returns `{ reason, grounded, cited }` through structured output, reason first so the verdict
+follows from it. One call per answered case, about two hundredths of a cent each.
+`evals/scoring.ts` puts them in order. A case that said "I don't know" passes if it is a
+fallback case and fails if not; a fallback case that answered fails, however good the answer
+sounds, because the corpus does not say. An answer case is checked by the rules and then judged,
+and its result names the first thing that failed: a missing fact, a forbidden claim, no
+citations, a citation to a passage not shown, ungrounded, miscited. It writes
+`evals/runs/<run>/results.json`; `evals/report.ts` prints the table; `evals/eval.ts` now scores
+the run it traced, and `evals/score.ts <run>` scores a run again, after the cases or the checks
+change, without running the pipeline. `test/checks.test.ts` tests the rules on hand-made traces.
+
+The judge is a model, so it is evaluated before it is trusted. `evals/judge-cases.jsonl` holds
+fifteen answers labelled by hand, each a real prompt from the baseline run with either the
+pipeline's own answer or a wrong one made from it: a changed number, a citation to the wrong
+passage, a claim no passage makes, the 220's weight given for the 220R, the wrong approver for a
+$700 refund. `evals/judge-eval.ts` runs the judge on them and reports its agreement with the
+labels. It started as twelve. Scoring the baseline found the judge wrong three ways, and each
+became a labelled case: it failed the $65 free-shipping answer because it had not been shown the
+system prompt that says to prefer the more recent document (now it is); and it failed the
+bench-fee answer for being cautious and the torque answer for a sentence without a citation,
+neither of which is what it was asked to judge, so its instructions now say to judge the facts
+and not the style, and that a missing citation is not a wrong one. With those changes it agreed
+with all fifteen labels on two runs.
+
+```sh
+npx tsx --env-file=.env evals/judge-eval.ts
+npx tsx --env-file=.env evals/eval.ts scored
+```
+
+The transcript, `transcripts/s2e4-scoring.txt`, shows the judge's evaluation, then a scored run.
+The judge agreed on 15 of 15 for grounded and 14 of 15 for cited: on this run it called the
+"every 20 fills" answer correctly cited, though it said in the same breath that the manual says
+10. The judge is nondeterministic too, which is why it is measured on every change to it and
+never trusted on one verdict. The run, `evals/runs/scored/`, passed 29 of 30 for $0.1057, judge
+included: all eight fallback cases said "I don't know", and the one failure is the staff
+discount, with no source in the top 20, a retrieval miss. The same scorer gave the baseline run
+of episode 3 (`evals/score.ts baseline`) 27 of 30: besides the staff discount, the two Firefly
+runtime and weight answers failed on a forbidden claim, because those answers mentioned the
+other model's figure as a contrast ("30 grams more than the 220's 310 g"), and this run's
+answers did not. Same code, same cases, two points apart, and whether the case or the answer is
+wrong there is episode 6's question. The source column says more than the score. `return-window`
+passed with its source nowhere in the top 20: the FAQ says 40 days too, and the case lists only
+the policy. `holiday-return` passed with its source 16th: the answer came from the FAQ and a
+worked example. A passing case with a missing source is a case that lists too few sources, or a
+lucky answer; either is worth knowing before it fails.
+
 ## Tags
 
 | Tag | Episode |
@@ -515,6 +580,7 @@ episode.
 | `s2e1` | The golden set |
 | `s2e2` | Models as a parameter |
 | `s2e3` | The tracer |
+| `s2e4` | Scoring |
 
 ## Dependencies
 

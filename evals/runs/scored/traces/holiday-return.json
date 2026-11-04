@@ -1,0 +1,174 @@
+{
+  "run": "scored",
+  "case": "holiday-return",
+  "question": "My lantern was delivered on November 20. What is the last day I can return it?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "The last day to start a return is January 31 of the following year. Any order delivered between November 1 and December 24 gets the holiday extension [5], as in the worked example of a November 14, 2026 delivery, which has until January 31, 2027 [3].",
+  "citations": [
+    {
+      "n": 5,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?"
+    },
+    {
+      "n": 3,
+      "where": "returns-policy.md > Worked examples"
+    }
+  ],
+  "cost": 0.00276,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.6333559535592781
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.5829842377053898
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.5598790893882194
+    },
+    {
+      "id": 101,
+      "where": "faq.md > My package says delivered but I don't have it. What now?",
+      "score": 0.5558952315954607
+    },
+    {
+      "id": 115,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?",
+      "score": 0.5512537361623022
+    },
+    {
+      "id": 40,
+      "where": "customer-service-playbook.md > Returns",
+      "score": 0.5427144820392398
+    },
+    {
+      "id": 200,
+      "where": "repair-manual.pdf p.2",
+      "score": 0.5394287441351336
+    },
+    {
+      "id": 253,
+      "where": "shipping.md > Contacts",
+      "score": 0.5362053994957537
+    },
+    {
+      "id": 57,
+      "where": "customer-service-playbook.md > WAR-01 Warranty claim opened",
+      "score": 0.5356488495811649
+    },
+    {
+      "id": 119,
+      "where": "faq.md > How do I make a warranty claim?",
+      "score": 0.5321370298473795
+    },
+    {
+      "id": 121,
+      "where": "faq.md > If I give a lantern as a gift, is it still under warranty?",
+      "score": 0.5317957219118917
+    },
+    {
+      "id": 232,
+      "where": "returns-policy.md > Common situations",
+      "score": 0.5244427748535386
+    },
+    {
+      "id": 265,
+      "where": "showrooms.md > Services",
+      "score": 0.523999937210815
+    },
+    {
+      "id": 287,
+      "where": "warranty.md > Relationship to the returns policy",
+      "score": 0.5214838281412788
+    },
+    {
+      "id": 11,
+      "where": "about.md > Contact",
+      "score": 0.517896775208081
+    },
+    {
+      "id": 230,
+      "where": "returns-policy.md > Holiday extension",
+      "score": 0.5156756130161955
+    },
+    {
+      "id": 218,
+      "where": "returns-policy.md > The return window",
+      "score": 0.5032857184840251
+    },
+    {
+      "id": 54,
+      "where": "customer-service-playbook.md > RET-02 RA number issued",
+      "score": 0.5027375588788976
+    },
+    {
+      "id": 108,
+      "where": "faq.md > Can I send something back if I changed my mind?",
+      "score": 0.5013802370077236
+    },
+    {
+      "id": 113,
+      "where": "faq.md > Can I return a lantern I have already put fuel in?",
+      "score": 0.4999326221133167
+    }
+  ],
+  "shown": [
+    {
+      "id": 7,
+      "where": "about.md > What we believe",
+      "score": 0.6333559535592781
+    },
+    {
+      "id": 221,
+      "where": "returns-policy.md > What can be returned",
+      "score": 0.5829842377053898
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.5598790893882194
+    },
+    {
+      "id": 101,
+      "where": "faq.md > My package says delivered but I don't have it. What now?",
+      "score": 0.5558952315954607
+    },
+    {
+      "id": 115,
+      "where": "faq.md > I got it as a holiday gift. Is the return period longer?",
+      "score": 0.5512537361623022
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "My lantern was delivered on November 20. What is the last day I can return it?",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] about.md > What we believe\n## What we believe\n\nA lantern should last. Everything we sell is chosen or built to be repaired, and the Repair\nCenter will fix an out-of-warranty lantern at a fair price rather than tell you to buy a new one.\nA policy should be plain. Our returns, shipping and warranty pages say what we do in numbers,\nand the customer service team is allowed to say yes. A customer should be able to reach a person.\nThe phone is answered by someone in Frederick, Monday through Friday 8:30 AM to 6:00 PM and\nSaturday 9:00 AM to 5:00 PM Eastern.\n\n[2] returns-policy.md > What can be returned\n## What can be returned\n\nAn item is eligible for return when all of the following are true:\n\n- It is unused. A lantern that has been switched on to check that it works is still unused. A\n  lantern that has been taken on a trip is not.\n- It is in its original packaging with all accessories, inserts, manuals and the warranty card.\n- It was purchased from Lantern Supply Co. directly: the online store, by phone, or at the\n  Frederick or Annapolis showroom. Items bought from another retailer go back to that retailer.\n- It is not on the final-sale list below.\n\n[3] returns-policy.md > Worked examples\n### Worked examples\n\nOrder LS-2026-004871 shipped on June 2, 2026 and was delivered on June 5, 2026. Day one is June 6.\nThe last day to start a return is July 15, 2026.\n\nOrder LS-2026-011302 was delivered on November 14, 2026. Under the ordinary rule the window\nwould close on December 24, 2026. Because the order was delivered between November 1 and\nDecember 24, the holiday extension applies and the customer has until January 31, 2027.\n\nOrder LS-2026-009140 was picked up curbside at Frederick on September 9, 2026. The last day to\nstart a return is October 19, 2026.\n\n[4] faq.md > My package says delivered but I don't have it. What now?\n### My package says delivered but I don't have it. What now?\n\nCheck with neighbors and your building's office first; most packages turn up within a day. If it\nhas not arrived 10 business days after the expected delivery date, write to us with the order\nnumber and we will ship a replacement before the carrier claim is settled.\n\n[5] faq.md > I got it as a holiday gift. Is the return period longer?\n### I got it as a holiday gift. Is the return period longer?\n\nYes. Any order delivered between November 1 and December 24 can be returned until January 31.\n\nQuestion: My lantern was delivered on November 20. What is the last day I can return it?",
+      "reply": "The last day to start a return is January 31 of the following year. Any order delivered between November 1 and December 24 gets the holiday extension [5], as in the worked example of a November 14, 2026 delivery, which has until January 31, 2027 [3].",
+      "stopReason": "end_turn",
+      "inputTokens": 980,
+      "outputTokens": 80,
+      "cost": 0.00276,
+      "ms": 1157
+    }
+  ],
+  "tokens": {
+    "input": 980,
+    "output": 80
+  },
+  "ms": 1163
+}

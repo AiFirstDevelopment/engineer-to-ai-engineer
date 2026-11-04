@@ -1,0 +1,170 @@
+{
+  "run": "scored",
+  "case": "pto-first-year",
+  "question": "How many days of PTO does a full-time employee get in their first year?",
+  "options": {
+    "citeCheck": true
+  },
+  "answer": "A full-time employee earns 15 days of PTO in their first year [1]. It accrues monthly in twelve equal parts, and PTO can be used once they have completed 60 days [1].",
+  "citations": [
+    {
+      "n": 1,
+      "where": "employee-handbook.md > Paid time off (PTO)"
+    }
+  ],
+  "cost": 0.00306,
+  "flagged": false,
+  "retrieved": [
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.6619596588873038
+    },
+    {
+      "id": 69,
+      "where": "employee-handbook.md > Pay",
+      "score": 0.4042520265885398
+    },
+    {
+      "id": 77,
+      "where": "employee-handbook.md > Retirement",
+      "score": 0.39883550775358567
+    },
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.389652702488636
+    },
+    {
+      "id": 73,
+      "where": "employee-handbook.md > Holidays",
+      "score": 0.3298057678240453
+    },
+    {
+      "id": 74,
+      "where": "employee-handbook.md > Other leave",
+      "score": 0.3159542355456253
+    },
+    {
+      "id": 72,
+      "where": "employee-handbook.md > Sick and safe leave",
+      "score": 0.3148249468121778
+    },
+    {
+      "id": 167,
+      "where": "lumen-rewards.md > Birthday reward",
+      "score": 0.3110514962299544
+    },
+    {
+      "id": 68,
+      "where": "employee-handbook.md > Schedules and timekeeping",
+      "score": 0.30613979798006724
+    },
+    {
+      "id": 79,
+      "where": "employee-handbook.md > Employee discount",
+      "score": 0.30523635365979607
+    },
+    {
+      "id": 62,
+      "where": "employee-handbook.md > Employee Handbook (excerpt)",
+      "score": 0.2868875478260954
+    },
+    {
+      "id": 88,
+      "where": "employee-handbook.md > Performance reviews",
+      "score": 0.2833891344389813
+    },
+    {
+      "id": 87,
+      "where": "employee-handbook.md > Training",
+      "score": 0.2822054036461399
+    },
+    {
+      "id": 78,
+      "where": "employee-handbook.md > Other benefits",
+      "score": 0.27960841654040725
+    },
+    {
+      "id": 109,
+      "where": "faq.md > Does the return period start when I order or when I receive it?",
+      "score": 0.2770866050629591
+    },
+    {
+      "id": 93,
+      "where": "employee-handbook.md > Acknowledgement",
+      "score": 0.2636663816401155
+    },
+    {
+      "id": 86,
+      "where": "employee-handbook.md > Training",
+      "score": 0.25643471149741276
+    },
+    {
+      "id": 274,
+      "where": "warranty.md > Warranty periods",
+      "score": 0.25020719927901697
+    },
+    {
+      "id": 220,
+      "where": "returns-policy.md > Worked examples",
+      "score": 0.24337957325757478
+    },
+    {
+      "id": 162,
+      "where": "lumen-rewards.md > Earning points",
+      "score": 0.2365042627364564
+    }
+  ],
+  "shown": [
+    {
+      "id": 71,
+      "where": "employee-handbook.md > Paid time off (PTO)",
+      "score": 0.6619596588873038
+    },
+    {
+      "id": 69,
+      "where": "employee-handbook.md > Pay",
+      "score": 0.4042520265885398
+    },
+    {
+      "id": 77,
+      "where": "employee-handbook.md > Retirement",
+      "score": 0.39883550775358567
+    },
+    {
+      "id": 76,
+      "where": "employee-handbook.md > Health insurance",
+      "score": 0.389652702488636
+    },
+    {
+      "id": 73,
+      "where": "employee-handbook.md > Holidays",
+      "score": 0.3298057678240453
+    }
+  ],
+  "calls": [
+    {
+      "kind": "embed",
+      "text": "How many days of PTO does a full-time employee get in their first year?",
+      "ms": 5
+    },
+    {
+      "kind": "chat",
+      "model": "claude-sonnet-5-5",
+      "system": "You answer questions for the staff of Lantern Supply Co. from the\npassages provided, and from nothing else. Cite every fact with the number of the passage it\ncomes from, like [2]. If passages disagree, prefer the one from the more recent document.\nWhen the passages do not answer the question, reply exactly: I don't know.\nBe brief: a sentence or two.",
+      "prompt": "Passages:\n\n[1] employee-handbook.md > Paid time off (PTO)\n### Paid time off (PTO)\n\nFull-time employees earn 15 days of PTO in each of their first three years and 20 days a year once\nthey have completed three years of service. PTO accrues monthly, in twelve equal parts, on the last\nday of each month. New hires may use PTO once they have completed 60 days. Part-time employees\nearn PTO in proportion to scheduled hours.\n\nUp to 5 days of unused PTO carry over into the next calendar year; the rest is forfeited on\nDecember 31. Unused PTO is paid out when you leave, as Maryland requires when a written policy\nsays so, and this policy says so.\n\nRequest PTO in Deputy at least two weeks ahead for anything longer than two days. Showroom\nrequests for the week of Thanksgiving and the two weeks before Christmas are approved on a\nfirst-come basis and are limited to two people per showroom at a time.\n\n[2] employee-handbook.md > Pay\n## Pay\n\nEveryone is paid twice a month, on the 15th and on the last day of the month. When a pay date falls\non a weekend or a bank holiday, pay is deposited the business day before. Pay is by direct deposit;\npaper checks are available on request from Harold Nkemelu's office and are mailed, not held.\n\nPay periods run from the 1st through the 15th and from the 16th through the end of the month.\nHourly employees are paid for the period that ended on the pay date; salaried employees are paid\ncurrent. Pay stubs are in Gusto. Report a pay error to People Operations within 30 days.\n\nAnnual pay reviews happen in February, after the fiscal year closes on January 31. Changes take\neffect with the pay period beginning March 1.\n\n[3] employee-handbook.md > Retirement\n### Retirement\n\nThe 401(k) plan is administered by Guideline. You may enroll after 90 days of employment, and the\ncompany matches 100% of your contributions up to 4% of pay. The match vests immediately. Enrollment\nis through the Guideline link in Gusto; contributions start with the next pay period.\n\n[4] employee-handbook.md > Health insurance\n### Health insurance\n\nMedical, dental and vision coverage is through the CareFirst Keystone Select plan. Eligibility\nbegins on the first day of the month after 30 days of full-time employment. The company pays 75% of\nthe employee premium and 50% of the premium for dependents. Open enrollment runs November 1\nthrough November 20 each year, for coverage starting January 1. Outside open enrollment you can\nchange your election only after a qualifying life event, within 30 days of the event.\n\n[5] employee-handbook.md > Holidays\n### Holidays\n\nThe company is closed, and the showrooms and support lines do not operate, on six holidays:\n\n- New Year's Day\n- Memorial Day\n- Independence Day\n- Labor Day\n- Thanksgiving Day\n- Christmas Day\n\nFull-time employees are paid for these days. When a holiday falls on a Sunday it is observed on\nMonday; when it falls on a Saturday the showrooms close that Saturday. The warehouse observes the\nsame six days. We are open on the day after Thanksgiving and on Christmas Eve, closing at 3:00 PM\non Christmas Eve.\n\nQuestion: How many days of PTO does a full-time employee get in their first year?",
+      "reply": "A full-time employee earns 15 days of PTO in their first year [1]. It accrues monthly in twelve equal parts, and PTO can be used once they have completed 60 days [1].",
+      "stopReason": "end_turn",
+      "inputTokens": 1225,
+      "outputTokens": 61,
+      "cost": 0.00306,
+      "ms": 1730
+    }
+  ],
+  "tokens": {
+    "input": 1225,
+    "output": 61
+  },
+  "ms": 1736
+}

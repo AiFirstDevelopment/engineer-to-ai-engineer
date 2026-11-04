@@ -1,10 +1,8 @@
 // Print one case of a run, step by step, from its trace.
 // Usage: npx tsx evals/trace.ts <run> <case>
 import { readFileSync } from "node:fs";
-import type { Passage, Result } from "../src/pipeline";
-import type { Call } from "./tracer";
-
-type Trace = Result & { run: string; case: string; question: string; calls: Call[]; ms: number };
+import type { Passage } from "../src/pipeline";
+import type { Trace } from "./tracer";
 
 const [run, id] = process.argv.slice(2);
 const trace = JSON.parse(

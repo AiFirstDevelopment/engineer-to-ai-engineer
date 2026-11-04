@@ -1,0 +1,38 @@
+$ npx tsx --env-file=.env evals/judge-eval.ts
+judge claude-haiku-5-5, 15 labelled answers; disagreements:
+  pump-cup-number: grounded false (label false), cited true (label false)
+  judge said: The answer says every 20 fills, but passage [1] states every 10 fills, and it also n
+agreement: grounded 15/15, cited 14/15; cost $0.0039
+$ npx tsx --env-file=.env evals/eval.ts scored
+case                     status  source  facts  judge     why
+return-window            pass    -       1/1    ok
+restocking-fee           pass    #3 *    1/1    ok
+sentinel-pro-warranty    pass    #1 *    1/1    ok
+firefly-220r-weight      pass    #4 *    1/1    ok
+free-shipping-65         pass    #7      1/1    ok
+bench-fee                pass    #1 *    1/1    ok
+generator-torque         pass    #4 *    1/1    ok
+staff-discount           FAIL    -                        said I don't know
+sentinel-low-runtime     pass    #4 *    1/1    ok
+firefly-220-low-runtime  pass    #4 *    1/1    ok
+fuel-to-canada           pass    #3 *    1/1    ok
+prepaid-label            pass    #1 *    1/1    ok
+points-for-reward        pass    #3 *    1/1    ok
+flame-tier               pass    #1 *    1/1    ok
+pump-cup                 pass    #1 *    2/2    ok
+sentinel-pro-pack        pass    #1 *    1/1    ok
+holiday-return           pass    #16     1/1    ok
+annapolis-pickup         pass    #7      1/1    ok
+pto-first-year           pass    #1 *    1/1    ok
+refund-approval          pass    #2 *    1/1    ok
+lost-package             pass    #1 *    1/1    ok
+heritage-kerosene        pass    #1 *    2/2    ok
+ceo-salary               pass    -
+sales-2025               pass    -
+sentinel-2000            pass    -
+dental-deductible        pass    #1 *
+ups-account              pass    #6
+showroom-wifi            pass    -
+firefly-euros            pass    #3 *
+brass-spinner            pass    #2 *
+passed 29/30: answer 21/22, fallback 8/8; $0.1057 with the judge (claude-haiku-5-5)
