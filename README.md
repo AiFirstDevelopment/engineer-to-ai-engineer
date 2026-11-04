@@ -2,10 +2,14 @@
 
 The code for the YouTube series *From engineer to AI engineer*: eight episodes that take an
 experienced software engineer with no generative-AI background from conventional software to a
-first retrieval pipeline (RAG), built across the series one piece per episode.
+first retrieval pipeline (RAG), built across the series one piece per episode. Its second series,
+*Prove it works*, builds the evaluation harness that tells you whether that pipeline answers
+right, on the same repository.
 
-Every episode is one commit and one tag (`s1e1` to `s1e8`). Check out a tag and you have the
-repository exactly as that episode leaves it; this README describes only what exists so far.
+Every episode is one commit and one tag (`s1e1` to `s1e8` for the first series, `s2e1` on for the
+second).
+Check out a tag and you have the repository exactly as that episode leaves it; this README
+describes only what exists so far.
 
 ## The premise
 
@@ -353,6 +357,58 @@ questions would measure it the same way.
 That is the method: a change is a flag, the flag is measured, the number decides, and the
 failures that remain tell you what to build next.
 
+## Series 2: Prove it works
+
+Series 1 ended with a pipeline and ten questions. Ten questions measured the four changes of
+episode 8, and they also showed their limit: one run of the same settings scored 9 and the
+next 8, so a difference of one question is noise, and a change that helps one kind of question
+and hurts another cannot be seen at all. This series builds what a team needs before it trusts
+a retrieval pipeline with customers: a set of cases with known answers, a pipeline that can be
+tested without a model, a record of every step of every run, a score that says which stage
+failed, a budget, a comparison between runs, and a gate in CI.
+
+### 1. The golden set (`s2e1`)
+
+Thirty cases with known answers, each one checked against the corpus.
+
+Files: `evals/golden.jsonl` is the golden set, one case per line: an `id`; the `question`,
+phrased the way a customer or a new employee asks it; `expect`, `answer` or `fallback`; the
+required `facts`, each with the `match` terms that count as stating it ("40 days", "40-day",
+"forty days"); the `forbidden` claims, each with terms that would mean the answer made it (the
+Firefly 220's 310 g given for the 220R); and the `sources`: the file, the page for the PDF, and
+a `quote` copied from the extracted text that proves the answer. 22 cases expect an answer and 8
+expect "I don't know": the CEO's salary, last year's unit sales, a Sentinel 2000 that does not
+exist, the dental plan's deductible (the plan is named, its deductible is not), the UPS account
+number (the shipping policy says it exists and does not give it), the showroom Wi-Fi, the
+Firefly's price in euros, the name of the Baltimore brass spinner. A fallback case may carry the
+nearest source, to show what the corpus does say. The answer cases cover eleven of the thirteen
+files and every trap in the corpus: the 220 against the 220R, the $60 threshold in the release
+notes against the $75 in two older pages, four facts found only in the PDF, and series 1's
+unsolved staff discount. `evals/golden.ts` loads the set and holds the two matching helpers
+every later script uses: `flat` (whitespace collapsed) and `mentions` (any of the terms,
+ignoring case).
+
+`evals/check-golden.ts` checks the set before anything is scored against it: ids unique, every
+answer case with facts and sources, every fact and claim with terms, and every quote found in
+the text that `src/extract.ts` produces for its file and page, the same text the index is built
+from. The comparison is character for character once runs of whitespace are collapsed, because
+the Markdown is wrapped at 100 columns and the PDF's text comes out a line at a time: the line
+breaks are layout, the characters are the content. A quote typed from memory is the commonest
+error in a golden set, and a case whose quote is not in the corpus can be scored as a retrieval
+miss forever while the pipeline is right.
+
+```sh
+npx tsx evals/check-golden.ts
+```
+
+No key, no model. The transcript, `transcripts/s2e1-the-golden-set.txt`, shows the thirty cases
+passing (22 answer, 8 fallback, 26 quotes in 11 files), then the bench-fee quote changed from
+the manual's "$25.00" to "$25", the way a person remembers it, and the check failing on it with
+exit code 1, then the quote restored and the check passing. Why thirty: enough that one case is
+three points and not ten, few enough that a person can read every answer of a run, and each one
+written from the document, not from memory. A golden set grows: episode 7 adds a way to turn
+real questions into new cases.
+
 ## Tags
 
 | Tag | Episode |
@@ -365,6 +421,7 @@ failures that remain tell you what to build next.
 | `s1e6` | Chunking and indexing is ETL |
 | `s1e7` | Your first pipeline |
 | `s1e8` | Making it good, with numbers |
+| `s2e1` | The golden set |
 
 ## Dependencies
 

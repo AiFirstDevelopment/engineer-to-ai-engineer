@@ -1,0 +1,19 @@
+$ npx tsx evals/check-golden.ts
+30 cases: 22 answer, 8 fallback
+26 quotes checked against 11 files
+all quotes verbatim
+
+$ sed -i "" "s/is \$25.00 plus parts/is \$25 plus parts/" evals/golden.jsonl
+$ npx tsx evals/check-golden.ts; echo "exit code $?"
+30 cases: 22 answer, 8 fallback
+26 quotes checked against 11 files
+FAIL  bench-fee: not in repair-manual.pdf p.1: "The bench fee for a paid repair is $25 p..."
+1 problem
+exit code 1
+
+$ sed -i "" "s/is \$25 plus parts/is \$25.00 plus parts/" evals/golden.jsonl
+$ npx tsx evals/check-golden.ts; echo "exit code $?"
+30 cases: 22 answer, 8 fallback
+26 quotes checked against 11 files
+all quotes verbatim
+exit code 0
