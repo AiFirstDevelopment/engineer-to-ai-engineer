@@ -1,0 +1,26 @@
+$ npx tsx --env-file=.env src/ask-with-doc.ts docs/returns-policy.md "In one sentence: how many
+days do I have to return a lantern?"
+prompt: 3,720 tokens, $0.0074 of input
+
+You have 40 days from the carrier-recorded delivery date (or the purchase date for showroom
+purchases) to start a return, or until January 31 of the following year if the order was
+delivered between November 1 and December 24. The lantern must also be unused, in its original
+packaging, and not have had fuel put in it.
+
+tokens in: 3720  out: 96  cost: $0.0084
+
+$ npx tsx --env-file=.env src/ask-with-doc.ts docs "What is the free shipping threshold?"
+prompt: 45,331 tokens, $0.0907 of input
+
+The free standard shipping threshold is **$60**. It applies to the order subtotal before shipping
+and tax.
+
+The change came with Hearth 4.3 on October 15, 2026, and lowered the threshold from $75. The
+release notes say they are the newer record when they disagree with a policy page. Several other
+documents still show the old $75 figure, including the FAQ (last updated September 28, 2026) and
+the shipping policy (also September 28, 2026). Those pages appear to be out of date.
+
+Orders below the threshold pay a flat $6.95 for standard shipping. The release notes don't
+mention any change to that rate.
+
+tokens in: 45331  out: 196  cost: $0.0926

@@ -141,6 +141,36 @@ with the tracking number and the email's two Fireflies and Northstar, in two rou
 half a cent. The prompt, the schema and the tool's description are code: they live in the
 repository, they are reviewed, and from episode 7 on they are tested.
 
+### 4. Why it can't read your documents (`s1e4`)
+
+The obvious fix, and why it is a dead end.
+
+Files: `src/ask-with-doc.ts` pastes a document into the prompt and asks the question after it.
+Given one Markdown file it pastes that file; given the folder it pastes every Markdown file in
+it (the PDF waits for episode 6). Before calling the model it counts the prompt's tokens with
+the free count-tokens endpoint and prints what that much input costs on every question.
+
+```sh
+npx tsx --env-file=.env src/ask-with-doc.ts docs/returns-policy.md \
+  "In one sentence: how many days do I have to return a lantern?"
+npx tsx --env-file=.env src/ask-with-doc.ts docs "What is the free shipping threshold?"
+```
+
+The transcript, `transcripts/s1e4-why-it-cant-read-your-documents.txt`, shows the return-window
+question answered right, 40 days from delivery, once `returns-policy.md` is in the prompt:
+3,720 tokens, three quarters of a cent of input per question. Then the whole corpus goes in,
+45,331 tokens, and the model answers the free-shipping question right too, $60, and even
+notices that the release notes are newer than the policy pages that still say $75. It can do
+that because it sees everything. The price is nine cents of input per question, before the
+answer, and it is paid again on every question because the model keeps nothing between calls.
+
+That is the dead end. A thousand questions a day is $90 a day for 26,000 words of
+documentation; ten times the documentation is ninety cents a question and a long wait for each
+answer; thirty times does not fit at all, because this model's context window, the most it can
+read in one call, is a million tokens. The window is the limit; the price is the wall you hit
+first. The way out is to send only the few paragraphs that matter to the question, which means
+finding them first. Finding them is retrieval, and it is the next four episodes.
+
 ## Tags
 
 | Tag | Episode |
@@ -148,6 +178,7 @@ repository, they are reviewed, and from episode 7 on they are tested.
 | `s1e1` | What actually changed, and what didn't |
 | `s1e2` | Calling a model from code |
 | `s1e3` | Prompts are code |
+| `s1e4` | Why it can't read your documents |
 
 ## Dependencies
 
