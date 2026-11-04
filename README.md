@@ -26,7 +26,7 @@ have: TypeScript, SQLite, `curl` and an HTTP server.
 - `cp .env.example .env` and put your key in `.env`. The file is gitignored. `ask.sh` reads it,
   and every `npx tsx` command below loads it with Node's own `--env-file=.env`, so there is no
   dotenv package.
-- `npm install`.
+- `npm install`. The first search (episode 5 on) downloads the embedding model, 97 MB, once.
 
 ## The model
 
@@ -100,7 +100,8 @@ the whole client is shorter than most SDK quick-starts.
 
 ```sh
 npx tsx --env-file=.env src/ask.ts "In one sentence: what does HTTP status 304 mean?"
-npx tsx --env-file=.env src/ask.ts "I bought a lantern from Lantern Supply Co. How many days do I have to return it?"
+npx tsx --env-file=.env src/ask.ts \
+  "I bought a lantern from Lantern Supply Co. How many days do I have to return it?"
 npx tsx --env-file=.env src/tokens.ts "The Firefly 220R charges in 3.5 hours over USB-C."
 ```
 
@@ -171,6 +172,42 @@ read in one call, is a million tokens. The window is the limit; the price is the
 first. The way out is to send only the few paragraphs that matter to the question, which means
 finding them first. Finding them is retrieval, and it is the next four episodes.
 
+### 5. Embeddings, for people who know SQL (`s1e5`)
+
+Search by meaning, with a table, a blob column and a loop.
+
+Files: `src/embed.ts` turns a text into a vector, a `Float32Array` of 384 numbers, with a small
+open embedding model, `all-MiniLM-L6-v2`, running on your machine through
+`@huggingface/transformers`. Texts that mean similar things get vectors that point the same
+way. The model downloads once, 97 MB into `node_modules/@huggingface/transformers/.cache`, and
+nothing is sent anywhere: there is no second vendor and no second key, and the only paid call
+in this repository is still Claude. `src/cosine.ts` is cosine similarity in ten lines: how alike
+two vectors point, 1 for the same direction, 0 for unrelated. `src/db.ts` is SQLite through
+`better-sqlite3`, one table, `chunks(id, source, text, embedding)`, where the embedding is the
+vector's bytes in a blob column like any other column. `src/search.ts` is the search: on its
+first run it splits every Markdown file in `docs/` into paragraphs (a quick split on blank
+lines, for now), embeds each and inserts it; on every run it embeds the query, scores every row
+with cosine in TypeScript, a full scan, and prints the top five.
+
+```sh
+npx tsx src/search.ts "what happens if the courier loses my parcel"
+```
+
+No `--env-file`: nothing here calls Claude. The transcript, `transcripts/s1e5-embeddings.txt`,
+shows the first run indexing 414 paragraphs in three seconds, then the top five. The best
+match, at 0.627, is the playbook's "A package counts as lost when it has not arrived 10
+business days after the expected delivery date", and it shares not one word with the query:
+courier against carrier and package, parcel against package, loses against lost. A keyword
+search finds none of that. Meaning beats words, and that is the whole reason for embeddings.
+Notice also that a bare heading line made the top five: paragraphs are a poor unit, which is
+episode 6.
+
+When does the full scan stop being fine? 414 rows of 384 floats is nothing; a hundred thousand
+rows is still a few tens of milliseconds in a loop like this one. When you have millions of
+rows, or many searches a second, you add a vector index (`sqlite-vec`, `pgvector`, or a vector
+database), which is the same decision as adding an index to any other table, made for the same
+reason, and not before.
+
 ## Tags
 
 | Tag | Episode |
@@ -179,14 +216,23 @@ finding them first. Finding them is retrieval, and it is the next four episodes.
 | `s1e2` | Calling a model from code |
 | `s1e3` | Prompts are code |
 | `s1e4` | Why it can't read your documents |
+| `s1e5` | Embeddings, for people who know SQL |
 
 ## Dependencies
 
-Every dependency, with its one-line reason. Development dependencies only so far.
+Every dependency, with its one-line reason.
+
+- `@huggingface/transformers`: runs the embedding model on your machine (ONNX Runtime
+  underneath); no embedding API, no key.
+- `better-sqlite3`: SQLite in-process and synchronous, the simplest database there is; npm
+  installs a prebuilt binary.
+
+Development dependencies:
 
 - `typescript`: the type checker (`npm run typecheck`).
 - `tsx`: runs a TypeScript file directly (`npx tsx file.ts`), no build step.
 - `@types/node`: the types of Node's own modules (`fs`, `http`, `process`).
+- `@types/better-sqlite3`: the types of `better-sqlite3`.
 
 ## Transcripts
 
