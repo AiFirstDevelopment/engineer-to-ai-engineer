@@ -1,0 +1,38 @@
+$ npx tsx --env-file=.env evals/compare.ts
+ 1. I changed my mind about a lamp that arrived three weeks ago. Can I still send it back?
+ 2. What is the restocking fee on an opened item that is not defective?
+ 3. How long is the warranty on the Sentinel 1000 Pro?
+ 4. How heavy is the rechargeable Firefly?
+ 5. Does a $65 order qualify for free shipping?
+ 6. My Northstar is out of warranty. What does it cost just to have the bench look at it?
+ 7. How tight should the Northstar generator tube be?
+ 8. Can staff buy a Second Light lantern for less?
+ 9. How long does the Sentinel 1000 run on low?
+10. What is Priya Whitcomb-Nair's salary?
+
+step            passed   cost     failed
+vector only      9/10    $0.035   8
++ hybrid         6/10    $0.037   4, 6, 7, 8
++ rerank         8/10    $0.045   6, 8
++ widen          9/10    $0.095   8
++ cite check     9/10    $0.093   8
+$ npx tsx --env-file=.env evals/run.ts --hybrid --rerank | grep -v "^PASS"
+FAIL  Can staff buy a Second Light lantern for less?
+      got: The passages don't give a staff discount, but they do say Second Light items are sold
+
+9/10 passed, cost $0.0473
+$ npx tsx --env-file=.env evals/run.ts --hybrid --rerank | grep -v "^PASS"
+FAIL  My Northstar is out of warranty. What does it cost just to have the bench look at it?
+      got: I don't know.
+FAIL  Can staff buy a Second Light lantern for less?
+      got: I don't know.
+
+8/10 passed, cost $0.0463
+$ sed -i "" 's/"claude-haiku-5-5"/"claude-sonnet-5-5"/' src/rerank.ts
+$ npx tsx --env-file=.env evals/run.ts --hybrid --rerank | grep -v "^PASS"
+FAIL  Can staff buy a Second Light lantern for less?
+      got: Yes, Second Light refurbished lanterns are sold at a discount, with a 1-year warranty
+
+9/10 passed, cost $0.1651
+$ git checkout src/rerank.ts
+Updated 1 path from the index

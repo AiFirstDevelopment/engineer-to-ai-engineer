@@ -30,13 +30,17 @@ have: TypeScript, SQLite, `curl` and an HTTP server.
 
 ## The model
 
-The series uses one chat model, `claude-sonnet-5-5`, in one place (the request body in `ask.sh`,
-and the constant `MODEL` in `src/claude.ts`). It costs $2 per million input tokens and
-$10 per million output tokens. A question through the finished pipeline is a few thousand
+The series answers with one chat model, `claude-sonnet-5-5`, set in one place (the request body
+in `ask.sh`, and the constant `MODEL` in `src/claude.ts`). It costs $2 per million input tokens
+and $10 per million output tokens. A question through the finished pipeline is a few thousand
 tokens in and a few hundred out, about a cent. Claude Opus 5.5 is the more capable model at
-twice the price per token; Claude Haiku 5.5 is twenty times cheaper but we want answers we can
-trust while we grade them. You pay for your own runs, so the cheaper of the two models we trust
-is the default, and swapping the constant is the whole migration.
+twice the price per token; Claude Haiku 5.5 is twenty times cheaper. The answers stay on
+Sonnet: an answer is what the customer reads, and we want answers we can trust while we grade
+them. You pay for your own runs, so the cheaper of the two models we trust is the default, and
+swapping the constant is the whole migration. One step uses Haiku: from episode 8 the reranker
+(`RERANK_MODEL` in `src/rerank.ts`) scores twenty passages for each question, a narrower job
+than writing a cited answer and four times the text, and Haiku does it well enough at a
+twentieth of the price per token (episode 8 measures it).
 
 ## The corpus: Lantern Supply Co.
 
@@ -282,6 +286,73 @@ discount section was not among the five passages retrieved (the question says st
 Second Light; the five nearest passages are all about Second Light itself). It is an honest
 failure, which is the second rule working, and it is a number. Episode 8 is about that number.
 
+### 8. Making it good, with numbers (`s1e8`)
+
+Four changes that usually help, each behind an option, each measured against the ten questions.
+
+Files: `src/keyword.ts` is BM25, the ranking function behind most search engines, in forty
+lines and no library: it finds exact terms, the model numbers, part codes and names that
+embeddings blur. `src/hybrid.ts` is reciprocal rank fusion: the vector list and the keyword
+list merged by rank, not by score, since the scores are on different scales. `src/rerank.ts`
+has a model read the twenty candidates and score each 0 to 10 for how well it answers the
+question, in one call for all of them: the question and the instructions are paid for once,
+and the model sees the candidates side by side, which is what ranking needs; a call per
+candidate would be twenty prompts and twenty round trips for scores that were never compared.
+The reranker is Claude Haiku 5.5, not the answering model (`RERANK_MODEL`; `src/claude.ts` now
+takes a `model` option and prices each model it calls, and refuses one it has no price for).
+`src/widen.ts` replaces each passage with itself and its neighbours from the same file, in
+order, because a chunk boundary is arbitrary. `src/cite-check.ts` removes any [n] that points
+at a passage the model was not shown and marks the answer, because a citation nobody can
+follow looks like evidence. `src/pipeline.ts` switches each on with an option; the server
+keeps the cite check on. `evals/suite.ts` runs the ten questions with a set of options,
+`evals/run.ts` takes the options as flags, and `evals/compare.ts` climbs the ladder, one
+change at a time, and prints the table. One expectation was widened while building this: the
+manual says "hand-tight plus a quarter turn, never more than 2.5 N·m", and an answer that
+quotes the first half is right.
+
+```sh
+npx tsx --env-file=.env evals/run.ts --hybrid --rerank
+npx tsx --env-file=.env evals/compare.ts
+```
+
+The transcript, `transcripts/s1e8-making-it-good.txt`, is the table, and it is not the table
+you would draw from the names of the techniques:
+
+| Step | Passed | Cost of the ten | Failed |
+| --- | --- | --- | --- |
+| vector only | 9/10 | $0.035 | 8 |
+| + hybrid | 6/10 | $0.037 | 4, 6, 7, 8 |
+| + rerank | 8/10 | $0.045 | 6, 8 |
+| + widen | 9/10 | $0.095 | 8 |
+| + cite check | 9/10 | $0.093 | 8 |
+
+Read it row by row. Hybrid, on its own, made things worse, and the eval is why we know: the
+keyword list is full of FAQ entries that say "Firefly" and "rechargeable" often, and after
+fusion the catalog chunk that holds the 220R's weight fell from fourth to ninth, out of the five
+the model sees; the chunk with the torque figure went the same way, and the model, shown the
+wrong half of the page, said it did not know, which is the right failure. Shipped without
+numbers, that change would have cost two questions. Reranking from the wider pool recovers
+them, for a fifth more per question than hybrid alone, because the twenty passages are read by
+Haiku at a twentieth of the answering model's price per token. Question 6, the bench fee, is the
+noise: the model is nondeterministic, so on ten questions one run is worth plus or minus one.
+The transcript runs the reranking step twice more, and it passes 9/10 and 8/10; the reranker
+puts the repair manual's bench-fee page first, and it is the answering model, reading that page,
+that sometimes says it does not know. Run it three times, or write fifty questions, before you
+believe a difference of one. Then the transcript switches the reranker to Sonnet for one run:
+9/10, the same as Haiku's best, for $0.165 instead of about $0.046, three and a half times the
+cost of the ten. The model that writes the answer has to be good; the model that sorts passages
+only has to be good enough, and the eval is how you know it is. Widening costs twice as much
+for context these answers did not need, which makes it the most expensive change on the ladder,
+and the cite check found nothing to remove, which is what you want from a guard. Question 8
+never passes. The handbook's employee discount section ranks 88th by vector and 38th by
+keyword for "Can staff buy a Second Light lantern for less?", because the question says staff
+and the handbook says employee; no reranker can promote a passage that never reached it. The fix
+for that is to rewrite the question before searching, which is a different change, and the ten
+questions would measure it the same way.
+
+That is the method: a change is a flag, the flag is measured, the number decides, and the
+failures that remain tell you what to build next.
+
 ## Tags
 
 | Tag | Episode |
@@ -293,6 +364,7 @@ failure, which is the second rule working, and it is a number. Episode 8 is abou
 | `s1e5` | Embeddings, for people who know SQL |
 | `s1e6` | Chunking and indexing is ETL |
 | `s1e7` | Your first pipeline |
+| `s1e8` | Making it good, with numbers |
 
 ## Dependencies
 

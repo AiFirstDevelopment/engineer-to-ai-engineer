@@ -2,8 +2,12 @@
 
 export const MODEL = "claude-sonnet-5-5";
 
-// Dollars per million tokens, from the price list. Change the model, change these too.
-const PRICE = { input: 2.0, output: 10.0 };
+// Dollars per million tokens, from the price list, for each model this repository calls.
+// Change a model, change its line too: a model missing here is an error, never free.
+const PRICES: Record<string, { input: number; output: number }> = {
+  "claude-sonnet-5-5": { input: 2.0, output: 10.0 },
+  "claude-haiku-5-5": { input: 0.1, output: 0.5 }, // the reranker (src/rerank.ts)
+};
 
 const API = "https://api.anthropic.com/v1/messages";
 
@@ -20,6 +24,7 @@ export type Message = { role: "user" | "assistant"; content: string | ContentBlo
 export type Tool = { name: string; description: string; input_schema: object };
 
 export type Options = {
+  model?: string; // MODEL unless a caller has a reason for another
   system?: string; // instructions that sit above the conversation
   maxTokens?: number; // the most the answer may be, in tokens
   tools?: Tool[]; // functions the model may ask us to run
@@ -36,8 +41,9 @@ export type Answer = {
 };
 
 export async function ask(messages: Message[], options: Options = {}): Promise<Answer> {
+  const model = options.model ?? MODEL;
   const body = {
-    model: MODEL,
+    model,
     max_tokens: options.maxTokens ?? 1024,
     system: options.system,
     messages,
@@ -55,7 +61,7 @@ export async function ask(messages: Message[], options: Options = {}): Promise<A
     stopReason: data.stop_reason,
     inputTokens: data.usage.input_tokens,
     outputTokens: data.usage.output_tokens,
-    cost: cost(data.usage),
+    cost: cost(data.usage, model),
   };
 }
 
@@ -66,8 +72,13 @@ export async function countTokens(text: string): Promise<number> {
   return data.input_tokens;
 }
 
-export function cost(usage: { input_tokens: number; output_tokens: number }): number {
-  return (usage.input_tokens * PRICE.input + usage.output_tokens * PRICE.output) / 1_000_000;
+export function cost(
+  usage: { input_tokens: number; output_tokens: number },
+  model = MODEL,
+): number {
+  const price = PRICES[model];
+  if (!price) throw new Error(`no price for ${model}; add it to PRICES in src/claude.ts`);
+  return (usage.input_tokens * price.input + usage.output_tokens * price.output) / 1_000_000;
 }
 
 async function post(url: string, body: unknown) {

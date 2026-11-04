@@ -13,7 +13,8 @@ createServer(async (request, response) => {
   try {
     const { question } = JSON.parse(await body(request)) as { question?: string };
     if (!question) return reply(response, 400, { error: "a question is required" });
-    reply(response, 200, await answer(question));
+    // Switch on what your numbers justify (evals/compare.ts). The cite check is always cheap.
+    reply(response, 200, await answer(question, { citeCheck: true }));
   } catch (error) {
     reply(response, 500, { error: String(error) });
   }
