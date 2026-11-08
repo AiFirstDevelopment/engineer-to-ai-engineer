@@ -6,10 +6,36 @@ first retrieval pipeline (RAG), built across the series one piece per episode. I
 *Prove it works*, builds the evaluation harness that tells you whether that pipeline answers
 right, on the same repository.
 
-Every episode is one commit and one tag (`s1e1` to `s1e8` for the first series, `s2e1` on for the
-second).
-Check out a tag and you have the repository exactly as that episode leaves it; this README
-describes only what exists so far.
+Every episode is one commit and one tag: `s1e1` to `s1e8` for the first series, `s2e1` to `s2e7` for the
+second. Check out a tag and you have the repository exactly as that episode leaves it, with a README that
+describes only what exists so far. This README, on `main`, describes all of it.
+
+## Start here
+
+The videos are two YouTube playlists: [From engineer to AI
+engineer](https://www.youtube.com/playlist?list=PLfmRFV611TOA), eight episodes, and [Prove it
+works](https://www.youtube.com/playlist?list=PLPUiBor6kL3E), seven. Every episode's description links its
+tag here, and the table under "Tags" at the end links every tag to its episode.
+
+To follow along at the keyboard:
+
+```sh
+git clone https://github.com/AiFirstDevelopment/engineer-to-ai-engineer.git
+cd engineer-to-ai-engineer
+git checkout s1e1            # the repository exactly as episode 1 leaves it
+cp .env.example .env         # then put your Anthropic API key in .env
+npm install
+./ask.sh "In two sentences: what is a race condition?"
+```
+
+Then `git checkout s1e2` and that episode's commands, and so on to `s2e7`. Checking out a tag puts git on a
+detached HEAD, which is fine for reading; `git checkout main` comes back. Run `npm install` again after
+checking out `s1e5`, `s1e6` or `s2e2`, the tags whose `package.json` adds dependencies, or whenever a command
+fails on a missing package. `main` is the finished repository: every file this README names is there.
+
+What a command costs is in its episode's section: cents, never dollars. The harness caps its own spending
+at $1 a run and $5 across every run in its ledger (`evals/ledger.ts`), and nothing in the test suite calls
+a model.
 
 ## The premise
 
@@ -76,6 +102,67 @@ and facts that exist only in the PDF (`repair-manual.pdf`, the Repair Center's b
 The PDF was rendered once from a Markdown draft with headless Chrome; the draft is not in the
 repository, on purpose, so its facts exist only in the PDF.
 
+## The map
+
+Three jobs, in three groups of files. The first two are series 1 and the third is series 2. Every box is a
+file in this repository; the episode sections below say what each does and what it printed when it ran.
+
+**Indexing**, `npx tsx src/index.ts`: the documents become searchable chunks in a SQLite file. It is an ETL
+job, and it is safe to run again: a hash of each file says which ones changed.
+
+```mermaid
+flowchart LR
+    docs["docs/<br/>12 Markdown files and 1 PDF"] --> extract["src/extract.ts<br/>text, page by page"]
+    extract --> chunk["src/chunk.ts<br/>chunks of about 1,200 characters,<br/>each with its source, heading and page"]
+    chunk --> embed["src/embed.ts<br/>one 384-number vector per chunk,<br/>all-MiniLM-L6-v2, on your machine"]
+    embed --> db[("lantern.db<br/>SQLite: chunks, files")]
+    job["src/index.ts<br/>hashes each file: skips the unchanged,<br/>replaces the changed, removes the deleted"] -.-> extract
+```
+
+**Answering**, `npx tsx --env-file=.env src/server.ts`: a question comes in over HTTP and an answer with
+citations goes out, or "I don't know." The stages marked *option* are switched on by `Options` in
+`src/pipeline.ts`, one flag each, so the evals can measure each on its own; what the server runs with is
+`SERVED` in `src/config.ts`, the rewrite and the cite check.
+
+```mermaid
+flowchart TD
+    q["POST /ask with a question<br/>src/server.ts"] --> rewrite["src/rewrite.ts, option, served<br/>the question rewritten in the documents' words"]
+    rewrite --> retrieve["src/retrieve.ts<br/>the 20 nearest chunks by cosine similarity<br/>src/embed.ts, src/cosine.ts, lantern.db"]
+    retrieve --> low{"best score<br/>under 0.25?"}
+    low -- yes --> idk["I don't know.<br/>no model is called"]
+    low -- no --> hybrid["src/keyword.ts and src/hybrid.ts, option<br/>BM25 keyword search, the two lists fused by rank"]
+    hybrid --> rerank["src/rerank.ts, option<br/>Claude Haiku 5.5 scores the 20 from 0 to 10"]
+    rerank --> five["the top 5"]
+    five --> widen["src/widen.ts, option<br/>each passage with its neighbours"]
+    widen --> prompt["src/prompt.ts<br/>the rules, and the passages numbered [1] to [5]"]
+    prompt --> claude["src/claude.ts<br/>Claude Sonnet 5.5, one HTTP call"]
+    claude --> said{"I don't know?"}
+    said -- yes --> idk
+    said -- no --> cite["src/cite-check.ts, option, served<br/>a [n] the model was not shown is removed, the answer flagged"]
+    cite --> out["the answer, each citation resolved to its file and heading, the cost"]
+    out -.-> log["src/log.ts<br/>logs/questions.jsonl"]
+```
+
+**Proving it**, `npx tsx --env-file=.env evals/eval.ts <run>`: the golden set goes through the same
+pipeline, every step is recorded, every case is scored, and the run is compared with the one before. In CI
+the same run is a gate.
+
+```mermaid
+flowchart LR
+    golden["evals/golden.jsonl<br/>31 cases: the question, the facts, the forbidden claims, the sources"] --> check["evals/check-golden.ts<br/>every quote is in the corpus"]
+    golden --> run["evals/eval.ts and evals/gate.ts<br/>evals/run-eval.ts: the pipeline on traced models"]
+    run --> traces["evals/runs/NAME/traces/*.json<br/>evals/tracer.ts: every call, every passage, every cent"]
+    traces --> score["evals/scoring.ts<br/>the rules first, evals/checks.ts,<br/>then the judge, evals/judge.ts, Claude Haiku 5.5"]
+    score --> results["evals/runs/NAME/results.json"]
+    results --> read["evals/report.ts, evals/compare.ts,<br/>evals/diagnose.ts, evals/trace.ts"]
+    run --> ledger["evals/runs/ledger.json<br/>every run, with its settings and cost<br/>caps: $1 a run, $5 in all"]
+    results --> gate{"85% passed, no fallback case answered,<br/>the budget not reached?"}
+    gate -- no --> red["exit 1: the pull request is red"]
+    gate -- yes --> green["exit 0"]
+    cases["evals/judge-cases.jsonl<br/>16 answers labelled by hand"] --> judgeeval["evals/judge-eval.ts<br/>the judge's agreement with the labels"]
+    log["logs/questions.jsonl<br/>what people asked the server"] --> sample["evals/sample.ts<br/>drafts of new cases, for a person to finish"] --> golden
+```
+
 ## Episodes
 
 ### 1. What actually changed, and what didn't (`s1e1`)
@@ -136,6 +223,21 @@ answers with a `tool_use` block instead of text; we run the function, append the
 turn and a `tool_result` to the conversation, and call again; it repeats until the model
 answers in text. The loop is ours, and it is a plain `while`. `src/claude.ts` grows two options,
 `tools` and `format`, and returns the whole content of a turn, not only its text.
+
+The loop, as the transcript shows it:
+
+```mermaid
+sequenceDiagram
+    participant T as src/tools.ts
+    participant M as Claude
+    participant F as lookup_order, from data/orders.json
+    T->>M: the question, and the tool's name, description and input schema
+    M-->>T: a tool_use block, lookup_order("LS-2026-012077")
+    T->>F: run the function
+    F-->>T: the order's JSON
+    T->>M: the conversation so far, the model's turn, and a tool_result holding that JSON
+    M-->>T: text, delivered on October 29 by UPS Ground, with the tracking number
+```
 
 ```sh
 npx tsx --env-file=.env src/structured.ts
@@ -442,6 +544,17 @@ know". `npm test` runs them. `.github/workflows/test.yml` runs the type check, t
 golden-set check on every push and pull request, with no secret: none of the three calls a
 model.
 
+The same pipeline, three ways to hand it its models:
+
+```mermaid
+flowchart LR
+    answer["answer(question, options, deps)<br/>src/pipeline.ts imports no model"] --> models["deps.models, a Models<br/>chat() and embed(), src/models.ts"]
+    models --> real["realModels<br/>Claude over HTTP, MiniLM on your machine<br/>src/server.ts, evals/suite.ts"]
+    models --> fake["the fakes<br/>test/fake-models.ts: answers from markers in the prompt<br/>npm test, no key, no network"]
+    models --> traced["traced(models)<br/>evals/tracer.ts: the real pair, every call recorded<br/>evals/eval.ts"]
+    traced --> real
+```
+
 ```sh
 npm test
 ```
@@ -724,9 +837,10 @@ hand: it installs, restores the embedding model from the cache, checks the golde
 the index, runs the gate with the key from the repository secret `ANTHROPIC_API_KEY`, and keeps
 the run's traces and results as an artifact, so a red check can be read with `evals/trace.ts`. A
 newer push cancels the running check, so one pull request never pays twice; the ledger's caps
-apply in CI as well, against the ledger committed in the branch. There is no remote yet: the
-secret is set in the repository's settings (Settings, Secrets and variables, Actions) once it
-has one, and making the check required is a branch protection rule.
+apply in CI as well, against the ledger committed in the branch. The
+secret is set in the repository's settings (Settings, Secrets and variables, Actions), and making the
+check required is a branch protection rule. A fork needs its own key there, or the gate fails for want of
+one; the `test` workflow needs no secret at all.
 
 `src/log.ts` appends every question the server answers to `logs/questions.jsonl` (gitignored),
 with the answer and what it cited; questions can carry personal details, so that file belongs
@@ -782,25 +896,97 @@ before any model change:
 4. Ship the swap when the comparison shows nothing lost that matters, and the ledger keeps the
    run that proved it.
 
+## Running it
+
+Without a key, at no cost:
+
+```sh
+npm run typecheck                                  # tsc over src/, evals/ and test/
+npm test                                           # the pipeline's rules, the tracer, the checks and the stage labels, on fakes
+npx tsx evals/check-golden.ts                      # every quote in the golden set is in the corpus
+npx tsx src/index.ts                               # build lantern.db from docs/ (downloads the 97 MB embedding model once)
+npx tsx src/search.ts "what is the bench fee for an out-of-warranty repair"
+npx tsx evals/trace.ts baseline staff-discount     # read one case of a committed run
+npx tsx evals/compare.ts five three                # two committed runs, case by case
+npx tsx evals/diagnose.ts five                     # a committed run's failures, by the stage that failed
+```
+
+With a key in `.env`, for cents:
+
+```sh
+npx tsx --env-file=.env src/ask.ts "In one sentence: what does HTTP status 304 mean?"
+npx tsx --env-file=.env src/server.ts               # then: curl -s localhost:3000/ask -d '{"question": "..."}'
+npx tsx --env-file=.env evals/run.ts --hybrid --rerank   # series 1's ten questions, about five cents
+npx tsx --env-file=.env evals/ladder.ts             # the five rows of episode 8's table, about thirty cents
+npx tsx --env-file=.env evals/eval.ts my-first-run  # the golden set, traced and scored, about thirteen cents
+npx tsx evals/compare.ts rewrite my-first-run       # against the committed run of the same settings
+npx tsx --env-file=.env evals/judge-eval.ts         # the judge against its labelled answers, under half a cent
+npx tsx --env-file=.env evals/gate.ts               # what CI runs: exit 0 or 1, about thirteen cents
+```
+
+A run's name must be new: `evals/eval.ts` refuses one that exists, so the committed runs stay as the
+episodes read them. Your runs land in `evals/runs/` beside them, each with its line in the ledger.
+
+## What is not in the repository
+
+`.gitignore` keeps out what each machine makes for itself:
+
+- `.env`: your key. `.env.example` is the template.
+- `lantern.db`: the index. `npx tsx src/index.ts` builds it from `docs/` in a few seconds. (At `s1e5`,
+  `src/search.ts` fills its own store on first run; from `s1e6` on, a search against an empty store says to
+  run the index.)
+- `node_modules/`, and inside it the embedding model: 97 MB, downloaded by the first search or index into
+  `node_modules/@huggingface/transformers/.cache`, and never again.
+- `logs/questions.jsonl`: every question the server answered, from `s2e7` on (`src/log.ts`).
+- `evals/drafts.jsonl`: what `evals/sample.ts` drafts from that log.
+
+Committed on purpose: `evals/runs/`, the runs the episodes read their numbers from, every trace included,
+and `evals/runs/ledger.json`; `transcripts/`, the real output of each episode's commands; and
+`docs/repair-manual.pdf`, the one PDF in the corpus.
+
+## If something does not work
+
+- **"ANTHROPIC_API_KEY is not set"**: the command is missing `--env-file=.env`, or `.env` is not there. Node
+  reads the file itself from version 20.6 on (`node --version`).
+- **`better-sqlite3` will not load** ("was compiled against a different Node.js version"): `npm rebuild
+  better-sqlite3`. Its prebuilt binary is for one major version of Node at a time.
+- **"Cannot find package"** after checking out a tag: `npm install` again. The dependencies change at `s1e5`,
+  `s1e6` and `s2e2`.
+- **The first search or index sits for a while**: the embedding model is downloading, once. After that, the
+  only thing that needs the network is Claude.
+- **"the store is empty"**: run `npx tsx src/index.ts` first.
+- **"exists; name the run something new"**: `evals/eval.ts` never overwrites a run.
+- **Cases "not run"**: the run reached its budget (`--budget`, never above `RUN_CAP`) or the ledger reached
+  `TOTAL_CAP` (`evals/ledger.ts`). Read the ledger, then raise the cap in the code on purpose.
+- **Port 3000 is taken**: `PORT` in `src/server.ts`.
+- **Your numbers differ from this README's by a case or two**: the models are nondeterministic, and every
+  number here is a committed run in `evals/runs/` or a transcript in `transcripts/`. A difference of one case
+  in thirty is noise; series 2, episode 5 is about telling noise from a change.
+- **`npm run typecheck` at `s1e1` says no inputs were found**: there is no TypeScript yet at that tag, only
+  `ask.sh`. It works from `s1e2` on.
+- **`./ask.sh` prints nothing**: `jq` is missing (`brew install jq`), or the key in `.env` is not set.
+
 ## Tags
 
-| Tag | Episode |
-| --- | --- |
-| `s1e1` | What actually changed, and what didn't |
-| `s1e2` | Calling a model from code |
-| `s1e3` | Prompts are code |
-| `s1e4` | Why it can't read your documents |
-| `s1e5` | Embeddings, for people who know SQL |
-| `s1e6` | Chunking and indexing is ETL |
-| `s1e7` | Your first pipeline |
-| `s1e8` | Making it good, with numbers |
-| `s2e1` | The golden set |
-| `s2e2` | Models as a parameter |
-| `s2e3` | The tracer |
-| `s2e4` | Scoring |
-| `s2e5` | Caps, the ledger and comparing runs |
-| `s2e6` | Diagnosing a failure |
-| `s2e7` | The harness as a gate |
+One commit and one tag per episode, in the order the episodes play; `git log --oneline` is the series.
+
+| Tag | Episode | Video |
+| --- | --- | --- |
+| `s1e1` | Series 1, episode 1: What actually changed, and what didn't | <https://youtu.be/55s2Yw-UBgc> |
+| `s1e2` | Series 1, episode 2: Calling a model from code | <https://youtu.be/WnyUC2Qqw-4> |
+| `s1e3` | Series 1, episode 3: Prompts are code | <https://youtu.be/Hpfw67Trg7k> |
+| `s1e4` | Series 1, episode 4: Why it can't read your documents | <https://youtu.be/b8ZsS2FKypw> |
+| `s1e5` | Series 1, episode 5: Embeddings, for people who know SQL | <https://youtu.be/fPsBmU_FSaw> |
+| `s1e6` | Series 1, episode 6: Chunking and indexing is ETL | <https://youtu.be/_LzjKfoXAvA> |
+| `s1e7` | Series 1, episode 7: Your first pipeline | <https://youtu.be/GZPzeVkgWNs> |
+| `s1e8` | Series 1, episode 8: Making it good, with numbers | <https://youtu.be/OfuJPNoKeSU> |
+| `s2e1` | Series 2, episode 1: The golden set | <https://youtu.be/FkJjuXGa9CE> |
+| `s2e2` | Series 2, episode 2: Models as a parameter | <https://youtu.be/50XGeIVL_eA> |
+| `s2e3` | Series 2, episode 3: The tracer | <https://youtu.be/zEEFXUjOCjA> |
+| `s2e4` | Series 2, episode 4: Scoring | <https://youtu.be/cEGDHGmIix4> |
+| `s2e5` | Series 2, episode 5: Caps, the ledger and comparing runs | <https://youtu.be/nQiUFUrc0eA> |
+| `s2e6` | Series 2, episode 6: Diagnosing a failure | <https://youtu.be/s6Zglb47T78> |
+| `s2e7` | Series 2, episode 7: The harness as a gate | <https://youtu.be/w6aXAi353GE> |
 
 ## Dependencies
 
@@ -823,4 +1009,4 @@ Development dependencies:
 
 `transcripts/` holds the real output of each episode's commands, recorded when the episode was
 built: the command line first, then what it printed, long lines wrapped to fit a slide. Nothing
-in them is edited or invented.
+in them is edited or invented. Each file is named for its tag.
