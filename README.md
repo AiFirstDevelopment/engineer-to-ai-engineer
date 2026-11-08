@@ -388,8 +388,10 @@ for a third of a cent: twenty-five times cheaper than pasting the corpus in epis
 faster. The question about the CEO's pay gets "I don't know." and no citations. The ten
 questions score 9/10 for less than four cents. The failure is "Can staff buy a Second Light
 lantern for less?": the pipeline answered "I don't know", because the handbook's employee
-discount section was not among the five passages retrieved (the question says staff and
-Second Light; the five nearest passages are all about Second Light itself). It is an honest
+discount section was not among the five passages retrieved. The question says staff and Second
+Light, and the nearest passage is the Second Light program in `about.md`; the other four, the Base
+Camp Bundle, the FAQ on refurbished lanterns, Lights for Scouts and the company's beliefs, are
+nearer to the question than the handbook is, which says employee, not staff. It is an honest
 failure, which is the second rule working, and it is a number. Episode 8 is about that number.
 
 ### 8. Making it good, with numbers (`s1e8`)
