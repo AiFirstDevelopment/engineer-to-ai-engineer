@@ -1010,3 +1010,7 @@ Development dependencies:
 `transcripts/` holds the real output of each episode's commands, recorded when the episode was
 built: the command line first, then what it printed, long lines wrapped to fit a slide. Nothing
 in them is edited or invented. Each file is named for its tag.
+
+## License
+
+MIT, in `LICENSE`: use the code, the corpus and the golden set as you like, with the notice kept.
