@@ -12,6 +12,11 @@ describes only what exists so far. This README, on `main`, describes all of it.
 
 ## Start here
 
+New to AI engineering? This is free, and it starts from zero: the [YouTube channel](https://www.youtube.com/@JoelStevick)
+has every episode, [joelstevick.com](https://joelstevick.com) has each episode's page, a free demo and the book, and the
+weekly newsletter [AI That Won't Confidently Lie](https://www.linkedin.com/newsletters/ai-that-won-t-confidently-lie-7526584806781087745/)
+teaches one piece at a time.
+
 The videos are two YouTube playlists: [From engineer to AI
 engineer](https://www.youtube.com/playlist?list=PLfmRFV611TOA), eight episodes, and [Prove it
 works](https://www.youtube.com/playlist?list=PLPUiBor6kL3E), seven. Every episode's description links its
